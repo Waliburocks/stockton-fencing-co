@@ -1,0 +1,649 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Sacramento Fencing Co. - Free Estimates" description="Contact Sacramento Fencing Co. for your free fence estimate. Call (916) 555-FENCE or fill out our online form. Serving Sacramento County.">
+	<section class="hero">
+		<div class="container">
+			<h1>Contact Sacramento Fencing Co.</h1>
+			<p>Get your free estimate today - let's discuss your fencing project!</p>
+		</div>
+	</section>
+
+	<section class="contact-info">
+		<div class="container">
+			<div class="contact-grid">
+				<div class="contact-methods">
+					<h2>Get In Touch</h2>
+					
+					<div class="contact-item">
+						<div class="contact-icon">📞</div>
+						<div class="contact-details">
+							<h3>Phone</h3>
+							<p><a href="tel:916-555-3362">(916) 555-FENCE</a></p>
+							<p class="hours">Mon-Fri: 7am-6pm<br/>Sat: 8am-4pm<br/>Sun: Emergency calls only</p>
+						</div>
+					</div>
+					
+					<div class="contact-item">
+						<div class="contact-icon">📧</div>
+						<div class="contact-details">
+							<h3>Email</h3>
+							<p><a href="mailto:info@sacramentofencing.com">info@sacramentofencing.com</a></p>
+							<p class="hours">We respond within 2 hours during business hours</p>
+						</div>
+					</div>
+					
+					<div class="contact-item">
+						<div class="contact-icon">📍</div>
+						<div class="contact-details">
+							<h3>Service Area</h3>
+							<p>Sacramento County & Surrounding Areas</p>
+							<p class="hours">25-mile radius from downtown Sacramento</p>
+						</div>
+					</div>
+					
+					<div class="contact-item">
+						<div class="contact-icon">🏢</div>
+						<div class="contact-details">
+							<h3>Business Address</h3>
+							<p>1234 Fence Installation Way<br/>Sacramento, CA 95811</p>
+							<p class="hours">Office visits by appointment only</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="contact-form">
+					<h2>Request Your Free Estimate</h2>
+					<form id="contact-form" action="#" method="POST">
+						<div class="form-row">
+							<div class="form-group">
+								<label for="firstName">First Name *</label>
+								<input type="text" id="firstName" name="firstName" required>
+							</div>
+							<div class="form-group">
+								<label for="lastName">Last Name *</label>
+								<input type="text" id="lastName" name="lastName" required>
+							</div>
+						</div>
+						
+						<div class="form-row">
+							<div class="form-group">
+								<label for="phone">Phone Number *</label>
+								<input type="tel" id="phone" name="phone" placeholder="(916) 555-1234" required>
+							</div>
+							<div class="form-group">
+								<label for="email">Email Address *</label>
+								<input type="email" id="email" name="email" placeholder="your@email.com" required>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="address">Property Address</label>
+							<input type="text" id="address" name="address" placeholder="Street address where fence will be installed">
+						</div>
+						
+						<div class="form-row">
+							<div class="form-group">
+								<label for="projectType">Project Type *</label>
+								<select id="projectType" name="projectType" required>
+									<option value="">Select project type</option>
+									<option value="new-installation">New Fence Installation</option>
+									<option value="fence-replacement">Complete Fence Replacement</option>
+									<option value="fence-repair">Fence Repair</option>
+									<option value="gate-installation">Gate Installation</option>
+									<option value="gate-repair">Gate Repair</option>
+									<option value="other">Other/Multiple Services</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="fenceType">Preferred Fence Type</label>
+								<select id="fenceType" name="fenceType">
+									<option value="">Select fence material</option>
+									<option value="wood-cedar">Cedar Wood Fence</option>
+									<option value="wood-pine">Pressure-Treated Pine</option>
+									<option value="wood-redwood">Redwood Fence</option>
+									<option value="vinyl-privacy">Vinyl Privacy Fence</option>
+									<option value="vinyl-picket">Vinyl Picket Fence</option>
+									<option value="chain-link-galvanized">Galvanized Chain Link</option>
+									<option value="chain-link-vinyl">Vinyl-Coated Chain Link</option>
+									<option value="iron-wrought">Wrought Iron Fence</option>
+									<option value="aluminum">Aluminum Fence</option>
+									<option value="not-sure">Not Sure Yet - Need Advice</option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="form-row">
+							<div class="form-group">
+								<label for="linearFeet">Approximate Linear Feet</label>
+								<input type="text" id="linearFeet" name="linearFeet" placeholder="e.g., 150 feet (if known)">
+							</div>
+							<div class="form-group">
+								<label for="timeline">Preferred Timeline</label>
+								<select id="timeline" name="timeline">
+									<option value="">Select preferred timeline</option>
+									<option value="asap">As Soon As Possible</option>
+									<option value="1-2-weeks">1-2 Weeks</option>
+									<option value="within-month">Within 1 Month</option>
+									<option value="2-3-months">2-3 Months</option>
+									<option value="planning-phase">Just Planning/Getting Quotes</option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="message">Project Details & Questions</label>
+							<textarea id="message" name="message" rows="5" placeholder="Tell us about your project... fence height preferences, style details, gates needed, property challenges, special requirements, etc."></textarea>
+						</div>
+						
+						<div class="form-group checkbox-group">
+							<input type="checkbox" id="newsletter" name="newsletter" value="yes">
+							<label for="newsletter">Send me seasonal fence maintenance tips and special offers</label>
+						</div>
+						
+						<button type="submit" class="btn submit-btn">Send My Free Estimate Request</button>
+						
+						<p class="form-note">* Required fields. We'll contact you within 24 hours to schedule your free on-site estimate. No obligation, no pressure - just professional service.</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="why-contact">
+		<div class="container">
+			<h2>Why Request an Estimate from Us?</h2>
+			<div class="benefits-grid">
+				<div class="benefit">
+					<div class="benefit-icon">🆓</div>
+					<h3>Always Free Estimates</h3>
+					<p>Detailed written estimates with material specifications and no hidden fees. We measure your property professionally and provide accurate, honest pricing.</p>
+				</div>
+				<div class="benefit">
+					<div class="benefit-icon">⚡</div>
+					<h3>Fast Response Time</h3>
+					<p>We respond to all inquiries within 2 business hours and can often schedule same-day estimates within Sacramento city limits.</p>
+				</div>
+				<div class="benefit">
+					<div class="benefit-icon">💰</div>
+					<h3>Competitive & Fair Pricing</h3>
+					<p>Transparent, competitive pricing with detailed breakdowns. We'll gladly match legitimate competitor quotes from licensed contractors.</p>
+				</div>
+				<div class="benefit">
+					<div class="benefit-icon">🏆</div>
+					<h3>25+ Years of Expertise</h3>
+					<p>Thousands of satisfied customers throughout Sacramento County trust our experience, quality workmanship, and professional service.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="service-areas-quick">
+		<div class="container">
+			<h2>Areas We Serve</h2>
+			<div class="areas-content">
+				<div class="primary-areas">
+					<h3>🎯 Primary Service Areas (Same/Next Day Response)</h3>
+					<div class="areas-list">
+						<span class="area-tag primary">Sacramento</span>
+						<span class="area-tag primary">Elk Grove</span>
+						<span class="area-tag primary">Roseville</span>
+						<span class="area-tag primary">Folsom</span>
+					</div>
+				</div>
+				<div class="extended-areas">
+					<h3>📍 Extended Service Areas</h3>
+					<div class="areas-list">
+						<span class="area-tag">Citrus Heights</span>
+						<span class="area-tag">Fair Oaks</span>
+						<span class="area-tag">Carmichael</span>
+						<span class="area-tag">Rancho Cordova</span>
+						<span class="area-tag">Rocklin</span>
+						<span class="area-tag">Lincoln</span>
+						<span class="area-tag">El Dorado Hills</span>
+						<span class="area-tag">Cameron Park</span>
+						<span class="area-tag">Granite Bay</span>
+						<span class="area-tag">Antelope</span>
+					</div>
+				</div>
+			</div>
+			<p class="areas-note">Don't see your area listed? <a href="tel:916-555-3362">Call us anyway</a> - we regularly travel further for quality projects and may still be able to help you!</p>
+		</div>
+	</section>
+
+	<section class="emergency-service">
+		<div class="container">
+			<div class="emergency-content">
+				<div class="emergency-icon">🚨</div>
+				<h2>Emergency Fence Repair Service</h2>
+				<p>Storm damage compromising your security? Fence down creating safety concerns? We offer 24/7 emergency fence repair services for urgent situations throughout Sacramento County.</p>
+				<a href="tel:916-555-3362" class="btn emergency-btn">Call for Emergency Service: (916) 555-FENCE</a>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+		color: white;
+		padding: 4rem 0;
+		text-align: center;
+	}
+	
+	.hero h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		font-weight: 700;
+	}
+	
+	.contact-info {
+		padding: 5rem 0;
+	}
+	
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: start;
+	}
+	
+	.contact-methods h2,
+	.contact-form h2 {
+		color: #2c3e50;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	
+	.contact-item {
+		display: flex;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+		padding: 2rem;
+		background: #f8f9fa;
+		border-radius: 15px;
+		border-left: 5px solid #e74c3c;
+		transition: transform 0.3s;
+	}
+	
+	.contact-item:hover {
+		transform: translateX(5px);
+	}
+	
+	.contact-icon {
+		font-size: 2.5rem;
+		flex-shrink: 0;
+	}
+	
+	.contact-details h3 {
+		color: #2c3e50;
+		margin-bottom: 0.5rem;
+		font-size: 1.3rem;
+		font-weight: 700;
+	}
+	
+	.contact-details a {
+		color: #e74c3c;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 1.2rem;
+	}
+	
+	.contact-details a:hover {
+		text-decoration: underline;
+	}
+	
+	.hours {
+		color: #666;
+		font-size: 0.95rem;
+		margin-top: 0.5rem;
+		line-height: 1.4;
+	}
+	
+	.contact-form {
+		background: white;
+		padding: 2.5rem;
+		border-radius: 20px;
+		box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+	}
+	
+	.form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+	}
+	
+	.form-group {
+		margin-bottom: 1.5rem;
+	}
+	
+	.form-group label {
+		display: block;
+		margin-bottom: 0.5rem;
+		color: #2c3e50;
+		font-weight: bold;
+		font-size: 1rem;
+	}
+	
+	.form-group input,
+	.form-group select,
+	.form-group textarea {
+		width: 100%;
+		padding: 1rem;
+		border: 2px solid #e0e0e0;
+		border-radius: 8px;
+		font-family: inherit;
+		font-size: 1rem;
+		transition: all 0.3s;
+		background: #fafafa;
+	}
+	
+	.form-group input:focus,
+	.form-group select:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: #e74c3c;
+		background: white;
+		box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+	}
+	
+	.form-group textarea {
+		resize: vertical;
+		min-height: 120px;
+		line-height: 1.5;
+	}
+	
+	.checkbox-group {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.75rem;
+		margin-bottom: 2rem;
+	}
+	
+	.checkbox-group input {
+		width: auto;
+		margin-top: 0.2rem;
+	}
+	
+	.checkbox-group label {
+		margin-bottom: 0;
+		font-weight: normal;
+		font-size: 0.95rem;
+		line-height: 1.4;
+	}
+	
+	.submit-btn {
+		width: 100%;
+		padding: 1.25rem;
+		font-size: 1.1rem;
+		font-weight: bold;
+		margin-bottom: 1rem;
+		background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+		border: none;
+		cursor: pointer;
+	}
+	
+	.submit-btn:hover {
+		background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+	}
+	
+	.form-note {
+		font-size: 0.9rem;
+		color: #666;
+		text-align: center;
+		margin: 0;
+		line-height: 1.4;
+	}
+	
+	.why-contact {
+		background: #f8f9fa;
+		padding: 5rem 0;
+	}
+	
+	.why-contact h2 {
+		text-align: center;
+		margin-bottom: 3rem;
+		font-size: 2.5rem;
+		color: #2c3e50;
+	}
+	
+	.benefits-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+	}
+	
+	.benefit {
+		background: white;
+		padding: 2.5rem;
+		border-radius: 15px;
+		text-align: center;
+		box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+		transition: all 0.3s;
+	}
+	
+	.benefit:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+	}
+	
+	.benefit-icon {
+		font-size: 3.5rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	.benefit h3 {
+		color: #2c3e50;
+		margin-bottom: 1rem;
+		font-size: 1.4rem;
+		font-weight: 700;
+	}
+	
+	.benefit p {
+		color: #555;
+		line-height: 1.6;
+	}
+	
+	.service-areas-quick {
+		padding: 5rem 0;
+	}
+	
+	.service-areas-quick h2 {
+		text-align: center;
+		margin-bottom: 3rem;
+		font-size: 2.5rem;
+		color: #2c3e50;
+	}
+	
+	.areas-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		margin-bottom: 2rem;
+	}
+	
+	.areas-content h3 {
+		color: #2c3e50;
+		margin-bottom: 1.5rem;
+		font-size: 1.3rem;
+		font-weight: 700;
+	}
+	
+	.areas-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+	
+	.area-tag {
+		background: #e74c3c;
+		color: white;
+		padding: 0.6rem 1.2rem;
+		border-radius: 25px;
+		font-size: 0.9rem;
+		font-weight: bold;
+		transition: all 0.3s;
+	}
+	
+	.area-tag.primary {
+		background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+		box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+	}
+	
+	.area-tag:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+	}
+	
+	.areas-note {
+		text-align: center;
+		font-size: 1.1rem;
+		color: #555;
+		margin-top: 2rem;
+		line-height: 1.5;
+	}
+	
+	.areas-note a {
+		color: #e74c3c;
+		text-decoration: none;
+		font-weight: bold;
+	}
+	
+	.areas-note a:hover {
+		text-decoration: underline;
+	}
+	
+	.emergency-service {
+		background: #34495e;
+		color: white;
+		padding: 4rem 0;
+	}
+	
+	.emergency-content {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	
+	.emergency-icon {
+		font-size: 4rem;
+		margin-bottom: 1.5rem;
+		animation: pulse 2s infinite;
+	}
+	
+	@keyframes pulse {
+		0% { transform: scale(1); }
+		50% { transform: scale(1.05); }
+		100% { transform: scale(1); }
+	}
+	
+	.emergency-content h2 {
+		font-size: 2.2rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	.emergency-content p {
+		font-size: 1.1rem;
+		margin-bottom: 2rem;
+		line-height: 1.6;
+	}
+	
+	.emergency-btn {
+		background: #e74c3c;
+		font-size: 1.1rem;
+		padding: 1rem 2rem;
+		display: inline-block;
+	}
+	
+	.emergency-btn:hover {
+		background: #c0392b;
+	}
+	
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2.2rem;
+		}
+		
+		.contact-grid {
+			grid-template-columns: 1fr;
+			gap: 3rem;
+		}
+		
+		.form-row {
+			grid-template-columns: 1fr;
+			gap: 0;
+		}
+		
+		.areas-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+		
+		.why-contact h2,
+		.service-areas-quick h2 {
+			font-size: 2rem;
+		}
+		
+		.benefits-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.contact-methods h2,
+		.contact-form h2 {
+			font-size: 1.8rem;
+		}
+		
+		.emergency-content h2 {
+			font-size: 1.8rem;
+		}
+		
+		.contact-item {
+			flex-direction: column;
+			text-align: center;
+			gap: 1rem;
+		}
+		
+		.contact-icon {
+			align-self: center;
+		}
+	}
+</style>
+
+<script>
+	document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+		e.preventDefault();
+		
+		// Get form data
+		const formData = new FormData(this);
+		const data = Object.fromEntries(formData);
+		
+		// Simple client-side validation
+		const required = ['firstName', 'lastName', 'phone', 'email', 'projectType'];
+		let missingFields = [];
+		
+		for (const field of required) {
+			if (!data[field] || data[field].trim() === '') {
+				missingFields.push(field.replace(/([A-Z])/g, ' $1').toLowerCase().replace(/^\w/, c => c.toUpperCase()));
+			}
+		}
+		
+		if (missingFields.length > 0) {
+			alert(`Please fill in the following required fields:\n• ${missingFields.join('\n• ')}`);
+			return;
+		}
+		
+		// Basic email validation
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!emailRegex.test(data.email)) {
+			alert('Please enter a valid email address.');
+			return;
+		}
+		
+		// Show success message (in a real app, this would submit to a server)
+		alert('Thank you for your request! We\'ll contact you within 24 hours to schedule your free estimate.\n\nA confirmation email will be sent to ' + data.email);
+		
+		// Reset form
+		this.reset();
+	});
+</script>

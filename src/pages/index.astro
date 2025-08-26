@@ -1,16 +1,308 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Sacramento Fencing Co. - Professional Fence Installation & Repair">
+	<section class="hero">
+		<div class="container">
+			<div class="hero-content">
+				<h1>Sacramento's Premier Fencing Company</h1>
+				<p class="hero-subtitle">Quality fence installation, repair, and maintenance for residential and commercial properties throughout Sacramento County.</p>
+				<div class="hero-buttons">
+					<a href="/contact" class="btn">Get Free Quote</a>
+					<a href="/services" class="btn btn-outline">View Services</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="features">
+		<div class="container">
+			<h2>Why Choose Sacramento Fencing Co.?</h2>
+			<div class="features-grid">
+				<div class="feature">
+					<div class="feature-icon">🏆</div>
+					<h3>25+ Years Experience</h3>
+					<p>Trusted by thousands of Sacramento homeowners and businesses since 1998.</p>
+				</div>
+				<div class="feature">
+					<div class="feature-icon">⚡</div>
+					<h3>Fast Installation</h3>
+					<p>Most residential fences completed within 1-2 days with minimal disruption.</p>
+				</div>
+				<div class="feature">
+					<div class="feature-icon">💯</div>
+					<h3>Quality Guarantee</h3>
+					<p>All work backed by our comprehensive warranty and satisfaction guarantee.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="services-preview">
+		<div class="container">
+			<h2>Our Fencing Services</h2>
+			<div class="services-grid">
+				<div class="service-card">
+					<h3>Wood Fencing</h3>
+					<p>Cedar, redwood, and pressure-treated options for privacy and beauty.</p>
+					<span class="price">Starting at $25/ft</span>
+				</div>
+				<div class="service-card">
+					<h3>Vinyl Fencing</h3>
+					<p>Low-maintenance, durable fencing that looks great for years.</p>
+					<span class="price">Starting at $30/ft</span>
+				</div>
+				<div class="service-card">
+					<h3>Chain Link</h3>
+					<p>Affordable security fencing for residential and commercial properties.</p>
+					<span class="price">Starting at $12/ft</span>
+				</div>
+				<div class="service-card">
+					<h3>Ornamental Iron</h3>
+					<p>Elegant wrought iron and aluminum fencing for upscale properties.</p>
+					<span class="price">Starting at $35/ft</span>
+				</div>
+			</div>
+			<div class="text-center">
+				<a href="/services" class="btn">View All Services</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="testimonials">
+		<div class="container">
+			<h2>What Our Customers Say</h2>
+			<div class="testimonials-grid">
+				<div class="testimonial">
+					<p>"Outstanding work! They installed our backyard privacy fence in just one day. Professional, clean, and exactly what we wanted."</p>
+					<div class="customer">- Sarah M., Elk Grove</div>
+				</div>
+				<div class="testimonial">
+					<p>"Best fencing company in Sacramento. Fair pricing, quality materials, and they showed up on time. Highly recommend!"</p>
+					<div class="customer">- Mike D., Roseville</div>
+				</div>
+				<div class="testimonial">
+					<p>"They repaired our storm-damaged fence quickly and it looks better than new. Great customer service from start to finish."</p>
+					<div class="customer">- Jennifer L., Sacramento</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="cta">
+		<div class="container">
+			<h2>Ready to Enhance Your Property?</h2>
+			<p>Contact Sacramento Fencing Co. today for your free estimate and consultation.</p>
+			<a href="/contact" class="btn">Get Started Today</a>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+		color: white;
+		padding: 5rem 0;
+		text-align: center;
+	}
+	
+	.hero h1 {
+		font-size: 3.5rem;
+		margin-bottom: 1.5rem;
+		font-weight: 700;
+	}
+	
+	.hero-subtitle {
+		font-size: 1.3rem;
+		margin-bottom: 2.5rem;
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+		opacity: 0.9;
+	}
+	
+	.hero-buttons {
+		display: flex;
+		gap: 1.5rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	
+	.btn-outline {
+		background: transparent;
+		border: 2px solid white;
+		color: white;
+	}
+	
+	.btn-outline:hover {
+		background: white;
+		color: #2c3e50;
+	}
+	
+	.features {
+		padding: 5rem 0;
+		background: #f8f9fa;
+	}
+	
+	.features h2 {
+		text-align: center;
+		margin-bottom: 3rem;
+		font-size: 2.5rem;
+		color: #2c3e50;
+	}
+	
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	
+	.feature {
+		text-align: center;
+		padding: 2rem;
+		background: white;
+		border-radius: 15px;
+		box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+		transition: transform 0.3s;
+	}
+	
+	.feature:hover {
+		transform: translateY(-5px);
+	}
+	
+	.feature-icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+	
+	.feature h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: #2c3e50;
+	}
+	
+	.services-preview {
+		padding: 5rem 0;
+	}
+	
+	.services-preview h2 {
+		text-align: center;
+		margin-bottom: 3rem;
+		font-size: 2.5rem;
+		color: #2c3e50;
+	}
+	
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+		margin-bottom: 3rem;
+	}
+	
+	.service-card {
+		padding: 2rem;
+		background: #f8f9fa;
+		border-radius: 15px;
+		text-align: center;
+		transition: all 0.3s;
+		border-left: 4px solid #e74c3c;
+	}
+	
+	.service-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+	}
+	
+	.service-card h3 {
+		color: #2c3e50;
+		margin-bottom: 1rem;
+		font-size: 1.3rem;
+	}
+	
+	.service-card p {
+		margin-bottom: 1rem;
+	}
+	
+	.price {
+		color: #e74c3c;
+		font-weight: bold;
+		font-size: 1.1rem;
+	}
+	
+	.testimonials {
+		padding: 5rem 0;
+		background: #f8f9fa;
+	}
+	
+	.testimonials h2 {
+		text-align: center;
+		margin-bottom: 3rem;
+		font-size: 2.5rem;
+		color: #2c3e50;
+	}
+	
+	.testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	
+	.testimonial {
+		background: white;
+		padding: 2rem;
+		border-radius: 15px;
+		box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+		border-left: 4px solid #3498db;
+	}
+	
+	.testimonial p {
+		font-style: italic;
+		margin-bottom: 1rem;
+		font-size: 1.1rem;
+	}
+	
+	.customer {
+		font-weight: bold;
+		color: #2c3e50;
+	}
+	
+	.cta {
+		background: #e74c3c;
+		color: white;
+		padding: 4rem 0;
+		text-align: center;
+	}
+	
+	.cta h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+	
+	.cta p {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+	}
+	
+	.text-center {
+		text-align: center;
+	}
+	
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2.5rem;
+		}
+		
+		.hero-buttons {
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.features h2,
+		.services-preview h2,
+		.testimonials h2,
+		.cta h2 {
+			font-size: 2rem;
+		}
+	}
+</style>
