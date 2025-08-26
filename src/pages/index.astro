@@ -4,13 +4,18 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Sacramento Fencing Co. - Professional Fence Installation & Repair">
 	<section class="hero">
-		<div class="container">
-			<div class="hero-content">
-				<h1>Sacramento's Premier Fencing Company</h1>
-				<p class="hero-subtitle">Quality fence installation, repair, and maintenance for residential and commercial properties throughout Sacramento County.</p>
-				<div class="hero-buttons">
-					<a href="/contact" class="btn">Get Free Quote</a>
-					<a href="/services" class="btn btn-outline">View Services</a>
+		<div class="hero-image-container">
+			<img src="/images/hero-fence.svg" alt="Professional fence installation Sacramento" class="hero-image" loading="eager" />
+			<div class="hero-overlay">
+				<div class="container">
+					<div class="hero-content">
+						<h1>Sacramento's Premier Fencing Company</h1>
+						<p class="hero-subtitle">Quality fence installation, repair, and maintenance for residential and commercial properties throughout Sacramento County.</p>
+						<div class="hero-buttons">
+							<a href="/contact" class="btn">Get Free Quote</a>
+							<a href="/services" class="btn btn-outline">View Services</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -44,21 +49,25 @@ import Layout from '../layouts/Layout.astro';
 			<h2>Our Fencing Services</h2>
 			<div class="services-grid">
 				<div class="service-card">
+					<img src="/images/wood-fence.svg" alt="Wood fence installation Sacramento" class="service-image" loading="lazy" />
 					<h3>Wood Fencing</h3>
 					<p>Cedar, redwood, and pressure-treated options for privacy and beauty.</p>
 					<span class="price">Starting at $25/ft</span>
 				</div>
 				<div class="service-card">
+					<img src="/images/vinyl-fence.svg" alt="Vinyl fence installation Sacramento" class="service-image" loading="lazy" />
 					<h3>Vinyl Fencing</h3>
 					<p>Low-maintenance, durable fencing that looks great for years.</p>
 					<span class="price">Starting at $30/ft</span>
 				</div>
 				<div class="service-card">
+					<img src="/images/chain-link-fence.svg" alt="Chain link fence installation Sacramento" class="service-image" loading="lazy" />
 					<h3>Chain Link</h3>
 					<p>Affordable security fencing for residential and commercial properties.</p>
 					<span class="price">Starting at $12/ft</span>
 				</div>
 				<div class="service-card">
+					<img src="/images/iron-fence.svg" alt="Ornamental iron fence installation Sacramento" class="service-image" loading="lazy" />
 					<h3>Ornamental Iron</h3>
 					<p>Elegant wrought iron and aluminum fencing for upscale properties.</p>
 					<span class="price">Starting at $35/ft</span>
@@ -101,16 +110,51 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
 	.hero {
-		background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-		color: white;
-		padding: 5rem 0;
+		position: relative;
+		min-height: 500px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-image-container {
+		position: relative;
+		width: 100%;
+		height: 500px;
+	}
+	
+	.hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, 
+			rgba(139, 69, 19, 0.8) 0%, 
+			rgba(101, 67, 33, 0.9) 100%
+		);
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-content {
 		text-align: center;
+		color: var(--white);
+		z-index: 2;
 	}
 	
 	.hero h1 {
 		font-size: 3.5rem;
 		margin-bottom: 1.5rem;
 		font-weight: 700;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 	}
 	
 	.hero-subtitle {
@@ -119,7 +163,8 @@ import Layout from '../layouts/Layout.astro';
 		max-width: 700px;
 		margin-left: auto;
 		margin-right: auto;
-		opacity: 0.9;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+		line-height: 1.6;
 	}
 	
 	.hero-buttons {
@@ -131,25 +176,25 @@ import Layout from '../layouts/Layout.astro';
 	
 	.btn-outline {
 		background: transparent;
-		border: 2px solid white;
-		color: white;
+		border: 2px solid var(--white);
+		color: var(--white);
 	}
 	
 	.btn-outline:hover {
-		background: white;
-		color: #2c3e50;
+		background: var(--white);
+		color: var(--primary-brown);
 	}
 	
 	.features {
 		padding: 5rem 0;
-		background: #f8f9fa;
+		background: var(--background-light);
 	}
 	
 	.features h2 {
 		text-align: center;
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
-		color: #2c3e50;
+		color: var(--text-dark);
 	}
 	
 	.features-grid {
@@ -161,14 +206,16 @@ import Layout from '../layouts/Layout.astro';
 	.feature {
 		text-align: center;
 		padding: 2rem;
-		background: white;
+		background: var(--white);
 		border-radius: 15px;
-		box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-		transition: transform 0.3s;
+		box-shadow: 0 5px 20px var(--shadow-light);
+		transition: all 0.3s ease;
+		border-top: 4px solid var(--accent-gold);
 	}
 	
 	.feature:hover {
-		transform: translateY(-5px);
+		transform: translateY(-8px);
+		box-shadow: 0 10px 30px var(--shadow-medium);
 	}
 	
 	.feature-icon {
@@ -179,67 +226,84 @@ import Layout from '../layouts/Layout.astro';
 	.feature h3 {
 		font-size: 1.5rem;
 		margin-bottom: 1rem;
-		color: #2c3e50;
+		color: var(--text-dark);
 	}
 	
 	.services-preview {
 		padding: 5rem 0;
+		background: var(--white);
 	}
 	
 	.services-preview h2 {
 		text-align: center;
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
-		color: #2c3e50;
+		color: var(--text-dark);
 	}
 	
 	.services-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2rem;
 		margin-bottom: 3rem;
 	}
 	
 	.service-card {
 		padding: 2rem;
-		background: #f8f9fa;
+		background: var(--background-light);
 		border-radius: 15px;
 		text-align: center;
-		transition: all 0.3s;
-		border-left: 4px solid #e74c3c;
+		transition: all 0.3s ease;
+		border-left: 5px solid var(--primary-brown);
+		box-shadow: 0 4px 15px var(--shadow-light);
 	}
 	
 	.service-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+		transform: translateY(-8px);
+		box-shadow: 0 15px 40px var(--shadow-medium);
+		border-left-color: var(--accent-gold);
+	}
+	
+	.service-image {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+		border-radius: 10px;
+		margin-bottom: 1.5rem;
+		box-shadow: 0 4px 15px var(--shadow-light);
 	}
 	
 	.service-card h3 {
-		color: #2c3e50;
+		color: var(--text-dark);
 		margin-bottom: 1rem;
-		font-size: 1.3rem;
+		font-size: 1.4rem;
+		font-weight: 600;
 	}
 	
 	.service-card p {
 		margin-bottom: 1rem;
+		color: var(--text-light);
+		line-height: 1.6;
 	}
 	
 	.price {
-		color: #e74c3c;
+		color: var(--primary-brown);
 		font-weight: bold;
-		font-size: 1.1rem;
+		font-size: 1.2rem;
+		display: block;
+		margin-top: 1rem;
 	}
 	
 	.testimonials {
 		padding: 5rem 0;
-		background: #f8f9fa;
+		background: var(--background-light);
 	}
 	
 	.testimonials h2 {
 		text-align: center;
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
-		color: #2c3e50;
+		color: var(--text-dark);
 	}
 	
 	.testimonials-grid {
@@ -249,27 +313,36 @@ import Layout from '../layouts/Layout.astro';
 	}
 	
 	.testimonial {
-		background: white;
+		background: var(--white);
 		padding: 2rem;
 		border-radius: 15px;
-		box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-		border-left: 4px solid #3498db;
+		box-shadow: 0 5px 20px var(--shadow-light);
+		border-left: 5px solid var(--forest-green);
+		transition: all 0.3s ease;
+	}
+	
+	.testimonial:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px var(--shadow-medium);
+		border-left-color: var(--accent-gold);
 	}
 	
 	.testimonial p {
 		font-style: italic;
 		margin-bottom: 1rem;
 		font-size: 1.1rem;
+		color: var(--text-light);
+		line-height: 1.6;
 	}
 	
 	.customer {
 		font-weight: bold;
-		color: #2c3e50;
+		color: var(--text-dark);
 	}
 	
 	.cta {
-		background: #e74c3c;
-		color: white;
+		background: linear-gradient(135deg, var(--primary-brown) 0%, var(--secondary-brown) 100%);
+		color: var(--white);
 		padding: 4rem 0;
 		text-align: center;
 	}
@@ -277,11 +350,13 @@ import Layout from '../layouts/Layout.astro';
 	.cta h2 {
 		font-size: 2.5rem;
 		margin-bottom: 1rem;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 	}
 	
 	.cta p {
 		font-size: 1.25rem;
 		margin-bottom: 2rem;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 	}
 	
 	.text-center {
@@ -289,8 +364,16 @@ import Layout from '../layouts/Layout.astro';
 	}
 	
 	@media (max-width: 768px) {
+		.hero-image-container {
+			height: 400px;
+		}
+		
 		.hero h1 {
 			font-size: 2.5rem;
+		}
+		
+		.hero-subtitle {
+			font-size: 1.1rem;
 		}
 		
 		.hero-buttons {
@@ -298,11 +381,29 @@ import Layout from '../layouts/Layout.astro';
 			align-items: center;
 		}
 		
+		.service-image {
+			height: 180px;
+		}
+		
 		.features h2,
 		.services-preview h2,
 		.testimonials h2,
 		.cta h2 {
 			font-size: 2rem;
+		}
+		
+		.services-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+	
+	@media (max-width: 480px) {
+		.hero h1 {
+			font-size: 2rem;
+		}
+		
+		.service-image {
+			height: 150px;
 		}
 	}
 </style>

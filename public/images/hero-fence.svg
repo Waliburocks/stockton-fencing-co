@@ -1,0 +1,91 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+</linearGradient>
+<linearGradient id="wood" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" style="stop-color:#D2691E;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#A0522D;stop-opacity:1" />
+</linearGradient>
+</defs>
+
+<!-- Sky Background -->
+<rect width="1200" height="400" fill="url(#sky)"/>
+
+<!-- Ground -->
+<rect x="0" y="320" width="1200" height="80" fill="#228B22"/>
+
+<!-- Fence Posts -->
+<g fill="url(#wood)" stroke="#8B4513" stroke-width="2">
+<rect x="50" y="180" width="30" height="160"/>
+<rect x="150" y="180" width="30" height="160"/>
+<rect x="250" y="180" width="30" height="160"/>
+<rect x="350" y="180" width="30" height="160"/>
+<rect x="450" y="180" width="30" height="160"/>
+<rect x="550" y="180" width="30" height="160"/>
+<rect x="650" y="180" width="30" height="160"/>
+<rect x="750" y="180" width="30" height="160"/>
+<rect x="850" y="180" width="30" height="160"/>
+<rect x="950" y="180" width="30" height="160"/>
+<rect x="1050" y="180" width="30" height="160"/>
+<rect x="1150" y="180" width="30" height="160"/>
+</g>
+
+<!-- Fence Pickets -->
+<g fill="url(#wood)" stroke="#8B4513" stroke-width="1">
+<rect x="80" y="190" width="20" height="130"/>
+<rect x="105" y="195" width="20" height="125"/>
+<rect x="130" y="190" width="20" height="130"/>
+<rect x="180" y="190" width="20" height="130"/>
+<rect x="205" y="195" width="20" height="125"/>
+<rect x="230" y="190" width="20" height="130"/>
+<rect x="280" y="190" width="20" height="130"/>
+<rect x="305" y="195" width="20" height="125"/>
+<rect x="330" y="190" width="20" height="130"/>
+<rect x="380" y="190" width="20" height="130"/>
+<rect x="405" y="195" width="20" height="125"/>
+<rect x="430" y="190" width="20" height="130"/>
+<rect x="480" y="190" width="20" height="130"/>
+<rect x="505" y="195" width="20" height="125"/>
+<rect x="530" y="190" width="20" height="130"/>
+<rect x="580" y="190" width="20" height="130"/>
+<rect x="605" y="195" width="20" height="125"/>
+<rect x="630" y="190" width="20" height="130"/>
+<rect x="680" y="190" width="20" height="130"/>
+<rect x="705" y="195" width="20" height="125"/>
+<rect x="730" y="190" width="20" height="130"/>
+<rect x="780" y="190" width="20" height="130"/>
+<rect x="805" y="195" width="20" height="125"/>
+<rect x="830" y="190" width="20" height="130"/>
+<rect x="880" y="190" width="20" height="130"/>
+<rect x="905" y="195" width="20" height="125"/>
+<rect x="930" y="190" width="20" height="130"/>
+<rect x="980" y="190" width="20" height="130"/>
+<rect x="1005" y="195" width="20" height="125"/>
+<rect x="1030" y="190" width="20" height="130"/>
+<rect x="1080" y="190" width="20" height="130"/>
+<rect x="1105" y="195" width="20" height="125"/>
+<rect x="1130" y="190" width="20" height="130"/>
+</g>
+
+<!-- Horizontal Rails -->
+<rect x="50" y="200" width="1130" height="8" fill="url(#wood)" stroke="#8B4513" stroke-width="1"/>
+<rect x="50" y="270" width="1130" height="8" fill="url(#wood)" stroke="#8B4513" stroke-width="1"/>
+
+<!-- Clouds -->
+<circle cx="200" cy="80" r="25" fill="white" opacity="0.8"/>
+<circle cx="220" cy="75" r="30" fill="white" opacity="0.8"/>
+<circle cx="240" cy="80" r="25" fill="white" opacity="0.8"/>
+<circle cx="900" cy="60" r="20" fill="white" opacity="0.8"/>
+<circle cx="915" cy="55" r="25" fill="white" opacity="0.8"/>
+<circle cx="930" cy="60" r="20" fill="white" opacity="0.8"/>
+
+<!-- Sun -->
+<circle cx="1000" cy="100" r="40" fill="#FFD700" opacity="0.9"/>
+
+<!-- Text Overlay -->
+<rect x="400" y="50" width="400" height="100" fill="rgba(139, 69, 19, 0.9)" rx="10"/>
+<text x="600" y="80" text-anchor="middle" fill="white" font-family="Arial" font-size="28" font-weight="bold">Sacramento Fencing Co.</text>
+<text x="600" y="110" text-anchor="middle" fill="#DAA520" font-family="Arial" font-size="18">Professional Quality Since 1998</text>
+</svg>
