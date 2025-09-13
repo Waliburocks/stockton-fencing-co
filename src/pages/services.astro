@@ -2,72 +2,262 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Fencing Services - Sacramento Fencing Co." description="Professional fence installation, repair, and maintenance services in Sacramento. Wood, vinyl, chain link, and ornamental iron fencing options.">
+<Layout 
+	title="Fencing Services Stockton CA | Chain Link, Wood, Vinyl & Iron Fence" 
+	description="Expert fencing services in Stockton, CA. Professional installation of chain link, wood, vinyl & ornamental iron fences. Emergency repairs, free estimates. Licensed & insured contractors." 
+	canonicalUrl="/services">
+	<!-- Service-specific Schema Markup -->
+	<script type="application/ld+json" slot="head">
+	{
+		"@context": "https://schema.org",
+		"@type": "WebPage",
+		"@id": "https://stockton-fencing.co/services",
+		"name": "Fencing Services - Stockton Fencing Co.",
+		"description": "Professional fence installation and repair services in Stockton, CA. Specializing in chain link, wood, vinyl, and ornamental iron fencing for residential and commercial properties.",
+		"url": "https://stockton-fencing.co/services",
+		"mainEntity": {
+			"@type": "ItemList",
+			"name": "Fencing Services",
+			"description": "Complete fencing solutions for residential and commercial properties",
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"item": {
+						"@type": "Service",
+						"name": "Chain Link Fence Installation",
+						"description": "Professional chain link fence installation with galvanized and vinyl-coated options",
+						"provider": {
+							"@type": "LocalBusiness",
+							"name": "Stockton Fencing Co.",
+							"telephone": "+1-888-682-0507"
+						},
+						"areaServed": ["Stockton, CA", "Sacramento, CA", "San Joaquin County, CA"],
+						"serviceType": "Fence Installation"
+					}
+				},
+				{
+					"@type": "ListItem", 
+					"position": 2,
+					"item": {
+						"@type": "Service",
+						"name": "Wood Fence Installation",
+						"description": "Custom wood fence installation using cedar, redwood, and pressure-treated materials",
+						"provider": {
+							"@type": "LocalBusiness",
+							"name": "Stockton Fencing Co.",
+							"telephone": "+1-888-682-0507"
+						},
+						"areaServed": ["Stockton, CA", "Sacramento, CA", "San Joaquin County, CA"],
+						"serviceType": "Fence Installation"
+					}
+				},
+				{
+					"@type": "ListItem",
+					"position": 3, 
+					"item": {
+						"@type": "Service",
+						"name": "Vinyl Fence Installation",
+						"description": "Low-maintenance vinyl fence installation with lifetime durability guarantee",
+						"provider": {
+							"@type": "LocalBusiness",
+							"name": "Stockton Fencing Co.",
+							"telephone": "+1-888-682-0507"
+						},
+						"areaServed": ["Stockton, CA", "Sacramento, CA", "San Joaquin County, CA"],
+						"serviceType": "Fence Installation"
+					}
+				},
+				{
+					"@type": "ListItem",
+					"position": 4,
+					"item": {
+						"@type": "Service", 
+						"name": "Ornamental Iron Fence Installation",
+						"description": "Elegant wrought iron and aluminum fence installation for security and aesthetics",
+						"provider": {
+							"@type": "LocalBusiness",
+							"name": "Stockton Fencing Co.",
+							"telephone": "+1-888-682-0507"
+						},
+						"areaServed": ["Stockton, CA", "Sacramento, CA", "San Joaquin County, CA"],
+						"serviceType": "Fence Installation"
+					}
+				},
+				{
+					"@type": "ListItem",
+					"position": 5,
+					"item": {
+						"@type": "Service",
+						"name": "Emergency Fence Repair",
+						"description": "Emergency fence repair services for storm damage and security issues",
+						"provider": {
+							"@type": "LocalBusiness", 
+							"name": "Stockton Fencing Co.",
+							"telephone": "+1-888-682-0507"
+						},
+						"areaServed": ["Stockton, CA", "Sacramento, CA", "San Joaquin County, CA"],
+						"serviceType": "Fence Repair"
+					}
+				}
+			]
+		},
+		"breadcrumb": {
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Home",
+					"item": "https://stockton-fencing.co/"
+				},
+				{
+					"@type": "ListItem",
+					"position": 2,
+					"name": "Services",
+					"item": "https://stockton-fencing.co/services"
+				}
+			]
+		}
+	}
+	</script>
 	<section class="hero">
+		<div class="hero-image-container">
+			<picture class="hero-picture">
+				<source srcset="/images/internal-page-fence-header.webp" type="image/webp">
+				<img src="/images/internal-page-fence-header.webp" alt="Professional fence installation services - various fence types display" class="hero-image" loading="eager" width="1200" height="400" />
+			</picture>
+			<div class="hero-overlay">
+				<div class="hero-content">
+					<h1>Professional Fencing Services</h1>
+					<p>Complete fence solutions for residential and commercial properties in San Joaquin County</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="emergency-services">
 		<div class="container">
-			<h1>Professional Fencing Services</h1>
-			<p>Complete fence solutions for residential and commercial properties in Sacramento County</p>
+			<div class="emergency-banner">
+				<div class="emergency-icon">🚨</div>
+				<div class="emergency-content">
+					<h2>Emergency Fence Services Available</h2>
+					<p>Storm damage? Security breach? We connect you with contractors who offer emergency fence repair services.</p>
+				</div>
+				<div class="emergency-cta">
+					<a href="tel:888-682-0507" class="btn btn-emergency">Call Now: (888) 682-0507</a>
+				</div>
+			</div>
 		</div>
 	</section>
 
 	<section class="services-detail">
 		<div class="container">
 			<div class="service-category">
-				<h2>🌲 Wood Fencing</h2>
+				<div class="category-header">
+					<img src="/images/chain-link-fence-photo.webp" alt="Chain link fence installation" class="category-image" loading="lazy" />
+					<h2>🔗 Chain Link Fencing</h2>
+				</div>
+				<div class="service-grid">
+					<div class="service-item">
+						<h3>Galvanized Chain Link</h3>
+						<p class="price"><a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a></p>
+						<ul>
+							<li>Rust-resistant galvanized coating</li>
+							<li>4-6 foot height options</li>
+							<li>Commercial and residential grade</li>
+							<li>Optional privacy slats</li>
+							<li>Professional installation guaranteed</li>
+						</ul>
+						<div class="service-cta">
+							<a href="/services/chain-link-fence" class="btn btn-service-detail">View Complete Details</a>
+						</div>
+					</div>
+					<div class="service-item">
+						<h3>Vinyl-Coated Chain Link</h3>
+						<p class="price"><a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a></p>
+						<ul>
+							<li>Green or black vinyl coating</li>
+							<li>Enhanced appearance</li>
+							<li>Ideal for residential use</li>
+							<li>Extended lifespan</li>
+							<li>Color-matched hardware</li>
+						</ul>
+						<div class="service-cta">
+							<a href="/services/chain-link-fence" class="btn btn-service-detail">View Complete Details</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="service-category">
+				<div class="category-header">
+					<img src="/images/wood-fence-photo.webp" alt="Wood fence installation" class="category-image" loading="lazy" />
+					<h2>🌲 Wood Fencing</h2>
+				</div>
 				<div class="service-grid">
 					<div class="service-item">
 						<h3>Cedar Privacy Fence</h3>
-						<p class="price">Starting at $28/linear foot</p>
+						<p class="price"><a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a></p>
 						<ul>
 							<li>Natural rot and insect resistance</li>
 							<li>Beautiful natural grain patterns</li>
 							<li>6-8 foot height options</li>
 							<li>Custom staining available</li>
-							<li>25-year lifespan</li>
+							<li>Long-lasting durability</li>
 						</ul>
+						<div class="service-cta">
+							<a href="/services/wood-fence" class="btn btn-service-detail">View Complete Details</a>
+						</div>
 					</div>
 					<div class="service-item">
 						<h3>Pressure-Treated Pine</h3>
-						<p class="price">Starting at $22/linear foot</p>
+						<p class="price"><a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a></p>
 						<ul>
 							<li>Budget-friendly option</li>
 							<li>Chemically treated for durability</li>
 							<li>Paint or stain ready</li>
 							<li>Standard picket or privacy styles</li>
-							<li>15-20 year lifespan</li>
+							<li>Excellent durability</li>
 						</ul>
 					</div>
 					<div class="service-item">
 						<h3>Redwood Fencing</h3>
-						<p class="price">Starting at $35/linear foot</p>
+						<p class="price"><a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a></p>
 						<ul>
 							<li>Premium California redwood</li>
 							<li>Naturally weather resistant</li>
 							<li>Rich, beautiful color</li>
 							<li>Custom designs available</li>
-							<li>30+ year lifespan</li>
+							<li>Superior longevity</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 
 			<div class="service-category">
-				<h2>🏠 Vinyl Fencing</h2>
+				<div class="category-header">
+					<img src="/images/vinyl-fence-photo.webp" alt="Vinyl fence installation" class="category-image" loading="lazy" />
+					<h2>🏠 Vinyl Fencing</h2>
+				</div>
 				<div class="service-grid">
 					<div class="service-item">
 						<h3>Privacy Vinyl Fence</h3>
-						<p class="price">Starting at $38/linear foot</p>
+						<p class="price"><a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a></p>
 						<ul>
 							<li>Maintenance-free PVC construction</li>
 							<li>Won't fade, crack, or peel</li>
 							<li>White, tan, or gray colors</li>
-							<li>25-year manufacturer warranty</li>
+							<li>Quality materials backed by manufacturer</li>
 							<li>Easy to clean</li>
 						</ul>
+						<div class="service-cta">
+							<a href="/services/vinyl-fence" class="btn btn-service-detail">View Complete Details</a>
+						</div>
 					</div>
 					<div class="service-item">
 						<h3>Vinyl Picket Fence</h3>
-						<p class="price">Starting at $32/linear foot</p>
+						<p class="price"><a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a></p>
 						<ul>
 							<li>Classic picket fence design</li>
 							<li>UV-resistant materials</li>
@@ -80,50 +270,28 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 
 			<div class="service-category">
-				<h2>🔗 Chain Link Fencing</h2>
-				<div class="service-grid">
-					<div class="service-item">
-						<h3>Galvanized Chain Link</h3>
-						<p class="price">Starting at $15/linear foot</p>
-						<ul>
-							<li>Rust-resistant galvanized coating</li>
-							<li>4-6 foot height options</li>
-							<li>Commercial and residential grade</li>
-							<li>Optional privacy slats</li>
-							<li>20-year rust warranty</li>
-						</ul>
-					</div>
-					<div class="service-item">
-						<h3>Vinyl-Coated Chain Link</h3>
-						<p class="price">Starting at $19/linear foot</p>
-						<ul>
-							<li>Green or black vinyl coating</li>
-							<li>Enhanced appearance</li>
-							<li>Ideal for residential use</li>
-							<li>Extended lifespan</li>
-							<li>Color-matched hardware</li>
-						</ul>
-					</div>
+				<div class="category-header">
+					<img src="/images/iron-fence-photo.webp" alt="Iron fence installation" class="category-image" loading="lazy" />
+					<h2>⚔️ Ornamental Iron & Aluminum</h2>
 				</div>
-			</div>
-
-			<div class="service-category">
-				<h2>⚔️ Ornamental Iron & Aluminum</h2>
 				<div class="service-grid">
 					<div class="service-item">
 						<h3>Wrought Iron Fencing</h3>
-						<p class="price">Starting at $48/linear foot</p>
+						<p class="price"><a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a></p>
 						<ul>
 							<li>Hand-forged traditional designs</li>
 							<li>Powder-coated finish</li>
 							<li>Custom ornamental details</li>
 							<li>Security and elegance</li>
-							<li>Lifetime structural warranty</li>
+							<li>Exceptional structural integrity</li>
 						</ul>
+						<div class="service-cta">
+							<a href="/services/iron-fence" class="btn btn-service-detail">View Complete Details</a>
+						</div>
 					</div>
 					<div class="service-item">
 						<h3>Aluminum Fencing</h3>
-						<p class="price">Starting at $35/linear foot</p>
+						<p class="price"><a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a></p>
 						<ul>
 							<li>Maintenance-free construction</li>
 							<li>Wrought iron appearance</li>
@@ -143,21 +311,24 @@ import Layout from '../layouts/Layout.astro';
 			<div class="services-grid">
 				<div class="service-card">
 					<div class="service-icon">🔧</div>
-					<h3>Fence Repair</h3>
-					<p>Expert repair services for all fence types. From broken boards to damaged posts, we restore your fence to like-new condition.</p>
-					<p class="price">Service calls from $125</p>
+					<h3>Emergency Fence Repair</h3>
+					<p>24/7 emergency repair services for all fence types. Storm damage, security breaches, broken gates - we respond immediately.</p>
+					<p class="price"><a href="tel:888-682-0507" class="price-link">Emergency: (888) 682-0507</a></p>
+					<div class="service-cta">
+						<a href="/services/fence-repair" class="btn btn-service-detail">View Repair Services</a>
+					</div>
 				</div>
 				<div class="service-card">
 					<div class="service-icon">🚪</div>
 					<h3>Gate Installation</h3>
 					<p>Custom gates designed to match your fence perfectly. Manual and automatic gate systems available.</p>
-					<p class="price">Starting at $425</p>
+					<p class="price"><a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a></p>
 				</div>
 				<div class="service-card">
 					<div class="service-icon">🎨</div>
 					<h3>Fence Staining & Sealing</h3>
 					<p>Professional staining and sealing services to protect and beautify your wood fence investment.</p>
-					<p class="price">$4-7 per linear foot</p>
+					<p class="price"><a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a></p>
 				</div>
 				<div class="service-card">
 					<div class="service-icon">📋</div>
@@ -171,22 +342,22 @@ import Layout from '../layouts/Layout.astro';
 
 	<section class="warranty-info">
 		<div class="container">
-			<h2>Our Guarantee & Warranties</h2>
+			<h2>Why Choose Our Contractors</h2>
 			<div class="warranty-grid">
 				<div class="warranty-item">
 					<div class="warranty-icon">🛡️</div>
-					<h3>Workmanship Warranty</h3>
-					<p>All installation work backed by our comprehensive 5-year workmanship guarantee.</p>
+					<h3>Professional Installation</h3>
+					<p>Expert installation with proper permits and materials. Call us to discuss options for your project.</p>
 				</div>
 				<div class="warranty-item">
 					<div class="warranty-icon">📞</div>
-					<h3>24/7 Emergency Service</h3>
-					<p>Storm damage or security issues? We offer emergency fence repair services year-round.</p>
+					<h3>Reliable Service</h3>
+					<p>Storm damage or security issues? Our network offers prompt fence repair services when you need them.</p>
 				</div>
 				<div class="warranty-item">
 					<div class="warranty-icon">💯</div>
-					<h3>100% Satisfaction Promise</h3>
-					<p>We're not satisfied until you are. Your complete satisfaction is our top priority.</p>
+					<h3>Get Your Free Quote</h3>
+					<p>Contact us today for personalized pricing and expert advice on your fencing project.</p>
 				</div>
 			</div>
 		</div>
@@ -197,21 +368,25 @@ import Layout from '../layouts/Layout.astro';
 			<h2>Our Simple Process</h2>
 			<div class="process-steps">
 				<div class="step">
+					<div class="step-icon">📋</div>
 					<div class="step-number">1</div>
 					<h3>Free Consultation</h3>
 					<p>We visit your property, measure the area, and discuss your fencing needs and preferences.</p>
 				</div>
 				<div class="step">
+					<div class="step-icon">💰</div>
 					<div class="step-number">2</div>
 					<h3>Written Estimate</h3>
 					<p>You receive a detailed written estimate with material specs, timeline, and final pricing.</p>
 				</div>
 				<div class="step">
+					<div class="step-icon">🔨</div>
 					<div class="step-number">3</div>
 					<h3>Professional Installation</h3>
 					<p>Our experienced crew installs your fence efficiently with minimal disruption to your property.</p>
 				</div>
 				<div class="step">
+					<div class="step-icon">✅</div>
 					<div class="step-number">4</div>
 					<h3>Final Walkthrough</h3>
 					<p>We conduct a thorough inspection with you to ensure everything meets our high standards.</p>
@@ -223,27 +398,177 @@ import Layout from '../layouts/Layout.astro';
 	<section class="cta">
 		<div class="container">
 			<h2>Ready for Your New Fence?</h2>
-			<p>Get your free estimate today and discover why Sacramento trusts us for their fencing needs.</p>
+			<p>Get your free estimate today and discover why Stockton trusts us for their fencing needs.</p>
 			<div class="cta-buttons">
-				<a href="/contact" class="btn">Get Free Estimate</a>
-				<a href="tel:916-555-3362" class="btn btn-outline">(916) 555-FENCE</a>
+				<a href="tel:888-682-0507" class="btn btn-quote">Call for Free Quote!</a>
+				<a href="tel:888-682-0507" class="btn btn-outline">(888) 682-0507</a>
 			</div>
 		</div>
 	</section>
 </Layout>
 
 <style>
+	.emergency-services {
+		background: linear-gradient(135deg, #FF4500 0%, #FF6B35 100%);
+		padding: 2rem 0;
+		margin-bottom: 2rem;
+	}
+	
+	.emergency-banner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2rem;
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 15px;
+		padding: 1.5rem 2rem;
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+	}
+	
+	.emergency-icon {
+		font-size: 3rem;
+		color: var(--white);
+	}
+	
+	.emergency-content {
+		flex-grow: 1;
+		color: var(--white);
+	}
+	
+	.emergency-content h2 {
+		margin: 0 0 0.5rem 0;
+		font-size: 1.8rem;
+		font-weight: 700;
+	}
+	
+	.emergency-content p {
+		margin: 0;
+		font-size: 1.1rem;
+		opacity: 0.95;
+	}
+	
+	.btn-emergency {
+		background: var(--white) !important;
+		color: #FF4500 !important;
+		font-weight: bold !important;
+		font-size: 1.1rem !important;
+		padding: 1rem 2rem !important;
+		text-transform: uppercase !important;
+		letter-spacing: 0.5px !important;
+		border-radius: 8px !important;
+		border: none !important;
+		transition: all 0.3s ease !important;
+		text-decoration: none !important;
+	}
+	
+	.btn-emergency:hover {
+		background: rgba(255, 255, 255, 0.9) !important;
+		transform: translateY(-2px) !important;
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+	}
+	
+	.category-header {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		margin-bottom: 2rem;
+		padding: 1.5rem;
+		background: var(--background-light);
+		border-radius: 15px;
+		box-shadow: 0 4px 15px var(--shadow-light);
+	}
+	
+	.category-image {
+		width: 120px;
+		height: 120px;
+		object-fit: cover;
+		border-radius: 12px;
+		box-shadow: 0 4px 15px var(--shadow-light);
+	}
+	
+	.category-header h2 {
+		margin: 0;
+		color: var(--text-dark);
+		font-size: 2.2rem;
+	}
+	
+	.price-link {
+		color: var(--primary-blue);
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 1.1rem;
+		transition: all 0.3s ease;
+	}
+	
+	.price-link:hover {
+		color: var(--accent-orange);
+		transform: scale(1.05);
+	}
+
 	.hero {
-		background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-		color: white;
-		padding: 4rem 0;
+		position: relative;
+		min-height: 400px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-image-container {
+		position: relative;
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+	}
+	
+	.hero-picture {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	
+	.hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+	}
+	
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, 
+			rgba(89, 123, 148, 0.85) 0%, 
+			rgba(70, 98, 117, 0.9) 100%
+		);
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-content {
 		text-align: center;
+		color: var(--white);
+		z-index: 2;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
 	}
 	
 	.hero h1 {
 		font-size: 3rem;
 		margin-bottom: 1rem;
 		font-weight: 700;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	}
+	
+	.hero p {
+		font-size: 1.2rem;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 	}
 	
 	.services-detail {
@@ -257,8 +582,8 @@ import Layout from '../layouts/Layout.astro';
 	.service-category h2 {
 		font-size: 2.2rem;
 		margin-bottom: 2.5rem;
-		color: #2c3e50;
-		border-bottom: 3px solid #e74c3c;
+		color: var(--text-dark);
+		border-bottom: 3px solid var(--primary-brown);
 		padding-bottom: 0.5rem;
 	}
 	
@@ -270,26 +595,29 @@ import Layout from '../layouts/Layout.astro';
 	}
 	
 	.service-item {
-		background: white;
+		background: var(--white);
 		padding: 2rem;
 		border-radius: 15px;
-		box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-		border-left: 5px solid #e74c3c;
-		transition: transform 0.3s;
+		box-shadow: 0 5px 20px var(--shadow-light);
+		border-left: 5px solid var(--primary-brown);
+		transition: all 0.3s ease;
 	}
 	
 	.service-item:hover {
-		transform: translateY(-5px);
+		transform: translateY(-8px);
+		box-shadow: 0 10px 30px var(--shadow-medium);
+		border-left-color: var(--accent-gold);
 	}
 	
 	.service-item h3 {
-		color: #2c3e50;
+		color: var(--text-dark);
 		margin-bottom: 0.5rem;
 		font-size: 1.4rem;
+		font-weight: 600;
 	}
 	
 	.price {
-		color: #e74c3c;
+		color: var(--primary-brown);
 		font-weight: bold;
 		font-size: 1.2rem;
 		margin-bottom: 1.5rem;
@@ -312,13 +640,41 @@ import Layout from '../layouts/Layout.astro';
 		content: "✓";
 		position: absolute;
 		left: 0;
-		color: #27ae60;
+		color: var(--forest-green);
 		font-weight: bold;
 		font-size: 1.1rem;
 	}
 	
+	.service-cta {
+		margin-top: 1.5rem;
+		text-align: center;
+	}
+	
+	.btn-service-detail {
+		background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%) !important;
+		color: var(--white) !important;
+		font-weight: bold !important;
+		font-size: 0.95rem !important;
+		padding: 0.8rem 1.5rem !important;
+		text-transform: uppercase !important;
+		letter-spacing: 0.5px !important;
+		box-shadow: 0 4px 15px rgba(89, 123, 148, 0.3) !important;
+		border: none !important;
+		transition: all 0.3s ease !important;
+		text-decoration: none !important;
+		border-radius: 8px !important;
+		display: inline-block !important;
+	}
+	
+	.btn-service-detail:hover {
+		background: linear-gradient(135deg, var(--secondary-blue) 0%, #466275 100%) !important;
+		transform: translateY(-2px) scale(1.02) !important;
+		box-shadow: 0 6px 20px rgba(89, 123, 148, 0.4) !important;
+		color: var(--white) !important;
+	}
+	
 	.additional-services {
-		background: #f8f9fa;
+		background: var(--background-light);
 		padding: 5rem 0;
 	}
 	
@@ -326,27 +682,29 @@ import Layout from '../layouts/Layout.astro';
 		text-align: center;
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
-		color: #2c3e50;
+		color: var(--text-dark);
+		padding: 0 2rem;
 	}
 	
 	.services-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 		gap: 2rem;
+		padding: 0 2rem;
 	}
 	
 	.service-card {
-		background: white;
+		background: var(--white);
 		padding: 2.5rem 2rem;
 		border-radius: 15px;
 		text-align: center;
-		box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-		transition: all 0.3s;
+		box-shadow: 0 5px 20px var(--shadow-light);
+		transition: all 0.3s ease;
 	}
 	
 	.service-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+		transform: translateY(-8px);
+		box-shadow: 0 15px 40px var(--shadow-medium);
 	}
 	
 	.service-icon {
@@ -355,9 +713,10 @@ import Layout from '../layouts/Layout.astro';
 	}
 	
 	.service-card h3 {
-		color: #2c3e50;
+		color: var(--text-dark);
 		margin-bottom: 1rem;
 		font-size: 1.3rem;
+		font-weight: 600;
 	}
 	
 	.service-card p {
@@ -378,21 +737,29 @@ import Layout from '../layouts/Layout.astro';
 		text-align: center;
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
-		color: #2c3e50;
+		color: var(--text-dark);
+		padding: 0 2rem;
 	}
 	
 	.warranty-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2rem;
+		padding: 0 2rem;
 	}
 	
 	.warranty-item {
 		text-align: center;
 		padding: 2rem;
-		background: white;
+		background: var(--white);
 		border-radius: 15px;
-		box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+		box-shadow: 0 5px 20px var(--shadow-light);
+		transition: all 0.3s ease;
+	}
+	
+	.warranty-item:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px var(--shadow-medium);
 	}
 	
 	.warranty-icon {
@@ -401,13 +768,14 @@ import Layout from '../layouts/Layout.astro';
 	}
 	
 	.warranty-item h3 {
-		color: #2c3e50;
+		color: var(--text-dark);
 		margin-bottom: 1rem;
 		font-size: 1.3rem;
+		font-weight: 600;
 	}
 	
 	.process {
-		background: #f8f9fa;
+		background: var(--background-light);
 		padding: 5rem 0;
 	}
 	
@@ -415,28 +783,42 @@ import Layout from '../layouts/Layout.astro';
 		text-align: center;
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
-		color: #2c3e50;
+		color: var(--text-dark);
+		padding: 0 2rem;
 	}
 	
 	.process-steps {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		gap: 2rem;
+		padding: 0 2rem;
 	}
 	
 	.step {
 		text-align: center;
 		padding: 2rem;
-		background: white;
+		background: var(--white);
 		border-radius: 15px;
-		box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+		box-shadow: 0 5px 20px var(--shadow-light);
+		transition: all 0.3s ease;
+	}
+	
+	.step:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px var(--shadow-medium);
+	}
+	
+	.step-icon {
+		font-size: 2.5rem;
+		margin: 0 auto 1rem;
+		text-align: center;
 	}
 	
 	.step-number {
 		width: 60px;
 		height: 60px;
-		background: #e74c3c;
-		color: white;
+		background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+		color: var(--white);
 		border-radius: 50%;
 		display: flex;
 		align-items: center;
@@ -444,17 +826,19 @@ import Layout from '../layouts/Layout.astro';
 		font-size: 1.5rem;
 		font-weight: bold;
 		margin: 0 auto 1rem;
+		box-shadow: 0 4px 15px var(--shadow-light);
 	}
 	
 	.step h3 {
-		color: #2c3e50;
+		color: var(--text-dark);
 		margin-bottom: 1rem;
 		font-size: 1.3rem;
+		font-weight: 600;
 	}
 	
 	.cta {
-		background: #e74c3c;
-		color: white;
+		background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+		color: var(--white);
 		padding: 4rem 0;
 		text-align: center;
 	}
@@ -478,13 +862,41 @@ import Layout from '../layouts/Layout.astro';
 	
 	.btn-outline {
 		background: transparent;
-		border: 2px solid white;
-		color: white;
+		border: 2px solid var(--white);
+		color: var(--white);
 	}
 	
 	.btn-outline:hover {
-		background: white;
-		color: #e74c3c;
+		background: var(--white);
+		color: var(--primary-brown);
+	}
+	
+	.btn-quote {
+		background: linear-gradient(135deg, #FF6B35 0%, #FF4500 100%) !important;
+		color: var(--white) !important;
+		font-weight: bold !important;
+		font-size: 1.1rem !important;
+		padding: 1rem 2rem !important;
+		text-transform: uppercase !important;
+		letter-spacing: 0.5px !important;
+		box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
+		border: none !important;
+		animation: pulse-glow 2s ease-in-out infinite alternate;
+	}
+	
+	.btn-quote:hover {
+		background: linear-gradient(135deg, #FF4500 0%, #FF6B35 100%) !important;
+		transform: translateY(-3px) scale(1.05) !important;
+		box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4) !important;
+	}
+	
+	@keyframes pulse-glow {
+		from {
+			box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+		}
+		to {
+			box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+		}
 	}
 	
 	@media (max-width: 768px) {
@@ -505,11 +917,52 @@ import Layout from '../layouts/Layout.astro';
 		.warranty-grid,
 		.process-steps {
 			grid-template-columns: 1fr;
+			padding: 0 1rem;
+		}
+		
+		.additional-services h2,
+		.warranty-info h2,
+		.process h2 {
+			padding: 0 1rem;
 		}
 		
 		.cta-buttons {
 			flex-direction: column;
 			align-items: center;
+		}
+		
+		.emergency-banner {
+			flex-direction: column;
+			text-align: center;
+			gap: 1rem;
+		}
+		
+		.emergency-content h2 {
+			font-size: 1.5rem;
+		}
+		
+		.emergency-content p {
+			font-size: 1rem;
+		}
+		
+		.category-header {
+			flex-direction: column;
+			text-align: center;
+			gap: 1rem;
+		}
+		
+		.category-image {
+			width: 100px;
+			height: 100px;
+		}
+		
+		.category-header h2 {
+			font-size: 1.8rem;
+		}
+		
+		.btn-emergency {
+			font-size: 1rem !important;
+			padding: 0.8rem 1.5rem !important;
 		}
 	}
 </style>

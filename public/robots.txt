@@ -1,0 +1,168 @@
+# Robots.txt for Sacramento Fencing Co. - Optimized for Fencing Business SEO
+# Website: https://sacramento-fencing.co
+# Last Updated: 2024-09-05
+
+# ====================================
+# GLOBAL SETTINGS FOR ALL CRAWLERS
+# ====================================
+
+User-agent: *
+Allow: /
+
+# Core website directories - Allow full access
+Allow: /services/
+Allow: /locations/
+Allow: /contact/
+Allow: /about/
+
+# Static assets - Critical for proper page rendering
+Allow: /images/
+Allow: /_astro/
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+# Allow common file types that help with SEO
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.svg$
+Allow: /*.pdf$
+
+# Disallow potentially sensitive or non-public areas
+Disallow: /admin/
+Disallow: /.env
+Disallow: /config/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /dist/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /logs/
+Disallow: /backup/
+Disallow: /database/
+
+# Disallow query parameters that might cause duplicate content
+Disallow: /*?*
+Disallow: /*#*
+
+# But allow important query parameters for fencing services
+Allow: /*?service=*
+Allow: /*?location=*
+Allow: /*?quote=*
+
+# ====================================
+# SEARCH ENGINE SPECIFIC SETTINGS
+# ====================================
+
+# Google - No crawl delay, priority access
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Google Images - Important for fence photo SEO
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Crawl-delay: 1
+
+# Google Mobile - Critical for local fence searches
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 0
+
+# Bing - Second most important search engine
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yahoo (Slurp) - Still relevant for some searches
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# DuckDuckGo - Growing privacy-focused search engine
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 2
+
+# Yandex - Important for international reach
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Facebook crawler - For social media sharing
+User-agent: facebookexternalhit
+Allow: /
+Crawl-delay: 1
+
+# LinkedIn crawler - For business networking
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 1
+
+# Twitter crawler - For tweet cards
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 1
+
+# ====================================
+# BLOCK PROBLEMATIC CRAWLERS
+# ====================================
+
+# Block aggressive crawlers that don't add SEO value
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Block scrapers and spam bots
+User-agent: SiteAuditBot
+Disallow: /
+
+User-agent: spbot
+Disallow: /
+
+User-agent: MegaIndex
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# ====================================
+# SITEMAP LOCATIONS
+# ====================================
+
+# Main sitemap
+Sitemap: https://sacramento-fencing.co/sitemap.xml
+
+# Additional sitemaps for comprehensive coverage
+# Sitemap: https://sacramento-fencing.co/sitemap-images.xml
+# Sitemap: https://sacramento-fencing.co/sitemap-services.xml
+# Sitemap: https://sacramento-fencing.co/sitemap-locations.xml
+
+# ====================================
+# GENERAL SETTINGS
+# ====================================
+
+# Default crawl delay (1 second - balanced for server load)
+Crawl-delay: 1
+
+# Host preference (helps with canonicalization)
+Host: sacramento-fencing.co

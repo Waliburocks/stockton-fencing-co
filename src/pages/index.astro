@@ -2,19 +2,80 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Sacramento Fencing Co. - Professional Fence Installation & Repair">
+<Layout 
+	title="Stockton Fencing Co. | #1 Fence Installation & Repair | Free Quotes" 
+	description="Professional fence installation & repair in Stockton, CA. Chain link, wood, vinyl & iron fencing. Licensed contractors, free estimates. Call (888) 682-0507 today!" 
+	canonicalUrl="/">
+	<!-- Homepage Schema Markup -->
+	<script type="application/ld+json" slot="head">
+	{
+		"@context": "https://schema.org",
+		"@type": "WebPage",
+		"@id": "https://stockton-fencing.co/",
+		"name": "Stockton Fencing Co. - Professional Fence Installation & Repair", 
+		"description": "Stockton's premier fence installation and repair company. Quality fencing solutions for residential and commercial properties throughout San Joaquin County.",
+		"url": "https://stockton-fencing.co/",
+		"mainEntity": {
+			"@type": "Organization",
+			"@id": "https://stockton-fencing.co/#business",
+			"name": "Stockton Fencing Co.",
+			"alternateName": "Stockton Fencing Co.",
+			"description": "Professional fence installation and repair services for residential and commercial properties in Stockton, CA and throughout San Joaquin County."
+		},
+		"potentialAction": [
+			{
+				"@type": "SearchAction",
+				"target": "https://stockton-fencing.co/services?q={search_term_string}",
+				"query-input": "required name=search_term_string"
+			}
+		],
+		"speakable": {
+			"@type": "SpeakableSpecification",
+			"cssSelector": ["h1", ".hero-subtitle", ".feature h3"]
+		},
+		"breadcrumb": {
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Home",
+					"item": "https://stockton-fencing.co/"
+				}
+			]
+		}
+	}
+	</script>
 	<section class="hero">
 		<div class="hero-image-container">
-			<img src="/images/hero-fence.svg" alt="Professional fence installation Sacramento" class="hero-image" loading="eager" />
+			<picture class="hero-picture">
+				<source 
+					media="(max-width: 480px)" 
+					srcset="/images/hero-fencing-mobile.webp" 
+					type="image/webp">
+				<source 
+					media="(max-width: 768px)" 
+					srcset="/images/hero-fencing-tablet.webp" 
+					type="image/webp">
+				<source 
+					srcset="/images/hero-fencing-professional.webp" 
+					type="image/webp">
+				<img 
+					src="/images/hero-fence.svg" 
+					alt="Professional fence installation and repair services in Stockton - beautiful wooden fence with modern design showcasing quality craftsmanship" 
+					class="hero-image" 
+					loading="eager" 
+					width="1200" 
+					height="600"
+					fetchpriority="high" />
+			</picture>
 			<div class="hero-overlay">
-				<div class="container">
-					<div class="hero-content">
-						<h1>Sacramento's Premier Fencing Company</h1>
-						<p class="hero-subtitle">Quality fence installation, repair, and maintenance for residential and commercial properties throughout Sacramento County.</p>
-						<div class="hero-buttons">
-							<a href="/contact" class="btn">Get Free Quote</a>
-							<a href="/services" class="btn btn-outline">View Services</a>
-						</div>
+				<div class="hero-content">
+					<h1>Stockton's Premier Fencing Company</h1>
+					<p class="hero-subtitle">Quality fence installation, repair, and maintenance for residential and commercial properties throughout San Joaquin County.</p>
+					<div class="hero-buttons">
+						<a href="tel:888-682-0507" class="btn btn-quote">Get Free Quote - Call Now!</a>
+						<a href="/services" class="btn btn-services">View Services</a>
 					</div>
 				</div>
 			</div>
@@ -23,22 +84,22 @@ import Layout from '../layouts/Layout.astro';
 
 	<section class="features">
 		<div class="container">
-			<h2>Why Choose Sacramento Fencing Co.?</h2>
+			<h2>Why Choose Our Network of Professionals?</h2>
 			<div class="features-grid">
 				<div class="feature">
 					<div class="feature-icon">🏆</div>
-					<h3>25+ Years Experience</h3>
-					<p>Trusted by thousands of Sacramento homeowners and businesses since 1998.</p>
+					<h3>Experienced Professionals</h3>
+					<p>Trusted by homeowners and businesses throughout the San Joaquin Valley.</p>
 				</div>
 				<div class="feature">
 					<div class="feature-icon">⚡</div>
-					<h3>Fast Installation</h3>
-					<p>Most residential fences completed within 1-2 days with minimal disruption.</p>
+					<h3>Efficient Service</h3>
+					<p>Professional installation with minimal disruption to your daily routine.</p>
 				</div>
 				<div class="feature">
 					<div class="feature-icon">💯</div>
-					<h3>Quality Guarantee</h3>
-					<p>All work backed by our comprehensive warranty and satisfaction guarantee.</p>
+					<h3>Quality Workmanship</h3>
+					<p>Professional contractors committed to delivering quality results you can trust.</p>
 				</div>
 			</div>
 		</div>
@@ -49,32 +110,60 @@ import Layout from '../layouts/Layout.astro';
 			<h2>Our Fencing Services</h2>
 			<div class="services-grid">
 				<div class="service-card">
-					<img src="/images/wood-fence.svg" alt="Wood fence installation Sacramento" class="service-image" loading="lazy" />
-					<h3>Wood Fencing</h3>
-					<p>Cedar, redwood, and pressure-treated options for privacy and beauty.</p>
-					<span class="price">Starting at $25/ft</span>
+					<a href="/services/chain-link-fence" class="service-card-link">
+						<img src="/images/chain-link-fence-photo.webp" alt="Chain link fence installation Stockton" class="service-image" loading="lazy" />
+						<h3>Chain Link</h3>
+						<p>Affordable security fencing for residential and commercial properties.</p>
+						<div class="service-cta">
+							<span class="btn btn-service-learn">Learn More →</span>
+						</div>
+					</a>
+					<div class="service-price">
+						<a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a>
+					</div>
 				</div>
 				<div class="service-card">
-					<img src="/images/vinyl-fence.svg" alt="Vinyl fence installation Sacramento" class="service-image" loading="lazy" />
-					<h3>Vinyl Fencing</h3>
-					<p>Low-maintenance, durable fencing that looks great for years.</p>
-					<span class="price">Starting at $30/ft</span>
+					<a href="/services/wood-fence" class="service-card-link">
+						<img src="/images/wood-fence-photo.webp" alt="Wood fence installation Stockton" class="service-image" loading="lazy" />
+						<h3>Wood Fencing</h3>
+						<p>Cedar, redwood, and pressure-treated options for privacy and beauty.</p>
+						<div class="service-cta">
+							<span class="btn btn-service-learn">Learn More →</span>
+						</div>
+					</a>
+					<div class="service-price">
+						<a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a>
+					</div>
 				</div>
 				<div class="service-card">
-					<img src="/images/chain-link-fence.svg" alt="Chain link fence installation Sacramento" class="service-image" loading="lazy" />
-					<h3>Chain Link</h3>
-					<p>Affordable security fencing for residential and commercial properties.</p>
-					<span class="price">Starting at $12/ft</span>
+					<a href="/services/vinyl-fence" class="service-card-link">
+						<img src="/images/vinyl-fence-photo.webp" alt="Vinyl fence installation Stockton" class="service-image" loading="lazy" />
+						<h3>Vinyl Fencing</h3>
+						<p>Low-maintenance, durable fencing that looks great for years.</p>
+						<div class="service-cta">
+							<span class="btn btn-service-learn">Learn More →</span>
+						</div>
+					</a>
+					<div class="service-price">
+						<a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a>
+					</div>
 				</div>
 				<div class="service-card">
-					<img src="/images/iron-fence.svg" alt="Ornamental iron fence installation Sacramento" class="service-image" loading="lazy" />
-					<h3>Ornamental Iron</h3>
-					<p>Elegant wrought iron and aluminum fencing for upscale properties.</p>
-					<span class="price">Starting at $35/ft</span>
+					<a href="/services/iron-fence" class="service-card-link">
+						<img src="/images/iron-fence-photo.webp" alt="Ornamental iron fence installation Stockton" class="service-image" loading="lazy" />
+						<h3>Ornamental Iron</h3>
+						<p>Elegant wrought iron and aluminum fencing for upscale properties.</p>
+						<div class="service-cta">
+							<span class="btn btn-service-learn">Learn More →</span>
+						</div>
+					</a>
+					<div class="service-price">
+						<a href="tel:888-682-0507" class="price-link">Call for Price: (888) 682-0507</a>
+					</div>
 				</div>
 			</div>
 			<div class="text-center">
-				<a href="/services" class="btn">View All Services</a>
+				<a href="/services" class="btn btn-services">View All Services</a>
 			</div>
 		</div>
 	</section>
@@ -84,16 +173,16 @@ import Layout from '../layouts/Layout.astro';
 			<h2>What Our Customers Say</h2>
 			<div class="testimonials-grid">
 				<div class="testimonial">
-					<p>"Outstanding work! They installed our backyard privacy fence in just one day. Professional, clean, and exactly what we wanted."</p>
-					<div class="customer">- Sarah M., Elk Grove</div>
+					<p>"Outstanding work! Professional installation with attention to detail. Clean, efficient, and exactly what we wanted."</p>
+					<div class="customer">- Sarah M., Tracy</div>
 				</div>
 				<div class="testimonial">
-					<p>"Best fencing company in Sacramento. Fair pricing, quality materials, and they showed up on time. Highly recommend!"</p>
-					<div class="customer">- Mike D., Roseville</div>
+					<p>"Excellent fencing service in Stockton. Fair pricing, quality materials, and reliable service. Highly recommend!"</p>
+					<div class="customer">- Mike D., Manteca</div>
 				</div>
 				<div class="testimonial">
-					<p>"They repaired our storm-damaged fence quickly and it looks better than new. Great customer service from start to finish."</p>
-					<div class="customer">- Jennifer L., Sacramento</div>
+					<p>"Professional repair service for our storm-damaged fence. Looks better than new with great customer service throughout."</p>
+					<div class="customer">- Jennifer L., Stockton</div>
 				</div>
 			</div>
 		</div>
@@ -102,8 +191,8 @@ import Layout from '../layouts/Layout.astro';
 	<section class="cta">
 		<div class="container">
 			<h2>Ready to Enhance Your Property?</h2>
-			<p>Contact Sacramento Fencing Co. today for your free estimate and consultation.</p>
-			<a href="/contact" class="btn">Get Started Today</a>
+			<p>Contact Stockton Fencing Co. today for your free estimate and consultation.</p>
+			<a href="tel:888-682-0507" class="btn btn-quote">Call for Free Quote Today!</a>
 		</div>
 	</section>
 </Layout>
@@ -121,6 +210,13 @@ import Layout from '../layouts/Layout.astro';
 		position: relative;
 		width: 100%;
 		height: 500px;
+		overflow: hidden;
+	}
+	
+	.hero-picture {
+		width: 100%;
+		height: 100%;
+		display: block;
 	}
 	
 	.hero-image {
@@ -128,6 +224,12 @@ import Layout from '../layouts/Layout.astro';
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
+		display: block;
+		transition: transform 0.3s ease;
+	}
+	
+	.hero-image:hover {
+		transform: scale(1.02);
 	}
 	
 	.hero-overlay {
@@ -137,8 +239,8 @@ import Layout from '../layouts/Layout.astro';
 		right: 0;
 		bottom: 0;
 		background: linear-gradient(135deg, 
-			rgba(139, 69, 19, 0.8) 0%, 
-			rgba(101, 67, 33, 0.9) 100%
+			rgba(89, 123, 148, 0.85) 0%, 
+			rgba(70, 98, 117, 0.9) 100%
 		);
 		display: flex;
 		align-items: center;
@@ -148,6 +250,10 @@ import Layout from '../layouts/Layout.astro';
 		text-align: center;
 		color: var(--white);
 		z-index: 2;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
 	}
 	
 	.hero h1 {
@@ -185,6 +291,54 @@ import Layout from '../layouts/Layout.astro';
 		color: var(--primary-brown);
 	}
 	
+	.btn-quote {
+		background: linear-gradient(135deg, #FF6B35 0%, #FF4500 100%) !important;
+		color: var(--white) !important;
+		font-weight: bold !important;
+		font-size: 1.1rem !important;
+		padding: 1rem 2rem !important;
+		text-transform: uppercase !important;
+		letter-spacing: 0.5px !important;
+		box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
+		border: none !important;
+		animation: pulse-glow 2s ease-in-out infinite alternate;
+	}
+	
+	.btn-quote:hover {
+		background: linear-gradient(135deg, #FF4500 0%, #FF6B35 100%) !important;
+		transform: translateY(-3px) scale(1.05) !important;
+		box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4) !important;
+	}
+	
+	@keyframes pulse-glow {
+		from {
+			box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+		}
+		to {
+			box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+		}
+	}
+	
+	.btn-services {
+		background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%) !important;
+		color: var(--white) !important;
+		font-weight: bold !important;
+		font-size: 1.1rem !important;
+		padding: 1rem 2rem !important;
+		text-transform: uppercase !important;
+		letter-spacing: 0.5px !important;
+		box-shadow: 0 4px 15px rgba(89, 123, 148, 0.3) !important;
+		border: none !important;
+		transition: all 0.3s ease !important;
+	}
+	
+	.btn-services:hover {
+		background: linear-gradient(135deg, var(--secondary-blue) 0%, #466275 100%) !important;
+		transform: translateY(-3px) scale(1.05) !important;
+		box-shadow: 0 8px 25px rgba(89, 123, 148, 0.4) !important;
+		color: var(--white) !important;
+	}
+	
 	.features {
 		padding: 5rem 0;
 		background: var(--background-light);
@@ -195,12 +349,14 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
 		color: var(--text-dark);
+		padding: 0 2rem;
 	}
 	
 	.features-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2rem;
+		padding: 0 2rem;
 	}
 	
 	.feature {
@@ -210,7 +366,7 @@ import Layout from '../layouts/Layout.astro';
 		border-radius: 15px;
 		box-shadow: 0 5px 20px var(--shadow-light);
 		transition: all 0.3s ease;
-		border-top: 4px solid var(--accent-gold);
+		border-top: 4px solid var(--accent-orange);
 	}
 	
 	.feature:hover {
@@ -239,6 +395,7 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
 		color: var(--text-dark);
+		padding: 0 2rem;
 	}
 	
 	.services-grid {
@@ -246,22 +403,81 @@ import Layout from '../layouts/Layout.astro';
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2rem;
 		margin-bottom: 3rem;
+		padding: 0 2rem;
 	}
 	
 	.service-card {
-		padding: 2rem;
-		background: var(--background-light);
+		position: relative;
+		background: var(--background-neutral);
 		border-radius: 15px;
 		text-align: center;
 		transition: all 0.3s ease;
-		border-left: 5px solid var(--primary-brown);
+		border-left: 5px solid var(--primary-blue);
 		box-shadow: 0 4px 15px var(--shadow-light);
+		overflow: hidden;
 	}
 	
 	.service-card:hover {
 		transform: translateY(-8px);
 		box-shadow: 0 15px 40px var(--shadow-medium);
-		border-left-color: var(--accent-gold);
+		border-left-color: var(--accent-orange);
+	}
+	
+	.service-card-link {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+		padding: 2rem;
+		height: 100%;
+	}
+	
+	.service-card-link:hover {
+		text-decoration: none;
+		color: inherit;
+	}
+	
+	.service-card .service-cta {
+		margin-top: 1.5rem;
+		opacity: 0;
+		transform: translateY(10px);
+		transition: all 0.3s ease;
+	}
+	
+	.service-card:hover .service-cta {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	
+	.service-price {
+		position: absolute;
+		bottom: 1rem;
+		left: 1rem;
+		right: 1rem;
+		text-align: center;
+		z-index: 10;
+	}
+	
+	.btn-service-learn {
+		background: linear-gradient(135deg, var(--accent-orange) 0%, #FF6B35 100%) !important;
+		color: var(--white) !important;
+		font-weight: bold !important;
+		font-size: 0.9rem !important;
+		padding: 0.7rem 1.2rem !important;
+		text-transform: uppercase !important;
+		letter-spacing: 0.5px !important;
+		box-shadow: 0 4px 15px rgba(232, 124, 46, 0.3) !important;
+		border: none !important;
+		transition: all 0.3s ease !important;
+		text-decoration: none !important;
+		border-radius: 6px !important;
+		display: inline-block !important;
+	}
+	
+	.btn-service-learn:hover {
+		background: linear-gradient(135deg, #FF6B35 0%, var(--accent-orange) 100%) !important;
+		transform: translateY(-1px) scale(1.02) !important;
+		box-shadow: 0 6px 20px rgba(232, 124, 46, 0.4) !important;
+		color: var(--white) !important;
 	}
 	
 	.service-image {
@@ -287,11 +503,24 @@ import Layout from '../layouts/Layout.astro';
 	}
 	
 	.price {
-		color: var(--primary-brown);
+		color: var(--primary-blue);
 		font-weight: bold;
 		font-size: 1.2rem;
 		display: block;
 		margin-top: 1rem;
+	}
+	
+	.price-link {
+		color: var(--primary-blue);
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 1.1rem;
+		transition: all 0.3s ease;
+	}
+	
+	.price-link:hover {
+		color: var(--accent-orange);
+		transform: scale(1.05);
 	}
 	
 	.testimonials {
@@ -304,12 +533,14 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
 		color: var(--text-dark);
+		padding: 0 2rem;
 	}
 	
 	.testimonials-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2rem;
+		padding: 0 2rem;
 	}
 	
 	.testimonial {
@@ -317,14 +548,14 @@ import Layout from '../layouts/Layout.astro';
 		padding: 2rem;
 		border-radius: 15px;
 		box-shadow: 0 5px 20px var(--shadow-light);
-		border-left: 5px solid var(--forest-green);
+		border-left: 5px solid var(--primary-blue);
 		transition: all 0.3s ease;
 	}
 	
 	.testimonial:hover {
 		transform: translateY(-5px);
 		box-shadow: 0 10px 30px var(--shadow-medium);
-		border-left-color: var(--accent-gold);
+		border-left-color: var(--accent-orange);
 	}
 	
 	.testimonial p {
@@ -341,7 +572,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 	
 	.cta {
-		background: linear-gradient(135deg, var(--primary-brown) 0%, var(--secondary-brown) 100%);
+		background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
 		color: var(--white);
 		padding: 4rem 0;
 		text-align: center;
@@ -361,6 +592,7 @@ import Layout from '../layouts/Layout.astro';
 	
 	.text-center {
 		text-align: center;
+		padding: 0 2rem;
 	}
 	
 	@media (max-width: 768px) {
@@ -392,8 +624,21 @@ import Layout from '../layouts/Layout.astro';
 			font-size: 2rem;
 		}
 		
-		.services-grid {
+		.services-grid,
+		.features-grid,
+		.testimonials-grid {
 			grid-template-columns: 1fr;
+			padding: 0 1rem;
+		}
+		
+		.features h2,
+		.services-preview h2,
+		.testimonials h2 {
+			padding: 0 1rem;
+		}
+		
+		.text-center {
+			padding: 0 1rem;
 		}
 	}
 	

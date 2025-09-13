@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+	title="Terms & Conditions | Stockton Fencing Co. | Service Warranty & Policies" 
+	description="Stockton Fencing Co. terms & conditions. Service agreements, warranty information, contractor policies, and terms for professional fence installation in Stockton, CA." 
+	canonicalUrl="/terms">
+	<section class="hero">
+		<div class="hero-image-container">
+			<picture class="hero-picture">
+				<source srcset="/images/internal-page-fence-header.webp" type="image/webp">
+				<img src="/images/internal-page-fence-header.webp" alt="Terms and conditions for professional fence services" class="hero-image" loading="eager" width="1200" height="400" />
+			</picture>
+			<div class="hero-overlay">
+				<div class="hero-content">
+					<h1>Terms & Conditions</h1>
+					<p>Service terms for our contractor network</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="terms-content">
+		<div class="container">
+			<div class="terms-text">
+				<h2>Service Agreement</h2>
+				<p><strong>Effective Date:</strong> January 1, 2025</p>
+				
+				<h3>1. Service Overview</h3>
+				<p>Our platform connects customers with independent fencing contractors in the Stockton area. We are not a fencing company but serve as a lead generation service that matches customers with qualified professionals.</p>
+				
+				<h3>2. Contractor Independence</h3>
+				<p>All contractors in our network are independent businesses. Each contractor is responsible for:</p>
+				<ul>
+					<li>Providing their own licensing and insurance</li>
+					<li>Setting their own pricing and terms</li>
+					<li>Delivering quality workmanship</li>
+					<li>Handling customer service and warranty issues</li>
+				</ul>
+				
+				<h3>3. Estimates and Pricing</h3>
+				<p>All estimates provided by contractors are:</p>
+				<ul>
+					<li>Non-binding until a written contract is signed</li>
+					<li>Subject to site conditions and material availability</li>
+					<li>Valid for 30 days unless otherwise specified</li>
+					<li>The responsibility of the individual contractor</li>
+				</ul>
+				
+				<h3>4. Customer Responsibilities</h3>
+				<p>Customers agree to:</p>
+				<ul>
+					<li>Provide accurate information about their project needs</li>
+					<li>Allow reasonable access to the work site</li>
+					<li>Obtain necessary permits if required by local jurisdiction</li>
+					<li>Communicate directly with matched contractors</li>
+				</ul>
+				
+				<h3>5. Limitation of Liability</h3>
+				<p>Our platform serves only as a matching service. We are not liable for:</p>
+				<ul>
+					<li>Work performed by independent contractors</li>
+					<li>Disputes between customers and contractors</li>
+					<li>Property damage during installation</li>
+					<li>Project delays or completion issues</li>
+				</ul>
+				
+				<h3>6. Dispute Resolution</h3>
+				<p>Any disputes should be resolved directly between the customer and the contractor. We encourage professional communication and may assist in facilitating discussions when requested.</p>
+				
+				<h3>7. Privacy and Data</h3>
+				<p>Customer information is shared only with matched contractors for project purposes. See our Privacy Policy for detailed information handling practices.</p>
+				
+				<h3>8. Changes to Terms</h3>
+				<p>These terms may be updated periodically. Continued use of our service constitutes acceptance of any changes.</p>
+				
+				<h3>9. Contact Information</h3>
+				<p>For questions about these terms, contact us at <a href="tel:888-682-0507">(888) 682-0507</a> or <a href="mailto:info@fencestockton.com">info@fencestockton.com</a>.</p>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		position: relative;
+		min-height: 400px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-image-container {
+		position: relative;
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+	}
+	
+	.hero-picture {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	
+	.hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+	}
+	
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, 
+			rgba(89, 123, 148, 0.85) 0%, 
+			rgba(70, 98, 117, 0.9) 100%
+		);
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-content {
+		text-align: center;
+		color: var(--white);
+		z-index: 2;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+	
+	.hero h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		font-weight: 700;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	}
+	
+	.hero p {
+		font-size: 1.2rem;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+	}
+	
+	.terms-content {
+		padding: 4rem 0;
+		background: var(--white);
+	}
+	
+	.terms-text {
+		max-width: 800px;
+		margin: 0 auto;
+		line-height: 1.6;
+	}
+	
+	.terms-text h2 {
+		color: var(--text-dark);
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	
+	.terms-text h3 {
+		color: var(--primary-blue);
+		font-size: 1.5rem;
+		margin: 2rem 0 1rem 0;
+		font-weight: 600;
+	}
+	
+	.terms-text p {
+		margin-bottom: 1rem;
+		color: var(--text-light);
+	}
+	
+	.terms-text ul {
+		margin: 1rem 0 2rem 2rem;
+		color: var(--text-light);
+	}
+	
+	.terms-text li {
+		margin-bottom: 0.5rem;
+	}
+	
+	.terms-text a {
+		color: var(--primary-blue);
+		text-decoration: none;
+		font-weight: bold;
+	}
+	
+	.terms-text a:hover {
+		color: var(--accent-orange);
+	}
+	
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2.2rem;
+		}
+		
+		.hero p {
+			font-size: 1rem;
+		}
+		
+		.terms-text {
+			padding: 0 1rem;
+		}
+		
+		.terms-text h2 {
+			font-size: 2rem;
+		}
+		
+		.terms-text h3 {
+			font-size: 1.3rem;
+		}
+	}
+</style>

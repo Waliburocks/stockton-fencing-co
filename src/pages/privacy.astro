@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+	title="Privacy Policy | Stockton Fencing Co. | Data Protection & Security" 
+	description="Stockton Fencing Co. privacy policy. Learn how we protect your personal information, secure data practices, and commitment to customer privacy for fence installation services." 
+	canonicalUrl="/privacy">
+	<section class="hero">
+		<div class="hero-image-container">
+			<picture class="hero-picture">
+				<source srcset="/images/internal-page-fence-header.webp" type="image/webp">
+				<img src="/images/internal-page-fence-header.webp" alt="Privacy policy for fence contractor services" class="hero-image" loading="eager" width="1200" height="400" />
+			</picture>
+			<div class="hero-overlay">
+				<div class="hero-content">
+					<h1>Privacy Policy</h1>
+					<p>How we protect your personal information</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="privacy-content">
+		<div class="container">
+			<div class="privacy-text">
+				<h2>Privacy Policy</h2>
+				<p><strong>Effective Date:</strong> January 1, 2025</p>
+				<p><strong>Last Updated:</strong> January 1, 2025</p>
+				
+				<h3>1. Information We Collect</h3>
+				<p>We collect information to provide our contractor matching service:</p>
+				<ul>
+					<li><strong>Contact Information:</strong> Name, phone number, email address</li>
+					<li><strong>Project Details:</strong> Property address, fence type preferences, project timeline</li>
+					<li><strong>Communication Records:</strong> Messages and calls related to your project</li>
+					<li><strong>Website Usage:</strong> Pages visited, time spent on site, browser information</li>
+				</ul>
+				
+				<h3>2. How We Use Your Information</h3>
+				<p>Your information is used to:</p>
+				<ul>
+					<li>Match you with qualified contractors in your area</li>
+					<li>Facilitate communication between you and contractors</li>
+					<li>Improve our matching service</li>
+					<li>Send project updates and service communications</li>
+					<li>Comply with legal requirements</li>
+				</ul>
+				
+				<h3>3. Information Sharing</h3>
+				<p>We share your information only as necessary:</p>
+				<ul>
+					<li><strong>With Contractors:</strong> Matched contractors receive your contact information and project details</li>
+					<li><strong>Service Providers:</strong> Third-party services that help operate our platform</li>
+					<li><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
+				</ul>
+				<p>We never sell your personal information to third parties.</p>
+				
+				<h3>4. Data Security</h3>
+				<p>We protect your information through:</p>
+				<ul>
+					<li>Secure data transmission (SSL encryption)</li>
+					<li>Limited access to personal information</li>
+					<li>Regular security assessments</li>
+					<li>Secure data storage practices</li>
+				</ul>
+				
+				<h3>5. Your Privacy Rights</h3>
+				<p>You have the right to:</p>
+				<ul>
+					<li>Request access to your personal information</li>
+					<li>Correct inaccurate information</li>
+					<li>Request deletion of your information</li>
+					<li>Opt out of non-essential communications</li>
+					<li>Withdraw consent for data processing</li>
+				</ul>
+				
+				<h3>6. Cookies and Tracking</h3>
+				<p>Our website uses cookies to:</p>
+				<ul>
+					<li>Remember your preferences</li>
+					<li>Analyze website performance</li>
+					<li>Improve user experience</li>
+				</ul>
+				<p>You can control cookies through your browser settings.</p>
+				
+				<h3>7. Third-Party Links</h3>
+				<p>Our website may contain links to contractor websites or other third parties. We are not responsible for their privacy practices. Please review their privacy policies before sharing information.</p>
+				
+				<h3>8. Children's Privacy</h3>
+				<p>Our services are not intended for children under 18. We do not knowingly collect personal information from children.</p>
+				
+				<h3>9. California Privacy Rights</h3>
+				<p>California residents have additional rights under the California Consumer Privacy Act (CCPA):</p>
+				<ul>
+					<li>Right to know what personal information is collected</li>
+					<li>Right to delete personal information</li>
+					<li>Right to opt out of sale of personal information</li>
+					<li>Right to non-discrimination for exercising privacy rights</li>
+				</ul>
+				
+				<h3>10. Data Retention</h3>
+				<p>We retain your information only as long as necessary to provide our services or as required by law. Completed project information may be retained for quality assurance purposes.</p>
+				
+				<h3>11. Changes to This Policy</h3>
+				<p>We may update this privacy policy periodically. We will notify you of significant changes by email or through our website.</p>
+				
+				<h3>12. Contact Us</h3>
+				<p>For privacy-related questions or to exercise your rights, contact us:</p>
+				<ul>
+					<li>Phone: <a href="tel:888-682-0507">(888) 682-0507</a></li>
+					<li>Email: <a href="mailto:privacy@fencestockton.com">privacy@fencestockton.com</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		position: relative;
+		min-height: 400px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-image-container {
+		position: relative;
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+	}
+	
+	.hero-picture {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	
+	.hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+	}
+	
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, 
+			rgba(89, 123, 148, 0.85) 0%, 
+			rgba(70, 98, 117, 0.9) 100%
+		);
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-content {
+		text-align: center;
+		color: var(--white);
+		z-index: 2;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+	
+	.hero h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		font-weight: 700;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	}
+	
+	.hero p {
+		font-size: 1.2rem;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+	}
+	
+	.privacy-content {
+		padding: 4rem 0;
+		background: var(--white);
+	}
+	
+	.privacy-text {
+		max-width: 800px;
+		margin: 0 auto;
+		line-height: 1.6;
+	}
+	
+	.privacy-text h2 {
+		color: var(--text-dark);
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	
+	.privacy-text h3 {
+		color: var(--primary-blue);
+		font-size: 1.5rem;
+		margin: 2rem 0 1rem 0;
+		font-weight: 600;
+	}
+	
+	.privacy-text p {
+		margin-bottom: 1rem;
+		color: var(--text-light);
+	}
+	
+	.privacy-text ul {
+		margin: 1rem 0 2rem 2rem;
+		color: var(--text-light);
+	}
+	
+	.privacy-text li {
+		margin-bottom: 0.5rem;
+	}
+	
+	.privacy-text a {
+		color: var(--primary-blue);
+		text-decoration: none;
+		font-weight: bold;
+	}
+	
+	.privacy-text a:hover {
+		color: var(--accent-orange);
+	}
+	
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2.2rem;
+		}
+		
+		.hero p {
+			font-size: 1rem;
+		}
+		
+		.privacy-text {
+			padding: 0 1rem;
+		}
+		
+		.privacy-text h2 {
+			font-size: 2rem;
+		}
+		
+		.privacy-text h3 {
+			font-size: 1.3rem;
+		}
+	}
+</style>

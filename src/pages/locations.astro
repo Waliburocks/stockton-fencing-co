@@ -2,11 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Service Areas - Sacramento Fencing Co." description="Professional fencing services throughout Sacramento County including Sacramento, Elk Grove, Roseville, Folsom, and surrounding communities.">
+<Layout 
+	title="Fence Installation Service Areas | Stockton, Tracy, Manteca, Lodi, Sacramento" 
+	description="Professional fence installation serving Stockton, Sacramento, Tracy, Manteca, Lodi & all San Joaquin County. Local contractors with fast response times. Free service area consultation." 
+	canonicalUrl="/locations">
 	<section class="hero">
-		<div class="container">
-			<h1>Serving Sacramento County & Beyond</h1>
-			<p>Professional fence installation and repair services throughout the greater Sacramento area</p>
+		<div class="hero-image-container">
+			<picture class="hero-picture">
+				<source srcset="/images/internal-page-fence-header.webp" type="image/webp">
+				<img src="/images/internal-page-fence-header.webp" alt="Stockton and San Joaquin County fence installation service areas" class="hero-image" loading="eager" width="1200" height="400" />
+			</picture>
+			<div class="hero-overlay">
+				<div class="hero-content">
+					<h1>Serving San Joaquin County & Beyond</h1>
+					<p>Professional fence installation and repair services throughout the greater Stockton area</p>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -16,22 +27,23 @@ import Layout from '../layouts/Layout.astro';
 			<div class="areas-grid">
 				<div class="area-card primary">
 					<div class="area-icon">🏛️</div>
-					<h3>Sacramento</h3>
-					<p>Our home base! Serving all Sacramento neighborhoods including Downtown, Midtown, East Sacramento, Land Park, and North Sacramento.</p>
+					<h3><a href="/locations/stockton">Stockton</a></h3>
+					<p>Our home base! Serving all Stockton neighborhoods including Downtown, Miracle Mile, Lincoln Village, and Spanos Park.</p>
 					<ul class="neighborhoods">
-						<li>Downtown & Capitol Area</li>
-						<li>Midtown & East Sacramento</li>
-						<li>Land Park & Curtis Park</li>
-						<li>North Sacramento & Del Paso</li>
-						<li>South Sacramento & Pocket</li>
+						<li>Downtown Stockton</li>
+						<li>Miracle Mile & Brookside</li>
+						<li>Lincoln Village</li>
+						<li>Spanos Park</li>
+						<li>Pacific & Wynn</li>
 					</ul>
 					<div class="response-time">Same-day estimates available</div>
+					<a href="/locations/stockton" class="location-link">View Stockton Details →</a>
 				</div>
 				
 				<div class="area-card">
 					<div class="area-icon">🌳</div>
-					<h3>Elk Grove</h3>
-					<p>Serving Elk Grove's growing residential communities with quality fence installation and repair services.</p>
+					<h3><a href="/locations/tracy">Tracy</a></h3>
+					<p>Serving Tracy's growing residential communities with quality fence installation and repair services.</p>
 					<ul class="neighborhoods">
 						<li>Elk Grove Village</li>
 						<li>Laguna Ridge</li>
@@ -39,32 +51,35 @@ import Layout from '../layouts/Layout.astro';
 						<li>Laguna West</li>
 					</ul>
 					<div class="response-time">Next-day service</div>
+					<a href="/locations/tracy" class="location-link">View Tracy Details →</a>
 				</div>
 				
 				<div class="area-card">
 					<div class="area-icon">🌹</div>
-					<h3>Roseville</h3>
-					<p>Professional fencing services for Roseville's beautiful residential and commercial properties.</p>
+					<h3><a href="/locations/manteca">Manteca</a></h3>
+					<p>Professional fencing services for Manteca's beautiful residential and commercial properties.</p>
 					<ul class="neighborhoods">
-						<li>West Roseville</li>
-						<li>East Roseville</li>
-						<li>Blue Oaks</li>
-						<li>Fiddyment Farms</li>
+						<li>Del Webb Manteca</li>
+						<li>Woodward Park</li>
+						<li>Bass Pro Area</li>
+						<li>Powers Tract</li>
 					</ul>
 					<div class="response-time">Next-day service</div>
+					<a href="/locations/manteca" class="location-link">View Manteca Details →</a>
 				</div>
 				
 				<div class="area-card">
 					<div class="area-icon">⛰️</div>
-					<h3>Folsom</h3>
-					<p>Serving Folsom's historic downtown and modern developments with custom fencing solutions.</p>
+					<h3><a href="/locations/lodi">Lodi</a></h3>
+					<p>Serving Lodi's historic downtown and wine country developments with custom fencing solutions.</p>
 					<ul class="neighborhoods">
-						<li>Historic Folsom</li>
-						<li>Folsom Ranch</li>
-						<li>Empire Ranch</li>
-						<li>Broadstone</li>
+						<li>Historic Lodi</li>
+						<li>Tokay Colony</li>
+						<li>Lodi Lake Area</li>
+						<li>Heritage District</li>
 					</ul>
 					<div class="response-time">Next-day service</div>
+					<a href="/locations/lodi" class="location-link">View Lodi Details →</a>
 				</div>
 			</div>
 		</div>
@@ -73,44 +88,44 @@ import Layout from '../layouts/Layout.astro';
 	<section class="extended-areas">
 		<div class="container">
 			<h2>Extended Service Areas</h2>
-			<p class="section-intro">We also provide fencing services to these communities throughout the greater Sacramento region:</p>
+			<p class="section-intro">We also provide fencing services to these communities throughout the greater Stockton region:</p>
 			
 			<div class="extended-grid">
 				<div class="extended-column">
-					<h3>Sacramento County</h3>
+					<h3>San Joaquin County</h3>
 					<ul>
-						<li>Citrus Heights</li>
-						<li>Fair Oaks</li>
-						<li>Carmichael</li>
-						<li>Rancho Cordova</li>
-						<li>Antelope</li>
-						<li>North Highlands</li>
-						<li>Arden-Arcade</li>
-						<li>Gold River</li>
+						<li>Ripon</li>
+						<li>Escalon</li>
+						<li>Lathrop</li>
+						<li>French Camp</li>
+						<li>Mountain House</li>
+						<li>Discovery Bay</li>
+						<li>Brentwood</li>
+						<li>Byron</li>
 					</ul>
 				</div>
 				
 				<div class="extended-column">
-					<h3>Placer County</h3>
+					<h3>Stanislaus County</h3>
 					<ul>
-						<li>Rocklin</li>
-						<li>Lincoln</li>
-						<li>Granite Bay</li>
-						<li>Loomis</li>
-						<li>Newcastle</li>
-						<li>Auburn</li>
-						<li>Colfax</li>
+						<li>Modesto</li>
+						<li>Turlock</li>
+						<li>Riverbank</li>
+						<li>Oakdale</li>
+						<li>Ceres</li>
+						<li>Newman</li>
+						<li>Patterson</li>
 					</ul>
 				</div>
 				
 				<div class="extended-column">
-					<h3>El Dorado County</h3>
+					<h3>Central Valley</h3>
 					<ul>
-						<li>El Dorado Hills</li>
-						<li>Cameron Park</li>
-						<li>Shingle Springs</li>
-						<li>Placerville</li>
-						<li>Diamond Springs</li>
+						<li>Livermore</li>
+						<li>Dublin</li>
+						<li>Pleasanton</li>
+						<li>Antioch</li>
+						<li>Pittsburg</li>
 					</ul>
 				</div>
 			</div>
@@ -124,19 +139,19 @@ import Layout from '../layouts/Layout.astro';
 				<div class="knowledge-item">
 					<div class="knowledge-icon">🌦️</div>
 					<h3>Climate Considerations</h3>
-					<p>We understand Sacramento's Mediterranean climate with hot, dry summers and wet winters. Our material recommendations and installation techniques are specifically designed for Central Valley conditions, ensuring your fence lasts for decades.</p>
+					<p>We understand Stockton's Mediterranean climate with hot, dry summers and wet winters. Our material recommendations and installation techniques are specifically designed for Central Valley conditions, ensuring your fence lasts for decades.</p>
 				</div>
 				
 				<div class="knowledge-item">
 					<div class="knowledge-icon">🏡</div>
 					<h3>Local Regulations</h3>
-					<p>Each Sacramento area community has unique HOA requirements and city codes. We're familiar with all local regulations including setback requirements, height restrictions, and permit processes. We handle all paperwork for you.</p>
+					<p>Each Stockton area community has unique HOA requirements and city codes. We're familiar with all local regulations including setback requirements, height restrictions, and permit processes. We handle all paperwork for you.</p>
 				</div>
 				
 				<div class="knowledge-item">
 					<div class="knowledge-icon">🌱</div>
 					<h3>Local Materials & Suppliers</h3>
-					<p>We source quality materials from trusted local suppliers, reducing costs and supporting Sacramento businesses. Our relationships ensure we get the best materials at competitive prices, savings we pass on to you.</p>
+					<p>We source quality materials from trusted local suppliers, reducing costs and supporting Stockton businesses. Our relationships ensure we get the best materials at competitive prices, savings we pass on to you.</p>
 				</div>
 			</div>
 		</div>
@@ -149,7 +164,7 @@ import Layout from '../layouts/Layout.astro';
 				<div class="promise-item">
 					<div class="promise-icon">⚡</div>
 					<h3>Fast Response Times</h3>
-					<p><strong>Sacramento city limits:</strong> Same-day estimates available</p>
+					<p><strong>Stockton city limits:</strong> Same-day estimates available</p>
 					<p><strong>Surrounding areas:</strong> Next-day service guaranteed</p>
 					<p><strong>Emergency repairs:</strong> 24/7 response for urgent situations</p>
 				</div>
@@ -202,8 +217,8 @@ import Layout from '../layouts/Layout.astro';
 			<h2>Not Sure If We Serve Your Area?</h2>
 			<p>Give us a call! We're always expanding our service areas and may be able to accommodate your project even if your location isn't listed above. We regularly travel further for larger commercial projects.</p>
 			<div class="cta-buttons">
-				<a href="/contact" class="btn">Get Free Estimate</a>
-				<a href="tel:916-555-3362" class="btn btn-outline">(916) 555-FENCE</a>
+				<a href="tel:888-682-0507" class="btn btn-quote">Call for Free Quote!</a>
+				<a href="tel:888-682-0507" class="btn btn-outline">(888) 682-0507</a>
 			</div>
 		</div>
 	</section>
@@ -211,16 +226,68 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
 	.hero {
-		background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
-		color: white;
-		padding: 4rem 0;
+		position: relative;
+		min-height: 400px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-image-container {
+		position: relative;
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+	}
+	
+	.hero-picture {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	
+	.hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+	}
+	
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, 
+			rgba(89, 123, 148, 0.85) 0%, 
+			rgba(70, 98, 117, 0.9) 100%
+		);
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-content {
 		text-align: center;
+		color: var(--white);
+		z-index: 2;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
 	}
 	
 	.hero h1 {
 		font-size: 3rem;
 		margin-bottom: 1rem;
 		font-weight: 700;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	}
+	
+	.hero p {
+		font-size: 1.2rem;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 	}
 	
 	.service-areas {
@@ -232,12 +299,14 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
 		color: #2c3e50;
+		padding: 0 2rem;
 	}
 	
 	.areas-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 		gap: 2rem;
+		padding: 0 2rem;
 	}
 	
 	.area-card {
@@ -255,7 +324,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 	
 	.area-card.primary {
-		border: 3px solid #e74c3c;
+		border: 3px solid var(--primary-brown);
 		background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
 		transform: scale(1.02);
 	}
@@ -299,7 +368,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 	
 	.response-time {
-		background: #e74c3c;
+		background: var(--primary-brown);
 		color: white;
 		padding: 0.5rem 1rem;
 		border-radius: 20px;
@@ -318,6 +387,7 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 1rem;
 		font-size: 2.5rem;
 		color: #2c3e50;
+		padding: 0 2rem;
 	}
 	
 	.section-intro {
@@ -334,6 +404,7 @@ import Layout from '../layouts/Layout.astro';
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 		gap: 3rem;
+		padding: 0 2rem;
 	}
 	
 	.extended-column {
@@ -348,7 +419,7 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 1.5rem;
 		font-size: 1.4rem;
 		text-align: center;
-		border-bottom: 2px solid #8e44ad;
+		border-bottom: 2px solid var(--primary-brown);
 		padding-bottom: 0.5rem;
 	}
 	
@@ -376,19 +447,21 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
 		color: #2c3e50;
+		padding: 0 2rem;
 	}
 	
 	.knowledge-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 		gap: 2rem;
+		padding: 0 2rem;
 	}
 	
 	.knowledge-item {
 		padding: 2.5rem;
 		background: white;
 		border-radius: 15px;
-		border-left: 5px solid #8e44ad;
+		border-left: 5px solid var(--primary-brown);
 		box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 		text-align: center;
 	}
@@ -419,12 +492,14 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
 		color: #2c3e50;
+		padding: 0 2rem;
 	}
 	
 	.promise-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2rem;
+		padding: 0 2rem;
 	}
 	
 	.promise-item {
@@ -453,7 +528,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 	
 	.promise-item strong {
-		color: #e74c3c;
+		color: var(--primary-brown);
 	}
 	
 	.coverage-stats {
@@ -466,12 +541,14 @@ import Layout from '../layouts/Layout.astro';
 		text-align: center;
 		margin-bottom: 3rem;
 		font-size: 2.5rem;
+		padding: 0 2rem;
 	}
 	
 	.stats-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		gap: 2rem;
+		padding: 0 2rem;
 	}
 	
 	.stat-item {
@@ -482,7 +559,7 @@ import Layout from '../layouts/Layout.astro';
 	.stat-number {
 		font-size: 4rem;
 		font-weight: bold;
-		color: #8e44ad;
+		color: var(--primary-brown);
 		margin-bottom: 0.5rem;
 	}
 	
@@ -492,7 +569,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 	
 	.contact-cta {
-		background: #e74c3c;
+		background: var(--primary-brown);
 		color: white;
 		padding: 4rem 0;
 		text-align: center;
@@ -527,7 +604,7 @@ import Layout from '../layouts/Layout.astro';
 	
 	.btn-outline:hover {
 		background: white;
-		color: #e74c3c;
+		color: var(--primary-brown);
 	}
 	
 	@media (max-width: 768px) {
@@ -542,6 +619,7 @@ import Layout from '../layouts/Layout.astro';
 		.coverage-stats h2,
 		.contact-cta h2 {
 			font-size: 2rem;
+			padding: 0 1rem;
 		}
 		
 		.areas-grid,
@@ -550,6 +628,7 @@ import Layout from '../layouts/Layout.astro';
 		.promise-grid,
 		.stats-grid {
 			grid-template-columns: 1fr;
+			padding: 0 1rem;
 		}
 		
 		.area-card.primary {
@@ -564,5 +643,61 @@ import Layout from '../layouts/Layout.astro';
 		.stat-number {
 			font-size: 3rem;
 		}
+	}
+	
+	.btn-quote {
+		background: linear-gradient(135deg, #FF6B35 0%, #FF4500 100%) !important;
+		color: var(--white) !important;
+		font-weight: bold !important;
+		font-size: 1.1rem !important;
+		padding: 1rem 2rem !important;
+		text-transform: uppercase !important;
+		letter-spacing: 0.5px !important;
+		box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
+		border: none !important;
+		animation: pulse-glow 2s ease-in-out infinite alternate;
+	}
+	
+	.btn-quote:hover {
+		background: linear-gradient(135deg, #FF4500 0%, #FF6B35 100%) !important;
+		transform: translateY(-3px) scale(1.05) !important;
+		box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4) !important;
+	}
+	
+	@keyframes pulse-glow {
+		from {
+			box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+		}
+		to {
+			box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+		}
+	}
+	
+	.area-card h3 a {
+		color: inherit;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+	
+	.area-card h3 a:hover {
+		color: var(--primary-brown);
+	}
+	
+	.location-link {
+		display: inline-block;
+		margin-top: 1rem;
+		padding: 0.5rem 1rem;
+		background: var(--primary-brown);
+		color: white;
+		text-decoration: none;
+		border-radius: 20px;
+		font-size: 0.9rem;
+		font-weight: bold;
+		transition: all 0.3s ease;
+	}
+	
+	.location-link:hover {
+		background: #8B4513;
+		transform: translateX(5px);
 	}
 </style>

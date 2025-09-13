@@ -1,0 +1,718 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+	title="Fencing Tips & News Blog | Stockton Fencing Co. | Expert Advice" 
+	description="Expert fencing tips, maintenance guides, and industry news from Stockton Fencing Co. Learn about fence materials, installation, repairs, and local fencing regulations in Stockton, CA." 
+	canonicalUrl="/blog">
+	
+	<!-- Blog-specific Schema Markup -->
+	<script type="application/ld+json" slot="head">
+	{
+		"@context": "https://schema.org",
+		"@type": "Blog",
+		"@id": "https://stockton-fencing.co/blog",
+		"name": "Stockton Fencing Co. Blog",
+		"description": "Expert fencing tips, maintenance guides, and industry insights from professional contractors in Stockton, CA",
+		"url": "https://stockton-fencing.co/blog",
+		"publisher": {
+			"@type": "Organization",
+			"name": "Stockton Fencing Co.",
+			"@id": "https://stockton-fencing.co/#business"
+		},
+		"blogPost": [
+			{
+				"@type": "BlogPosting",
+				"headline": "5 Signs Your Fence Needs Immediate Repair",
+				"description": "Learn to identify critical fence damage before it becomes a costly replacement",
+				"datePublished": "2024-09-01",
+				"author": {
+					"@type": "Person",
+					"name": "Stockton Fencing Team"
+				}
+			},
+			{
+				"@type": "BlogPosting",
+				"headline": "Best Fence Materials for Stockton's Climate",
+				"description": "Which fencing materials perform best in San Joaquin Valley weather conditions",
+				"datePublished": "2024-08-28",
+				"author": {
+					"@type": "Person",
+					"name": "Stockton Fencing Team"
+				}
+			}
+		],
+		"breadcrumb": {
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Home",
+					"item": "https://stockton-fencing.co/"
+				},
+				{
+					"@type": "ListItem",
+					"position": 2,
+					"name": "Blog",
+					"item": "https://stockton-fencing.co/blog"
+				}
+			]
+		}
+	}
+	</script>
+
+	<section class="hero">
+		<div class="hero-image-container">
+			<picture class="hero-picture">
+				<source srcset="/images/internal-page-fence-header.webp" type="image/webp">
+				<img src="/images/internal-page-fence-header.webp" alt="Fencing expertise and tips from Stockton Fencing Co. professionals" class="hero-image" loading="eager" width="1200" height="400" />
+			</picture>
+			<div class="hero-overlay">
+				<div class="hero-content">
+					<h1>Fencing Tips & Expert Advice</h1>
+					<p>Professional insights, maintenance tips, and industry news from Stockton's trusted fencing experts</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="blog-intro">
+		<div class="container">
+			<div class="intro-content">
+				<h2>Expert Knowledge at Your Fingertips</h2>
+				<p>Our team of professional fencing contractors shares decades of experience through practical tips, maintenance guides, and industry insights. Whether you're planning a new installation, maintaining an existing fence, or dealing with repairs, our blog provides the expert knowledge you need.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="blog-posts">
+		<div class="container">
+			<h2>Latest Posts</h2>
+			<div class="posts-grid">
+				<article class="blog-post">
+					<div class="post-image">
+						<img src="/images/wood-fence-photo.webp" alt="Damaged fence requiring repair" loading="lazy" />
+					</div>
+					<div class="post-content">
+						<div class="post-meta">
+							<span class="post-date">September 1, 2024</span>
+							<span class="post-category">Maintenance</span>
+						</div>
+						<h3><a href="/blog/fence-repair-signs">5 Signs Your Fence Needs Immediate Repair</a></h3>
+						<p>Don't wait until it's too late! Learn to identify the warning signs that indicate your fence needs professional attention before minor issues become major expenses.</p>
+						<div class="post-footer">
+							<a href="/blog/fence-repair-signs" class="read-more">Read More →</a>
+							<span class="reading-time">5 min read</span>
+						</div>
+					</div>
+				</article>
+
+				<article class="blog-post">
+					<div class="post-image">
+						<img src="/images/vinyl-fence-photo.webp" alt="Different fence materials comparison" loading="lazy" />
+					</div>
+					<div class="post-content">
+						<div class="post-meta">
+							<span class="post-date">August 28, 2024</span>
+							<span class="post-category">Materials</span>
+						</div>
+						<h3><a href="/blog/best-fence-materials-stockton">Best Fence Materials for Stockton's Climate</a></h3>
+						<p>Stockton's hot summers and mild winters create unique challenges for fencing materials. Discover which options perform best in our San Joaquin Valley climate.</p>
+						<div class="post-footer">
+							<a href="/blog/best-fence-materials-stockton" class="read-more">Read More →</a>
+							<span class="reading-time">7 min read</span>
+						</div>
+					</div>
+				</article>
+
+				<article class="blog-post">
+					<div class="post-image">
+						<img src="/images/chain-link-fence-photo.webp" alt="Chain link fence maintenance" loading="lazy" />
+					</div>
+					<div class="post-content">
+						<div class="post-meta">
+							<span class="post-date">August 25, 2024</span>
+							<span class="post-category">Maintenance</span>
+						</div>
+						<h3><a href="/blog/chain-link-maintenance-guide">Chain Link Fence Maintenance: A Complete Guide</a></h3>
+						<p>Keep your chain link fence looking great and lasting longer with our comprehensive maintenance guide. Simple steps that save money and extend fence life.</p>
+						<div class="post-footer">
+							<a href="/blog/chain-link-maintenance-guide" class="read-more">Read More →</a>
+							<span class="reading-time">6 min read</span>
+						</div>
+					</div>
+				</article>
+
+				<article class="blog-post">
+					<div class="post-image">
+						<img src="/images/iron-fence-photo.webp" alt="Professional fence installation process" loading="lazy" />
+					</div>
+					<div class="post-content">
+						<div class="post-meta">
+							<span class="post-date">August 22, 2024</span>
+							<span class="post-category">Installation</span>
+						</div>
+						<h3><a href="/blog/fence-installation-process">What to Expect During Professional Fence Installation</a></h3>
+						<p>Planning a fence installation? Learn about our professional process, timeline, and what homeowners can expect from start to finish.</p>
+						<div class="post-footer">
+							<a href="/blog/fence-installation-process" class="read-more">Read More →</a>
+							<span class="reading-time">8 min read</span>
+						</div>
+					</div>
+				</article>
+
+				<article class="blog-post">
+					<div class="post-image">
+						<img src="/images/wood-fence-photo.webp" alt="Wood fence staining and sealing" loading="lazy" />
+					</div>
+					<div class="post-content">
+						<div class="post-meta">
+							<span class="post-date">August 18, 2024</span>
+							<span class="post-category">Maintenance</span>
+						</div>
+						<h3><a href="/blog/wood-fence-staining-guide">Wood Fence Staining: When, Why, and How</a></h3>
+						<p>Protect your investment with proper wood fence staining. Learn the best practices, timing, and products for maintaining beautiful wood fencing.</p>
+						<div class="post-footer">
+							<a href="/blog/wood-fence-staining-guide" class="read-more">Read More →</a>
+							<span class="reading-time">10 min read</span>
+						</div>
+					</div>
+				</article>
+
+				<article class="blog-post">
+					<div class="post-image">
+						<img src="/images/vinyl-fence-photo.webp" alt="Local fence installation regulations" loading="lazy" />
+					</div>
+					<div class="post-content">
+						<div class="post-meta">
+							<span class="post-date">August 15, 2024</span>
+							<span class="post-category">Regulations</span>
+						</div>
+						<h3><a href="/blog/stockton-fence-regulations">Stockton Fence Regulations: What Homeowners Need to Know</a></h3>
+						<p>Navigate local fencing codes and HOA requirements with confidence. Essential information for Stockton homeowners planning fence projects.</p>
+						<div class="post-footer">
+							<a href="/blog/stockton-fence-regulations" class="read-more">Read More →</a>
+							<span class="reading-time">6 min read</span>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section class="blog-categories">
+		<div class="container">
+			<h2>Browse by Category</h2>
+			<div class="categories-grid">
+				<div class="category-card">
+					<div class="category-icon">🔧</div>
+					<h3>Maintenance Tips</h3>
+					<p>Keep your fence in perfect condition with expert maintenance advice and seasonal care guides.</p>
+					<span class="post-count">8 posts</span>
+				</div>
+				<div class="category-card">
+					<div class="category-icon">🏗️</div>
+					<h3>Installation Guides</h3>
+					<p>Understanding the professional installation process and what to expect from your fencing project.</p>
+					<span class="post-count">5 posts</span>
+				</div>
+				<div class="category-card">
+					<div class="category-icon">🧱</div>
+					<h3>Materials & Options</h3>
+					<p>Compare fencing materials, styles, and find the perfect option for your property and budget.</p>
+					<span class="post-count">7 posts</span>
+				</div>
+				<div class="category-card">
+					<div class="category-icon">📋</div>
+					<h3>Local Regulations</h3>
+					<p>Navigate Stockton's fencing codes, HOA requirements, and permit processes with confidence.</p>
+					<span class="post-count">4 posts</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="newsletter-signup">
+		<div class="container">
+			<div class="signup-content">
+				<h2>Stay Updated with Fencing Tips</h2>
+				<p>Get the latest maintenance tips, seasonal advice, and exclusive offers delivered to your inbox monthly.</p>
+				<div class="signup-form">
+					<input type="email" placeholder="Enter your email address" class="email-input">
+					<button type="button" class="btn btn-signup">Subscribe</button>
+				</div>
+				<p class="signup-note">Join 500+ homeowners getting expert fencing advice. Unsubscribe anytime.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="cta">
+		<div class="container">
+			<h2>Need Professional Fencing Services?</h2>
+			<p>Ready to put expert advice into action? Contact Stockton Fencing Co. for professional installation, repairs, or maintenance.</p>
+			<div class="cta-buttons">
+				<a href="tel:888-682-0507" class="btn btn-quote">Get Free Quote: (888) 682-0507</a>
+				<a href="/contact" class="btn btn-outline">Schedule Consultation</a>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		position: relative;
+		min-height: 400px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-image-container {
+		position: relative;
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+	}
+	
+	.hero-picture {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	
+	.hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+	}
+	
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, 
+			rgba(89, 123, 148, 0.85) 0%, 
+			rgba(70, 98, 117, 0.9) 100%
+		);
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-content {
+		text-align: center;
+		color: var(--white);
+		z-index: 2;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+	
+	.hero h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		font-weight: 700;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	}
+	
+	.hero p {
+		font-size: 1.2rem;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+	}
+
+	.blog-intro {
+		padding: 4rem 0;
+		background: var(--background-light);
+	}
+	
+	.intro-content {
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+		padding: 0 2rem;
+	}
+	
+	.intro-content h2 {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		color: var(--text-dark);
+	}
+	
+	.intro-content p {
+		font-size: 1.2rem;
+		line-height: 1.8;
+		color: var(--text-light);
+	}
+
+	.blog-posts {
+		padding: 5rem 0;
+	}
+	
+	.blog-posts h2 {
+		text-align: center;
+		margin-bottom: 4rem;
+		font-size: 2.5rem;
+		color: var(--text-dark);
+		padding: 0 2rem;
+	}
+	
+	.posts-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 3rem;
+		padding: 0 2rem;
+	}
+	
+	.blog-post {
+		background: var(--white);
+		border-radius: 15px;
+		overflow: hidden;
+		box-shadow: 0 5px 20px var(--shadow-light);
+		transition: all 0.3s ease;
+	}
+	
+	.blog-post:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 15px 40px var(--shadow-medium);
+	}
+	
+	.post-image {
+		height: 200px;
+		overflow: hidden;
+	}
+	
+	.post-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+	
+	.blog-post:hover .post-image img {
+		transform: scale(1.05);
+	}
+	
+	.post-content {
+		padding: 2rem;
+	}
+	
+	.post-meta {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 1rem;
+		font-size: 0.9rem;
+	}
+	
+	.post-date {
+		color: var(--text-light);
+	}
+	
+	.post-category {
+		background: var(--primary-blue);
+		color: var(--white);
+		padding: 0.25rem 0.75rem;
+		border-radius: 15px;
+		font-size: 0.8rem;
+		font-weight: 600;
+	}
+	
+	.post-content h3 {
+		margin-bottom: 1rem;
+		font-size: 1.3rem;
+		line-height: 1.4;
+	}
+	
+	.post-content h3 a {
+		color: var(--text-dark);
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+	
+	.post-content h3 a:hover {
+		color: var(--primary-blue);
+	}
+	
+	.post-content p {
+		color: var(--text-light);
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+	
+	.post-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.read-more {
+		color: var(--primary-blue);
+		text-decoration: none;
+		font-weight: 600;
+		transition: color 0.3s ease;
+	}
+	
+	.read-more:hover {
+		color: var(--accent-orange);
+	}
+	
+	.reading-time {
+		color: var(--neutral-cool);
+		font-size: 0.9rem;
+	}
+
+	.blog-categories {
+		padding: 5rem 0;
+		background: var(--background-light);
+	}
+	
+	.blog-categories h2 {
+		text-align: center;
+		margin-bottom: 4rem;
+		font-size: 2.5rem;
+		color: var(--text-dark);
+		padding: 0 2rem;
+	}
+	
+	.categories-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		padding: 0 2rem;
+	}
+	
+	.category-card {
+		background: var(--white);
+		padding: 2.5rem 2rem;
+		border-radius: 15px;
+		text-align: center;
+		box-shadow: 0 5px 20px var(--shadow-light);
+		transition: all 0.3s ease;
+		border-top: 4px solid var(--primary-blue);
+	}
+	
+	.category-card:hover {
+		transform: translateY(-5px);
+		border-top-color: var(--accent-orange);
+	}
+	
+	.category-icon {
+		font-size: 3rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	.category-card h3 {
+		color: var(--text-dark);
+		margin-bottom: 1rem;
+		font-size: 1.3rem;
+	}
+	
+	.category-card p {
+		color: var(--text-light);
+		line-height: 1.5;
+		margin-bottom: 1.5rem;
+	}
+	
+	.post-count {
+		background: var(--background-neutral);
+		color: var(--text-dark);
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+
+	.newsletter-signup {
+		padding: 5rem 0;
+		background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+		color: var(--white);
+	}
+	
+	.signup-content {
+		max-width: 600px;
+		margin: 0 auto;
+		text-align: center;
+		padding: 0 2rem;
+	}
+	
+	.signup-content h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+	}
+	
+	.signup-content p {
+		font-size: 1.1rem;
+		margin-bottom: 2rem;
+		opacity: 0.9;
+	}
+	
+	.signup-form {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 1rem;
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.email-input {
+		flex: 1;
+		padding: 1rem 1.5rem;
+		border: none;
+		border-radius: 8px;
+		font-size: 1rem;
+		background: var(--white);
+		color: var(--text-dark);
+	}
+	
+	.email-input:focus {
+		outline: 2px solid var(--accent-orange);
+	}
+	
+	.btn-signup {
+		background: var(--accent-orange) !important;
+		color: var(--white) !important;
+		border: none !important;
+		padding: 1rem 2rem !important;
+		font-weight: bold !important;
+		border-radius: 8px !important;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+	
+	.btn-signup:hover {
+		background: #ed975a !important;
+		transform: translateY(-2px);
+	}
+	
+	.signup-note {
+		font-size: 0.9rem;
+		opacity: 0.8;
+	}
+
+	.cta {
+		background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+		color: var(--white);
+		padding: 4rem 0;
+		text-align: center;
+	}
+	
+	.cta h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+	}
+	
+	.cta p {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+	}
+	
+	.cta-buttons {
+		display: flex;
+		gap: 1.5rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	
+	.btn-outline {
+		background: transparent;
+		border: 2px solid var(--white);
+		color: var(--white);
+	}
+	
+	.btn-outline:hover {
+		background: var(--white);
+		color: var(--primary-blue);
+	}
+	
+	.btn-quote {
+		background: linear-gradient(135deg, #FF6B35 0%, #FF4500 100%) !important;
+		color: var(--white) !important;
+		font-weight: bold !important;
+		font-size: 1.1rem !important;
+		padding: 1rem 2rem !important;
+		text-transform: uppercase !important;
+		letter-spacing: 0.5px !important;
+		box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
+		border: none !important;
+		animation: pulse-glow 2s ease-in-out infinite alternate;
+	}
+	
+	.btn-quote:hover {
+		background: linear-gradient(135deg, #FF4500 0%, #FF6B35 100%) !important;
+		transform: translateY(-3px) scale(1.05) !important;
+		box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4) !important;
+	}
+	
+	@keyframes pulse-glow {
+		from {
+			box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+		}
+		to {
+			box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2.2rem;
+		}
+		
+		.intro-content h2,
+		.blog-posts h2,
+		.blog-categories h2,
+		.signup-content h2,
+		.cta h2 {
+			font-size: 2rem;
+		}
+		
+		.posts-grid,
+		.categories-grid {
+			grid-template-columns: 1fr;
+			padding: 0 1rem;
+		}
+		
+		.intro-content,
+		.signup-content,
+		.blog-posts h2,
+		.blog-categories h2 {
+			padding: 0 1rem;
+		}
+		
+		.signup-form {
+			flex-direction: column;
+		}
+		
+		.cta-buttons {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	
+	@media (max-width: 480px) {
+		.hero h1 {
+			font-size: 1.8rem;
+		}
+		
+		.posts-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+		
+		.post-content {
+			padding: 1.5rem;
+		}
+		
+		.category-card {
+			padding: 2rem 1.5rem;
+		}
+	}
+</style>

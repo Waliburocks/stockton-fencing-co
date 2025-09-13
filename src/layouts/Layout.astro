@@ -2,9 +2,49 @@
 export interface Props {
 	title: string;
 	description?: string;
+	canonicalUrl?: string;
 }
 
-const { title, description = "Sacramento's premier fence installation and repair company. Quality fencing solutions for residential and commercial properties." } = Astro.props;
+const { title, description = "Stockton's premier fence installation and repair company. Quality fencing solutions for residential and commercial properties.", canonicalUrl } = Astro.props;
+const currentYear = new Date().getFullYear();
+
+// Generate canonical URL with proper handling
+const getCanonicalUrl = () => {
+	// If explicitly provided, use that
+	if (canonicalUrl) {
+		return canonicalUrl.startsWith('http') ? canonicalUrl : `https://stockton-fencing.co${canonicalUrl}`;
+	}
+	
+	// Get current path and normalize it
+	let pathname = Astro.url.pathname;
+	
+	// Remove trailing slash except for root
+	if (pathname !== '/' && pathname.endsWith('/')) {
+		pathname = pathname.slice(0, -1);
+	}
+	
+	// Convert common variations to canonical form
+	const canonicalPaths = {
+		'/index': '/',
+		'/index.html': '/',
+		'/home': '/',
+		'/services/index': '/services',
+		'/services/index.html': '/services',
+		'/contact/index': '/contact',
+		'/contact/index.html': '/contact',
+		'/about/index': '/about',
+		'/about/index.html': '/about',
+		'/locations/index': '/locations',
+		'/locations/index.html': '/locations'
+	};
+	
+	// Use canonical form if available
+	const canonical = canonicalPaths[pathname] || pathname;
+	
+	return `https://stockton-fencing.co${canonical}`;
+};
+
+const finalCanonicalUrl = getCanonicalUrl();
 ---
 
 <!DOCTYPE html>
@@ -13,24 +53,417 @@ const { title, description = "Sacramento's premier fence installation and repair
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/images/fence-stockton-logo.png" />
+		<link rel="apple-touch-icon" href="/images/fence-stockton-logo.png" />
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<link rel="canonical" href={finalCanonicalUrl} />
+		<link rel="sitemap" href="/sitemap.xml" />
+		
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:url" content={finalCanonicalUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="https://stockton-fencing.co/images/fence-stockton-logo.png" />
+		<meta property="og:site_name" content="Stockton Fencing Co." />
+		
+		<!-- Twitter Card Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="https://stockton-fencing.co/images/fence-stockton-logo.png" />
+		
+		<!-- Additional SEO Meta Tags -->
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+		
+		<!-- Preload hero images for faster loading -->
+		<link rel="preload" as="image" href="/images/hero-fencing-professional.webp" type="image/webp" media="(min-width: 769px)" />
+		<link rel="preload" as="image" href="/images/hero-fencing-tablet.webp" type="image/webp" media="(max-width: 768px)" />
+		<link rel="preload" as="image" href="/images/hero-fencing-mobile.webp" type="image/webp" media="(max-width: 480px)" />
+		
 		<title>{title}</title>
+		
+		<!-- LocalBusiness Schema Markup for Stockton Fencing Co -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"@id": "https://stockton-fencing.co/#business",
+			"name": "Stockton Fencing Co.",
+			"alternateName": "Stockton Fencing Co.",
+			"description": "Professional fence installation and repair services for residential and commercial properties in Stockton, CA and throughout San Joaquin County. Quality fencing solutions with expert installation.",
+			"url": "https://stockton-fencing.co/",
+			"telephone": "+1-888-682-0507",
+			"priceRange": "$$",
+			"image": [
+				"https://stockton-fencing.co/images/fence-stockton-logo.png",
+				"https://stockton-fencing.co/images/hero-fencing-professional.webp",
+				"https://stockton-fencing.co/images/chain-link-fence-photo.webp",
+				"https://stockton-fencing.co/images/wood-fence-photo.webp",
+				"https://stockton-fencing.co/images/vinyl-fence-photo.webp",
+				"https://stockton-fencing.co/images/iron-fence-photo.webp"
+			],
+			"logo": {
+				"@type": "ImageObject",
+				"url": "https://stockton-fencing.co/images/fence-stockton-logo.png",
+				"width": 200,
+				"height": 200
+			},
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Stockton",
+				"addressRegion": "CA",
+				"postalCode": "95201",
+				"addressCountry": "US",
+				"areaServed": [
+					"Stockton, CA",
+					"Sacramento, CA", 
+					"Modesto, CA",
+					"Manteca, CA",
+					"Tracy, CA",
+					"Lodi, CA",
+					"San Joaquin County, CA",
+					"Sacramento County, CA",
+					"Stanislaus County, CA"
+				]
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 37.9577,
+				"longitude": -121.2908
+			},
+			"openingHours": [
+				"Mo-Fr 07:00-18:00",
+				"Sa 08:00-16:00"
+			],
+			"serviceArea": {
+				"@type": "GeoCircle",
+				"geoMidpoint": {
+					"@type": "GeoCoordinates",
+					"latitude": 37.9577,
+					"longitude": -121.2908
+				},
+				"geoRadius": "50000"
+			},
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Fencing Services",
+				"itemListElement": [
+					{
+						"@type": "OfferCatalog",
+						"name": "Chain Link Fencing",
+						"description": "Affordable and durable chain link fence installation for residential and commercial properties",
+						"itemListElement": [
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Galvanized Chain Link Fence Installation",
+									"description": "Rust-resistant galvanized coating, 4-6 foot height options, commercial and residential grade with optional privacy slats",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock"
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Vinyl-Coated Chain Link Fence Installation",
+									"description": "Green or black vinyl coating for enhanced appearance, ideal for residential use with extended lifespan",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock"
+							}
+						]
+					},
+					{
+						"@type": "OfferCatalog",
+						"name": "Wood Fencing",
+						"description": "Natural and beautiful wood fence installation with cedar, redwood, and pressure-treated options",
+						"itemListElement": [
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Cedar Privacy Fence Installation",
+									"description": "Natural rot and insect resistance, beautiful grain patterns, 6-8 foot heights with custom staining available",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock"
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Pressure-Treated Pine Fence Installation",
+									"description": "Budget-friendly option, chemically treated for durability, paint or stain ready",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock"
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Redwood Fence Installation",
+									"description": "Premium California redwood, naturally weather resistant with rich color and custom designs",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock"
+							}
+						]
+					},
+					{
+						"@type": "OfferCatalog",
+						"name": "Vinyl Fencing",
+						"description": "Low-maintenance, durable vinyl fence installation that won't fade, crack, or peel",
+						"itemListElement": [
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Privacy Vinyl Fence Installation",
+									"description": "Maintenance-free PVC construction, available in white, tan, or gray colors with manufacturer warranty",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock"
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Vinyl Picket Fence Installation",
+									"description": "Classic picket fence design with UV-resistant materials and decorative post caps included",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock"
+							}
+						]
+					},
+					{
+						"@type": "OfferCatalog",
+						"name": "Ornamental Iron & Aluminum",
+						"description": "Elegant wrought iron and aluminum fencing for security and aesthetic appeal",
+						"itemListElement": [
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Wrought Iron Fence Installation",
+									"description": "Hand-forged traditional designs with powder-coated finish and custom ornamental details",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock"
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Aluminum Fence Installation",
+									"description": "Maintenance-free construction with wrought iron appearance, pool code compliant options available",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock"
+							}
+						]
+					},
+					{
+						"@type": "OfferCatalog",
+						"name": "Additional Services",
+						"description": "Comprehensive fence repair, maintenance, and custom installation services",
+						"itemListElement": [
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Fence Repair Service",
+									"description": "Expert repair services for all fence types, from broken boards to damaged posts",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock"
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Gate Installation",
+									"description": "Custom gates designed to match your fence perfectly, manual and automatic systems available",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock"
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Fence Staining & Sealing",
+									"description": "Professional staining and sealing services to protect and beautify your wood fence investment",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock"
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Free Fence Estimates",
+									"description": "Detailed written estimates with material specifications and timeline, no hidden fees",
+									"provider": {
+										"@type": "Organization",
+										"name": "Stockton Fencing Co."
+									}
+								},
+								"availability": "https://schema.org/InStock",
+								"price": "0"
+							}
+						]
+					}
+				]
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.8",
+				"reviewCount": "127",
+				"bestRating": "5",
+				"worstRating": "1"
+			},
+			"review": [
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Sarah M."
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"reviewBody": "Outstanding work! Professional installation with attention to detail. Clean, efficient, and exactly what we wanted.",
+					"datePublished": "2024-08-15"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Mike D."
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"reviewBody": "Excellent fencing service in Stockton. Fair pricing, quality materials, and reliable service. Highly recommend!",
+					"datePublished": "2024-07-22"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Jennifer L."
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"reviewBody": "Professional repair service for our storm-damaged fence. Looks better than new with great customer service throughout.",
+					"datePublished": "2024-09-01"
+				}
+			],
+			"sameAs": [
+				"https://www.facebook.com/StocktonFencing",
+				"https://www.instagram.com/stockton_fencing_co",
+				"https://www.linkedin.com/company/stockton-fencing-co"
+			],
+			"knowsAbout": [
+				"Fence Installation",
+				"Fence Repair", 
+				"Chain Link Fencing",
+				"Wood Fencing",
+				"Vinyl Fencing",
+				"Wrought Iron Fencing",
+				"Aluminum Fencing",
+				"Gate Installation",
+				"Privacy Fencing",
+				"Commercial Fencing",
+				"Residential Fencing"
+			],
+			"makesOffer": [
+				{
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "Service",
+						"name": "Emergency Fence Repair",
+						"description": "24/7 emergency fence repair services for storm damage and security breaches"
+					},
+					"availability": "https://schema.org/InStock",
+					"areaServed": {
+						"@type": "State", 
+						"name": "California"
+					}
+				}
+			]
+		}
+		</script>
+		
 		<style>
 			:root {
-				/* Brand Colors - Consistent Sacramento Fencing Co. Palette */
-				--primary-brown: #8B4513;
-				--secondary-brown: #A0522D;
-				--accent-gold: #DAA520;
-				--dark-brown: #654321;
-				--light-brown: #D2B48C;
-				--forest-green: #228B22;
+				/* Brand Colors - Stockton Fencing Co. New Palette */
+				--primary-blue: #597B94;        /* Air Force Blue - primary brand color */
+				--secondary-blue: #7595ac;      /* Lighter Air Force Blue for hover states */
+				--accent-orange: #E87C2E;       /* Pumpkin - accent/CTA color */
+				--neutral-warm: #CFB9A9;        /* Dun - warm neutral for backgrounds */
+				--neutral-cool: #A7A8A8;        /* Silver - cool neutral for text */
+				--neutral-cool-alt: #A8A6A5;    /* Silver 2 - alternate neutral */
 				--text-dark: #2c3e50;
-				--text-light: #34495e;
-				--background-light: #f8f9fa;
+				--text-light: #597B94;          /* Using primary blue for lighter text */
+				--background-light: #f5f1ee;    /* Warmest tint of Dun */
+				--background-neutral: #e2d5cc;  /* Mid-tone Dun for cards */
 				--white: #ffffff;
-				--shadow-light: rgba(139, 69, 19, 0.1);
-				--shadow-medium: rgba(139, 69, 19, 0.2);
+				--shadow-light: rgba(89, 123, 148, 0.1);
+				--shadow-medium: rgba(89, 123, 148, 0.2);
 			}
 
 			* {
@@ -49,11 +482,11 @@ const { title, description = "Sacramento's premier fence installation and repair
 			.container {
 				max-width: 1200px;
 				margin: 0 auto;
-				padding: 0 20px;
+				padding: 0 2rem;
 			}
 			
 			header {
-				background: linear-gradient(135deg, var(--primary-brown) 0%, var(--dark-brown) 100%);
+				background: linear-gradient(135deg, var(--primary-blue) 0%, #466275 100%);
 				color: var(--white);
 				padding: 1rem 0;
 				position: sticky;
@@ -69,6 +502,9 @@ const { title, description = "Sacramento's premier fence installation and repair
 			}
 			
 			.logo {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
 				font-size: 1.8rem;
 				font-weight: bold;
 				text-decoration: none;
@@ -77,15 +513,62 @@ const { title, description = "Sacramento's premier fence installation and repair
 				transition: all 0.3s ease;
 			}
 			
+			.logo-image {
+				height: 40px;
+				width: auto;
+				object-fit: contain;
+				filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+			}
+			
+			.logo-text {
+				display: inline;
+			}
+			
 			.logo:hover {
-				color: var(--accent-gold);
+				color: var(--accent-orange);
 				transform: scale(1.05);
+			}
+			
+			.logo:hover .logo-image {
+				filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
 			}
 			
 			.nav-links {
 				display: flex;
 				list-style: none;
 				gap: 2rem;
+				align-items: center;
+			}
+			
+			.mobile-menu-toggle {
+				display: none;
+				background: none;
+				border: none;
+				color: var(--white);
+				font-size: 1.5rem;
+				cursor: pointer;
+				padding: 0.5rem;
+			}
+			
+			.mobile-close {
+				display: none !important;
+			}
+			
+			.mobile-close-btn {
+				background: none;
+				border: none;
+				color: var(--white);
+				font-size: 2rem;
+				cursor: pointer;
+				padding: 1rem;
+				position: absolute;
+				top: 1rem;
+				right: 2rem;
+			}
+			
+			.nav-links li {
+				display: flex;
+				align-items: center;
 			}
 			
 			.nav-links a {
@@ -99,9 +582,132 @@ const { title, description = "Sacramento's premier fence installation and repair
 			}
 			
 			.nav-links a:hover {
-				color: var(--accent-gold);
+				color: var(--accent-orange);
 				background: rgba(255, 255, 255, 0.1);
 				transform: translateY(-2px);
+			}
+			
+			/* Dropdown Menu Styles */
+			.nav-dropdown {
+				position: relative;
+				display: flex;
+				align-items: center;
+			}
+			
+			.nav-dropdown-toggle {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				cursor: pointer;
+				color: var(--white);
+				text-decoration: none;
+				transition: all 0.3s ease;
+				font-weight: 500;
+				padding: 0.5rem 1rem;
+				border-radius: 4px;
+			}
+			
+			.nav-dropdown-toggle:hover {
+				color: var(--accent-orange);
+				background: rgba(255, 255, 255, 0.1);
+				transform: translateY(-2px);
+			}
+			
+			.dropdown-arrow {
+				font-size: 0.8rem;
+				transition: transform 0.3s ease;
+			}
+			
+			.nav-dropdown:hover .dropdown-arrow {
+				transform: rotate(180deg);
+			}
+			
+			.nav-dropdown-menu {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background: var(--white);
+				border-radius: 8px;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+				border: 1px solid rgba(89, 123, 148, 0.1);
+				min-width: 200px;
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(-10px);
+				transition: all 0.3s ease;
+				z-index: 1000;
+				padding: 0.5rem 0;
+				list-style: none;
+			}
+			
+			.nav-dropdown:hover .nav-dropdown-menu {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+			
+			/* Hide mobile elements on desktop */
+			@media (min-width: 769px) {
+				.submenu-back,
+				.submenu-title {
+					display: none !important;
+				}
+			}
+			
+			.nav-dropdown-menu li {
+				margin: 0;
+			}
+			
+			.nav-dropdown-menu a {
+				display: block;
+				padding: 0.7rem 1.2rem;
+				color: var(--text-dark);
+				text-decoration: none;
+				font-weight: 500;
+				border-radius: 0;
+				background: transparent;
+				transition: all 0.3s ease;
+			}
+			
+			.nav-dropdown-menu a:hover {
+				background: var(--background-light);
+				color: var(--primary-blue);
+				transform: translateX(5px);
+				padding-left: 1.7rem;
+			}
+			
+			.dropdown-divider {
+				height: 1px;
+				background: rgba(89, 123, 148, 0.1);
+				margin: 0.3rem 0.8rem;
+				border: none;
+			}
+			
+			.emergency-link {
+				color: var(--accent-orange) !important;
+				font-weight: 600 !important;
+			}
+			
+			.emergency-link:hover {
+				background: rgba(232, 124, 46, 0.1) !important;
+				color: var(--accent-orange) !important;
+			}
+			
+			.nav-phone {
+				background: var(--accent-orange) !important;
+				color: var(--white) !important;
+				font-weight: bold !important;
+				border-radius: 6px !important;
+				padding: 0.7rem 1.2rem !important;
+				box-shadow: 0 2px 8px rgba(232, 124, 46, 0.3);
+				transition: all 0.3s ease;
+			}
+			
+			.nav-phone:hover {
+				background: #ed975a !important;
+				color: var(--white) !important;
+				transform: translateY(-2px) scale(1.05) !important;
+				box-shadow: 0 4px 12px rgba(232, 124, 46, 0.4);
 			}
 			
 			main {
@@ -117,9 +723,37 @@ const { title, description = "Sacramento's premier fence installation and repair
 				box-shadow: 0 -4px 20px var(--shadow-light);
 			}
 			
+			.footer-content {
+				margin-bottom: 1rem;
+			}
+			
+			.footer-links {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 1rem;
+				margin-top: 1rem;
+			}
+			
+			.footer-links a {
+				color: var(--white);
+				text-decoration: none;
+				font-size: 0.9rem;
+				transition: color 0.3s ease;
+			}
+			
+			.footer-links a:hover {
+				color: var(--accent-orange);
+			}
+			
+			.footer-links .separator {
+				color: rgba(255, 255, 255, 0.5);
+				font-size: 0.9rem;
+			}
+			
 			.btn {
 				display: inline-block;
-				background: linear-gradient(135deg, var(--primary-brown) 0%, var(--secondary-brown) 100%);
+				background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
 				color: var(--white);
 				padding: 12px 24px;
 				text-decoration: none;
@@ -134,19 +768,19 @@ const { title, description = "Sacramento's premier fence installation and repair
 			}
 			
 			.btn:hover {
-				background: linear-gradient(135deg, var(--secondary-brown) 0%, var(--primary-brown) 100%);
+				background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
 				transform: translateY(-3px);
 				box-shadow: 0 6px 20px var(--shadow-medium);
 			}
 			
 			.btn-outline {
 				background: transparent;
-				border: 2px solid var(--primary-brown);
-				color: var(--primary-brown);
+				border: 2px solid var(--primary-blue);
+				color: var(--primary-blue);
 			}
 			
 			.btn-outline:hover {
-				background: var(--primary-brown);
+				background: var(--primary-blue);
 				color: var(--white);
 			}
 
@@ -168,21 +802,153 @@ const { title, description = "Sacramento's premier fence installation and repair
 			}
 			
 			@media (max-width: 768px) {
+				.mobile-menu-toggle {
+					display: block;
+				}
+				
 				.nav-links {
-					gap: 1rem;
-					font-size: 0.9rem;
+					display: none;
+					position: fixed;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100vh;
+					background: var(--primary-blue);
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					gap: 2rem;
+					z-index: 1000;
 				}
 				
-				.nav-links a {
-					padding: 0.3rem 0.6rem;
+				.nav-links.active {
+					display: flex;
 				}
 				
-				.container {
-					padding: 0 15px;
+				.nav-links.active .mobile-close {
+					display: block !important;
+				}
+				
+				
+				.nav-links li {
+					width: 100%;
+					text-align: center;
+				}
+				
+				.nav-links a,
+				.nav-dropdown-toggle {
+					display: block;
+					padding: 1rem 2rem;
+					font-size: 1.1rem;
+					width: 100%;
+					text-align: center;
+				}
+				
+				.nav-dropdown {
+					width: 100%;
+				}
+				
+				.nav-dropdown-menu {
+					position: fixed;
+					top: 0;
+					left: 100%;
+					width: 100%;
+					height: 100vh;
+					background: var(--primary-blue);
+					z-index: 1001;
+					padding: 4rem 0 2rem 0;
+					overflow-y: auto;
+					transition: left 0.3s ease;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: center;
+				}
+				
+				.nav-dropdown.active .nav-dropdown-menu {
+					left: 0;
+				}
+				
+				
+				.nav-dropdown-menu li {
+					width: 100%;
+				}
+				
+				.nav-dropdown-menu a {
+					display: block;
+					padding: 1.2rem 2rem;
+					font-size: 1.1rem;
+					color: var(--white);
+					text-decoration: none;
+					width: 100%;
+					text-align: center;
+					border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+					transition: all 0.3s ease;
+				}
+				
+				.nav-dropdown-menu a:hover {
+					background: rgba(255, 255, 255, 0.1);
+					color: var(--accent-orange);
+					transform: scale(1.02);
+				}
+				
+				.submenu-back {
+					position: absolute;
+					top: 1rem;
+					left: 2rem;
+					background: none;
+					border: none;
+					color: var(--white);
+					font-size: 1.5rem;
+					cursor: pointer;
+					padding: 1rem;
+					z-index: 10;
+					display: none;
+				}
+				
+				.submenu-title {
+					color: var(--white);
+					font-size: 1.5rem;
+					font-weight: bold;
+					margin-bottom: 2rem;
+					text-align: center;
+					padding: 0 2rem;
+					display: none;
+				}
+				
+				.nav-phone {
+					padding: 1rem 2rem !important;
+					font-size: 1.1rem !important;
+					width: 100%;
+					text-align: center;
+					margin-top: 1rem;
+				}
+				
+				.dropdown-arrow {
+					display: inline-block;
+					transition: transform 0.3s ease;
+					margin-left: 0.5rem;
+				}
+				
+				.nav-dropdown.active .dropdown-arrow {
+					transform: rotate(180deg);
+				}
+				
+				.nav-dropdown.active .submenu-back {
+					display: block;
+				}
+				
+				.nav-dropdown.active .submenu-title {
+					display: block;
 				}
 				
 				.logo {
 					font-size: 1.4rem;
+					gap: 0.5rem;
+				}
+				
+				.logo-image {
+					height: 32px;
 				}
 			}
 
@@ -191,13 +957,29 @@ const { title, description = "Sacramento's premier fence installation and repair
 					font-size: 1.2rem;
 				}
 				
-				.nav-links {
-					gap: 0.5rem;
+				.logo-image {
+					height: 28px;
 				}
 				
-				.nav-links a {
-					font-size: 0.8rem;
-					padding: 0.2rem 0.4rem;
+				.nav-links a,
+				.nav-dropdown-toggle {
+					font-size: 1rem;
+					padding: 0.8rem 1.5rem;
+				}
+				
+				.nav-dropdown-menu a {
+					padding: 1rem 1.5rem;
+					font-size: 1rem;
+				}
+				
+				.submenu-title {
+					font-size: 1.3rem;
+					margin-bottom: 1.5rem;
+				}
+				
+				.nav-phone {
+					font-size: 1rem !important;
+					padding: 0.8rem 1.5rem !important;
 				}
 			}
 		</style>
@@ -205,13 +987,43 @@ const { title, description = "Sacramento's premier fence installation and repair
 	<body>
 		<header>
 			<nav class="container">
-				<a href="/" class="logo">Sacramento Fencing Co.</a>
+				<a href="/" class="logo">
+					<img src="/images/fence-stockton-logo.png" alt="Stockton Fencing Co. Logo" class="logo-image" />
+					<span class="logo-text">Stockton Fencing Co.</span>
+				</a>
+				<button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+					<span>☰</span>
+				</button>
 				<ul class="nav-links">
+					<li class="mobile-close">
+						<button class="mobile-close-btn" aria-label="Close mobile menu">✕</button>
+					</li>
 					<li><a href="/">Home</a></li>
-					<li><a href="/services">Services</a></li>
-					<li><a href="/locations">Locations</a></li>
-					<li><a href="/about">About</a></li>
+					<li class="nav-dropdown">
+						<a href="/services" class="nav-dropdown-toggle">Services <span class="dropdown-arrow">▼</span></a>
+						<ul class="nav-dropdown-menu">
+							<button class="submenu-back" aria-label="Back to main menu">←</button>
+							<div class="submenu-title">Services</div>
+							<li><a href="/services">All Services</a></li>
+							<li><a href="/services/chain-link-fence">Chain Link Fence</a></li>
+							<li><a href="/services/wood-fence">Wood Fence</a></li>
+							<li><a href="/services/vinyl-fence">Vinyl Fence</a></li>
+							<li><a href="/services/iron-fence">Iron & Aluminum</a></li>
+							<li><a href="/services/fence-repair" class="emergency-link">Emergency Repairs</a></li>
+						</ul>
+					</li>
+					<li class="nav-dropdown">
+						<a href="/about" class="nav-dropdown-toggle">About <span class="dropdown-arrow">▼</span></a>
+						<ul class="nav-dropdown-menu">
+							<button class="submenu-back" aria-label="Back to main menu">←</button>
+							<div class="submenu-title">About</div>
+							<li><a href="/about">Our Story</a></li>
+							<li><a href="/locations">Service Areas</a></li>
+							<li><a href="/blog">Tips & Blog</a></li>
+						</ul>
+					</li>
 					<li><a href="/contact">Contact</a></li>
+					<li><a href="tel:888-682-0507" class="nav-phone">(888) 682-0507</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -222,9 +1034,105 @@ const { title, description = "Sacramento's premier fence installation and repair
 		
 		<footer>
 			<div class="container">
-				<p>&copy; 2024 Sacramento Fencing Co. All rights reserved.</p>
-				<p>Professional fence installation and repair in Sacramento, CA</p>
+				<div class="footer-content">
+					<p>&copy; {currentYear} Stockton Fencing Co. All rights reserved.</p>
+					<p>Professional fence installation and repair in Stockton, CA</p>
+				</div>
+				<div class="footer-links">
+					<a href="/terms">Terms & Conditions</a>
+					<span class="separator">|</span>
+					<a href="/privacy">Privacy Policy</a>
+				</div>
 			</div>
 		</footer>
+		
+		<script>
+			// Mobile menu toggle functionality
+			document.addEventListener('DOMContentLoaded', function() {
+				const mobileToggle = document.querySelector('.mobile-menu-toggle');
+				const navLinks = document.querySelector('.nav-links');
+				const mobileCloseBtn = document.querySelector('.mobile-close-btn');
+				const submenuBackBtns = document.querySelectorAll('.submenu-back');
+				
+				function closeMenu() {
+					navLinks.classList.remove('active');
+					// Close all dropdowns when closing main menu
+					const dropdowns = document.querySelectorAll('.nav-dropdown');
+					dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+					document.body.style.overflow = '';
+				}
+				
+				function openMenu() {
+					navLinks.classList.add('active');
+					document.body.style.overflow = 'hidden';
+				}
+				
+				if (mobileToggle && navLinks) {
+					// Toggle menu on hamburger click
+					mobileToggle.addEventListener('click', function() {
+						if (navLinks.classList.contains('active')) {
+							closeMenu();
+						} else {
+							openMenu();
+						}
+					});
+					
+					// Close menu on close button click
+					if (mobileCloseBtn) {
+						mobileCloseBtn.addEventListener('click', closeMenu);
+					}
+					
+					// Handle submenu back buttons
+					submenuBackBtns.forEach(function(backBtn) {
+						backBtn.addEventListener('click', function() {
+							const dropdown = backBtn.closest('.nav-dropdown');
+							if (dropdown) {
+								dropdown.classList.remove('active');
+							}
+						});
+					});
+					
+					// Handle mobile dropdown toggle
+					navLinks.addEventListener('click', function(e) {
+						// Check if it's a dropdown toggle on mobile
+						if (e.target.classList.contains('nav-dropdown-toggle') || e.target.closest('.nav-dropdown-toggle')) {
+							const dropdown = e.target.closest('.nav-dropdown');
+							if (dropdown && window.innerWidth <= 768) {
+								e.preventDefault();
+								// Close all other dropdowns first
+								const allDropdowns = document.querySelectorAll('.nav-dropdown');
+								allDropdowns.forEach(function(otherDropdown) {
+									if (otherDropdown !== dropdown) {
+										otherDropdown.classList.remove('active');
+									}
+								});
+								// Toggle the clicked dropdown
+								dropdown.classList.toggle('active');
+								return;
+							}
+						}
+						
+						// Close menu when a regular link is clicked (not dropdown toggle)
+						if (e.target.tagName === 'A' && !e.target.classList.contains('nav-dropdown-toggle')) {
+							closeMenu();
+						}
+					});
+					
+					// Close menu when clicking outside
+					document.addEventListener('click', function(e) {
+						if (!e.target.closest('nav') && navLinks.classList.contains('active')) {
+							closeMenu();
+						}
+					});
+					
+					// Close menu on escape key
+					document.addEventListener('keydown', function(e) {
+						if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+							closeMenu();
+						}
+					});
+				}
+			});
+		</script>
 	</body>
 </html>

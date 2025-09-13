@@ -1,13 +1,13 @@
-# Sacramento Fencing Co. Website
+# Stockton Fencing Co. Website
 
-A professional, responsive website for Sacramento Fencing Co., a leading fence installation and repair company serving Sacramento County, California.
+A professional, responsive website for Stockton Fencing Co., a leading fence installation and repair company serving San Joaquin County, California.
 
 ## 🏆 Features
 
 - **Professional Design**: Modern, mobile-responsive design with smooth animations
 - **Complete Business Website**: Homepage, Services, Locations, About, and Contact pages
 - **Service Showcase**: Detailed information about wood, vinyl, chain link, and ornamental iron fencing
-- **Location Coverage**: Comprehensive Sacramento County service area information
+- **Location Coverage**: Comprehensive San Joaquin County service area information
 - **Contact Integration**: Professional contact form with form validation
 - **SEO Optimized**: Meta tags, semantic HTML, and search engine friendly structure
 
@@ -15,7 +15,7 @@ A professional, responsive website for Sacramento Fencing Co., a leading fence i
 
 - **Homepage**: Hero section, company features, service preview, customer testimonials
 - **Services**: Detailed fence types, pricing, warranties, and installation process
-- **Locations**: Service areas throughout Sacramento County with response times
+- **Locations**: Service areas throughout San Joaquin County with response times
 - **About**: Company history, team members, achievements, and community involvement  
 - **Contact**: Contact form, business information, service areas, and emergency services
 
@@ -80,10 +80,10 @@ vercel --prod
 
 ## 💼 Business Information
 
-**Sacramento Fencing Co.**
-- **Phone**: (916) 555-FENCE
-- **Email**: info@sacramentofencing.com  
-- **Service Area**: Sacramento County & Surrounding Areas
+**Stockton Fencing Co.**
+- **Phone**: (888) 682-0507
+- **Email**: info@fencestockton.com  
+- **Service Area**: San Joaquin County & Surrounding Areas
 - **Established**: 1998
 - **Specialties**: Wood, Vinyl, Chain Link, Ornamental Iron Fencing
 
