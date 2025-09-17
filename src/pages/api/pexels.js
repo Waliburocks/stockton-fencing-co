@@ -8,7 +8,8 @@ if (!PEXELS_API_KEY) {
   console.error('PEXELS_API_KEY environment variable is not set');
 }
 
-export async function GET({ url }) {
+export async function GET({ request }) {
+  const url = new URL(request.url);
   const params = new URLSearchParams(url.search);
   const action = params.get('action');
   const query = params.get('query');
@@ -18,6 +19,7 @@ export async function GET({ url }) {
   const size = params.get('size') || '';
   const color = params.get('color') || '';
   const photoId = params.get('id');
+
 
   try {
     let apiUrl = '';
