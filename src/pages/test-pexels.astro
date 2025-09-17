@@ -1,0 +1,44 @@
+---
+// Simple test page to verify Pexels integration
+---
+
+<html>
+  <head>
+    <title>Pexels API Test</title>
+  </head>
+  <body>
+    <h1>Pexels API Test</h1>
+    <div id="test-results"></div>
+    
+    <script>
+      async function testPexelsAPI() {
+        const resultsDiv = document.getElementById('test-results');
+        
+        try {
+          // Test curated photos
+          resultsDiv.innerHTML = '<p>Testing curated photos...</p>';
+          const response = await fetch('/api/pexels?action=curated&per_page=5');
+          
+          if (response.ok) {
+            const data = await response.json();
+            resultsDiv.innerHTML = `
+              <h2>✅ API Working!</h2>
+              <p>Found ${data.photos.length} curated photos</p>
+              <p>Total available: ${data.total_results}</p>
+              <h3>Sample Photo:</h3>
+              <img src="${data.photos[0].src.medium}" alt="${data.photos[0].alt}" style="max-width: 300px;">
+              <p>By: ${data.photos[0].photographer}</p>
+            `;
+          } else {
+            resultsDiv.innerHTML = `<p>❌ API Error: ${response.status}</p>`;
+          }
+        } catch (error) {
+          resultsDiv.innerHTML = `<p>❌ Error: ${error.message}</p>`;
+        }
+      }
+      
+      // Run test when page loads
+      testPexelsAPI();
+    </script>
+  </body>
+</html>

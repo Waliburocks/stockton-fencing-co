@@ -1,0 +1,324 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PexelsImageSearch from '../../components/PexelsImageSearch.jsx';
+---
+
+<Layout 
+	title="Image Management - Admin | Stockton Fencing Co." 
+	description="Manage website images and search Pexels for new content" 
+	canonicalUrl="/admin/images">
+	
+	<main class="admin-page">
+		<div class="admin-header">
+			<div class="container">
+				<h1>Image Management</h1>
+				<p>Search, preview, and download images from Pexels for your website</p>
+			</div>
+		</div>
+
+		<div class="admin-content">
+			<div class="container">
+				<!-- Pexels Search Component -->
+				<PexelsImageSearch client:load />
+				
+				<!-- Instructions Panel -->
+				<div class="instructions-panel">
+					<h2>How to Use</h2>
+					<div class="instructions-grid">
+						<div class="instruction-card">
+							<h3>🔍 Search Images</h3>
+							<p>Use the search bar to find specific images, or click on suggested terms for fence-related content. Use filters to narrow down by orientation, size, and color.</p>
+						</div>
+						
+						<div class="instruction-card">
+							<h3>👁️ Preview & Validate</h3>
+							<p>Click on any image to see a detailed view with recommendations for use on your fencing website. Check warnings and suggested use cases.</p>
+						</div>
+						
+						<div class="instruction-card">
+							<h3>📥 Download Images</h3>
+							<p>Download images in various sizes. The system will provide proper attribution text that you must include when using the image.</p>
+						</div>
+						
+						<div class="instruction-card">
+							<h3>📋 Copy Attribution</h3>
+							<p>Always copy and use the provided attribution. Available in HTML, text, and markdown formats. This is required by Pexels license.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Usage Guidelines -->
+				<div class="guidelines-panel">
+					<h2>Pexels License Guidelines</h2>
+					<div class="guidelines-content">
+						<div class="guideline-section">
+							<h3>✅ What You Can Do</h3>
+							<ul>
+								<li>Use images for commercial and personal projects</li>
+								<li>Modify and edit the images</li>
+								<li>Use images on websites, blogs, and social media</li>
+								<li>Use images in marketing materials</li>
+								<li>Download and use images without asking permission</li>
+							</ul>
+						</div>
+						
+						<div class="guideline-section">
+							<h3>❌ What You Cannot Do</h3>
+							<ul>
+								<li>Sell unmodified images</li>
+								<li>Use images to create competing stock photo services</li>
+								<li>Use images in a way that suggests photographer endorsement</li>
+								<li>Use identifiable people in images for commercial purposes without consent</li>
+								<li>Distribute images as standalone downloads</li>
+							</ul>
+						</div>
+						
+						<div class="guideline-section">
+							<h3>🏷️ Attribution Requirements</h3>
+							<ul>
+								<li>Attribution is not required but greatly appreciated</li>
+								<li>When provided, use the format: "Photo by [Photographer] on Pexels"</li>
+								<li>Include photographer and Pexels links when possible</li>
+								<li>The system automatically generates proper attribution for you</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Image Organization Tips -->
+				<div class="organization-panel">
+					<h2>Image Organization Tips</h2>
+					<div class="tips-grid">
+						<div class="tip-card">
+							<h3>📁 File Naming</h3>
+							<p>Use descriptive names like <code>wooden-fence-installation.jpg</code> rather than generic names. Include relevant keywords for SEO.</p>
+						</div>
+						
+						<div class="tip-card">
+							<h3>📏 Size Selection</h3>
+							<p><strong>Large/Large2x:</strong> Hero sections, banners<br>
+							<strong>Medium:</strong> Blog posts, service pages<br>
+							<strong>Small:</strong> Thumbnails, gallery images</p>
+						</div>
+						
+						<div class="tip-card">
+							<h3>🎯 SEO Optimization</h3>
+							<p>Always add descriptive alt text that includes relevant keywords. Use the auto-generated suggestions as a starting point.</p>
+						</div>
+						
+						<div class="tip-card">
+							<h3>🗂️ Folder Structure</h3>
+							<p>Organize images in logical folders: <code>/images/blog/</code>, <code>/images/services/</code>, <code>/images/gallery/</code></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	/* Admin page styles */
+	.admin-page {
+		min-height: 100vh;
+		background: #f8f9fa;
+	}
+
+	.admin-header {
+		background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+		color: white;
+		padding: 3rem 0;
+		text-align: center;
+	}
+
+	.admin-header h1 {
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+	}
+
+	.admin-header p {
+		font-size: 1.2rem;
+		opacity: 0.9;
+	}
+
+	.admin-content {
+		padding: 3rem 0;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	/* Instructions Panel */
+	.instructions-panel {
+		background: white;
+		border-radius: 8px;
+		padding: 2rem;
+		margin: 2rem 0;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.instructions-panel h2 {
+		color: #2c5530;
+		font-size: 1.8rem;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.instructions-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.instruction-card {
+		background: #f8f9fa;
+		padding: 1.5rem;
+		border-radius: 6px;
+		border-left: 4px solid #2c5530;
+	}
+
+	.instruction-card h3 {
+		color: #2c5530;
+		font-size: 1.2rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.instruction-card p {
+		color: #666;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	/* Guidelines Panel */
+	.guidelines-panel {
+		background: white;
+		border-radius: 8px;
+		padding: 2rem;
+		margin: 2rem 0;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.guidelines-panel h2 {
+		color: #2c5530;
+		font-size: 1.8rem;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.guidelines-content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.guideline-section h3 {
+		color: #2c5530;
+		font-size: 1.3rem;
+		margin-bottom: 1rem;
+	}
+
+	.guideline-section ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	.guideline-section li {
+		padding: 0.5rem 0;
+		padding-left: 1.5rem;
+		position: relative;
+		line-height: 1.5;
+	}
+
+	.guideline-section li::before {
+		content: "•";
+		color: #2c5530;
+		font-weight: bold;
+		position: absolute;
+		left: 0;
+	}
+
+	/* Organization Panel */
+	.organization-panel {
+		background: white;
+		border-radius: 8px;
+		padding: 2rem;
+		margin: 2rem 0;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.organization-panel h2 {
+		color: #2c5530;
+		font-size: 1.8rem;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.tips-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.tip-card {
+		background: #f8f9fa;
+		padding: 1.5rem;
+		border-radius: 6px;
+		border-left: 4px solid #4a7c59;
+	}
+
+	.tip-card h3 {
+		color: #2c5530;
+		font-size: 1.2rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.tip-card p {
+		color: #666;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.tip-card code {
+		background: #e9ecef;
+		padding: 0.2rem 0.4rem;
+		border-radius: 3px;
+		font-family: 'Courier New', monospace;
+		font-size: 0.9rem;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.admin-header {
+			padding: 2rem 0;
+		}
+
+		.admin-header h1 {
+			font-size: 2rem;
+		}
+
+		.admin-header p {
+			font-size: 1rem;
+		}
+
+		.container {
+			padding: 0 1rem;
+		}
+
+		.instructions-grid,
+		.guidelines-content,
+		.tips-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.instructions-panel,
+		.guidelines-panel,
+		.organization-panel {
+			padding: 1.5rem;
+			margin: 1rem 0;
+		}
+	}
+</style>
