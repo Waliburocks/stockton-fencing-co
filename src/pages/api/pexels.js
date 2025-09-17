@@ -1,8 +1,12 @@
 // API endpoint for Pexels integration
 // This handles server-side API calls to avoid CORS issues
 
-const PEXELS_API_KEY = 'JuTfCn5YnJ9d0FcNpOmDvsQzjxSsttmdOyhrvbmbkVwCnlVxnHNHY18J';
+const PEXELS_API_KEY = import.meta.env.PEXELS_API_KEY || process.env.PEXELS_API_KEY;
 const PEXELS_BASE_URL = 'https://api.pexels.com/v1';
+
+if (!PEXELS_API_KEY) {
+  console.error('PEXELS_API_KEY environment variable is not set');
+}
 
 export async function GET({ url }) {
   const params = new URLSearchParams(url.search);

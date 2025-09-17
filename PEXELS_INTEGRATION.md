@@ -58,13 +58,18 @@ src/
 
 ## API Configuration
 
-Your Pexels API key is configured in `/src/pages/api/pexels.js`. The current key is:
+Your Pexels API key is configured via environment variables for security.
 
-```
-JuTfCn5YnJ9d0FcNpOmDvsQzjxSsttmdOyhrvbmbkVwCnlVxnHNHY18J
-```
+**Setup Instructions:**
 
-**Important**: Keep this key secure and don't commit it to public repositories in production.
+1. Create a `.env` file in your project root (already ignored by git)
+2. Add your Pexels API key: `PEXELS_API_KEY=your_actual_key_here`
+3. The API endpoint will automatically use this environment variable
+
+**Important**: 
+- Never commit API keys to public repositories
+- The `.env` file is automatically ignored by git for security
+- For production deployment, set the `PEXELS_API_KEY` environment variable in your hosting platform (Netlify, Vercel, etc.)
 
 ## Available Functions
 
