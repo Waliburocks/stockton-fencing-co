@@ -5,6 +5,19 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Force HTTPS for all traffic
+[[redirects]]
+  from = "http://fencestockton.com/*"
+  to = "https://fencestockton.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.fencestockton.com/*"
+  to = "https://fencestockton.com/:splat"
+  status = 301
+  force = true
+
 # Handle SPA routing for subpages
 [[redirects]]
   from = "/*"
