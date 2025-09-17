@@ -5,6 +5,15 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
 # Force HTTPS for all traffic
 [[redirects]]
   from = "http://fencestockton.com/*"
