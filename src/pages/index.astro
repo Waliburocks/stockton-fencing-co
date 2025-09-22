@@ -49,23 +49,26 @@ import Layout from '../layouts/Layout.astro';
 	<section class="hero">
 		<div class="hero-image-container">
 			<picture class="hero-picture">
-				<source 
-					media="(max-width: 480px)" 
-					srcset="/images/hero-fencing-mobile.webp" 
-					type="image/webp">
-				<source 
-					media="(max-width: 768px)" 
-					srcset="/images/hero-fencing-tablet.webp" 
-					type="image/webp">
-				<source 
-					srcset="/images/hero-fencing-professional.webp" 
-					type="image/webp">
-				<img 
-					src="/images/hero-fence.svg" 
-					alt="Professional fence installation and repair services in Stockton - beautiful wooden fence with modern design showcasing quality craftsmanship" 
-					class="hero-image" 
-					loading="eager" 
-					width="1200" 
+				<source
+					media="(max-width: 480px)"
+					srcset="/images/hero-fencing-mobile.webp"
+					type="image/webp"
+					fetchpriority="high">
+				<source
+					media="(max-width: 768px)"
+					srcset="/images/hero-fencing-tablet.webp"
+					type="image/webp"
+					fetchpriority="high">
+				<source
+					srcset="/images/hero-fencing-professional.webp"
+					type="image/webp"
+					fetchpriority="high">
+				<img
+					src="/images/hero-fencing-mobile.webp"
+					alt="Professional fence installation and repair services in Stockton - beautiful wooden fence with modern design showcasing quality craftsmanship"
+					class="hero-image"
+					loading="eager"
+					width="1200"
 					height="600"
 					fetchpriority="high" />
 			</picture>
@@ -111,7 +114,14 @@ import Layout from '../layouts/Layout.astro';
 			<div class="services-grid">
 				<div class="service-card">
 					<a href="/services/chain-link-fence" class="service-card-link">
-						<img src="/images/chain-link-fence-photo.webp" alt="Chain link fence installation Stockton" class="service-image" loading="lazy" />
+						<img
+							src="/images/chain-link-fence-photo.webp"
+							alt="Chain link fence installation Stockton"
+							class="service-image"
+							loading="lazy"
+							width="350"
+							height="350"
+							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 350px" />
 						<h3>Chain Link</h3>
 						<p>Affordable security fencing for residential and commercial properties.</p>
 						<div class="service-cta">
@@ -124,7 +134,14 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="service-card">
 					<a href="/services/wood-fence" class="service-card-link">
-						<img src="/images/wood-fence-photo.webp" alt="Wood fence installation Stockton" class="service-image" loading="lazy" />
+						<img
+							src="/images/wood-fence-photo.webp"
+							alt="Wood fence installation Stockton"
+							class="service-image"
+							loading="lazy"
+							width="350"
+							height="350"
+							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 350px" />
 						<h3>Wood Fencing</h3>
 						<p>Cedar, redwood, and pressure-treated options for privacy and beauty.</p>
 						<div class="service-cta">
@@ -137,7 +154,14 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="service-card">
 					<a href="/services/vinyl-fence" class="service-card-link">
-						<img src="/images/vinyl-fence-photo.webp" alt="Vinyl fence installation Stockton" class="service-image" loading="lazy" />
+						<img
+							src="/images/vinyl-fence-photo.webp"
+							alt="Vinyl fence installation Stockton"
+							class="service-image"
+							loading="lazy"
+							width="350"
+							height="350"
+							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 350px" />
 						<h3>Vinyl Fencing</h3>
 						<p>Low-maintenance, durable fencing that looks great for years.</p>
 						<div class="service-cta">
@@ -150,7 +174,14 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="service-card">
 					<a href="/services/iron-fence" class="service-card-link">
-						<img src="/images/iron-fence-photo.webp" alt="Ornamental iron fence installation Stockton" class="service-image" loading="lazy" />
+						<img
+							src="/images/iron-fence-photo.webp"
+							alt="Ornamental iron fence installation Stockton"
+							class="service-image"
+							loading="lazy"
+							width="350"
+							height="350"
+							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 350px" />
 						<h3>Ornamental Iron</h3>
 						<p>Elegant wrought iron and aluminum fencing for upscale properties.</p>
 						<div class="service-cta">
