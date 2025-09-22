@@ -78,25 +78,37 @@ import Layout from '../../layouts/Layout.astro';
 			</div>
 		</div>
 
-		<!-- Post Header -->
-		<div class="post-header">
-			<div class="container">
-				<h1>How Much Do Fences Cost in Stockton? 2024 Complete Price Guide</h1>
-				<div class="post-meta">
-					<span class="author">By Stockton Fencing Team</span>
-					<span class="date">September 15, 2024</span>
-					<span class="read-time">10 min read</span>
+	</section>
+
+	<section class="hero">
+		<div class="hero-image-container">
+			<picture class="hero-picture">
+				<source srcset="/images/blog/fence-cost-calculator.jpg" type="image/jpeg">
+				<img src="/images/blog/fence-cost-calculator.jpg" alt="Professional fence cost calculation and planning in Stockton" class="hero-image" loading="eager" width="1200" height="400" />
+			</picture>
+			<div class="hero-overlay">
+				<div class="hero-content">
+					<h1>How Much Do Fences Cost in Stockton? 2024 Complete Price Guide</h1>
+					<p>Complete guide to fence costs in Stockton, CA</p>
 				</div>
 			</div>
 		</div>
+	</section>
 
-		<div class="featured-image">
+	<main class="blog-post">
+		<article class="article-content">
 			<div class="container">
-				<img src="/images/blog/fence-cost-calculator.jpg" alt="Professional fence cost calculation and planning in Stockton" loading="eager" width="800" height="600" />
-			</div>
-		</div>
+				<header class="article-header">
+					<div class="article-meta">
+						<span class="category">Pricing</span>
+						<time datetime="2024-09-15">September 15, 2024</time>
+						<span class="reading-time">10 min read</span>
+					</div>
+				</header>
 
-		<div class="post-content">
+				<div class="content-wrapper">
+					<div class="article-text">
+						<div class="post-content">
 			<div class="container">
 				<div class="content-wrapper">
 					<article class="main-content">
@@ -451,18 +463,121 @@ import Layout from '../../layouts/Layout.astro';
 		color: #6c757d;
 	}
 
-	.post-header {
-		background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
-		color: white;
-		padding: 3rem 0;
+	.hero {
+		position: relative;
+		min-height: 400px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-image-container {
+		position: relative;
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+	}
+	
+	.hero-picture {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	
+	.hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+	}
+	
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, 
+			rgba(89, 123, 148, 0.85) 0%, 
+			rgba(70, 98, 117, 0.9) 100%
+		);
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-content {
 		text-align: center;
+		color: var(--white);
+		z-index: 2;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+	
+	.hero h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		font-weight: 700;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	}
+	
+	.hero p {
+		font-size: 1.2rem;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 	}
 
-	.post-header h1 {
-		font-size: 2.5rem;
-		font-weight: 700;
-		margin-bottom: 1rem;
-		line-height: 1.2;
+	.blog-post {
+		background: var(--white);
+	}
+	
+	.article-content {
+		padding: 3rem 0;
+	}
+	
+	.article-header {
+		margin-bottom: 3rem;
+		padding: 0 2rem;
+	}
+	
+	.article-meta {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+		flex-wrap: wrap;
+		font-size: 0.9rem;
+		color: var(--text-light);
+	}
+	
+	.category {
+		background: var(--primary-blue);
+		color: var(--white);
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-weight: 600;
+		font-size: 0.8rem;
+	}
+	
+	.reading-time {
+		color: var(--neutral-cool);
+	}
+	
+	.content-wrapper {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+	
+	.lead {
+		font-size: 1.2rem;
+		line-height: 1.8;
+		color: var(--text-medium);
+		margin-bottom: 2.5rem;
+		padding: 1.5rem;
+		background: var(--background-light);
+		border-left: 4px solid var(--primary-blue);
+		border-radius: 0 8px 8px 0;
 	}
 
 	.post-meta {
