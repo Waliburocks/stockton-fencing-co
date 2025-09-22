@@ -92,15 +92,90 @@ const finalCanonicalUrl = getCanonicalUrl();
 		<link rel="preload" as="image" href="/images/hero-fencing-professional.webp" type="image/webp" media="(min-width: 769px)" />
 		
 		<title>{title}</title>
-		
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-LWSFZV3CZ1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
 
-		  gtag('config', 'G-LWSFZV3CZ1');
+		<!-- Critical CSS inlined for faster rendering -->
+		<style>
+			/* Critical above-the-fold styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				line-height: 1.6;
+				color: #2c3e50;
+				background-color: #ffffff;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+
+			header {
+				background: linear-gradient(135deg, #597B94 0%, #466275 100%);
+				color: #ffffff;
+				padding: 1rem 0;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+				box-shadow: 0 4px 20px rgba(89, 123, 148, 0.2);
+			}
+
+			nav {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.hero {
+				position: relative;
+				min-height: 400px;
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+			}
+
+			.hero-image {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+				display: block;
+			}
+		</style>
+
+		<!-- Load non-critical CSS asynchronously -->
+		<script>
+		  // Load non-critical CSS after page load
+		  window.addEventListener('load', function() {
+		    var link = document.createElement('link');
+		    link.rel = 'stylesheet';
+		    link.href = '/_astro/index.DwtZICxu.css';
+		    document.head.appendChild(link);
+		  });
+		</script>
+		
+		<!-- Deferred Google Analytics - Load after critical content -->
+		<script>
+		  // Defer Google Analytics to after page load to avoid forced reflows
+		  window.addEventListener('load', function() {
+		    // Load gtag script
+		    var script = document.createElement('script');
+		    script.async = true;
+		    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-LWSFZV3CZ1';
+		    document.head.appendChild(script);
+
+		    // Initialize gtag
+		    window.dataLayer = window.dataLayer || [];
+		    function gtag(){dataLayer.push(arguments);}
+		    gtag('js', new Date());
+		    gtag('config', 'G-LWSFZV3CZ1');
+		    window.gtag = gtag;
+		  });
 		</script>
 		
 		<!-- LocalBusiness Schema Markup for Stockton Fencing Co -->
@@ -463,8 +538,26 @@ const finalCanonicalUrl = getCanonicalUrl();
 		}
 		</script>
 
-		<!-- AltText AI Script -->
-		<script type="module" defer id="alttextai-ujs" src="https://ujs.alttext.ai/alttextai-ujs.js?site-key=c95c60cfd5def341"></script>
+		<!-- AltText AI Script - Load after user interaction or delay -->
+		<script>
+		  // Defer AltText AI to after user interaction to avoid forced reflows
+		  function loadAltTextAI() {
+		    if (document.getElementById('alttextai-ujs')) return;
+		    var script = document.createElement('script');
+		    script.type = 'module';
+		    script.id = 'alttextai-ujs';
+		    script.src = 'https://ujs.alttext.ai/alttextai-ujs.js?site-key=c95c60cfd5def341';
+		    document.head.appendChild(script);
+		  }
+
+		  // Load on first user interaction for better performance
+		  ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(function(event) {
+		    document.addEventListener(event, loadAltTextAI, { once: true, passive: true });
+		  });
+
+		  // Fallback: load after 3 seconds if no interaction
+		  setTimeout(loadAltTextAI, 3000);
+		</script>
 
 		<style>
 			:root {
