@@ -1,642 +1,318 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const schemaData = {
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	"@id": "https://stockton-fencing.co/blog/what-to-do-damaged-fence",
+	"headline": "What to Do When Your Fence is Damaged",
+	"description": "Complete guide on handling fence damage in Stockton. From emergency repairs to insurance claims, learn the steps to take when your fence is damaged.",
+	"image": "https://stockton-fencing.co/images/blog/damaged-fence-repair.jpg",
+	"datePublished": "2024-09-15T10:00:00-07:00",
+	"dateModified": "2024-09-15T10:00:00-07:00",
+	"author": {
+		"@type": "Person",
+		"name": "Stockton Fencing Team"
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "Stockton Fencing Co.",
+		"@id": "https://stockton-fencing.co/#business",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://stockton-fencing.co/images/fence-stockton-logo.png"
+		}
+	},
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": "https://stockton-fencing.co/blog/what-to-do-damaged-fence"
+	},
+	"wordCount": 1500,
+	"articleSection": "Guide",
+	"keywords": ["damaged fence repair", "fence emergency", "Stockton fence damage", "fence insurance claims", "broken fence repair", "fence storm damage"],
+	"breadcrumb": {
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "Home",
+				"item": "https://stockton-fencing.co/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "Blog",
+				"item": "https://stockton-fencing.co/blog"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
+				"name": "What to Do When Your Fence is Damaged",
+				"item": "https://stockton-fencing.co/blog/what-to-do-damaged-fence"
+			}
+		]
+	}
+};
 ---
 
-<Layout 
-	title="What to Do When Your Fence is Damaged | Emergency Repair Guide | Stockton Fencing Co." 
-	description="Discover what to do when your fence is damaged in Stockton. Get expert advice on emergency repairs, insurance claims, and when to call professionals. Fast, reliable solutions." 
-	canonicalUrl="/blog/what-to-do-damaged-fence">
+<BlogLayout 
+	title="What to Do When Your Fence is Damaged | Emergency Repair Guide | Stockton Fencing Co."
+	description="Discover what to do when your fence is damaged in Stockton. Get expert advice on emergency repairs, insurance claims, and when to call professionals. Fast, reliable solutions."
+	canonicalUrl="/blog/what-to-do-damaged-fence"
+	heroImage="/images/blog/damaged-fence-repair.jpg"
+	heroImageAlt="Damaged fence being repaired by professional contractors in Stockton"
+	heroTitle="What to Do When Your Fence is Damaged"
+	heroSubtitle="Emergency guide for handling fence damage from storms, accidents, or wear"
+	publishDate="September 15, 2024"
+	category="Emergency"
+	readingTime="8 min read"
+	breadcrumbTitle="What to Do When Your Fence is Damaged"
+	schemaData={schemaData}
+>
+	<div class="intro-section">
+		<p class="lead">Discovering a damaged fence on your Stockton property can be stressful, especially when it affects your privacy, security, or curb appeal. Whether the damage resulted from severe weather, accidents, or normal wear and tear, knowing the right steps to take can save you time, money, and prevent further complications.</p>
+		
+		<p>In Stockton's climate, with occasional strong winds and weather extremes, fence damage is more common than many homeowners expect. This comprehensive guide will walk you through exactly what to do when your fence is damaged, from immediate safety measures to long-term repair solutions.</p>
+	</div>
+
+	<h2>Immediate Steps: Safety First</h2>
 	
-	<!-- Blog Post Schema Markup -->
-	<script type="application/ld+json" slot="head">
-	{
-		"@context": "https://schema.org",
-		"@type": "BlogPosting",
-		"@id": "https://stockton-fencing.co/blog/what-to-do-damaged-fence",
-		"headline": "What to Do When Your Fence is Damaged",
-		"description": "Complete guide on handling fence damage in Stockton. From emergency repairs to insurance claims, learn the steps to take when your fence is damaged.",
-		"image": "https://stockton-fencing.co/images/blog/damaged-fence-repair.jpg",
-		"datePublished": "2024-09-15T10:00:00-07:00",
-		"dateModified": "2024-09-15T10:00:00-07:00",
-		"author": {
-			"@type": "Person",
-			"name": "Stockton Fencing Team"
-		},
-		"publisher": {
-			"@type": "Organization",
-			"name": "Stockton Fencing Co.",
-			"@id": "https://stockton-fencing.co/#business",
-			"logo": {
-				"@type": "ImageObject",
-				"url": "https://stockton-fencing.co/images/fence-stockton-logo.png"
-			}
-		},
-		"mainEntityOfPage": {
-			"@type": "WebPage",
-			"@id": "https://stockton-fencing.co/blog/what-to-do-damaged-fence"
-		},
-		"wordCount": 1500,
-		"articleSection": "Guide",
-		"keywords": ["damaged fence repair", "fence emergency", "Stockton fence damage", "fence insurance claims", "broken fence repair", "fence storm damage"],
-		"breadcrumb": {
-			"@type": "BreadcrumbList",
-			"itemListElement": [
-				{
-					"@type": "ListItem",
-					"position": 1,
-					"name": "Home",
-					"item": "https://stockton-fencing.co/"
-				},
-				{
-					"@type": "ListItem",
-					"position": 2,
-					"name": "Blog",
-					"item": "https://stockton-fencing.co/blog"
-				},
-				{
-					"@type": "ListItem",
-					"position": 3,
-					"name": "What to Do When Your Fence is Damaged",
-					"item": "https://stockton-fencing.co/blog/what-to-do-damaged-fence"
-				}
-			]
-		}
-	}
-	</script>
+	<h3>1. Assess the Safety Risk</h3>
+	<p>Before doing anything else, evaluate whether the damaged fence poses an immediate safety hazard:</p>
+	<ul>
+		<li><strong>Structural integrity:</strong> Are fence posts leaning dangerously or completely fallen?</li>
+		<li><strong>Sharp edges:</strong> Are there broken boards with splinters or metal edges that could cause injury?</li>
+		<li><strong>Electrical concerns:</strong> Has the fence damage affected any electrical wiring or lighting?</li>
+		<li><strong>Traffic hazards:</strong> Does the damage create visibility or access issues near roadways?</li>
+	</ul>
 
-	<main>
-		<!-- Breadcrumbs -->
-		<div class="breadcrumbs">
-			<div class="container">
-				<nav aria-label="breadcrumb">
-					<a href="/">Home</a>
-					<span>></span>
-					<a href="/blog">Blog</a>
-					<span>></span>
-					<span>What to Do When Your Fence is Damaged</span>
-				</nav>
+	<p>If the damage poses immediate danger to people or property, secure the area immediately and consider calling emergency services if necessary.</p>
+
+	<h3>2. Document Everything</h3>
+	<p>Proper documentation is crucial for insurance claims and repair estimates:</p>
+	<ul>
+		<li>Take multiple photos from different angles</li>
+		<li>Capture close-up shots of specific damage areas</li>
+		<li>Include wide shots showing the overall scope of damage</li>
+		<li>Note the date and time of discovery</li>
+		<li>Write detailed descriptions of what you observe</li>
+	</ul>
+
+	<h3>3. Secure the Area</h3>
+	<p>Take immediate steps to prevent further damage or injury:</p>
+	<ul>
+		<li>Remove loose debris that could become projectiles</li>
+		<li>Install temporary barriers if the fence provided security</li>
+		<li>Cover exposed areas with tarps if privacy was compromised</li>
+		<li>Mark hazardous areas with caution tape or signs</li>
+	</ul>
+
+	<h2>Determining the Cause of Damage</h2>
+
+	<p>Understanding what caused your fence damage is essential for both repair planning and insurance claims. Common causes in the Stockton area include:</p>
+
+	<h3>Weather-Related Damage</h3>
+	<ul>
+		<li><strong>Wind damage:</strong> High winds can push over entire sections, especially if posts weren't properly anchored</li>
+		<li><strong>Rain damage:</strong> Excessive moisture can cause wood rot and weaken fence structures</li>
+		<li><strong>Sun damage:</strong> Stockton's intense summer sun can cause wood to crack and warp over time</li>
+	</ul>
+
+	<h3>Accidental Damage</h3>
+	<ul>
+		<li><strong>Vehicle impacts:</strong> Cars backing into fences or collision damage</li>
+		<li><strong>Falling trees or branches:</strong> Especially common during storms</li>
+		<li><strong>Neighbor-related incidents:</strong> Construction equipment or landscaping accidents</li>
+	</ul>
+
+	<h3>Wear and Deterioration</h3>
+	<ul>
+		<li><strong>Age-related failure:</strong> Old fences reaching the end of their lifespan</li>
+		<li><strong>Pest damage:</strong> Termites, carpenter ants, or other wood-destroying insects</li>
+		<li><strong>Foundation settling:</strong> Ground movement affecting post stability</li>
+	</ul>
+
+	<h2>Contacting Insurance Companies</h2>
+
+	<p>Many homeowners don't realize that fence damage may be covered under their homeowners insurance policy. Here's how to navigate the insurance process:</p>
+
+	<h3>Review Your Policy</h3>
+	<p>Before calling your insurance company, review your policy to understand:</p>
+	<ul>
+		<li>Coverage limits for fences and other structures</li>
+		<li>Your deductible amount</li>
+		<li>Exclusions that might apply</li>
+		<li>Whether your fence is considered a structure or personal property</li>
+	</ul>
+
+	<h3>File a Claim Promptly</h3>
+	<p>Most insurance companies require prompt notification of damage. When filing your claim:</p>
+	<ul>
+		<li>Provide all documentation you've gathered</li>
+		<li>Be honest and detailed about the circumstances</li>
+		<li>Ask about temporary repair coverage</li>
+		<li>Get your claim number and adjuster contact information</li>
+	</ul>
+
+	<h3>Working with Adjusters</h3>
+	<p>Insurance adjusters will need to inspect the damage. Prepare by:</p>
+	<ul>
+		<li>Being present during the inspection</li>
+		<li>Pointing out all damage, even minor issues</li>
+		<li>Asking questions about the assessment process</li>
+		<li>Getting copies of all adjuster reports</li>
+	</ul>
+
+	<h2>When to Call Professionals vs. DIY Repairs</h2>
+
+	<p>Deciding whether to repair fence damage yourself or hire professionals depends on several factors:</p>
+
+	<h3>DIY-Friendly Repairs</h3>
+	<p>Consider handling these repairs yourself if you have basic tools and skills:</p>
+	<ul>
+		<li>Replacing individual fence boards or pickets</li>
+		<li>Tightening loose hardware</li>
+		<li>Touching up paint or stain</li>
+		<li>Minor gate adjustments</li>
+	</ul>
+
+	<h3>Professional Repair Situations</h3>
+	<p>Call experienced fence contractors for:</p>
+	<ul>
+		<li>Post replacement or realignment</li>
+		<li>Structural damage to multiple sections</li>
+		<li>Foundation or concrete work</li>
+		<li>Electrical components (for automated gates)</li>
+		<li>Insurance claim work requiring documentation</li>
+	</ul>
+
+	<h2>Choosing the Right Repair Contractor in Stockton</h2>
+
+	<p>When professional help is needed, selecting the right contractor is crucial for quality repairs and fair pricing:</p>
+
+	<h3>Research and Verification</h3>
+	<ul>
+		<li><strong>License verification:</strong> Ensure contractors are licensed in California</li>
+		<li><strong>Insurance coverage:</strong> Verify liability and workers' compensation insurance</li>
+		<li><strong>Local references:</strong> Ask for recent Stockton-area project references</li>
+		<li><strong>Better Business Bureau:</strong> Check ratings and complaint history</li>
+	</ul>
+
+	<h3>Getting Multiple Estimates</h3>
+	<p>Obtain at least three detailed estimates that include:</p>
+	<ul>
+		<li>Specific materials to be used</li>
+		<li>Labor costs broken down by task</li>
+		<li>Timeline for completion</li>
+		<li>Warranty information</li>
+		<li>Permit costs (if applicable)</li>
+	</ul>
+
+	<h2>Temporary Solutions and Emergency Repairs</h2>
+
+	<p>While waiting for permanent repairs, temporary solutions can maintain security and prevent further damage:</p>
+
+	<h3>Immediate Security Measures</h3>
+	<ul>
+		<li><strong>Temporary fencing:</strong> Portable panels or construction fencing</li>
+		<li><strong>Plywood barriers:</strong> For privacy and wind protection</li>
+		<li><strong>Security cameras:</strong> If the fence provided security for valuable property</li>
+	</ul>
+
+	<h3>Weather Protection</h3>
+	<ul>
+		<li><strong>Tarps and plastic sheeting:</strong> Protect exposed wood from moisture</li>
+		<li><strong>Temporary posts:</strong> Support sagging sections</li>
+		<li><strong>Sandbags:</strong> Anchor loose materials</li>
+	</ul>
+
+	<h2>Prevention: Avoiding Future Damage</h2>
+
+	<p>Learning from fence damage helps prevent future problems:</p>
+
+	<h3>Regular Maintenance Schedule</h3>
+	<ul>
+		<li><strong>Annual inspections:</strong> Check for loose hardware, rot, or pest damage</li>
+		<li><strong>Cleaning:</strong> Remove debris and vegetation from fence lines</li>
+		<li><strong>Staining/sealing:</strong> Protect wood from weather damage</li>
+		<li><strong>Drainage:</strong> Ensure proper water flow away from posts</li>
+	</ul>
+
+	<h3>Upgrade Considerations</h3>
+	<p>If your fence was damaged due to design or material weaknesses, consider:</p>
+	<ul>
+		<li><strong>Stronger materials:</strong> Vinyl or composite for durability</li>
+		<li><strong>Better post anchoring:</strong> Deeper footings or steel reinforcement</li>
+		<li><strong>Wind-resistant designs:</strong> Spacing between boards for wind flow</li>
+		<li><strong>Professional installation:</strong> Ensure proper techniques and materials</li>
+	</ul>
+
+	<h2>Legal Considerations</h2>
+
+	<p>Fence damage can sometimes involve legal complexities:</p>
+
+	<h3>Property Line Issues</h3>
+	<ul>
+		<li>Verify fence location before repairs</li>
+		<li>Consult property surveys if boundaries are unclear</li>
+		<li>Communicate with neighbors about shared fence responsibilities</li>
+	</ul>
+
+	<h3>Permit Requirements</h3>
+	<p>Some fence repairs in Stockton may require permits:</p>
+	<ul>
+		<li>Check with San Joaquin County building department</li>
+		<li>Understand height restrictions and setback requirements</li>
+		<li>Ensure compliance with HOA regulations</li>
+	</ul>
+
+	<h2>Cost Considerations and Budgeting</h2>
+
+	<p>Understanding potential costs helps you budget for repairs:</p>
+
+	<h3>Typical Repair Costs in Stockton</h3>
+	<ul>
+		<li><strong>Board replacement:</strong> $15-40 per linear foot</li>
+		<li><strong>Post replacement:</strong> $100-300 per post</li>
+		<li><strong>Section rebuild:</strong> $25-75 per linear foot</li>
+		<li><strong>Gate repairs:</strong> $150-500 depending on complexity</li>
+	</ul>
+
+	<h3>Factors Affecting Repair Costs</h3>
+	<ul>
+		<li>Extent of damage</li>
+		<li>Materials chosen for repair</li>
+		<li>Accessibility of damaged areas</li>
+		<li>Permit and inspection fees</li>
+		<li>Timeline urgency</li>
+	</ul>
+
+	<h2>Conclusion: Getting Your Fence Back to Perfect</h2>
+
+	<p>Dealing with fence damage doesn't have to be overwhelming when you know the right steps to take. By prioritizing safety, documenting everything thoroughly, and working with qualified professionals when needed, you can restore your fence efficiently and effectively.</p>
+
+	<p>Remember that quality repairs not only fix immediate problems but also prevent future damage. Whether you're dealing with storm damage, wear and tear, or unexpected accidents, taking action quickly and methodically ensures the best outcome for your property.</p>
+
+	<p>For professional fence repair services in Stockton and surrounding areas, contact Stockton Fencing Co. Our experienced team can assess your damage, work with insurance companies, and provide lasting repair solutions that protect your investment for years to come.</p>
+
+	<div class="related-posts">
+		<div class="container">
+			<h3>Related Articles</h3>
+			<div class="posts-grid">
+				<article class="post-card">
+					<h4><a href="/blog/complete-guide-fences-stockton">Complete Guide to Fences in Stockton</a></h4>
+					<p>Everything you need to know about fencing materials, costs, and installation in Stockton.</p>
+				</article>
+				<article class="post-card">
+					<h4><a href="/blog/fall-fence-preparation">Fall Fence Preparation Guide</a></h4>
+					<p>Essential fall maintenance guide for protecting your fence investment in Stockton.</p>
+				</article>
+				<article class="post-card">
+					<h4><a href="/blog/emergency-fence-service">Emergency Fence Service: What You Need to Know</a></h4>
+					<p>Learn when to call for emergency fence repairs and what to expect from emergency services.</p>
+				</article>
 			</div>
 		</div>
-
-	</section>
-
-	<section class="hero">
-		<div class="hero-image-container">
-			<picture class="hero-picture">
-				<source srcset="/images/blog/damaged-fence-repair.jpg" type="image/jpeg">
-				<img src="/images/blog/damaged-fence-repair.jpg" alt="Damaged fence being repaired by professional contractors in Stockton" class="hero-image" loading="eager" width="1200" height="400" />
-			</picture>
-			<div class="hero-overlay">
-				<div class="hero-content">
-					<h1>What to Do When Your Fence is Damaged</h1>
-					<p>Emergency guide for handling fence damage from storms, accidents, or wear</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<main class="blog-post">
-		<article class="article-content">
-			<div class="container">
-				<header class="article-header">
-					<div class="article-meta">
-						<span class="category">Emergency</span>
-						<time datetime="2024-09-15">September 15, 2024</time>
-						<span class="reading-time">8 min read</span>
-					</div>
-				</header>
-
-				<div class="content-wrapper">
-					<div class="article-text">
-						<div class="post-content">
-			<div class="container">
-				<div class="content-wrapper">
-					<article class="main-content">
-						<div class="intro-section">
-							<p class="lead">Discovering a damaged fence on your Stockton property can be stressful, especially when it affects your privacy, security, or curb appeal. Whether the damage resulted from severe weather, accidents, or normal wear and tear, knowing the right steps to take can save you time, money, and prevent further complications.</p>
-							
-							<p>In Stockton's climate, with occasional strong winds and weather extremes, fence damage is more common than many homeowners expect. This comprehensive guide will walk you through exactly what to do when your fence is damaged, from immediate safety measures to long-term repair solutions.</p>
-						</div>
-
-						<h2>Immediate Steps: Safety First</h2>
-						
-						<h3>1. Assess the Safety Risk</h3>
-						<p>Before doing anything else, evaluate whether the damaged fence poses an immediate safety hazard:</p>
-						<ul>
-							<li><strong>Structural integrity:</strong> Are fence posts leaning dangerously or completely fallen?</li>
-							<li><strong>Sharp edges:</strong> Are there broken boards with splinters or metal edges that could cause injury?</li>
-							<li><strong>Electrical concerns:</strong> Has the fence damage affected any electrical wiring or lighting?</li>
-							<li><strong>Traffic hazards:</strong> Does the damage create visibility or access issues near roadways?</li>
-						</ul>
-
-						<p>If the damage poses immediate danger to people or property, secure the area immediately and consider calling emergency services if necessary.</p>
-
-						<h3>2. Document Everything</h3>
-						<p>Proper documentation is crucial for insurance claims and repair estimates:</p>
-						<ul>
-							<li>Take multiple photos from different angles</li>
-							<li>Capture close-up shots of specific damage areas</li>
-							<li>Include wide shots showing the overall scope of damage</li>
-							<li>Note the date and time of discovery</li>
-							<li>Write detailed descriptions of what you observe</li>
-						</ul>
-
-						<h3>3. Secure the Area</h3>
-						<p>Take immediate steps to prevent further damage or injury:</p>
-						<ul>
-							<li>Remove loose debris that could become projectiles</li>
-							<li>Install temporary barriers if the fence provided security</li>
-							<li>Cover exposed areas with tarps if privacy was compromised</li>
-							<li>Mark hazardous areas with caution tape or signs</li>
-						</ul>
-
-						<h2>Determining the Cause of Damage</h2>
-
-						<p>Understanding what caused your fence damage is essential for both repair planning and insurance claims. Common causes in the Stockton area include:</p>
-
-						<h3>Weather-Related Damage</h3>
-						<ul>
-							<li><strong>Wind damage:</strong> High winds can push over entire sections, especially if posts weren't properly anchored</li>
-							<li><strong>Rain damage:</strong> Excessive moisture can cause wood rot and weaken fence structures</li>
-							<li><strong>Sun damage:</strong> Stockton's intense summer sun can cause wood to crack and warp over time</li>
-						</ul>
-
-						<h3>Accidental Damage</h3>
-						<ul>
-							<li><strong>Vehicle impacts:</strong> Cars backing into fences or collision damage</li>
-							<li><strong>Falling trees or branches:</strong> Especially common during storms</li>
-							<li><strong>Neighbor-related incidents:</strong> Construction equipment or landscaping accidents</li>
-						</ul>
-
-						<h3>Wear and Deterioration</h3>
-						<ul>
-							<li><strong>Age-related failure:</strong> Old fences reaching the end of their lifespan</li>
-							<li><strong>Pest damage:</strong> Termites, carpenter ants, or other wood-destroying insects</li>
-							<li><strong>Foundation settling:</strong> Ground movement affecting post stability</li>
-						</ul>
-
-						<h2>Contacting Insurance Companies</h2>
-
-						<p>Many homeowners don't realize that fence damage may be covered under their homeowners insurance policy. Here's how to navigate the insurance process:</p>
-
-						<h3>Review Your Policy</h3>
-						<p>Before calling your insurance company, review your policy to understand:</p>
-						<ul>
-							<li>Coverage limits for fences and other structures</li>
-							<li>Your deductible amount</li>
-							<li>Exclusions that might apply</li>
-							<li>Whether your fence is considered a structure or personal property</li>
-						</ul>
-
-						<h3>File a Claim Promptly</h3>
-						<p>Most insurance companies require prompt notification of damage. When filing your claim:</p>
-						<ul>
-							<li>Provide all documentation you've gathered</li>
-							<li>Be honest and detailed about the circumstances</li>
-							<li>Ask about temporary repair coverage</li>
-							<li>Get your claim number and adjuster contact information</li>
-						</ul>
-
-						<h3>Working with Adjusters</h3>
-						<p>Insurance adjusters will need to inspect the damage. Prepare by:</p>
-						<ul>
-							<li>Being present during the inspection</li>
-							<li>Pointing out all damage, even minor issues</li>
-							<li>Asking questions about the assessment process</li>
-							<li>Getting copies of all adjuster reports</li>
-						</ul>
-
-						<h2>When to Call Professionals vs. DIY Repairs</h2>
-
-						<p>Deciding whether to repair fence damage yourself or hire professionals depends on several factors:</p>
-
-						<h3>DIY-Friendly Repairs</h3>
-						<p>Consider handling these repairs yourself if you have basic tools and skills:</p>
-						<ul>
-							<li>Replacing individual fence boards or pickets</li>
-							<li>Tightening loose hardware</li>
-							<li>Touching up paint or stain</li>
-							<li>Minor gate adjustments</li>
-						</ul>
-
-						<h3>Professional Repair Situations</h3>
-						<p>Call experienced fence contractors for:</p>
-						<ul>
-							<li>Post replacement or realignment</li>
-							<li>Structural damage to multiple sections</li>
-							<li>Foundation or concrete work</li>
-							<li>Electrical components (for automated gates)</li>
-							<li>Insurance claim work requiring documentation</li>
-						</ul>
-
-						<h2>Choosing the Right Repair Contractor in Stockton</h2>
-
-						<p>When professional help is needed, selecting the right contractor is crucial for quality repairs and fair pricing:</p>
-
-						<h3>Research and Verification</h3>
-						<ul>
-							<li><strong>License verification:</strong> Ensure contractors are licensed in California</li>
-							<li><strong>Insurance coverage:</strong> Verify liability and workers' compensation insurance</li>
-							<li><strong>Local references:</strong> Ask for recent Stockton-area project references</li>
-							<li><strong>Better Business Bureau:</strong> Check ratings and complaint history</li>
-						</ul>
-
-						<h3>Getting Multiple Estimates</h3>
-						<p>Obtain at least three detailed estimates that include:</p>
-						<ul>
-							<li>Specific materials to be used</li>
-							<li>Labor costs broken down by task</li>
-							<li>Timeline for completion</li>
-							<li>Warranty information</li>
-							<li>Permit costs (if applicable)</li>
-						</ul>
-
-						<h2>Temporary Solutions and Emergency Repairs</h2>
-
-						<p>While waiting for permanent repairs, temporary solutions can maintain security and prevent further damage:</p>
-
-						<h3>Immediate Security Measures</h3>
-						<ul>
-							<li><strong>Temporary fencing:</strong> Portable panels or construction fencing</li>
-							<li><strong>Plywood barriers:</strong> For privacy and wind protection</li>
-							<li><strong>Security cameras:</strong> If the fence provided security for valuable property</li>
-						</ul>
-
-						<h3>Weather Protection</h3>
-						<ul>
-							<li><strong>Tarps and plastic sheeting:</strong> Protect exposed wood from moisture</li>
-							<li><strong>Temporary posts:</strong> Support sagging sections</li>
-							<li><strong>Sandbags:</strong> Anchor loose materials</li>
-						</ul>
-
-						<h2>Prevention: Avoiding Future Damage</h2>
-
-						<p>Learning from fence damage helps prevent future problems:</p>
-
-						<h3>Regular Maintenance Schedule</h3>
-						<ul>
-							<li><strong>Annual inspections:</strong> Check for loose hardware, rot, or pest damage</li>
-							<li><strong>Cleaning:</strong> Remove debris and vegetation from fence lines</li>
-							<li><strong>Staining/sealing:</strong> Protect wood from weather damage</li>
-							<li><strong>Drainage:</strong> Ensure proper water flow away from posts</li>
-						</ul>
-
-						<h3>Upgrade Considerations</h3>
-						<p>If your fence was damaged due to design or material weaknesses, consider:</p>
-						<ul>
-							<li><strong>Stronger materials:</strong> Vinyl or composite for durability</li>
-							<li><strong>Better post anchoring:</strong> Deeper footings or steel reinforcement</li>
-							<li><strong>Wind-resistant designs:</strong> Spacing between boards for wind flow</li>
-							<li><strong>Professional installation:</strong> Ensure proper techniques and materials</li>
-						</ul>
-
-						<h2>Legal Considerations</h2>
-
-						<p>Fence damage can sometimes involve legal complexities:</p>
-
-						<h3>Property Line Issues</h3>
-						<ul>
-							<li>Verify fence location before repairs</li>
-							<li>Consult property surveys if boundaries are unclear</li>
-							<li>Communicate with neighbors about shared fence responsibilities</li>
-						</ul>
-
-						<h3>Permit Requirements</h3>
-						<p>Some fence repairs in Stockton may require permits:</p>
-						<ul>
-							<li>Check with San Joaquin County building department</li>
-							<li>Understand height restrictions and setback requirements</li>
-							<li>Ensure compliance with HOA regulations</li>
-						</ul>
-
-						<h2>Cost Considerations and Budgeting</h2>
-
-						<p>Understanding potential costs helps you budget for repairs:</p>
-
-						<h3>Typical Repair Costs in Stockton</h3>
-						<ul>
-							<li><strong>Board replacement:</strong> $15-40 per linear foot</li>
-							<li><strong>Post replacement:</strong> $100-300 per post</li>
-							<li><strong>Section rebuild:</strong> $25-75 per linear foot</li>
-							<li><strong>Gate repairs:</strong> $150-500 depending on complexity</li>
-						</ul>
-
-						<h3>Factors Affecting Repair Costs</h3>
-						<ul>
-							<li>Extent of damage</li>
-							<li>Materials chosen for repair</li>
-							<li>Accessibility of damaged areas</li>
-							<li>Permit and inspection fees</li>
-							<li>Timeline urgency</li>
-						</ul>
-
-						<h2>Conclusion: Getting Your Fence Back to Perfect</h2>
-
-						<p>Dealing with fence damage doesn't have to be overwhelming when you know the right steps to take. By prioritizing safety, documenting everything thoroughly, and working with qualified professionals when needed, you can restore your fence efficiently and effectively.</p>
-
-						<p>Remember that quality repairs not only fix immediate problems but also prevent future damage. Whether you're dealing with storm damage, wear and tear, or unexpected accidents, taking action quickly and methodically ensures the best outcome for your property.</p>
-
-						<p>For professional fence repair services in Stockton and surrounding areas, contact Stockton Fencing Co. Our experienced team can assess your damage, work with insurance companies, and provide lasting repair solutions that protect your investment for years to come.</p>
-
-					</article>
-
-					<aside class="sidebar">
-						<div class="cta-box">
-							<h3>Need Emergency Fence Repair?</h3>
-							<p>Don't wait for fence damage to get worse. Our Stockton team provides fast, professional repair services.</p>
-							<a href="/contact" class="cta-button">Get Emergency Service</a>
-						</div>
-
-						<div class="related-services">
-							<h3>Related Services</h3>
-							<ul>
-								<li><a href="/services/fence-repair">Fence Repair</a></li>
-								<li><a href="/services/storm-damage">Storm Damage Restoration</a></li>
-								<li><a href="/services/fence-maintenance">Fence Maintenance</a></li>
-								<li><a href="/services/emergency-service">Emergency Services</a></li>
-							</ul>
-						</div>
-
-						<div class="contact-info">
-							<h3>Emergency Contact</h3>
-							<p><strong>24/7 Service Available</strong></p>
-							<p>Phone: (209) 555-FENCE</p>
-							<p>Email: emergency@stockton-fencing.co</p>
-						</div>
-					</aside>
-				</div>
-			</div>
-		</div>
-
-		<div class="related-posts">
-			<div class="container">
-				<h3>Related Articles</h3>
-				<div class="posts-grid">
-					<article class="post-card">
-						<a href="/blog/complete-guide-fences-stockton">
-							<h4>Complete Guide to Fences in Stockton</h4>
-							<p>Everything you need to know about fencing materials, costs, and installation in Stockton.</p>
-						</a>
-					</article>
-					<article class="post-card">
-						<a href="/blog/fall-fence-preparation">
-							<h4>Fall Fence Preparation Guide</h4>
-							<p>Essential fall maintenance guide for protecting your fence investment in Stockton.</p>
-						</a>
-					</article>
-					<article class="post-card">
-						<a href="/blog/emergency-fence-service">
-							<h4>Emergency Fence Service: What You Need to Know</h4>
-							<p>Learn when to call for emergency fence repairs and what to expect from emergency services.</p>
-						</a>
-					</article>
-				</div>
-			</div>
-		</div>
-	</main>
-</Layout>
-
-<style>
-	/* Blog post styles */
-	.breadcrumbs {
-		background: #f8f9fa;
-		padding: 1rem 0;
-		border-bottom: 1px solid #e9ecef;
-	}
-
-	.breadcrumbs nav {
-		font-size: 0.9rem;
-	}
-
-	.breadcrumbs a {
-		color: #2c5530;
-		text-decoration: none;
-	}
-
-	.breadcrumbs a:hover {
-		text-decoration: underline;
-	}
-
-	.breadcrumbs span {
-		margin: 0 0.5rem;
-		color: #6c757d;
-	}
-
-	.post-header {
-		background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
-		color: white;
-		padding: 3rem 0;
-		text-align: center;
-	}
-
-	.post-header h1 {
-		font-size: 2.5rem;
-		font-weight: 700;
-		margin-bottom: 1rem;
-		line-height: 1.2;
-	}
-
-	.post-meta {
-		display: flex;
-		justify-content: center;
-		gap: 2rem;
-		font-size: 0.9rem;
-		opacity: 0.9;
-	}
-
-	.featured-image {
-		margin: 2rem 0;
-	}
-
-	.featured-image img {
-		width: 100%;
-		height: auto;
-		border-radius: 8px;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	}
-
-	.post-content {
-		padding: 2rem 0;
-	}
-
-	.content-wrapper {
-		display: grid;
-		grid-template-columns: 2fr 1fr;
-		gap: 3rem;
-	}
-
-	.main-content {
-		max-width: none;
-	}
-
-	.intro-section .lead {
-		font-size: 1.2rem;
-		font-weight: 500;
-		color: #2c5530;
-		margin-bottom: 1.5rem;
-		line-height: 1.6;
-	}
-
-	.main-content h2 {
-		color: #2c5530;
-		font-size: 1.8rem;
-		margin: 2.5rem 0 1rem 0;
-		font-weight: 600;
-	}
-
-	.main-content h3 {
-		color: #4a7c59;
-		font-size: 1.4rem;
-		margin: 2rem 0 1rem 0;
-		font-weight: 600;
-	}
-
-	.main-content p {
-		margin-bottom: 1.2rem;
-		line-height: 1.7;
-	}
-
-	.main-content ul, .main-content ol {
-		margin-bottom: 1.5rem;
-		padding-left: 2rem;
-	}
-
-	.main-content li {
-		margin-bottom: 0.5rem;
-		line-height: 1.6;
-	}
-
-	.sidebar {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-
-	.cta-box {
-		background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
-		color: white;
-		padding: 2rem;
-		border-radius: 8px;
-		text-align: center;
-	}
-
-	.cta-box h3 {
-		margin-bottom: 1rem;
-		font-size: 1.3rem;
-	}
-
-	.cta-button {
-		background: white;
-		color: #2c5530;
-		padding: 0.8rem 1.5rem;
-		border-radius: 5px;
-		text-decoration: none;
-		font-weight: 600;
-		display: inline-block;
-		margin-top: 1rem;
-		transition: transform 0.2s;
-	}
-
-	.cta-button:hover {
-		transform: translateY(-2px);
-	}
-
-	.related-services, .contact-info {
-		background: #f8f9fa;
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-
-	.related-services h3, .contact-info h3 {
-		color: #2c5530;
-		margin-bottom: 1rem;
-		font-size: 1.2rem;
-	}
-
-	.related-services ul {
-		list-style: none;
-		padding: 0;
-	}
-
-	.related-services li {
-		margin-bottom: 0.5rem;
-	}
-
-	.related-services a {
-		color: #4a7c59;
-		text-decoration: none;
-		font-weight: 500;
-	}
-
-	.related-services a:hover {
-		text-decoration: underline;
-	}
-
-	.related-posts {
-		background: #f8f9fa;
-		padding: 3rem 0;
-		margin-top: 3rem;
-	}
-
-	.related-posts h3 {
-		text-align: center;
-		color: #2c5530;
-		margin-bottom: 2rem;
-		font-size: 1.8rem;
-	}
-
-	.posts-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 2rem;
-	}
-
-	.post-card {
-		background: white;
-		padding: 1.5rem;
-		border-radius: 8px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		transition: transform 0.2s;
-	}
-
-	.post-card:hover {
-		transform: translateY(-4px);
-	}
-
-	.post-card a {
-		text-decoration: none;
-		color: inherit;
-	}
-
-	.post-card h4 {
-		color: #2c5530;
-		margin-bottom: 0.5rem;
-		font-size: 1.2rem;
-	}
-
-	.post-card p {
-		color: #6c757d;
-		font-size: 0.9rem;
-	}
-
-	/* Mobile responsiveness */
-	@media (max-width: 768px) {
-		.post-header h1 {
-			font-size: 2rem;
-		}
-
-		.post-meta {
-			flex-direction: column;
-			gap: 0.5rem;
-		}
-
-		.content-wrapper {
-			grid-template-columns: 1fr;
-			gap: 2rem;
-		}
-
-		.posts-grid {
-			grid-template-columns: 1fr;
-		}
-	}
-</style>
+	</div>
+</BlogLayout>

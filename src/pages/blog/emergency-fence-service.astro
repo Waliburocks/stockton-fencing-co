@@ -1,117 +1,80 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const schemaData = {
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	"@id": "https://stockton-fencing.co/blog/emergency-fence-service",
+	"headline": "Emergency Fence Service: What You Need to Know",
+	"description": "Complete guide to emergency fence services in Stockton. Understanding when urgent repairs are needed, what to expect from emergency services, and safety protocols.",
+	"image": "https://stockton-fencing.co/images/blog/emergency-fence-service.jpg",
+	"datePublished": "2024-09-15T14:00:00-07:00",
+	"dateModified": "2024-09-15T14:00:00-07:00",
+	"author": {
+		"@type": "Person",
+		"name": "Stockton Fencing Team"
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "Stockton Fencing Co.",
+		"@id": "https://stockton-fencing.co/#business",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://stockton-fencing.co/images/fence-stockton-logo.png"
+		}
+	},
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": "https://stockton-fencing.co/blog/emergency-fence-service"
+	},
+	"wordCount": 1500,
+	"articleSection": "Guide",
+	"keywords": ["emergency fence repair", "24/7 fence service", "Stockton emergency fencing", "urgent fence repair", "fence emergency response", "San Joaquin County fence emergency"],
+	"breadcrumb": {
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "Home",
+				"item": "https://stockton-fencing.co/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "Blog",
+				"item": "https://stockton-fencing.co/blog"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
+				"name": "Emergency Fence Service Guide",
+				"item": "https://stockton-fencing.co/blog/emergency-fence-service"
+			}
+		]
+	}
+};
 ---
 
-<Layout 
-	title="Emergency Fence Service: What You Need to Know in Stockton | 24/7 Fence Repair | Stockton Fencing Co." 
-	description="Complete guide to emergency fence services in Stockton. Learn when to call for emergency repairs, what to expect, and how to handle fence emergencies safely." 
-	canonicalUrl="/blog/emergency-fence-service">
-	
-	<!-- Blog Post Schema Markup -->
-	<script type="application/ld+json" slot="head">
-	{
-		"@context": "https://schema.org",
-		"@type": "BlogPosting",
-		"@id": "https://stockton-fencing.co/blog/emergency-fence-service",
-		"headline": "Emergency Fence Service: What You Need to Know",
-		"description": "Complete guide to emergency fence services in Stockton. Understanding when urgent repairs are needed, what to expect from emergency services, and safety protocols.",
-		"image": "https://stockton-fencing.co/images/blog/emergency-fence-service.jpg",
-		"datePublished": "2024-09-15T14:00:00-07:00",
-		"dateModified": "2024-09-15T14:00:00-07:00",
-		"author": {
-			"@type": "Person",
-			"name": "Stockton Fencing Team"
-		},
-		"publisher": {
-			"@type": "Organization",
-			"name": "Stockton Fencing Co.",
-			"@id": "https://stockton-fencing.co/#business",
-			"logo": {
-				"@type": "ImageObject",
-				"url": "https://stockton-fencing.co/images/fence-stockton-logo.png"
-			}
-		},
-		"mainEntityOfPage": {
-			"@type": "WebPage",
-			"@id": "https://stockton-fencing.co/blog/emergency-fence-service"
-		},
-		"wordCount": 1500,
-		"articleSection": "Guide",
-		"keywords": ["emergency fence repair", "24/7 fence service", "Stockton emergency fencing", "urgent fence repair", "fence emergency response", "San Joaquin County fence emergency"],
-		"breadcrumb": {
-			"@type": "BreadcrumbList",
-			"itemListElement": [
-				{
-					"@type": "ListItem",
-					"position": 1,
-					"name": "Home",
-					"item": "https://stockton-fencing.co/"
-				},
-				{
-					"@type": "ListItem",
-					"position": 2,
-					"name": "Blog",
-					"item": "https://stockton-fencing.co/blog"
-				},
-				{
-					"@type": "ListItem",
-					"position": 3,
-					"name": "Emergency Fence Service Guide",
-					"item": "https://stockton-fencing.co/blog/emergency-fence-service"
-				}
-			]
-		}
-	}
-	</script>
-
-	<main>
-		<!-- Breadcrumbs -->
-		<div class="breadcrumbs">
-			<div class="container">
-				<nav aria-label="breadcrumb">
-					<a href="/">Home</a>
-					<span>></span>
-					<a href="/blog">Blog</a>
-					<span>></span>
-					<span>Emergency Fence Service Guide</span>
-				</nav>
-			</div>
-		</div>
-
-
-	<section class="hero">
-		<div class="hero-image-container">
-			<picture class="hero-picture">
-				<source srcset="/images/blog/emergency-fence-service.jpg" type="image/jpeg">
-				<img src="/images/blog/emergency-fence-service.jpg" alt="Emergency fence repair team responding to urgent call in Stockton" class="hero-image" loading="eager" width="1200" height="400" />
-			</picture>
-			<div class="hero-overlay">
-				<div class="hero-content">
-					<h1>Emergency Fence Service: What You Need to Know</h1>
-					<p>Complete guide to emergency fence services in Stockton</p>
+<BlogLayout
+	title="Emergency Fence Service: What You Need to Know in Stockton | 24/7 Fence Repair | Stockton Fencing Co."
+	description="Complete guide to emergency fence services in Stockton. Learn when to call for emergency repairs, what to expect, and how to handle fence emergencies safely."
+	canonicalUrl="/blog/emergency-fence-service"
+	heroImage="/images/blog/emergency-fence-service.jpg"
+	heroImageAlt="Emergency fence repair team responding to urgent call in Stockton"
+	heroTitle="Emergency Fence Service: What You Need to Know"
+	heroSubtitle="Complete guide to emergency fence services in Stockton"
+	publishDate="September 15, 2024"
+	category="Emergency"
+	readingTime="9 min read"
+	breadcrumbTitle="Emergency Fence Service Guide"
+	schemaData={schemaData}
+>
+				<div class="intro-section">
+					<p class="lead">Fence emergencies can happen at any time, often when you least expect them. Whether it's storm damage, vehicle impact, or sudden structural failure, knowing when to call for emergency fence service and what to expect can protect your property, ensure safety, and minimize damage to your investment.</p>
+					
+					<p>In Stockton, where strong Delta winds, occasional severe weather, and busy urban environments create various risks for fence damage, understanding emergency fence services is essential for every property owner. This comprehensive guide explains everything you need to know about emergency fence situations and how to respond effectively.</p>
 				</div>
-			</div>
-		</div>
-	</section>
-
-	<main class="blog-post">
-		<article class="article-content">
-			<div class="container">
-				<header class="article-header">
-					<div class="article-meta">
-						<span class="category">Emergency</span>
-						<time datetime="2024-09-15">September 15, 2024</time>
-						<span class="reading-time">9 min read</span>
-					</div>
-				</header>
-
-				<div class="content-wrapper">
-					<div class="article-text">
-						<div class="intro-section">
-							<p class="lead">Fence emergencies can happen at any time, often when you least expect them. Whether it's storm damage, vehicle impact, or sudden structural failure, knowing when to call for emergency fence service and what to expect can protect your property, ensure safety, and minimize damage to your investment.</p>
-							
-							<p>In Stockton, where strong Delta winds, occasional severe weather, and busy urban environments create various risks for fence damage, understanding emergency fence services is essential for every property owner. This comprehensive guide explains everything you need to know about emergency fence situations and how to respond effectively.</p>
-						</div>
 
 						<h2>What Constitutes a Fence Emergency?</h2>
 						
@@ -375,456 +338,29 @@ import Layout from '../../layouts/Layout.astro';
 
 						<p>The key to effective emergency response is preparation, quick action, and working with qualified professionals who understand the urgency of fence emergencies. Remember that safety always comes first, and temporary solutions can provide security while permanent repairs are planned and executed.</p>
 
-						<p>For 24/7 emergency fence service in Stockton and surrounding areas, contact Stockton Fencing Co. Our experienced emergency response team is ready to handle any fence crisis with professionalism, speed, and expertise. We're here when you need us most, providing the rapid response and quality service your emergency situation demands.</p>
+				<p>For 24/7 emergency fence service in Stockton and surrounding areas, contact Stockton Fencing Co. Our experienced emergency response team is ready to handle any fence crisis with professionalism, speed, and expertise. We're here when you need us most, providing the rapid response and quality service your emergency situation demands.</p>
 
-					</article>
-
-					<aside class="sidebar">
-						<div class="emergency-box">
-							<h3>24/7 Emergency Service</h3>
-							<p><strong>Fence Emergency?</strong></p>
-							<p>Call now for immediate response:</p>
-							<p class="emergency-phone">(209) 555-FENCE</p>
-							<a href="tel:2095553362" class="emergency-button">Call Now</a>
-						</div>
-
-						<div class="emergency-checklist">
-							<h3>Emergency Checklist</h3>
-							<ul>
-								<li>☐ Ensure area safety</li>
-								<li>☐ Call 911 if needed</li>
-								<li>☐ Document damage</li>
-								<li>☐ Secure the area</li>
-								<li>☐ Contact emergency fence service</li>
-								<li>☐ Notify insurance company</li>
-								<li>☐ Coordinate repairs</li>
-							</ul>
-						</div>
-
-						<div class="related-services">
-							<h3>Emergency Services</h3>
-							<ul>
-								<li><a href="/services/emergency-repair">24/7 Emergency Repair</a></li>
-								<li><a href="/services/storm-damage">Storm Damage Response</a></li>
-								<li><a href="/services/temporary-fencing">Temporary Fencing</a></li>
-								<li><a href="/services/security-restoration">Security Restoration</a></li>
-							</ul>
-						</div>
-					</aside>
-				</div>
-			</div>
+	<div class="related-posts">
+		<h3>Related Articles</h3>
+		<div class="posts-grid">
+			<article class="post-card">
+				<a href="/blog/what-to-do-damaged-fence">
+					<h4>What to Do When Your Fence is Damaged</h4>
+					<p>Step-by-step guide for handling fence damage and knowing when professional help is needed.</p>
+				</a>
+			</article>
+			<article class="post-card">
+				<a href="/blog/fall-fence-preparation">
+					<h4>Fall Fence Preparation Guide</h4>
+					<p>Prepare your fence for winter weather to prevent emergency situations.</p>
+				</a>
+			</article>
+			<article class="post-card">
+				<a href="/blog/fence-costs-stockton">
+					<h4>How Much Do Fences Cost in Stockton?</h4>
+					<p>Complete 2024 fence cost guide with pricing for all materials and installation.</p>
+				</a>
+			</article>
 		</div>
-
-		<div class="related-posts">
-			<div class="container">
-				<h3>Related Articles</h3>
-				<div class="posts-grid">
-					<article class="post-card">
-						<a href="/blog/what-to-do-damaged-fence">
-							<h4>What to Do When Your Fence is Damaged</h4>
-							<p>Step-by-step guide for handling fence damage and knowing when professional help is needed.</p>
-						</a>
-					</article>
-					<article class="post-card">
-						<a href="/blog/fall-fence-preparation">
-							<h4>Fall Fence Preparation Guide</h4>
-							<p>Prepare your fence for winter weather to prevent emergency situations.</p>
-						</a>
-					</article>
-					<article class="post-card">
-						<a href="/blog/fence-costs-stockton">
-							<h4>How Much Do Fences Cost in Stockton?</h4>
-							<p>Complete 2024 fence cost guide with pricing for all materials and installation.</p>
-						</a>
-					</article>
-				</div>
-			</div>
-		</div>
-	</main>
-</Layout>
-
-<style>
-	/* Blog post styles - consistent with previous posts */
-	.breadcrumbs {
-		background: #f8f9fa;
-		padding: 1rem 0;
-		border-bottom: 1px solid #e9ecef;
-	}
-
-	.breadcrumbs nav {
-		font-size: 0.9rem;
-	}
-
-	.breadcrumbs a {
-		color: #2c5530;
-		text-decoration: none;
-	}
-
-	.breadcrumbs a:hover {
-		text-decoration: underline;
-	}
-
-	.breadcrumbs span {
-		margin: 0 0.5rem;
-		color: #6c757d;
-	}
-
-	.hero {
-		position: relative;
-		min-height: 400px;
-		overflow: hidden;
-		display: flex;
-		align-items: center;
-	}
-	
-	.hero-image-container {
-		position: relative;
-		width: 100%;
-		height: 400px;
-		overflow: hidden;
-	}
-	
-	.hero-picture {
-		width: 100%;
-		height: 100%;
-		display: block;
-	}
-	
-	.hero-image {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-		display: block;
-	}
-	
-	.hero-overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: linear-gradient(135deg, 
-			rgba(89, 123, 148, 0.85) 0%, 
-			rgba(70, 98, 117, 0.9) 100%
-		);
-		display: flex;
-		align-items: center;
-	}
-	
-	.hero-content {
-		text-align: center;
-		color: var(--white);
-		z-index: 2;
-		width: 100%;
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 2rem;
-	}
-	
-	.hero h1 {
-		font-size: 3rem;
-		margin-bottom: 1rem;
-		font-weight: 700;
-		text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-	}
-	
-	.hero p {
-		font-size: 1.2rem;
-		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-	}
-
-	.blog-post {
-		background: var(--white);
-	}
-	
-	.article-content {
-		padding: 3rem 0;
-	}
-	
-	.article-header {
-		margin-bottom: 3rem;
-		padding: 0 2rem;
-	}
-	
-	.article-meta {
-		display: flex;
-		gap: 2rem;
-		align-items: center;
-		flex-wrap: wrap;
-		font-size: 0.9rem;
-		color: var(--text-light);
-	}
-	
-	.category {
-		background: var(--primary-blue);
-		color: var(--white);
-		padding: 0.5rem 1rem;
-		border-radius: 20px;
-		font-weight: 600;
-		font-size: 0.8rem;
-	}
-	
-	.reading-time {
-		color: var(--neutral-cool);
-	}
-	
-	.content-wrapper {
-		max-width: 800px;
-		margin: 0 auto;
-		padding: 0 2rem;
-	}
-	
-	.lead {
-		font-size: 1.2rem;
-		line-height: 1.8;
-		color: var(--text-medium);
-		margin-bottom: 2.5rem;
-		padding: 1.5rem;
-		background: var(--background-light);
-		border-left: 4px solid var(--primary-blue);
-		border-radius: 0 8px 8px 0;
-	}
-
-	.post-meta {
-		display: flex;
-		justify-content: center;
-		gap: 2rem;
-		font-size: 0.9rem;
-		opacity: 0.9;
-	}
-
-	.article-text h2 {
-		color: var(--text-dark);
-		font-size: 2rem;
-		margin: 3rem 0 1.5rem 0;
-		padding-bottom: 0.5rem;
-		border-bottom: 2px solid var(--background-neutral);
-	}
-	
-	.article-text h3 {
-		color: var(--text-dark);
-		font-size: 1.4rem;
-		margin: 2rem 0 1rem 0;
-	}
-	
-	.article-text p {
-		line-height: 1.8;
-		margin-bottom: 1.5rem;
-		color: var(--text-medium);
-	}
-	
-	.article-text ul, .article-text ol {
-		margin-bottom: 2rem;
-		padding-left: 2rem;
-	}
-	
-	.article-text li {
-		line-height: 1.7;
-		margin-bottom: 0.5rem;
-		color: var(--text-medium);
-	}
-	
-	.article-text strong {
-		color: var(--text-dark);
-		font-weight: 600;
-	}
-
-	.main-content {
-		max-width: none;
-	}
-
-	.intro-section .lead {
-		font-size: 1.2rem;
-		font-weight: 500;
-		color: #2c5530;
-		margin-bottom: 1.5rem;
-		line-height: 1.6;
-	}
-
-	.main-content h2 {
-		color: #2c5530;
-		font-size: 1.8rem;
-		margin: 2.5rem 0 1rem 0;
-		font-weight: 600;
-	}
-
-	.main-content h3 {
-		color: #4a7c59;
-		font-size: 1.4rem;
-		margin: 2rem 0 1rem 0;
-		font-weight: 600;
-	}
-
-	.main-content p {
-		margin-bottom: 1.2rem;
-		line-height: 1.7;
-	}
-
-	.main-content ul, .main-content ol {
-		margin-bottom: 1.5rem;
-		padding-left: 2rem;
-	}
-
-	.main-content li {
-		margin-bottom: 0.5rem;
-		line-height: 1.6;
-	}
-
-	.sidebar {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-
-	.emergency-box {
-		background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
-		color: white;
-		padding: 2rem;
-		border-radius: 8px;
-		text-align: center;
-		border: 3px solid #dc3545;
-	}
-
-	.emergency-box h3 {
-		margin-bottom: 1rem;
-		font-size: 1.3rem;
-		color: white;
-	}
-
-	.emergency-phone {
-		font-size: 1.5rem;
-		font-weight: bold;
-		margin: 1rem 0;
-		letter-spacing: 1px;
-	}
-
-	.emergency-button {
-		background: white;
-		color: #dc3545;
-		padding: 1rem 2rem;
-		border-radius: 5px;
-		text-decoration: none;
-		font-weight: 700;
-		font-size: 1.1rem;
-		display: inline-block;
-		margin-top: 1rem;
-		transition: transform 0.2s;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-	}
-
-	.emergency-button:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
-	}
-
-	.emergency-checklist, .related-services {
-		background: #f8f9fa;
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-
-	.emergency-checklist h3, .related-services h3 {
-		color: #2c5530;
-		margin-bottom: 1rem;
-		font-size: 1.2rem;
-	}
-
-	.emergency-checklist ul, .related-services ul {
-		list-style: none;
-		padding: 0;
-	}
-
-	.emergency-checklist li {
-		margin-bottom: 0.5rem;
-		padding: 0.3rem 0;
-		border-bottom: 1px solid #e9ecef;
-		font-weight: 500;
-	}
-
-	.related-services li {
-		margin-bottom: 0.5rem;
-	}
-
-	.related-services a {
-		color: #4a7c59;
-		text-decoration: none;
-		font-weight: 500;
-	}
-
-	.related-services a:hover {
-		text-decoration: underline;
-	}
-
-	.related-posts {
-		background: #f8f9fa;
-		padding: 3rem 0;
-		margin-top: 3rem;
-	}
-
-	.related-posts h3 {
-		text-align: center;
-		color: #2c5530;
-		margin-bottom: 2rem;
-		font-size: 1.8rem;
-	}
-
-	.posts-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 2rem;
-	}
-
-	.post-card {
-		background: white;
-		padding: 1.5rem;
-		border-radius: 8px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		transition: transform 0.2s;
-	}
-
-	.post-card:hover {
-		transform: translateY(-4px);
-	}
-
-	.post-card a {
-		text-decoration: none;
-		color: inherit;
-	}
-
-	.post-card h4 {
-		color: #2c5530;
-		margin-bottom: 0.5rem;
-		font-size: 1.2rem;
-	}
-
-	.post-card p {
-		color: #6c757d;
-		font-size: 0.9rem;
-	}
-
-	/* Mobile responsiveness */
-	@media (max-width: 768px) {
-		.post-header h1 {
-			font-size: 2rem;
-		}
-
-		.post-meta {
-			flex-direction: column;
-			gap: 0.5rem;
-		}
-
-		.content-wrapper {
-			grid-template-columns: 1fr;
-			gap: 2rem;
-		}
-
-		.posts-grid {
-			grid-template-columns: 1fr;
-		}
-
-		.emergency-phone {
-			font-size: 1.3rem;
-		}
-	}
-</style>
+	</div>
+</BlogLayout>

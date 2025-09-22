@@ -1,0 +1,314 @@
+---
+import Layout from './Layout.astro';
+
+export interface Props {
+	title: string;
+	description: string;
+	canonicalUrl: string;
+	heroImage: string;
+	heroImageAlt: string;
+	heroTitle: string;
+	heroSubtitle: string;
+	publishDate: string;
+	category: string;
+	readingTime: string;
+	breadcrumbTitle: string;
+	schemaData?: any;
+}
+
+const { 
+	title, 
+	description, 
+	canonicalUrl, 
+	heroImage, 
+	heroImageAlt, 
+	heroTitle, 
+	heroSubtitle, 
+	publishDate, 
+	category, 
+	readingTime, 
+	breadcrumbTitle,
+	schemaData 
+} = Astro.props;
+---
+
+<Layout title={title} description={description} canonicalUrl={canonicalUrl}>
+	{schemaData && (
+		<script type="application/ld+json" slot="head" set:html={JSON.stringify(schemaData)} />
+	)}
+
+	<section class="hero">
+		<div class="hero-image-container">
+			<picture class="hero-picture">
+				<source srcset={heroImage} type="image/jpeg">
+				<img src={heroImage} alt={heroImageAlt} class="hero-image" loading="eager" width="1200" height="400" />
+			</picture>
+			<div class="hero-overlay">
+				<div class="hero-content">
+					<h1>{heroTitle}</h1>
+					<p>{heroSubtitle}</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<article class="blog-article">
+		<div class="container">
+			<div class="article-header">
+				<div class="breadcrumb">
+					<a href="/">Home</a> → <a href="/blog">Blog</a> → <span>{breadcrumbTitle}</span>
+				</div>
+				<div class="article-meta">
+					<span class="publish-date">{publishDate}</span>
+					<span class="category">{category}</span>
+					<span class="reading-time">{readingTime}</span>
+				</div>
+			</div>
+
+			<div class="article-content">
+				<slot />
+			</div>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.hero {
+		position: relative;
+		min-height: 400px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-image-container {
+		position: relative;
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+	}
+	
+	.hero-picture {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	
+	.hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+	}
+	
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, 
+			rgba(89, 123, 148, 0.85) 0%, 
+			rgba(70, 98, 117, 0.9) 100%
+		);
+		display: flex;
+		align-items: center;
+	}
+	
+	.hero-content {
+		text-align: center;
+		color: var(--white);
+		z-index: 2;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+	
+	.hero h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		font-weight: 700;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	}
+	
+	.hero p {
+		font-size: 1.2rem;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+	}
+
+	.blog-article {
+		padding: 5rem 0;
+	}
+	
+	.article-header {
+		max-width: 800px;
+		margin: 0 auto 3rem auto;
+		padding: 0 2rem;
+	}
+	
+	.breadcrumb {
+		margin-bottom: 1rem;
+		font-size: 0.9rem;
+	}
+	
+	.breadcrumb a {
+		color: var(--primary-blue);
+		text-decoration: none;
+	}
+	
+	.breadcrumb a:hover {
+		color: var(--accent-orange);
+	}
+	
+	.breadcrumb span {
+		color: var(--text-light);
+	}
+	
+	.article-meta {
+		display: flex;
+		gap: 2rem;
+		font-size: 0.9rem;
+		color: var(--text-light);
+		flex-wrap: wrap;
+	}
+	
+	.category {
+		background: var(--primary-blue);
+		color: var(--white);
+		padding: 0.25rem 0.75rem;
+		border-radius: 15px;
+		font-size: 0.8rem;
+		font-weight: 600;
+	}
+	
+	.article-content {
+		max-width: 800px;
+		margin: 0 auto;
+		line-height: 1.8;
+		padding: 0 2rem;
+	}
+	
+	/* Content styling */
+	:global(.article-content .lead) {
+		font-size: 1.2rem;
+		color: var(--text-light);
+		font-weight: 500;
+		margin-bottom: 2rem;
+	}
+	
+	:global(.article-content .intro-section) {
+		margin-bottom: 3rem;
+		padding-bottom: 2rem;
+		border-bottom: 2px solid var(--background-light);
+	}
+
+	:global(.article-content h2) {
+		color: var(--text-dark);
+		font-size: 1.8rem;
+		margin: 3rem 0 1.5rem 0;
+		border-left: 4px solid var(--primary-blue);
+		padding-left: 1rem;
+	}
+	
+	:global(.article-content h3) {
+		color: var(--text-dark);
+		font-size: 1.4rem;
+		margin: 2rem 0 1rem 0;
+	}
+	
+	:global(.article-content p) {
+		margin-bottom: 1.5rem;
+		color: var(--text-light);
+	}
+	
+	:global(.article-content ul), :global(.article-content ol) {
+		margin: 1.5rem 0;
+		padding-left: 2rem;
+	}
+	
+	:global(.article-content li) {
+		margin-bottom: 0.5rem;
+		color: var(--text-light);
+	}
+
+	:global(.article-content strong) {
+		color: var(--text-dark);
+		font-weight: 600;
+	}
+
+	/* Related posts styling */
+	:global(.related-posts) {
+		padding: 3rem 0;
+		background: var(--background-light);
+		margin-top: 3rem;
+	}
+	
+	:global(.related-posts h3) {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 1.8rem;
+		color: var(--text-dark);
+	}
+	
+	:global(.posts-grid) {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	
+	:global(.post-card) {
+		background: var(--white);
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 2px 10px var(--shadow-light);
+		transition: transform 0.3s ease;
+		padding: 1.5rem;
+	}
+	
+	:global(.post-card:hover) {
+		transform: translateY(-5px);
+	}
+	
+	:global(.post-card h4) {
+		margin-bottom: 0.5rem;
+		font-size: 1.1rem;
+		line-height: 1.4;
+	}
+	
+	:global(.post-card h4 a) {
+		color: var(--text-dark);
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+	
+	:global(.post-card h4 a:hover) {
+		color: var(--primary-blue);
+	}
+	
+	:global(.post-card p) {
+		color: var(--text-light);
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2.2rem;
+		}
+		
+		.article-header,
+		.article-content {
+			padding: 0 1rem;
+		}
+		
+		:global(.posts-grid) {
+			grid-template-columns: 1fr;
+		}
+		
+		.article-meta {
+			flex-direction: column;
+			gap: 1rem;
+		}
+	}
+</style>
