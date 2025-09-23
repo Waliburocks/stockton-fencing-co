@@ -79,12 +79,11 @@ const finalCanonicalUrl = getCanonicalUrl();
 		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 		<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-		<!-- Resource hints for performance -->
-		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+		<!-- Resource hints for performance - prioritized by importance -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-		<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+		<link rel="preconnect" href="https://www.googletagmanager.com" />
 		<link rel="dns-prefetch" href="//ujs.alttext.ai" />
-		<link rel="preconnect" href="https://ujs.alttext.ai" crossorigin />
+		<link rel="dns-prefetch" href="//fonts.gstatic.com" />
 		
 		<!-- Preload hero images for faster loading - mobile first for LCP optimization -->
 		<link rel="preload" as="image" href="/images/hero-fencing-mobile.webp" type="image/webp" media="(max-width: 480px)" fetchpriority="high" />
@@ -93,9 +92,23 @@ const finalCanonicalUrl = getCanonicalUrl();
 		
 		<title>{title}</title>
 
-		<!-- Critical CSS inlined for faster rendering -->
+		<!-- Critical CSS inlined for faster rendering - expanded coverage -->
 		<style>
 			/* Critical above-the-fold styles */
+			:root {
+				--primary-blue: #597B94;
+				--secondary-blue: #7595ac;
+				--accent-orange: #E87C2E;
+				--neutral-warm: #CFB9A9;
+				--neutral-cool: #A7A8A8;
+				--text-dark: #2c3e50;
+				--text-light: #597B94;
+				--background-light: #f5f1ee;
+				--white: #ffffff;
+				--shadow-light: rgba(89, 123, 148, 0.1);
+				--shadow-medium: rgba(89, 123, 148, 0.2);
+			}
+
 			* {
 				margin: 0;
 				padding: 0;
@@ -105,8 +118,8 @@ const finalCanonicalUrl = getCanonicalUrl();
 			body {
 				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 				line-height: 1.6;
-				color: #2c3e50;
-				background-color: #ffffff;
+				color: var(--text-dark);
+				background-color: var(--white);
 			}
 
 			.container {
@@ -116,19 +129,64 @@ const finalCanonicalUrl = getCanonicalUrl();
 			}
 
 			header {
-				background: linear-gradient(135deg, #597B94 0%, #466275 100%);
-				color: #ffffff;
+				background: linear-gradient(135deg, var(--primary-blue) 0%, #466275 100%);
+				color: var(--white);
 				padding: 1rem 0;
 				position: sticky;
 				top: 0;
 				z-index: 100;
-				box-shadow: 0 4px 20px rgba(89, 123, 148, 0.2);
+				box-shadow: 0 4px 20px var(--shadow-medium);
 			}
 
 			nav {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
+			}
+
+			.logo {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				font-size: 1.8rem;
+				font-weight: bold;
+				text-decoration: none;
+				color: var(--white);
+				text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+				transition: all 0.3s ease;
+			}
+
+			.logo-image {
+				height: 40px;
+				width: auto;
+				object-fit: contain;
+				filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+			}
+
+			.nav-links {
+				display: flex;
+				list-style: none;
+				gap: 2rem;
+				align-items: center;
+			}
+
+			.nav-links a {
+				color: var(--white);
+				text-decoration: none;
+				transition: all 0.3s ease;
+				font-weight: 500;
+				padding: 0.5rem 1rem;
+				border-radius: 4px;
+			}
+
+			.mobile-menu-toggle {
+				display: none;
+				background: none;
+				border: none;
+				color: var(--white);
+				font-size: 1.5rem;
+				cursor: pointer;
+				padding: 0.5rem;
 			}
 
 			.hero {
@@ -139,6 +197,19 @@ const finalCanonicalUrl = getCanonicalUrl();
 				align-items: center;
 			}
 
+			.hero-image-container {
+				position: relative;
+				width: 100%;
+				height: 400px;
+				overflow: hidden;
+			}
+
+			.hero-picture {
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+
 			.hero-image {
 				width: 100%;
 				height: 100%;
@@ -146,18 +217,118 @@ const finalCanonicalUrl = getCanonicalUrl();
 				object-position: center;
 				display: block;
 			}
-		</style>
 
-		<!-- Load non-critical CSS asynchronously -->
-		<script>
-		  // Load non-critical CSS after page load
-		  window.addEventListener('load', function() {
-		    var link = document.createElement('link');
-		    link.rel = 'stylesheet';
-		    link.href = '/_astro/index.DwtZICxu.css';
-		    document.head.appendChild(link);
-		  });
-		</script>
+			.hero-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: linear-gradient(135deg,
+					rgba(89, 123, 148, 0.85) 0%,
+					rgba(70, 98, 117, 0.9) 100%
+				);
+				display: flex;
+				align-items: center;
+			}
+
+			.hero-content {
+				text-align: center;
+				color: var(--white);
+				z-index: 2;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+
+			.hero h1 {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+				font-weight: 700;
+				text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+			}
+
+			.hero-subtitle {
+				font-size: 1.2rem;
+				text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+				margin-bottom: 2rem;
+			}
+
+			.hero-buttons {
+				display: flex;
+				gap: 1rem;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+
+			.btn {
+				display: inline-block;
+				background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+				color: var(--white);
+				padding: 12px 24px;
+				text-decoration: none;
+				border-radius: 8px;
+				font-weight: bold;
+				transition: all 0.3s ease;
+				border: none;
+				cursor: pointer;
+				font-size: 1rem;
+				text-align: center;
+				box-shadow: 0 2px 10px var(--shadow-light);
+			}
+
+			.btn-quote {
+				background: linear-gradient(135deg, #FF6B35 0%, #FF4500 100%) !important;
+				color: var(--white) !important;
+				font-weight: bold !important;
+				text-transform: uppercase !important;
+				letter-spacing: 0.5px !important;
+				box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
+			}
+
+			@media (max-width: 768px) {
+				.mobile-menu-toggle {
+					display: block;
+				}
+
+				.nav-links {
+					display: none;
+				}
+
+				.logo {
+					font-size: 1.4rem;
+					gap: 0.5rem;
+				}
+
+				.logo-image {
+					height: 32px;
+				}
+
+				.hero h1 {
+					font-size: 2.2rem;
+				}
+
+				.hero-buttons {
+					flex-direction: column;
+					align-items: center;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.logo {
+					font-size: 1.2rem;
+				}
+
+				.logo-image {
+					height: 28px;
+				}
+
+				.hero h1 {
+					font-size: 1.8rem;
+				}
+			}
+		</style>
 		
 		<!-- Deferred Google Analytics - Load after critical content -->
 		<script>
@@ -538,25 +709,54 @@ const finalCanonicalUrl = getCanonicalUrl();
 		}
 		</script>
 
-		<!-- AltText AI Script - Load after user interaction or delay -->
+		<!-- AltText AI Script - Load only after significant user interaction or long delay -->
 		<script>
-		  // Defer AltText AI to after user interaction to avoid forced reflows
+		  // Defer AltText AI to very late in the page lifecycle
 		  function loadAltTextAI() {
-		    if (document.getElementById('alttextai-ujs')) return;
+		    if (document.getElementById('alttextai-ujs') || window.altTextAILoaded) return;
+		    window.altTextAILoaded = true;
+
+		    // Create script after ensuring page is fully loaded
 		    var script = document.createElement('script');
 		    script.type = 'module';
 		    script.id = 'alttextai-ujs';
 		    script.src = 'https://ujs.alttext.ai/alttextai-ujs.js?site-key=c95c60cfd5def341';
+		    script.async = true;
 		    document.head.appendChild(script);
 		  }
 
-		  // Load on first user interaction for better performance
-		  ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(function(event) {
-		    document.addEventListener(event, loadAltTextAI, { once: true, passive: true });
+		  // Only load after page is completely finished and user has interacted
+		  var loadConditions = {
+		    pageLoaded: false,
+		    userInteracted: false,
+		    timerExpired: false
+		  };
+
+		  function checkLoadConditions() {
+		    if ((loadConditions.pageLoaded && loadConditions.userInteracted) || loadConditions.timerExpired) {
+		      loadAltTextAI();
+		    }
+		  }
+
+		  // Wait for page to be completely loaded
+		  window.addEventListener('load', function() {
+		    loadConditions.pageLoaded = true;
+		    checkLoadConditions();
 		  });
 
-		  // Fallback: load after 3 seconds if no interaction
-		  setTimeout(loadAltTextAI, 3000);
+		  // Wait for meaningful user interaction (not just scroll)
+		  ['mousedown', 'touchstart', 'keydown', 'click'].forEach(function(event) {
+		    document.addEventListener(event, function() {
+		      loadConditions.userInteracted = true;
+		      checkLoadConditions();
+		    }, { once: true, passive: true });
+		  });
+
+		  // Fallback: load after 10 seconds regardless
+		  setTimeout(function() {
+		    loadConditions.timerExpired = true;
+		    checkLoadConditions();
+		  }, 10000);
 		</script>
 
 		<style>
