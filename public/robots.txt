@@ -115,6 +115,15 @@ User-agent: Twitterbot
 Allow: /
 Crawl-delay: 1
 
+# Internet Archive Wayback Machine - Important for historical preservation
+User-agent: ia_archiver
+Allow: /
+Crawl-delay: 1
+
+User-agent: archive.org_bot
+Allow: /
+Crawl-delay: 1
+
 # ====================================
 # BLOCK PROBLEMATIC CRAWLERS
 # ====================================
