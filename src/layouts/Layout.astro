@@ -92,6 +92,30 @@ const finalCanonicalUrl = getCanonicalUrl();
 		
 		<title>{title}</title>
 
+		<!-- Disable render-blocking CSS by loading asynchronously -->
+		<script>
+		  // Prevent render-blocking CSS and forced reflows
+		  (function() {
+		    // Use requestAnimationFrame to avoid forced reflows
+		    requestAnimationFrame(function() {
+		      var links = document.querySelectorAll('link[rel="stylesheet"]');
+		      for (var i = 0; i < links.length; i++) {
+		        var link = links[i];
+		        if (link.href && link.href.includes('_astro')) {
+		          link.rel = 'preload';
+		          link.as = 'style';
+		          link.onload = function() {
+		            // Use requestAnimationFrame for style application
+		            requestAnimationFrame(function() {
+		              link.rel = 'stylesheet';
+		            });
+		          };
+		        }
+		      }
+		    });
+		  })();
+		</script>
+
 		<!-- Critical CSS inlined for faster rendering - expanded coverage -->
 		<style>
 			/* Critical above-the-fold styles */
@@ -329,24 +353,92 @@ const finalCanonicalUrl = getCanonicalUrl();
 					font-size: 1.8rem;
 				}
 			}
+
+			/* Additional critical styles for below-the-fold content */
+			.services-preview {
+				padding: 5rem 0;
+				background: var(--white);
+			}
+
+			.services-preview h2 {
+				text-align: center;
+				margin-bottom: 3rem;
+				font-size: 2.5rem;
+				color: var(--text-dark);
+				padding: 0 2rem;
+			}
+
+			.services-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin-bottom: 3rem;
+				padding: 0 2rem;
+			}
+
+			.service-card {
+				background: var(--background-light);
+				border-radius: 15px;
+				text-align: center;
+				transition: all 0.3s ease;
+				border-left: 5px solid var(--primary-blue);
+				box-shadow: 0 4px 15px var(--shadow-light);
+				overflow: hidden;
+			}
+
+			.service-card h3 {
+				font-size: 1.4rem;
+				font-weight: 600;
+				color: var(--text-dark);
+				margin-bottom: 1rem;
+			}
+
+			.service-card p {
+				color: var(--text-dark);
+				line-height: 1.6;
+				margin-bottom: 1rem;
+			}
+
+			.service-image {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 8px;
+				margin-bottom: 1rem;
+			}
+
+			@media (max-width: 768px) {
+				.services-grid {
+					grid-template-columns: 1fr;
+					padding: 0 1rem;
+				}
+
+				.services-preview h2 {
+					font-size: 2rem;
+					padding: 0 1rem;
+				}
+			}
 		</style>
 		
 		<!-- Deferred Google Analytics - Load after critical content -->
 		<script>
-		  // Defer Google Analytics to after page load to avoid forced reflows
+		  // Defer Google Analytics and minimize forced reflows
 		  window.addEventListener('load', function() {
-		    // Load gtag script
-		    var script = document.createElement('script');
-		    script.async = true;
-		    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-LWSFZV3CZ1';
-		    document.head.appendChild(script);
+		    // Use requestAnimationFrame to prevent blocking
+		    requestAnimationFrame(function() {
+		      // Load gtag script
+		      var script = document.createElement('script');
+		      script.async = true;
+		      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-LWSFZV3CZ1';
+		      document.head.appendChild(script);
 
-		    // Initialize gtag
-		    window.dataLayer = window.dataLayer || [];
-		    function gtag(){dataLayer.push(arguments);}
-		    gtag('js', new Date());
-		    gtag('config', 'G-LWSFZV3CZ1');
-		    window.gtag = gtag;
+		      // Initialize gtag
+		      window.dataLayer = window.dataLayer || [];
+		      function gtag(){dataLayer.push(arguments);}
+		      gtag('js', new Date());
+		      gtag('config', 'G-LWSFZV3CZ1');
+		      window.gtag = gtag;
+		    });
 		  });
 		</script>
 		
