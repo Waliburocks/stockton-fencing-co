@@ -1487,8 +1487,12 @@ const finalCanonicalUrl = getCanonicalUrl();
 		</footer>
 		
 		<script>
+			// Test if JavaScript is working
+			console.log('JavaScript loaded successfully');
+
 			// Mobile menu toggle functionality
 			document.addEventListener('DOMContentLoaded', function() {
+				console.log('DOMContentLoaded fired');
 				const mobileToggle = document.querySelector('.mobile-menu-toggle');
 				const navLinks = document.querySelector('.nav-links');
 				const mobileCloseBtn = document.querySelector('.mobile-close-btn');
@@ -1578,6 +1582,7 @@ const finalCanonicalUrl = getCanonicalUrl();
 					}
 				});
 
+				// Always set up the mobile functionality
 				if (mobileToggle && navLinks) {
 					// Toggle menu on hamburger click
 					mobileToggle.addEventListener('click', function() {
