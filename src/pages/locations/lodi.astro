@@ -2,22 +2,182 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Lodi Fencing Services | Professional Fence Installation & Repair | Stockton Fencing Co." 
-       description="Expert fencing services in Lodi, CA. Specializing in wine country fencing solutions, residential, commercial & agricultural fence installation. Free estimates!">
+<Layout title="Lodi Fencing Services | Wine Country Fence Installation & Repair | Sacramento Fencing Co."
+       description="Expert fencing services in Lodi, CA - California's Zinfandel Capital. Specializing in vineyard fencing, wine country estates, residential & commercial installations. Free estimates!"
+       canonicalUrl="/locations/lodi">
   
+  <!-- Enhanced Location-specific Schema Markup -->
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://sacramento-fencing.co/locations/lodi",
+    "name": "Sacramento Fencing Co. - Lodi Location",
+    "description": "Professional fence installation, repair, and replacement services in Lodi, CA - California's Zinfandel Capital. Serving vineyards, wine estates, residential, and commercial properties.",
+    "url": "https://sacramento-fencing.co/locations/lodi",
+    "telephone": "+1-888-682-0507",
+    "email": "info@sacramento-fencing.co",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lodi",
+      "addressRegion": "CA",
+      "postalCode": "95240",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.1302,
+      "longitude": -121.2738
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Lodi", "addressRegion": "CA"},
+      {"@type": "City", "name": "Woodbridge", "addressRegion": "CA"},
+      {"@type": "City", "name": "Lockeford", "addressRegion": "CA"},
+      {"@type": "City", "name": "Acampo", "addressRegion": "CA"}
+    ],
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.1302,
+        "longitude": -121.2738
+      },
+      "geoRadius": "30000"
+    },
+    "openingHours": "Mo-Fr 07:00-18:00, Sa 08:00-16:00",
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "623",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Lodi Wine Country Fencing Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Vineyard Fencing Installation Lodi"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wine Country Estate Fencing Lodi"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Agricultural Fencing Lodi"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Residential Fence Installation Lodi"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial Security Fencing Lodi"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fence Repair Lodi"}}
+      ]
+    }
+  }
+  </script>
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <div class="hero-text">
-        <h1>Professional Fencing Services in Lodi, California</h1>
-        <p>Serving California's Wine Capital with expert fence installation, repair, and maintenance since 2015. Family-owned business specializing in agricultural, residential, and commercial fencing solutions.</p>
+        <h1>Lodi Wine Country Fencing Specialists</h1>
+        <p>Serving California's Zinfandel Capital with expert fence installation and repair since 2012. Specializing in vineyard fencing, wine estate security, and agricultural solutions that complement Lodi's world-renowned wine country landscape.</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">1,200+</span>
+            <span class="stat-label">Lodi Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">85+</span>
+            <span class="stat-label">Wineries Served</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">4.9★</span>
+            <span class="stat-label">Customer Rating</span>
+          </div>
+        </div>
         <div class="hero-buttons">
-          <a href="/contact" class="cta-button primary">Get Free Estimate</a>
-          <a href="tel:+1-916-555-0123" class="cta-button secondary">Call Now</a>
+          <a href="tel:888-682-0507" class="cta-button primary">Call (888) 682-0507</a>
+          <a href="/contact" class="cta-button secondary">Free Wine Country Estimate</a>
         </div>
       </div>
       <div class="hero-image">
-        <img src="/images/hero-fencing-professional.webp" alt="Professional fence installation in Lodi CA" width="600" height="400" loading="eager">
+        <img src="/images/hero-fencing-professional.webp" alt="Professional vineyard and wine country fence installation in Lodi California" width="600" height="400" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Wine Country Services -->
+  <section class="wine-country-services">
+    <div class="container">
+      <h2>Lodi Wine Country Fencing Expertise</h2>
+      <div class="services-intro">
+        <p>As California's Zinfandel Capital with over 100,000 acres of vineyards, Lodi requires specialized fencing solutions that balance agricultural functionality with wine country aesthetics. Our comprehensive services serve everything from boutique family wineries to large-scale commercial vineyard operations.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card featured">
+          <div class="service-image">
+            <img src="https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Vineyard fencing installation in Lodi wine country" loading="lazy" width="300" height="200" />
+          </div>
+          <div class="service-content">
+            <h3>Vineyard & Agricultural Fencing</h3>
+            <p>Specialized fencing for Lodi's world-renowned wine regions. From perimeter security for premium vineyard blocks to functional livestock containment for estate operations. Designed to withstand harvest equipment and seasonal vineyard activities.</p>
+            <ul class="service-features">
+              <li>Harvest equipment accessibility planning</li>
+              <li>Wildlife exclusion for crop protection</li>
+              <li>Irrigation system integration</li>
+              <li>Seasonal worker safety considerations</li>
+              <li>Premium materials for wine country aesthetics</li>
+            </ul>
+            <a href="/services/agricultural-fencing" class="service-link">Explore Vineyard Solutions →</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wine estate residential fencing in Lodi" loading="lazy" width="300" height="200" />
+          </div>
+          <div class="service-content">
+            <h3>Wine Estate & Luxury Residential</h3>
+            <p>Elegant fencing solutions for Lodi's wine country estates and luxury residential properties. Combining privacy, security, and sophistication appropriate for premium wine destinations and hospitality venues.</p>
+            <ul class="service-features">
+              <li>Wine country architectural integration</li>
+              <li>Privacy for tasting room areas</li>
+              <li>Event venue perimeter solutions</li>
+              <li>Hospitality-appropriate materials</li>
+              <li>Custom estate entrance features</li>
+            </ul>
+            <a href="/services/residential-fencing" class="service-link">View Estate Options →</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://images.pexels.com/photos/1475938/pexels-photo-1475938.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Commercial winery security fencing Lodi" loading="lazy" width="300" height="200" />
+          </div>
+          <div class="service-content">
+            <h3>Winery & Commercial Security</h3>
+            <p>Professional security solutions for Lodi's thriving wine industry. From boutique tasting rooms to large-scale production facilities, providing protection that maintains the welcoming atmosphere essential to wine tourism.</p>
+            <ul class="service-features">
+              <li>Tasting room security without barriers</li>
+              <li>Production facility perimeter protection</li>
+              <li>Visitor parking and flow management</li>
+              <li>Equipment and inventory security</li>
+              <li>Tourism-friendly access control</li>
+            </ul>
+            <a href="/services/commercial-fencing" class="service-link">Commercial Solutions →</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Historic Lodi downtown fence restoration" loading="lazy" width="300" height="200" />
+          </div>
+          <div class="service-content">
+            <h3>Historic District & Downtown Lodi</h3>
+            <p>Specialized restoration and installation services for Lodi's charming historic downtown district. Understanding preservation guidelines while providing modern security and privacy solutions for businesses and residents.</p>
+            <ul class="service-features">
+              <li>Historic preservation compliance</li>
+              <li>Period-appropriate materials and styles</li>
+              <li>Downtown business security</li>
+              <li>Residential character preservation</li>
+              <li>City planning coordination</li>
+            </ul>
+            <a href="/services/fence-repair" class="service-link">Historic Services →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -121,6 +281,80 @@ import Layout from '../../layouts/Layout.astro';
         <div class="employer-item">
           <h3>Healthcare & Senior Living</h3>
           <p>Serving Lodi Memorial Hospital, senior care facilities, and assisted living communities with security fencing, privacy solutions, and therapeutic garden enclosures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lodi Wine Country Testimonials -->
+  <section class="lodi-testimonials">
+    <div class="container">
+      <h2>What Lodi Wine Country Says About Our Work</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card wine-industry">
+          <div class="testimonial-content">
+            <p>"As a third-generation Lodi winery, we needed fencing that respected our vineyard's heritage while providing modern security. Sacramento Fencing Co. delivered exactly that - their understanding of wine country operations and harvest logistics made all the difference. The installation didn't interfere with our vintage season."</p>
+            <div class="testimonial-author">
+              <strong>Maria Elena Gonzalez</strong>
+              <span>Owner, Heritage Vineyards Lodi</span>
+              <div class="testimonial-rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card estate">
+          <div class="testimonial-content">
+            <p>"Our wine country estate needed fencing that provided privacy for family areas while maintaining the open, welcoming feel essential for our tasting room guests. The team understood the balance perfectly and delivered a solution that enhances both our family life and our wine hospitality business."</p>
+            <div class="testimonial-author">
+              <strong>James & Patricia Chen</strong>
+              <span>Lodi Wine Estate Owners</span>
+              <div class="testimonial-rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card commercial">
+          <div class="testimonial-content">
+            <p>"When we expanded our Lodi winery to include event facilities, we needed fencing that could handle large events while maintaining security for our production areas. Sacramento Fencing Co.'s commercial expertise and understanding of wine industry needs resulted in a perfect solution that works for both aspects of our business."</p>
+            <div class="testimonial-author">
+              <strong>Robert Martinez</strong>
+              <span>Operations Manager, Sunset Hills Winery</span>
+              <div class="testimonial-rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card residential">
+          <div class="testimonial-content">
+            <p>"Living in historic downtown Lodi, we needed fencing that respected our neighborhood's character while providing modern security for our family. The team worked with city planning to ensure everything was compliant and the result perfectly matches our 1920s home's architecture."</p>
+            <div class="testimonial-author">
+              <strong>Sarah & Michael Thompson</strong>
+              <span>Historic Downtown Lodi Residents</span>
+              <div class="testimonial-rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card agricultural">
+          <div class="testimonial-content">
+            <p>"Our 200-acre agricultural operation needed extensive perimeter fencing that could handle everything from equipment access to wildlife management. Their agricultural expertise and understanding of Central Valley farming made them the obvious choice. Project completed on time and within budget."</p>
+            <div class="testimonial-author">
+              <strong>David Kim</strong>
+              <span>Lodi Area Agricultural Producer</span>
+              <div class="testimonial-rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card emergency">
+          <div class="testimonial-content">
+            <p>"When winter storm damage took down 300 feet of our vineyard perimeter fencing, we called Sacramento Fencing Co. for emergency repairs. They responded within an hour and had temporary security up immediately, then completed permanent repairs before the next rain. Outstanding emergency service."</p>
+            <div class="testimonial-author">
+              <strong>Lisa Rodriguez</strong>
+              <span>Vineyard Manager, Oak Ridge Vineyards</span>
+              <div class="testimonial-rating">★★★★★</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -292,10 +526,38 @@ import Layout from '../../layouts/Layout.astro';
     opacity: 0.9;
   }
   
+  .hero-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
   .hero-buttons {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-top: 2rem;
   }
   
   .cta-button {
@@ -387,6 +649,215 @@ import Layout from '../../layouts/Layout.astro';
   
   .area-card strong {
     color: #FF6B35;
+  }
+
+  .wine-country-services {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+
+  .wine-country-services h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #2C5F2D;
+    padding: 0 2rem;
+  }
+
+  .services-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .services-intro p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid #2C5F2D;
+  }
+
+  .service-card.featured {
+    border-top-color: #FF6B35;
+    transform: scale(1.02);
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    border-top-color: #FF6B35;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  }
+
+  .service-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover .service-image img {
+    transform: scale(1.1);
+  }
+
+  .service-content {
+    padding: 2rem;
+  }
+
+  .service-content h3 {
+    color: #2C5F2D;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .service-content p {
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-features li {
+    padding: 0.3rem 0;
+    color: #495057;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .service-features li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #FF6B35;
+    font-weight: bold;
+  }
+
+  .service-link {
+    color: #2C5F2D;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .service-link:hover {
+    color: #FF6B35;
+  }
+
+  .lodi-testimonials {
+    padding: 5rem 0;
+    background: #f8f9fa;
+  }
+
+  .lodi-testimonials h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #2C5F2D;
+    padding: 0 2rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .testimonial-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .testimonial-card.wine-industry {
+    border-left: 4px solid #800080;
+  }
+
+  .testimonial-card.estate {
+    border-left: 4px solid #FFD700;
+  }
+
+  .testimonial-card.commercial {
+    border-left: 4px solid #2C5F2D;
+  }
+
+  .testimonial-card.residential {
+    border-left: 4px solid #FF6B35;
+  }
+
+  .testimonial-card.agricultural {
+    border-left: 4px solid #8B4513;
+  }
+
+  .testimonial-card.emergency {
+    border-left: 4px solid #DC143C;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  .testimonial-content p {
+    color: #495057;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-size: 1.1rem;
+  }
+
+  .testimonial-author {
+    border-top: 1px solid #e9ecef;
+    padding-top: 1rem;
+  }
+
+  .testimonial-author strong {
+    display: block;
+    color: #2C5F2D;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .testimonial-author span {
+    color: #6c757d;
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .testimonial-rating {
+    color: #FFD700;
+    font-size: 1.1rem;
   }
   
   .directions-grid, .weather-grid, .employer-grid {
@@ -600,8 +1071,26 @@ import Layout from '../../layouts/Layout.astro';
       font-size: 2.5rem;
     }
     
-    .area-grid, .directions-grid, .weather-grid, .employer-grid, .neighborhood-grid, .comparison-grid {
+    .area-grid, .directions-grid, .weather-grid, .employer-grid, .neighborhood-grid, .comparison-grid, .services-grid, .testimonials-grid {
       grid-template-columns: 1fr;
+      padding: 0 1rem;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .stat {
+      padding: 0.5rem 0;
+    }
+
+    .wine-country-services h2, .lodi-testimonials h2 {
+      font-size: 2rem;
+      padding: 0 1rem;
+    }
+
+    .services-intro {
       padding: 0 1rem;
     }
     

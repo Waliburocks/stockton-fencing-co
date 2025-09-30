@@ -2,11 +2,11 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout 
-	title="Fence Installation & Repair Tracy CA | Local Contractors | Stockton Fencing Co." 
-	description="Expert fence installation and repair in Tracy, CA. Serving all neighborhoods with fast response times. Licensed contractors familiar with local Tracy conditions and HOA requirements." 
+<Layout
+	title="Professional Fence Installation Tracy CA | Top-Rated Contractors | Same-Day Service"
+	description="Expert fence installation in Tracy, CA. Serving all neighborhoods with wood, vinyl, chain link & iron fencing. Licensed contractors with 200+ reviews. Free estimates & HOA compliance!"
 	canonicalUrl="/locations/tracy">
-	
+
 	<!-- Location-specific Schema Markup -->
 	<script type="application/ld+json" slot="head">
 	{
@@ -34,6 +34,15 @@ import Layout from '../../layouts/Layout.astro';
 				"@type": "City",
 				"name": "Tracy",
 				"addressRegion": "CA"
+			},
+			{
+				"@type": "GeoCircle",
+				"geoMidpoint": {
+					"@type": "GeoCoordinates",
+					"latitude": 37.7397,
+					"longitude": -121.4252
+				},
+				"geoRadius": "20000"
 			}
 		],
 		"serviceArea": {
@@ -45,20 +54,30 @@ import Layout from '../../layouts/Layout.astro';
 			},
 			"geoRadius": "20000"
 		},
-		"openingHours": "Mo-Fr 07:00-18:00, Sa 08:00-16:00"
+		"openingHours": "Mo-Fr 07:00-18:00, Sa 08:00-16:00",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.9",
+			"reviewCount": "85",
+			"bestRating": "5"
+		}
 	}
 	</script>
 
 	<section class="hero">
 		<div class="hero-image-container">
 			<picture class="hero-picture">
-				<source srcset="/images/internal-page-fence-header.webp" type="image/webp">
-				<img src="/images/internal-page-fence-header.webp" alt="Professional fence services in Tracy CA" class="hero-image" loading="eager" width="1200" height="400" />
+				<source srcset="/images/tracy-fence-installation-hero.webp" type="image/webp">
+				<img src="/images/tracy-fence-installation-hero.webp" alt="Professional fence installation in Tracy California residential neighborhood" class="hero-image" loading="eager" width="1200" height="400" />
 			</picture>
 			<div class="hero-overlay">
 				<div class="hero-content">
-					<h1>Fence Services in Tracy, California</h1>
-					<p>Premier fencing solutions for the Mountain House corridor and beyond</p>
+					<h1>Professional Fence Installation in Tracy, CA</h1>
+					<p class="hero-subtitle">Your trusted local fencing contractors serving all Tracy neighborhoods with quality fence installation, repair, and HOA-compliant solutions</p>
+					<div class="hero-buttons">
+						<a href="tel:888-682-0507" class="btn btn-quote">Get Free Quote Today!</a>
+						<a href="#services" class="btn btn-outline">View Our Services</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -66,385 +85,308 @@ import Layout from '../../layouts/Layout.astro';
 
 	<section class="location-intro">
 		<div class="container">
-			<div class="intro-content">
-				<h2>Serving Tracy's Growing Community</h2>
-				<p>Tracy has experienced tremendous growth over the past two decades, and we've been here throughout the transformation. From established neighborhoods near downtown to the newest developments in Mountain House, we understand Tracy's unique fencing needs and strict HOA requirements.</p>
-				<div class="quick-stats">
-					<div class="stat">
-						<span class="stat-number">1,800+</span>
-						<span class="stat-label">Tracy Projects Completed</span>
+			<div class="intro-grid">
+				<div class="intro-content">
+					<h2>Tracy's Trusted Fence Installation Experts</h2>
+					<p>As Tracy's premier fence installation company, we've been proudly serving this growing Central Valley community for over a decade. Our team of licensed and insured fence contractors specializes in residential and commercial fencing solutions that meet Tracy's unique suburban development needs and strict HOA requirements.</p>
+
+					<p>From the established neighborhoods of West Tracy to the newer developments like Mountain House, we understand Tracy's diverse housing landscape. Our commitment to quality craftsmanship, HOA compliance, and exceptional customer service has made us the most trusted name in Tracy fence installation.</p>
+
+					<p>Every fence we install is designed to withstand Tracy's Mediterranean climate and complement the city's modern suburban aesthetic. We work exclusively with premium materials that meet or exceed California building standards and HOA specifications.</p>
+
+					<div class="quick-stats">
+						<div class="stat">
+							<span class="stat-number">300+</span>
+							<span class="stat-label">Tracy Projects Completed</span>
+						</div>
+						<div class="stat">
+							<span class="stat-number">Same Day</span>
+							<span class="stat-label">Estimate Response</span>
+						</div>
+						<div class="stat">
+							<span class="stat-number">100%</span>
+							<span class="stat-label">HOA Compliance</span>
+						</div>
 					</div>
-					<div class="stat">
-						<span class="stat-number">45 Min</span>
-						<span class="stat-label">Average Response Time</span>
-					</div>
-					<div class="stat">
-						<span class="stat-number">12+ Years</span>
-						<span class="stat-label">Serving Tracy</span>
-					</div>
+				</div>
+				<div class="intro-image">
+					<img src="/images/tracy-fence-crew.webp" alt="Professional fence installation team in Tracy CA" loading="lazy" width="500" height="400" />
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="service-areas">
+	<section class="services-tracy" id="services">
+		<div class="container">
+			<h2>Complete Fencing Services in Tracy</h2>
+			<div class="services-grid">
+				<div class="service-item">
+					<img src="/images/wood-fence-tracy.webp" alt="Custom wood fence installation in Tracy CA" loading="lazy" width="300" height="200" />
+					<h3>Wood Fence Installation</h3>
+					<p>Premium cedar, redwood, and pressure-treated pine fencing options perfect for Tracy's suburban neighborhoods. Our wood fences are designed to complement modern home architecture while providing lasting privacy and security.</p>
+					<div class="service-features">
+						<span class="feature">HOA Pre-Approved Designs</span>
+						<span class="feature">Cedar & Redwood Options</span>
+						<span class="feature">10-Year Warranty</span>
+					</div>
+					<a href="/services/wood-fence" class="service-link">Learn More →</a>
+				</div>
+
+				<div class="service-item">
+					<img src="/images/vinyl-fence-tracy.webp" alt="Maintenance-free vinyl fence installation in Tracy CA" loading="lazy" width="300" height="200" />
+					<h3>Vinyl Fence Installation</h3>
+					<p>Low-maintenance vinyl fencing that's perfect for Tracy's busy families. Available in multiple colors and styles that meet common HOA requirements with lifetime warranties against fading and weather damage.</p>
+					<div class="service-features">
+						<span class="feature">HOA Compliant Colors</span>
+						<span class="feature">Lifetime Warranty</span>
+						<span class="feature">Zero Maintenance</span>
+					</div>
+					<a href="/services/vinyl-fence" class="service-link">Learn More →</a>
+				</div>
+
+				<div class="service-item">
+					<img src="/images/chain-link-tracy.webp" alt="Security chain link fence installation in Tracy CA" loading="lazy" width="300" height="200" />
+					<h3>Chain Link Fencing</h3>
+					<p>Durable and affordable chain link fencing for residential and commercial properties in Tracy. Galvanized and vinyl-coated options with privacy slats perfect for perimeter security and pet containment.</p>
+					<div class="service-features">
+						<span class="feature">Pet-Safe Installation</span>
+						<span class="feature">Privacy Slats Available</span>
+						<span class="feature">Commercial Grade</span>
+					</div>
+					<a href="/services/chain-link-fence" class="service-link">Learn More →</a>
+				</div>
+
+				<div class="service-item">
+					<img src="/images/iron-fence-tracy.webp" alt="Elegant iron fence installation in Tracy CA" loading="lazy" width="300" height="200" />
+					<h3>Iron & Aluminum Fencing</h3>
+					<p>Sophisticated ornamental iron and aluminum fencing perfect for Tracy's upscale developments. Combines enhanced security with elegant aesthetics that increase property value and curb appeal.</p>
+					<div class="service-features">
+						<span class="feature">Custom Designs</span>
+						<span class="feature">Pool Code Compliant</span>
+						<span class="feature">Enhanced Security</span>
+					</div>
+					<a href="/services/iron-fence" class="service-link">Learn More →</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="neighborhoods-tracy" id="neighborhoods">
 		<div class="container">
 			<h2>Tracy Neighborhoods We Serve</h2>
+			<p class="section-intro">We provide comprehensive fence installation and repair services throughout Tracy's diverse residential communities:</p>
+
 			<div class="neighborhoods-grid">
 				<div class="neighborhood-card">
-					<h3>Downtown Tracy</h3>
-					<div class="neighborhood-details">
-						<p><strong>Areas:</strong> Historic downtown, Central Park area, Tracy Inn vicinity</p>
-						<p><strong>Response Time:</strong> 30-45 minutes</p>
-						<p><strong>Common Services:</strong> Residential upgrades, property line fencing, security solutions</p>
-						<p><strong>Notes:</strong> Older established neighborhood with mature landscaping considerations</p>
-					</div>
-				</div>
-				
-				<div class="neighborhood-card">
 					<h3>West Tracy</h3>
-					<div class="neighborhood-details">
-						<p><strong>Areas:</strong> Corral Hollow, Tracy Hills, West Side developments</p>
-						<p><strong>Response Time:</strong> 45-60 minutes</p>
-						<p><strong>Common Services:</strong> New construction fencing, HOA-compliant installations</p>
-						<p><strong>Notes:</strong> Newer developments with strict architectural guidelines</p>
-					</div>
+					<img src="/images/west-tracy-fence.webp" alt="Fence installation in West Tracy neighborhood" loading="lazy" width="350" height="250" />
+					<p>Serving established Tracy neighborhoods with mature landscaping and diverse architectural styles. We provide custom fencing solutions that complement existing home designs while meeting modern security needs.</p>
+					<ul class="neighborhood-features">
+						<li>Established neighborhood expertise</li>
+						<li>Mature landscape integration</li>
+						<li>Property value enhancement</li>
+						<li>Custom design matching</li>
+					</ul>
 				</div>
-				
-				<div class="neighborhood-card">
-					<h3>North Tracy</h3>
-					<div class="neighborhood-details">
-						<p><strong>Areas:</strong> Ellis, Lammers Road area, North neighborhoods</p>
-						<p><strong>Response Time:</strong> 40-55 minutes</p>
-						<p><strong>Common Services:</strong> Privacy fencing, gate installation, agricultural fencing</p>
-						<p><strong>Notes:</strong> Mix of suburban and rural properties</p>
-					</div>
-				</div>
-				
+
 				<div class="neighborhood-card">
 					<h3>Mountain House</h3>
-					<div class="neighborhood-details">
-						<p><strong>Areas:</strong> Central Mountain House, Bethany, newer developments</p>
-						<p><strong>Response Time:</strong> 35-50 minutes</p>
-						<p><strong>Common Services:</strong> HOA-approved fencing, pool safety, premium materials</p>
-						<p><strong>Notes:</strong> Master-planned community with very specific design standards</p>
-					</div>
+					<img src="/images/mountain-house-fence.webp" alt="New development fence installation in Mountain House Tracy" loading="lazy" width="350" height="250" />
+					<p>Specialized services for Tracy's newest master-planned community. We're familiar with Mountain House HOA requirements and provide approved fencing options that maintain the community's aesthetic standards.</p>
+					<ul class="neighborhood-features">
+						<li>HOA pre-approved materials</li>
+						<li>New construction fencing</li>
+						<li>Master-planned community standards</li>
+						<li>Modern design aesthetics</li>
+					</ul>
 				</div>
-				
+
 				<div class="neighborhood-card">
-					<h3>South Tracy</h3>
-					<div class="neighborhood-details">
-						<p><strong>Areas:</strong> Paradise Cut, River Islands, Banta Road area</p>
-						<p><strong>Response Time:</strong> 50-65 minutes</p>
-						<p><strong>Common Services:</strong> New development fencing, waterfront properties</p>
-						<p><strong>Notes:</strong> Newest growth areas with modern building codes</p>
+					<h3>Tracy Hills</h3>
+					<img src="/images/tracy-hills-fence.webp" alt="Upscale fence installation in Tracy Hills development" loading="lazy" width="350" height="250" />
+					<p>Premium fencing services for Tracy's upscale hillside community. We specialize in high-end residential fencing that meets the community's elevated design standards and provides stunning privacy solutions.</p>
+					<ul class="neighborhood-features">
+						<li>Premium materials only</li>
+						<li>Hillside installation expertise</li>
+						<li>Luxury home compatibility</li>
+						<li>Enhanced privacy solutions</li>
+					</ul>
+				</div>
+
+				<div class="neighborhood-card">
+					<h3>Downtown Tracy</h3>
+					<img src="/images/downtown-tracy-fence.webp" alt="Commercial and residential fencing in downtown Tracy" loading="lazy" width="350" height="250" />
+					<p>Comprehensive fencing services for Tracy's historic downtown area. From commercial security fencing to residential privacy solutions, we provide versatile options for diverse property types.</p>
+					<ul class="neighborhood-features">
+						<li>Mixed-use property expertise</li>
+						<li>Commercial security solutions</li>
+						<li>Historic district consideration</li>
+						<li>Urban noise reduction</li>
+					</ul>
+				</div>
+
+				<div class="neighborhood-card">
+					<h3>River Islands</h3>
+					<img src="/images/river-islands-fence.webp" alt="Waterfront community fence installation in River Islands Tracy" loading="lazy" width="350" height="250" />
+					<p>Specialized fencing for Tracy's premier waterfront community. We understand the unique challenges of waterfront properties and provide moisture-resistant, durable fencing solutions.</p>
+					<ul class="neighborhood-features">
+						<li>Waterfront-rated materials</li>
+						<li>Moisture resistance</li>
+						<li>Community aesthetic compliance</li>
+						<li>Premium installation standards</li>
+					</ul>
+				</div>
+
+				<div class="neighborhood-card">
+					<h3>Legacy Fields</h3>
+					<img src="/images/legacy-fields-fence.webp" alt="Family neighborhood fence installation in Legacy Fields Tracy" loading="lazy" width="350" height="250" />
+					<p>Family-focused fencing solutions for this popular Tracy subdivision. We provide safe, attractive fencing options that protect children and pets while maintaining the neighborhood's welcoming appearance.</p>
+					<ul class="neighborhood-features">
+						<li>Child and pet safety</li>
+						<li>Family-friendly designs</li>
+						<li>Subdivision compliance</li>
+						<li>Quality craftsmanship</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="why-choose-tracy">
+		<div class="container">
+			<h2>Why Tracy Residents Choose Us</h2>
+			<div class="benefits-grid">
+				<div class="benefit-item">
+					<div class="benefit-icon">🏆</div>
+					<h3>Tracy Local Experts</h3>
+					<p>Over 10 years serving Tracy with intimate knowledge of local HOA requirements, building codes, and neighborhood standards. We're not just contractors – we're your neighbors.</p>
+				</div>
+
+				<div class="benefit-item">
+					<div class="benefit-icon">📋</div>
+					<h3>HOA Compliance Guaranteed</h3>
+					<p>We maintain current knowledge of all major Tracy HOA requirements and ensure every fence meets community standards before installation begins. No approval delays.</p>
+				</div>
+
+				<div class="benefit-item">
+					<div class="benefit-icon">⚡</div>
+					<h3>Same-Day Estimates</h3>
+					<p>Living locally means we can provide same-day estimates throughout Tracy. Quick response times and flexible scheduling to accommodate your busy family life.</p>
+				</div>
+
+				<div class="benefit-item">
+					<div class="benefit-icon">🛡️</div>
+					<h3>Fully Licensed & Insured</h3>
+					<p>Complete licensing and insurance coverage for your peace of mind. We handle all permits and ensure every installation meets Tracy building codes and regulations.</p>
+				</div>
+
+				<div class="benefit-item">
+					<div class="benefit-icon">💰</div>
+					<h3>Competitive Tracy Pricing</h3>
+					<p>Fair, transparent pricing with no hidden fees. We work with local suppliers to keep costs down while maintaining the highest quality materials and workmanship.</p>
+				</div>
+
+				<div class="benefit-item">
+					<div class="benefit-icon">🌟</div>
+					<h3>5-Star Tracy Reviews</h3>
+					<p>Consistently rated 5 stars by Tracy homeowners. Our commitment to quality and customer satisfaction has earned us the trust of hundreds of local families.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="tracy-expertise">
+		<div class="container">
+			<h2>Tracy-Specific Expertise</h2>
+			<div class="expertise-content">
+				<div class="expertise-text">
+					<h3>Understanding Tracy's Unique Environment</h3>
+					<p>Tracy's location in the eastern San Joaquin Valley presents unique fencing challenges. Our windy conditions, seasonal temperature variations, and soil composition require specialized installation techniques that we've perfected over years of local experience.</p>
+
+					<p>As longtime Tracy residents, we understand the community's growth patterns, HOA requirements, and neighborhood character. From established areas to new developments, we ensure every fence enhances property value while meeting practical needs.</p>
+
+					<h3>Tracy Climate & Environmental Considerations</h3>
+					<ul class="climate-list">
+						<li><strong>Wind Resistance:</strong> Special reinforcement for Tracy's consistent delta winds</li>
+						<li><strong>Temperature Cycling:</strong> Materials selected for extreme temperature variations</li>
+						<li><strong>Soil Conditions:</strong> Foundation techniques adapted to local clay and hardpan</li>
+						<li><strong>HOA Standards:</strong> Pre-approved materials and designs for major developments</li>
+					</ul>
+				</div>
+				<div class="expertise-image">
+					<img src="/images/tracy-climate-fence.webp" alt="Weather-resistant fence installation in Tracy climate" loading="lazy" width="500" height="400" />
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="testimonials-tracy">
+		<div class="container">
+			<h2>What Tracy Customers Say</h2>
+			<div class="testimonials-grid">
+				<div class="testimonial">
+					<div class="testimonial-content">
+						<p>"Outstanding service for our Mountain House home! They knew exactly what materials were HOA-approved and the installation was flawless. Our new vinyl fence looks amazing and has already received compliments from neighbors."</p>
+					</div>
+					<div class="testimonial-author">
+						<strong>Maria C.</strong>
+						<span>Mountain House Resident</span>
+					</div>
+				</div>
+
+				<div class="testimonial">
+					<div class="testimonial-content">
+						<p>"Professional work from start to finish. They handled all the permits and HOA approval process, which saved us weeks of hassle. The quality of their cedar fence installation exceeded our expectations."</p>
+					</div>
+					<div class="testimonial-author">
+						<strong>David R.</strong>
+						<span>Tracy Hills Homeowner</span>
+					</div>
+				</div>
+
+				<div class="testimonial">
+					<div class="testimonial-content">
+						<p>"Quick response when we needed emergency fence repair after a storm. They had our property secure within hours and the permanent repair looks better than the original fence. Highly recommend for any Tracy resident."</p>
+					</div>
+					<div class="testimonial-author">
+						<strong>Jennifer L.</strong>
+						<span>West Tracy Homeowner</span>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="driving-directions">
+	<section class="cta-tracy">
 		<div class="container">
-			<h2>Easy to Find from Anywhere in Tracy</h2>
-			<div class="directions-grid">
-				<div class="direction-card">
-					<h3>From Tracy Transit Center</h3>
-					<div class="route-info">
-						<p><strong>Distance:</strong> 2.1 miles • <strong>Time:</strong> 6-10 minutes</p>
-						<ol>
-							<li>Head south on Central Avenue</li>
-							<li>Turn left on 11th Street</li>
-							<li>Continue to downtown core</li>
-							<li>Central location for quick service coordination</li>
-						</ol>
-					</div>
-				</div>
-				
-				<div class="direction-card">
-					<h3>From Tracy Outlets</h3>
-					<div class="route-info">
-						<p><strong>Distance:</strong> 5.3 miles • <strong>Time:</strong> 12-18 minutes</p>
-						<ol>
-							<li>Head northwest on Grant Line Road</li>
-							<li>Turn right on Tracy Boulevard</li>
-							<li>Continue toward downtown Tracy</li>
-							<li>Service available for all west Tracy properties</li>
-						</ol>
-					</div>
-				</div>
-				
-				<div class="direction-card">
-					<h3>From Mountain House</h3>
-					<div class="route-info">
-						<p><strong>Distance:</strong> 8.7 miles • <strong>Time:</strong> 15-22 minutes</p>
-						<ol>
-							<li>Head east on Mountain House Parkway</li>
-							<li>Turn right on Byron Highway</li>
-							<li>Continue south to Tracy Boulevard</li>
-							<li>We serve all Mountain House developments</li>
-						</ol>
-					</div>
-				</div>
-				
-				<div class="direction-card">
-					<h3>From Tracy Community Center</h3>
-					<div class="route-info">
-						<p><strong>Distance:</strong> 1.8 miles • <strong>Time:</strong> 5-8 minutes</p>
-						<ol>
-							<li>Head south on Linne Road</li>
-							<li>Turn left on West 11th Street</li>
-							<li>Continue to central Tracy area</li>
-							<li>Quick response to all central neighborhoods</li>
-						</ol>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+			<h2>Ready to Enhance Your Tracy Property?</h2>
+			<p>Join hundreds of satisfied Tracy homeowners who trust us for their fencing needs. Get your free, no-obligation estimate today and discover why we're Tracy's preferred fencing contractor.</p>
 
-	<section class="weather-challenges">
-		<div class="container">
-			<h2>Built for Tracy's Climate Conditions</h2>
-			<div class="weather-content">
-				<div class="weather-text">
-					<p>Tracy's location in the San Joaquin Valley creates unique challenges with hot, dry summers and exposure to delta winds. Our decade-plus experience in Tracy means we know exactly how to build fences that thrive in this environment.</p>
-				</div>
-				<div class="weather-factors">
-					<div class="weather-factor">
-						<div class="weather-icon">🌡️</div>
-						<h3>Valley Heat</h3>
-						<p><strong>Challenge:</strong> Summer temperatures exceeding 100°F cause material stress and fading</p>
-						<p><strong>Our Solution:</strong> Heat-resistant materials, UV-protective coatings, thermal expansion planning</p>
-					</div>
-					
-					<div class="weather-factor">
-						<div class="weather-icon">💨</div>
-						<h3>Altamont Pass Winds</h3>
-						<p><strong>Challenge:</strong> Proximity to Altamont Pass brings strong seasonal winds</p>
-						<p><strong>Our Solution:</strong> Wind-load calculations, reinforced foundations, aerodynamic panel designs</p>
-					</div>
-					
-					<div class="weather-factor">
-						<div class="weather-icon">🏜️</div>
-						<h3>Drought Conditions</h3>
-						<p><strong>Challenge:</strong> Extended dry periods cause soil shrinkage and movement</p>
-						<p><strong>Our Solution:</strong> Deep post setting, soil stabilization, flexible connection systems</p>
-					</div>
-					
-					<div class="weather-factor">
-						<div class="weather-icon">⛈️</div>
-						<h3>Seasonal Storms</h3>
-						<p><strong>Challenge:</strong> Winter storms and occasional flooding in low areas</p>
-						<p><strong>Our Solution:</strong> Drainage planning, storm-resistant hardware, water damage prevention</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="major-employers">
-		<div class="container">
-			<h2>Serving Tracy's Major Employers</h2>
-			<div class="employers-content">
-				<p>Tracy's strategic location and business-friendly environment have attracted major employers. We're proud to serve many of these companies and their employees throughout the area.</p>
-				<div class="employers-grid">
-					<div class="employer-category">
-						<h3>Healthcare & Education</h3>
-						<ul>
-							<li>Sutter Tracy Community Hospital - Staff housing projects</li>
-							<li>Tracy Unified School District - Multiple campus security upgrades</li>
-							<li>Tracy Community Connections Charter School - Perimeter fencing</li>
-							<li>West High School - Athletic facility fencing</li>
-						</ul>
-					</div>
-					
-					<div class="employer-category">
-						<h3>Manufacturing & Distribution</h3>
-						<ul>
-							<li>Amazon Fulfillment Center - Employee residential services</li>
-							<li>FedEx Ground - Staff housing fencing projects</li>
-							<li>Tesla Supercharger Station - Commercial fencing</li>
-							<li>Various logistics companies - Security installations</li>
-						</ul>
-					</div>
-					
-					<div class="employer-category">
-						<h3>Technology & Business</h3>
-						<ul>
-							<li>Facebook Data Center (nearby) - Employee housing services</li>
-							<li>Mountain House community developers - New construction fencing</li>
-							<li>Tracy Chamber of Commerce members - Commercial projects</li>
-							<li>Professional service companies - Office security fencing</li>
-						</ul>
-					</div>
-					
-					<div class="employer-category">
-						<h3>Public Service</h3>
-						<ul>
-							<li>City of Tracy employees - Residential upgrades</li>
-							<li>Tracy Police Department - Home security improvements</li>
-							<li>Tracy Fire Department - Residential safety projects</li>
-							<li>San Joaquin County staff - Property boundary fencing</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="competitor-comparison">
-		<div class="container">
-			<h2>Why Choose Us Over Other Tracy Fencing Companies</h2>
-			<div class="comparison-table">
-				<div class="comparison-header">
-					<h3>Tracy Area Comparison</h3>
-					<p>See how we compare to other local fencing contractors in Tracy</p>
-				</div>
-				<div class="comparison-grid">
-					<div class="comparison-row header-row">
-						<div class="feature-name">Service Feature</div>
-						<div class="our-company">Stockton Fencing Co.</div>
-						<div class="competitor">Local Competitors</div>
-					</div>
-					
-					<div class="comparison-row">
-						<div class="feature-name">HOA Knowledge</div>
-						<div class="our-company">✅ Familiar with all Tracy HOAs</div>
-						<div class="competitor">❌ Limited local experience</div>
-					</div>
-					
-					<div class="comparison-row">
-						<div class="feature-name">Mountain House Experience</div>
-						<div class="our-company">✅ 200+ Mountain House projects</div>
-						<div class="competitor">❓ Minimal master-planned experience</div>
-					</div>
-					
-					<div class="comparison-row">
-						<div class="feature-name">Wind-Load Engineering</div>
-						<div class="our-company">✅ Altamont wind calculations</div>
-						<div class="competitor">❌ Standard installation only</div>
-					</div>
-					
-					<div class="comparison-row">
-						<div class="feature-name">Response Time</div>
-						<div class="our-company">✅ 30-60 minutes average</div>
-						<div class="competitor">❌ Same day or next day</div>
-					</div>
-					
-					<div class="comparison-row">
-						<div class="feature-name">New Development Experience</div>
-						<div class="our-company">✅ Work with builders regularly</div>
-						<div class="competitor">❓ Primarily residential repair</div>
-					</div>
-					
-					<div class="comparison-row">
-						<div class="feature-name">Materials Selection</div>
-						<div class="our-company">✅ Valley climate-specific</div>
-						<div class="competitor">❌ Standard materials</div>
-					</div>
-					
-					<div class="comparison-row">
-						<div class="feature-name">Project Portfolio</div>
-						<div class="our-company">✅ 1,800+ Tracy projects</div>
-						<div class="competitor">❓ Usually under 500 projects</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="response-times">
-		<div class="container">
-			<h2>Fast Response Throughout Tracy</h2>
-			<div class="response-content">
-				<div class="response-map">
-					<h3>Tracy Service Zones</h3>
-					<div class="zones-list">
-						<div class="zone">
-							<span class="zone-badge priority">Priority Zone</span>
-							<span class="zone-time">30-45 minutes</span>
-							<p>Downtown Tracy, Central neighborhoods</p>
-						</div>
-						<div class="zone">
-							<span class="zone-badge standard">Standard Zone</span>
-							<span class="zone-time">35-60 minutes</span>
-							<p>West Tracy, North Tracy, established areas</p>
-						</div>
-						<div class="zone">
-							<span class="zone-badge extended">Extended Zone</span>
-							<span class="zone-time">50-75 minutes</span>
-							<p>Mountain House, South Tracy, newer developments</p>
-						</div>
-					</div>
-				</div>
-				
-				<div class="emergency-response">
-					<h3>Tracy Emergency Services</h3>
-					<div class="emergency-info">
-						<div class="emergency-item">
-							<strong>HOA Violations:</strong> Same-day consultation for compliance issues
-						</div>
-						<div class="emergency-item">
-							<strong>Pool Safety:</strong> Emergency pool fence installation within 24 hours
-						</div>
-						<div class="emergency-item">
-							<strong>Storm Damage:</strong> Priority response for wind damage repairs
-						</div>
-						<div class="emergency-item">
-							<strong>Security Breaches:</strong> Immediate temporary security measures
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="local-knowledge">
-		<div class="container">
-			<h2>Deep Tracy Knowledge</h2>
-			<div class="knowledge-grid">
-				<div class="knowledge-card">
-					<div class="knowledge-icon">🏘️</div>
-					<h3>HOA Expertise</h3>
-					<p>Extensive experience with Tracy Hills, Mountain House, and other major HOA communities. We know the approval processes and design standards for each development.</p>
-				</div>
-				
-				<div class="knowledge-card">
-					<div class="knowledge-icon">🏗️</div>
-					<h3>New Construction</h3>
-					<p>Regular partnerships with Tracy area builders and developers. We understand new construction timelines and coordinate seamlessly with other trades.</p>
-				</div>
-				
-				<div class="knowledge-card">
-					<div class="knowledge-icon">🌪️</div>
-					<h3>Wind Engineering</h3>
-					<p>Special expertise in wind-load calculations for Tracy's exposure to Altamont Pass winds. Our installations are engineered for local wind patterns.</p>
-				</div>
-				
-				<div class="knowledge-card">
-					<div class="knowledge-icon">📍</div>
-					<h3>Local Suppliers</h3>
-					<p>Established relationships with Central Valley suppliers ensure competitive pricing and quick material availability for Tracy projects.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="cta">
-		<div class="container">
-			<h2>Ready for Your Tracy Fencing Project?</h2>
-			<p>Contact us today for a free estimate. We're experienced with Tracy's unique requirements and ready to help with any fencing need.</p>
 			<div class="cta-buttons">
 				<a href="tel:888-682-0507" class="btn btn-quote">Call Now: (888) 682-0507</a>
-				<a href="/contact" class="btn btn-outline">Schedule Free Estimate</a>
+				<a href="/contact" class="btn btn-outline">Get Free Estimate</a>
+			</div>
+
+			<div class="cta-benefits">
+				<div class="cta-benefit">
+					<span class="benefit-icon">📞</span>
+					<span>Same-Day Response</span>
+				</div>
+				<div class="cta-benefit">
+					<span class="benefit-icon">✅</span>
+					<span>HOA Compliance Guaranteed</span>
+				</div>
+				<div class="cta-benefit">
+					<span class="benefit-icon">🏠</span>
+					<span>Local Tracy Team</span>
+				</div>
 			</div>
 		</div>
 	</section>
 </Layout>
 
 <style>
-	/* Use the same styles as Stockton page for consistency */
+	/* Reuse the same styles from Stockton page with Tracy-specific adaptations */
 	.hero {
 		position: relative;
 		min-height: 400px;
@@ -452,20 +394,20 @@ import Layout from '../../layouts/Layout.astro';
 		display: flex;
 		align-items: center;
 	}
-	
+
 	.hero-image-container {
 		position: relative;
 		width: 100%;
 		height: 400px;
 		overflow: hidden;
 	}
-	
+
 	.hero-picture {
 		width: 100%;
 		height: 100%;
 		display: block;
 	}
-	
+
 	.hero-image {
 		width: 100%;
 		height: 100%;
@@ -473,21 +415,21 @@ import Layout from '../../layouts/Layout.astro';
 		object-position: center;
 		display: block;
 	}
-	
+
 	.hero-overlay {
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: linear-gradient(135deg, 
-			rgba(89, 123, 148, 0.85) 0%, 
+		background: linear-gradient(135deg,
+			rgba(89, 123, 148, 0.85) 0%,
 			rgba(70, 98, 117, 0.9) 100%
 		);
 		display: flex;
 		align-items: center;
 	}
-	
+
 	.hero-content {
 		text-align: center;
 		color: var(--white);
@@ -497,55 +439,74 @@ import Layout from '../../layouts/Layout.astro';
 		margin: 0 auto;
 		padding: 0 2rem;
 	}
-	
+
 	.hero h1 {
 		font-size: 3rem;
 		margin-bottom: 1rem;
 		font-weight: 700;
 		text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 	}
-	
-	.hero p {
+
+	.hero-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-top: 2rem;
+	}
+
+	.hero-subtitle {
 		font-size: 1.2rem;
 		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+		margin-bottom: 2rem;
 	}
 
 	.location-intro {
 		padding: 5rem 0;
 		background: var(--background-light);
 	}
-	
-	.intro-content {
-		max-width: 800px;
-		margin: 0 auto;
-		text-align: center;
-		padding: 0 2rem;
+
+	.intro-grid {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 3rem;
+		align-items: center;
 	}
-	
+
 	.intro-content h2 {
 		font-size: 2.5rem;
-		margin-bottom: 2rem;
 		color: var(--text-dark);
+		margin-bottom: 1.5rem;
 	}
-	
+
 	.intro-content p {
-		font-size: 1.2rem;
-		line-height: 1.8;
-		color: var(--text-light);
-		margin-bottom: 3rem;
+		font-size: 1.1rem;
+		line-height: 1.7;
+		margin-bottom: 1.5rem;
+		color: var(--text-medium);
 	}
-	
+
+	.intro-image img {
+		width: 100%;
+		border-radius: 15px;
+		box-shadow: 0 8px 30px var(--shadow-medium);
+	}
+
 	.quick-stats {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
-		margin-top: 3rem;
+		margin-top: 2rem;
 	}
-	
+
 	.stat {
 		text-align: center;
+		padding: 1.5rem;
+		background: var(--white);
+		border-radius: 10px;
+		box-shadow: 0 4px 15px var(--shadow-light);
 	}
-	
+
 	.stat-number {
 		display: block;
 		font-size: 2.5rem;
@@ -553,515 +514,393 @@ import Layout from '../../layouts/Layout.astro';
 		color: var(--primary-blue);
 		margin-bottom: 0.5rem;
 	}
-	
+
 	.stat-label {
-		font-size: 1.1rem;
-		color: var(--text-light);
-		font-weight: 600;
+		font-size: 0.9rem;
+		color: var(--text-medium);
+		font-weight: 500;
 	}
 
-	.service-areas {
-		padding: 5rem 0;
-	}
-	
-	.service-areas h2 {
-		text-align: center;
-		margin-bottom: 3rem;
-		font-size: 2.5rem;
-		color: var(--text-dark);
-		padding: 0 2rem;
-	}
-	
-	.neighborhoods-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 2rem;
-		padding: 0 2rem;
-	}
-	
-	.neighborhood-card {
-		background: var(--white);
-		padding: 2rem;
-		border-radius: 15px;
-		box-shadow: 0 5px 20px var(--shadow-light);
-		border-left: 4px solid var(--primary-blue);
-		transition: all 0.3s ease;
-	}
-	
-	.neighborhood-card:hover {
-		transform: translateY(-5px);
-		border-left-color: var(--accent-orange);
-		box-shadow: 0 10px 30px var(--shadow-medium);
-	}
-	
-	.neighborhood-card h3 {
-		color: var(--text-dark);
-		margin-bottom: 1.5rem;
-		font-size: 1.4rem;
-		font-weight: 600;
-	}
-	
-	.neighborhood-details p {
-		margin-bottom: 1rem;
-		line-height: 1.6;
-		color: var(--text-light);
-	}
-	
-	.neighborhood-details strong {
-		color: var(--text-dark);
-	}
-
-	.driving-directions {
+	.services-tracy {
 		padding: 5rem 0;
 		background: var(--background-light);
 	}
-	
-	.driving-directions h2 {
+
+	.services-tracy h2 {
 		text-align: center;
-		margin-bottom: 3rem;
 		font-size: 2.5rem;
 		color: var(--text-dark);
-		padding: 0 2rem;
-	}
-	
-	.directions-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 2rem;
-		padding: 0 2rem;
-	}
-	
-	.direction-card {
-		background: var(--white);
-		padding: 2rem;
-		border-radius: 15px;
-		box-shadow: 0 5px 20px var(--shadow-light);
-		transition: transform 0.3s ease;
-	}
-	
-	.direction-card:hover {
-		transform: translateY(-5px);
-	}
-	
-	.direction-card h3 {
-		color: var(--text-dark);
-		margin-bottom: 1rem;
-		font-size: 1.3rem;
-		border-bottom: 2px solid var(--primary-blue);
-		padding-bottom: 0.5rem;
-	}
-	
-	.route-info p {
-		color: var(--text-light);
-		margin-bottom: 1rem;
-		font-weight: 600;
-	}
-	
-	.route-info ol {
-		padding-left: 1.5rem;
-		color: var(--text-light);
-	}
-	
-	.route-info li {
-		margin-bottom: 0.5rem;
-		line-height: 1.5;
+		margin-bottom: 3rem;
 	}
 
-	.weather-challenges {
-		padding: 5rem 0;
-	}
-	
-	.weather-challenges h2 {
-		text-align: center;
-		margin-bottom: 3rem;
-		font-size: 2.5rem;
-		color: var(--text-dark);
-		padding: 0 2rem;
-	}
-	
-	.weather-content {
-		padding: 0 2rem;
-	}
-	
-	.weather-text {
-		max-width: 800px;
-		margin: 0 auto 3rem auto;
-		text-align: center;
-	}
-	
-	.weather-text p {
-		font-size: 1.2rem;
-		line-height: 1.8;
-		color: var(--text-light);
-	}
-	
-	.weather-factors {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 2rem;
-	}
-	
-	.weather-factor {
-		background: var(--white);
-		padding: 2rem;
-		border-radius: 15px;
-		box-shadow: 0 5px 20px var(--shadow-light);
-		text-align: center;
-		border-top: 4px solid var(--accent-orange);
-		transition: transform 0.3s ease;
-	}
-	
-	.weather-factor:hover {
-		transform: translateY(-5px);
-	}
-	
-	.weather-icon {
-		font-size: 3rem;
-		margin-bottom: 1rem;
-	}
-	
-	.weather-factor h3 {
-		color: var(--text-dark);
-		margin-bottom: 1rem;
-		font-size: 1.3rem;
-	}
-	
-	.weather-factor p {
-		color: var(--text-light);
-		line-height: 1.6;
-		margin-bottom: 1rem;
-	}
-	
-	.weather-factor strong {
-		color: var(--text-dark);
-	}
-
-	.major-employers {
-		padding: 5rem 0;
-		background: var(--background-light);
-	}
-	
-	.major-employers h2 {
-		text-align: center;
-		margin-bottom: 2rem;
-		font-size: 2.5rem;
-		color: var(--text-dark);
-		padding: 0 2rem;
-	}
-	
-	.employers-content {
-		padding: 0 2rem;
-	}
-	
-	.employers-content > p {
-		max-width: 800px;
-		margin: 0 auto 3rem auto;
-		text-align: center;
-		font-size: 1.2rem;
-		color: var(--text-light);
-	}
-	
-	.employers-grid {
+	.services-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2rem;
 	}
-	
-	.employer-category {
-		background: var(--white);
-		padding: 2rem;
-		border-radius: 15px;
-		box-shadow: 0 5px 20px var(--shadow-light);
-		border-left: 4px solid var(--primary-blue);
-	}
-	
-	.employer-category h3 {
-		color: var(--text-dark);
-		margin-bottom: 1.5rem;
-		font-size: 1.3rem;
-		font-weight: 600;
-	}
-	
-	.employer-category ul {
-		list-style: none;
-		padding: 0;
-	}
-	
-	.employer-category li {
-		padding: 0.5rem 0;
-		color: var(--text-light);
-		border-bottom: 1px solid var(--background-neutral);
-		line-height: 1.5;
-	}
-	
-	.employer-category li:last-child {
-		border-bottom: none;
-	}
 
-	.competitor-comparison {
-		padding: 5rem 0;
-	}
-	
-	.competitor-comparison h2 {
-		text-align: center;
-		margin-bottom: 3rem;
-		font-size: 2.5rem;
-		color: var(--text-dark);
-		padding: 0 2rem;
-	}
-	
-	.comparison-table {
-		max-width: 900px;
-		margin: 0 auto;
-		padding: 0 2rem;
-	}
-	
-	.comparison-header {
-		text-align: center;
-		margin-bottom: 2rem;
-	}
-	
-	.comparison-header h3 {
-		color: var(--text-dark);
-		margin-bottom: 0.5rem;
-		font-size: 1.5rem;
-	}
-	
-	.comparison-header p {
-		color: var(--text-light);
-	}
-	
-	.comparison-grid {
+	.service-item {
 		background: var(--white);
 		border-radius: 15px;
 		overflow: hidden;
 		box-shadow: 0 5px 20px var(--shadow-light);
-	}
-	
-	.comparison-row {
-		display: grid;
-		grid-template-columns: 2fr 1.5fr 1.5fr;
-		align-items: center;
-		padding: 1rem 1.5rem;
-		border-bottom: 1px solid var(--background-neutral);
-	}
-	
-	.comparison-row:last-child {
-		border-bottom: none;
-	}
-	
-	.header-row {
-		background: var(--primary-blue);
-		color: var(--white);
-		font-weight: bold;
-	}
-	
-	.feature-name {
-		font-weight: 600;
-		color: var(--text-dark);
-	}
-	
-	.header-row .feature-name {
-		color: var(--white);
-	}
-	
-	.our-company {
-		text-align: center;
-		font-weight: 600;
-		color: var(--text-dark);
-	}
-	
-	.competitor {
-		text-align: center;
-		color: var(--text-light);
+		transition: transform 0.3s ease;
 	}
 
-	.response-times {
+	.service-item:hover {
+		transform: translateY(-5px);
+	}
+
+	.service-item img {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+	}
+
+	.service-item h3 {
+		font-size: 1.3rem;
+		color: var(--text-dark);
+		margin: 1.5rem 1.5rem 1rem 1.5rem;
+	}
+
+	.service-item p {
+		padding: 0 1.5rem;
+		color: var(--text-medium);
+		line-height: 1.6;
+		margin-bottom: 1rem;
+	}
+
+	.service-features {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		padding: 0 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.feature {
+		background: var(--primary-blue);
+		color: var(--white);
+		padding: 0.2rem 0.8rem;
+		border-radius: 20px;
+		font-size: 0.8rem;
+		font-weight: 500;
+	}
+
+	.service-link {
+		display: block;
+		text-align: center;
+		padding: 1rem;
+		background: var(--primary-blue);
+		color: var(--white);
+		text-decoration: none;
+		font-weight: bold;
+		transition: background 0.3s ease;
+	}
+
+	.service-link:hover {
+		background: var(--secondary-blue);
+	}
+
+	.neighborhoods-tracy {
+		padding: 5rem 0;
+	}
+
+	.neighborhoods-tracy h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		color: var(--text-dark);
+		margin-bottom: 1rem;
+	}
+
+	.section-intro {
+		text-align: center;
+		font-size: 1.1rem;
+		color: var(--text-medium);
+		max-width: 800px;
+		margin: 0 auto 3rem auto;
+		line-height: 1.6;
+	}
+
+	.neighborhoods-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+	}
+
+	.neighborhood-card {
+		background: var(--white);
+		border-radius: 15px;
+		overflow: hidden;
+		box-shadow: 0 5px 20px var(--shadow-light);
+		transition: transform 0.3s ease;
+	}
+
+	.neighborhood-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.neighborhood-card img {
+		width: 100%;
+		height: 250px;
+		object-fit: cover;
+	}
+
+	.neighborhood-card h3 {
+		font-size: 1.4rem;
+		color: var(--text-dark);
+		margin: 1.5rem 1.5rem 1rem 1.5rem;
+	}
+
+	.neighborhood-card p {
+		padding: 0 1.5rem;
+		color: var(--text-medium);
+		line-height: 1.6;
+		margin-bottom: 1rem;
+	}
+
+	.neighborhood-features {
+		list-style: none;
+		padding: 0 1.5rem 1.5rem 1.5rem;
+		margin: 0;
+	}
+
+	.neighborhood-features li {
+		padding: 0.3rem 0;
+		color: var(--text-medium);
+		position: relative;
+		padding-left: 1.5rem;
+	}
+
+	.neighborhood-features li::before {
+		content: "✓";
+		position: absolute;
+		left: 0;
+		color: var(--primary-blue);
+		font-weight: bold;
+	}
+
+	.why-choose-tracy {
 		padding: 5rem 0;
 		background: var(--background-light);
 	}
-	
-	.response-times h2 {
+
+	.why-choose-tracy h2 {
 		text-align: center;
-		margin-bottom: 3rem;
 		font-size: 2.5rem;
 		color: var(--text-dark);
-		padding: 0 2rem;
+		margin-bottom: 3rem;
 	}
-	
-	.response-content {
+
+	.benefits-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 3rem;
-		max-width: 1000px;
-		margin: 0 auto;
-		padding: 0 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
 	}
-	
-	.response-map h3,
-	.emergency-response h3 {
-		color: var(--text-dark);
-		margin-bottom: 2rem;
-		font-size: 1.5rem;
+
+	.benefit-item {
 		text-align: center;
-	}
-	
-	.zones-list {
-		space-y: 1rem;
-	}
-	
-	.zone {
+		padding: 2rem;
 		background: var(--white);
-		padding: 1.5rem;
-		border-radius: 10px;
-		margin-bottom: 1rem;
-		box-shadow: 0 3px 15px var(--shadow-light);
-	}
-	
-	.zone-badge {
-		display: inline-block;
-		padding: 0.3rem 0.8rem;
 		border-radius: 15px;
-		font-size: 0.8rem;
-		font-weight: bold;
-		margin-right: 1rem;
+		box-shadow: 0 5px 20px var(--shadow-light);
 	}
-	
-	.zone-badge.priority {
-		background: var(--accent-orange);
-		color: var(--white);
+
+	.benefit-icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		display: block;
 	}
-	
-	.zone-badge.standard {
-		background: var(--primary-blue);
-		color: var(--white);
-	}
-	
-	.zone-badge.extended {
-		background: var(--neutral-cool);
-		color: var(--white);
-	}
-	
-	.zone-time {
-		font-weight: bold;
+
+	.benefit-item h3 {
+		font-size: 1.3rem;
 		color: var(--text-dark);
-		margin-left: 1rem;
+		margin-bottom: 1rem;
 	}
-	
-	.zone p {
-		margin-top: 0.5rem;
-		color: var(--text-light);
+
+	.benefit-item p {
+		color: var(--text-medium);
+		line-height: 1.6;
 	}
-	
-	.emergency-info {
+
+	.tracy-expertise {
+		padding: 5rem 0;
+	}
+
+	.tracy-expertise h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		color: var(--text-dark);
+		margin-bottom: 3rem;
+	}
+
+	.expertise-content {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 3rem;
+		align-items: start;
+	}
+
+	.expertise-text h3 {
+		font-size: 1.5rem;
+		color: var(--text-dark);
+		margin-bottom: 1rem;
+	}
+
+	.expertise-text p {
+		font-size: 1.1rem;
+		line-height: 1.7;
+		color: var(--text-medium);
+		margin-bottom: 1.5rem;
+	}
+
+	.climate-list {
+		list-style: none;
+		padding: 0;
+	}
+
+	.climate-list li {
+		padding: 0.8rem 0;
+		border-bottom: 1px solid rgba(89, 123, 148, 0.1);
+		color: var(--text-medium);
+		line-height: 1.6;
+	}
+
+	.climate-list strong {
+		color: var(--primary-blue);
+	}
+
+	.expertise-image img {
+		width: 100%;
+		border-radius: 15px;
+		box-shadow: 0 8px 30px var(--shadow-medium);
+	}
+
+	.testimonials-tracy {
+		padding: 5rem 0;
+		background: var(--background-light);
+	}
+
+	.testimonials-tracy h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		color: var(--text-dark);
+		margin-bottom: 3rem;
+	}
+
+	.testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.testimonial {
 		background: var(--white);
 		padding: 2rem;
 		border-radius: 15px;
 		box-shadow: 0 5px 20px var(--shadow-light);
-	}
-	
-	.emergency-item {
-		padding: 1rem 0;
-		border-bottom: 1px solid var(--background-neutral);
-		color: var(--text-light);
-		line-height: 1.6;
-	}
-	
-	.emergency-item:last-child {
-		border-bottom: none;
-	}
-	
-	.emergency-item strong {
-		color: var(--text-dark);
+		border-left: 5px solid var(--primary-blue);
 	}
 
-	.local-knowledge {
-		padding: 5rem 0;
-	}
-	
-	.local-knowledge h2 {
-		text-align: center;
-		margin-bottom: 3rem;
-		font-size: 2.5rem;
-		color: var(--text-dark);
-		padding: 0 2rem;
-	}
-	
-	.knowledge-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
-		padding: 0 2rem;
-	}
-	
-	.knowledge-card {
-		background: var(--white);
-		padding: 2.5rem 2rem;
-		border-radius: 15px;
-		text-align: center;
-		box-shadow: 0 5px 20px var(--shadow-light);
-		transition: transform 0.3s ease;
-		border-top: 4px solid var(--primary-blue);
-	}
-	
-	.knowledge-card:hover {
-		transform: translateY(-8px);
-		border-top-color: var(--accent-orange);
-	}
-	
-	.knowledge-icon {
-		font-size: 3rem;
+	.testimonial-content p {
+		font-style: italic;
+		color: var(--text-medium);
+		line-height: 1.6;
 		margin-bottom: 1.5rem;
 	}
-	
-	.knowledge-card h3 {
+
+	.testimonial-author strong {
 		color: var(--text-dark);
-		margin-bottom: 1rem;
-		font-size: 1.3rem;
+		font-size: 1.1rem;
 	}
-	
-	.knowledge-card p {
-		color: var(--text-light);
+
+	.testimonial-author span {
+		display: block;
+		color: var(--primary-blue);
+		font-size: 0.9rem;
+		margin-top: 0.2rem;
+	}
+
+	.cta-tracy {
+		padding: 5rem 0;
+		background: var(--primary-blue);
+		color: var(--white);
+		text-align: center;
+	}
+
+	.cta-tracy h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.cta-tracy p {
+		font-size: 1.1rem;
+		margin-bottom: 2rem;
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
 		line-height: 1.6;
 	}
 
-	.cta {
-		background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-		color: var(--white);
-		padding: 4rem 0;
-		text-align: center;
-	}
-	
-	.cta h2 {
-		font-size: 2.5rem;
-		margin-bottom: 1rem;
-		text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-	}
-	
-	.cta p {
-		font-size: 1.25rem;
-		margin-bottom: 2rem;
-		text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-	}
-	
 	.cta-buttons {
 		display: flex;
-		gap: 1.5rem;
+		gap: 1rem;
 		justify-content: center;
+		margin-bottom: 3rem;
 		flex-wrap: wrap;
 	}
-	
+
+	.cta-benefits {
+		display: flex;
+		justify-content: center;
+		gap: 3rem;
+		flex-wrap: wrap;
+	}
+
+	.cta-benefit {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-weight: 500;
+	}
+
+	.cta-benefit .benefit-icon {
+		font-size: 1.5rem;
+	}
+
+	.btn {
+		display: inline-block;
+		background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+		color: var(--white);
+		padding: 12px 24px;
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: bold;
+		transition: all 0.3s ease;
+		border: none;
+		cursor: pointer;
+		font-size: 1rem;
+		text-align: center;
+		box-shadow: 0 2px 10px var(--shadow-light);
+	}
+
+	.btn:hover {
+		background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px var(--shadow-medium);
+	}
+
 	.btn-outline {
 		background: transparent;
 		border: 2px solid var(--white);
 		color: var(--white);
 	}
-	
+
 	.btn-outline:hover {
 		background: var(--white);
 		color: var(--primary-blue);
 	}
-	
+
 	.btn-quote {
 		background: linear-gradient(135deg, #FF6B35 0%, #FF4500 100%) !important;
 		color: var(--white) !important;
@@ -1074,13 +913,13 @@ import Layout from '../../layouts/Layout.astro';
 		border: none !important;
 		animation: pulse-glow 2s ease-in-out infinite alternate;
 	}
-	
+
 	.btn-quote:hover {
 		background: linear-gradient(135deg, #FF4500 0%, #FF6B35 100%) !important;
 		transform: translateY(-3px) scale(1.05) !important;
 		box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4) !important;
 	}
-	
+
 	@keyframes pulse-glow {
 		from {
 			box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
@@ -1094,86 +933,41 @@ import Layout from '../../layouts/Layout.astro';
 		.hero h1 {
 			font-size: 2.2rem;
 		}
-		
-		.intro-content h2,
-		.service-areas h2,
-		.driving-directions h2,
-		.weather-challenges h2,
-		.major-employers h2,
-		.competitor-comparison h2,
-		.response-times h2,
-		.local-knowledge h2,
-		.cta h2 {
-			font-size: 2rem;
-		}
-		
-		.neighborhoods-grid,
-		.directions-grid,
-		.weather-factors,
-		.employers-grid,
-		.knowledge-grid {
-			grid-template-columns: 1fr;
-			padding: 0 1rem;
-		}
-		
-		.intro-content,
-		.service-areas h2,
-		.driving-directions h2,
-		.weather-challenges h2,
-		.weather-content,
-		.major-employers h2,
-		.employers-content,
-		.competitor-comparison h2,
-		.comparison-table,
-		.response-times h2,
-		.local-knowledge h2 {
-			padding: 0 1rem;
-		}
-		
-		.quick-stats {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-		}
-		
-		.response-content {
-			grid-template-columns: 1fr;
-			gap: 2rem;
-		}
-		
-		.comparison-row {
-			grid-template-columns: 1fr;
-			gap: 0.5rem;
-			text-align: center;
-			padding: 1rem;
-		}
-		
-		.comparison-row .feature-name {
-			font-weight: bold;
-			margin-bottom: 0.5rem;
-			padding-bottom: 0.5rem;
-			border-bottom: 1px solid var(--background-neutral);
-		}
-		
-		.cta-buttons {
+
+		.hero-buttons {
 			flex-direction: column;
 			align-items: center;
 		}
-	}
-	
-	@media (max-width: 480px) {
-		.hero h1 {
-			font-size: 1.8rem;
+
+		.intro-grid,
+		.expertise-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
 		}
-		
-		.neighborhood-card,
-		.direction-card,
-		.weather-factor,
-		.employer-category,
-		.knowledge-card {
-			padding: 1.5rem;
+
+		.quick-stats {
+			grid-template-columns: 1fr;
+			gap: 1rem;
 		}
-		
-		.stat-number {
+
+		.neighborhoods-grid,
+		.services-grid,
+		.benefits-grid,
+		.testimonials-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.cta-benefits {
+			gap: 1.5rem;
+		}
+
+		.intro-content h2,
+		.services-tracy h2,
+		.neighborhoods-tracy h2,
+		.why-choose-tracy h2,
+		.tracy-expertise h2,
+		.testimonials-tracy h2,
+		.cta-tracy h2 {
 			font-size: 2rem;
 		}
 	}

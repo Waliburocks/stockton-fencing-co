@@ -1097,6 +1097,29 @@ const finalCanonicalUrl = getCanonicalUrl();
 				transition: all 0.3s ease;
 			}
 
+			.menu-section-header {
+				padding: 0.7rem 1.2rem;
+				color: var(--primary-blue) !important;
+				font-weight: 700;
+				font-size: 0.85rem;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+				background: var(--background-light);
+				margin-top: 0.5rem;
+				border-top: 1px solid rgba(89, 123, 148, 0.1);
+			}
+
+			.menu-section-header:first-of-type {
+				margin-top: 0;
+				border-top: none;
+			}
+
+			.locations-menu {
+				min-width: 250px;
+				max-height: 80vh;
+				overflow-y: auto;
+			}
+
 			/* Ensure dropdown menu items are visible when open */
 			.nav-dropdown.open .nav-dropdown-menu li {
 				display: block !important;
@@ -1456,6 +1479,42 @@ const finalCanonicalUrl = getCanonicalUrl();
 						</ul>
 					</li>
 					<li class="nav-dropdown">
+						<a href="/locations" class="nav-dropdown-toggle">Locations <span class="dropdown-arrow">▼</span></a>
+						<ul class="nav-dropdown-menu locations-menu">
+							<li class="mobile-only">
+								<button class="submenu-back" aria-label="Back to main menu">←</button>
+								<div class="submenu-title">Service Areas</div>
+							</li>
+							<li class="menu-section-header">San Joaquin County</li>
+							<li><a href="/locations/stockton">Stockton</a></li>
+							<li><a href="/locations/tracy">Tracy</a></li>
+							<li><a href="/locations/manteca">Manteca</a></li>
+							<li><a href="/locations/lodi">Lodi</a></li>
+							<li><a href="/locations/ripon">Ripon</a></li>
+							<li><a href="/locations/escalon">Escalon</a></li>
+							<li><a href="/locations/lathrop">Lathrop</a></li>
+							<li><a href="/locations/french-camp">French Camp</a></li>
+							<li class="menu-section-header">Stanislaus County</li>
+							<li><a href="/locations/modesto">Modesto</a></li>
+							<li><a href="/locations/turlock">Turlock</a></li>
+							<li><a href="/locations/riverbank">Riverbank</a></li>
+							<li><a href="/locations/oakdale">Oakdale</a></li>
+							<li><a href="/locations/ceres">Ceres</a></li>
+							<li><a href="/locations/newman">Newman</a></li>
+							<li><a href="/locations/patterson">Patterson</a></li>
+							<li class="menu-section-header">Tri-Valley & East Bay</li>
+							<li><a href="/locations/livermore">Livermore</a></li>
+							<li><a href="/locations/dublin">Dublin</a></li>
+							<li><a href="/locations/pleasanton">Pleasanton</a></li>
+							<li><a href="/locations/mountain-house">Mountain House</a></li>
+							<li><a href="/locations/discovery-bay">Discovery Bay</a></li>
+							<li><a href="/locations/brentwood">Brentwood</a></li>
+							<li><a href="/locations/byron">Byron</a></li>
+							<li><a href="/locations/antioch">Antioch</a></li>
+							<li><a href="/locations/pittsburg">Pittsburg</a></li>
+						</ul>
+					</li>
+					<li class="nav-dropdown">
 						<a href="/about" class="nav-dropdown-toggle">About <span class="dropdown-arrow">▼</span></a>
 						<ul class="nav-dropdown-menu">
 							<li class="mobile-only">
@@ -1463,7 +1522,6 @@ const finalCanonicalUrl = getCanonicalUrl();
 								<div class="submenu-title">About</div>
 							</li>
 							<li><a href="/about">Our Story</a></li>
-							<li><a href="/locations">Service Areas</a></li>
 							<li><a href="/blog">Tips & Blog</a></li>
 						</ul>
 					</li>

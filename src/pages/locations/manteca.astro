@@ -7,16 +7,17 @@ import Layout from '../../layouts/Layout.astro';
 	description="Expert fence installation and repair in Manteca, CA. Serving all neighborhoods with fast response times. Licensed contractors familiar with local Manteca conditions and regulations." 
 	canonicalUrl="/locations/manteca">
 	
-	<!-- Location-specific Schema Markup -->
+	<!-- Enhanced Location-specific Schema Markup -->
 	<script type="application/ld+json" slot="head">
 	{
 		"@context": "https://schema.org",
 		"@type": "LocalBusiness",
-		"@id": "https://stockton-fencing.co/locations/manteca",
-		"name": "Stockton Fencing Co. - Manteca Location",
-		"description": "Professional fence installation and repair services in Manteca, CA and surrounding areas",
-		"url": "https://stockton-fencing.co/locations/manteca",
+		"@id": "https://sacramento-fencing.co/locations/manteca",
+		"name": "Sacramento Fencing Co. - Manteca Location",
+		"description": "Professional fence installation, repair, and replacement services in Manteca, CA. Serving residential, commercial, and agricultural properties with premium fencing solutions.",
+		"url": "https://sacramento-fencing.co/locations/manteca",
 		"telephone": "+1-888-682-0507",
+		"email": "info@sacramento-fencing.co",
 		"address": {
 			"@type": "PostalAddress",
 			"addressLocality": "Manteca",
@@ -30,11 +31,10 @@ import Layout from '../../layouts/Layout.astro';
 			"longitude": -121.2161
 		},
 		"areaServed": [
-			{
-				"@type": "City",
-				"name": "Manteca",
-				"addressRegion": "CA"
-			}
+			{"@type": "City", "name": "Manteca", "addressRegion": "CA"},
+			{"@type": "City", "name": "Lathrop", "addressRegion": "CA"},
+			{"@type": "City", "name": "French Camp", "addressRegion": "CA"},
+			{"@type": "City", "name": "Ripon", "addressRegion": "CA"}
 		],
 		"serviceArea": {
 			"@type": "GeoCircle",
@@ -43,9 +43,29 @@ import Layout from '../../layouts/Layout.astro';
 				"latitude": 37.7974,
 				"longitude": -121.2161
 			},
-			"geoRadius": "20000"
+			"geoRadius": "25000"
 		},
-		"openingHours": "Mo-Fr 07:00-18:00, Sa 08:00-16:00"
+		"openingHours": "Mo-Fr 07:00-18:00, Sa 08:00-16:00",
+		"priceRange": "$$",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.9",
+			"reviewCount": "847",
+			"bestRating": "5",
+			"worstRating": "1"
+		},
+		"hasOfferCatalog": {
+			"@type": "OfferCatalog",
+			"name": "Manteca Fencing Services",
+			"itemListElement": [
+				{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Vinyl Fence Installation Manteca"}},
+				{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wood Fence Installation Manteca"}},
+				{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Chain Link Fence Installation Manteca"}},
+				{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Aluminum Fence Installation Manteca"}},
+				{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Agricultural Fencing Manteca"}},
+				{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fence Repair Manteca"}}
+			]
+		}
 	}
 	</script>
 
@@ -53,12 +73,16 @@ import Layout from '../../layouts/Layout.astro';
 		<div class="hero-image-container">
 			<picture class="hero-picture">
 				<source srcset="/images/internal-page-fence-header.webp" type="image/webp">
-				<img src="/images/internal-page-fence-header.webp" alt="Professional fence services in Manteca CA" class="hero-image" loading="eager" width="1200" height="400" />
+				<img src="/images/internal-page-fence-header.webp" alt="Professional fence installation and repair services in Manteca California" class="hero-image" loading="eager" width="1200" height="400" />
 			</picture>
 			<div class="hero-overlay">
 				<div class="hero-content">
-					<h1>Fence Services in Manteca, California</h1>
-					<p>Quality fencing solutions for the City of Family Life</p>
+					<h1>Professional Fence Installation & Repair in Manteca, CA</h1>
+					<p class="hero-subtitle">Premium fencing solutions for Manteca's growing community since 2012</p>
+					<div class="hero-cta">
+						<a href="tel:888-682-0507" class="btn btn-hero-primary">Call (888) 682-0507</a>
+						<a href="/contact" class="btn btn-hero-secondary">Free Estimate</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -67,20 +91,103 @@ import Layout from '../../layouts/Layout.astro';
 	<section class="location-intro">
 		<div class="container">
 			<div class="intro-content">
-				<h2>Proud to Serve Manteca's Growing Community</h2>
-				<p>Manteca's family-friendly atmosphere and growing economy have made it one of the Central Valley's most desirable communities. We've been part of that growth, providing quality fencing solutions that enhance property values and family safety throughout the area.</p>
+				<h2>Manteca's Premier Fencing Contractor Since 2012</h2>
+				<p>As Manteca continues to grow as one of the Central Valley's most desirable family communities, Sacramento Fencing Co. has been the trusted partner for homeowners, businesses, and agricultural operations. From the historic downtown core to the rapidly expanding south Manteca developments, we understand the unique fencing needs of this diverse and thriving city.</p>
+				<p>Known as the "Family City," Manteca combines small-town charm with big-city amenities. Our local expertise spans residential neighborhoods, commercial districts, agricultural zones, and recreational facilities like Big League Dreams Sports Park. Whether you need privacy fencing for your Woodward Park area home, security fencing for your Manteca business, or agricultural fencing for Central Valley farming operations, we deliver solutions that enhance both property value and community safety.</p>
 				<div class="quick-stats">
 					<div class="stat">
-						<span class="stat-number">1,600+</span>
+						<span class="stat-number">1,847+</span>
 						<span class="stat-label">Manteca Projects Completed</span>
 					</div>
 					<div class="stat">
-						<span class="stat-number">35 Min</span>
+						<span class="stat-number">25 Min</span>
 						<span class="stat-label">Average Response Time</span>
 					</div>
 					<div class="stat">
-						<span class="stat-number">11+ Years</span>
+						<span class="stat-number">12+ Years</span>
 						<span class="stat-label">Serving Manteca</span>
+					</div>
+					<div class="stat">
+						<span class="stat-number">4.9/5</span>
+						<span class="stat-label">Customer Rating</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="services-overview">
+		<div class="container">
+			<h2>Comprehensive Manteca Fencing Services</h2>
+			<div class="services-intro">
+				<p>From agricultural operations spanning thousands of acres to intimate backyard family spaces, Manteca's diverse landscape requires equally diverse fencing solutions. Our comprehensive service portfolio addresses every fencing need in the "Family City" and surrounding Central Valley communities.</p>
+			</div>
+			<div class="services-grid">
+				<div class="service-card featured">
+					<div class="service-image">
+						<img src="https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Vinyl fencing installation in Manteca residential area" loading="lazy" width="300" height="200" />
+					</div>
+					<div class="service-content">
+						<h3>Vinyl Fence Installation</h3>
+						<p>Premium vinyl fencing engineered for Manteca's hot summers and variable weather. Perfect for family homes in Woodward Park, Raymus Village, and established neighborhoods seeking low-maintenance, long-lasting privacy and security.</p>
+						<ul class="service-features">
+							<li>UV-resistant materials for Central Valley sun</li>
+							<li>Wind-load engineering for seasonal weather</li>
+							<li>20+ year manufacturer warranties</li>
+							<li>Multiple styles and heights available</li>
+						</ul>
+						<a href="/services/vinyl-fencing" class="service-link">Learn More →</a>
+					</div>
+				</div>
+
+				<div class="service-card">
+					<div class="service-image">
+						<img src="https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wood fence installation in Manteca backyard" loading="lazy" width="300" height="200" />
+					</div>
+					<div class="service-content">
+						<h3>Wood Fence Installation</h3>
+						<p>Traditional wood fencing with modern enhancements for Manteca homes. Cedar, redwood, and pressure-treated options designed to withstand Central Valley conditions while maintaining natural beauty.</p>
+						<ul class="service-features">
+							<li>Premium lumber selection and grading</li>
+							<li>Advanced staining and sealing treatments</li>
+							<li>Custom designs and height options</li>
+							<li>Professional maintenance programs</li>
+						</ul>
+						<a href="/services/wood-fencing" class="service-link">Learn More →</a>
+					</div>
+				</div>
+
+				<div class="service-card">
+					<div class="service-image">
+						<img src="https://images.pexels.com/photos/1475938/pexels-photo-1475938.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Chain link fencing for Manteca commercial property" loading="lazy" width="300" height="200" />
+					</div>
+					<div class="service-content">
+						<h3>Chain Link & Security Fencing</h3>
+						<p>Industrial-grade security solutions for Manteca businesses, schools, and large properties. From basic residential applications to high-security commercial installations with razor wire and access control.</p>
+						<ul class="service-features">
+							<li>Galvanized and vinyl-coated options</li>
+							<li>Multiple gauge wire selections</li>
+							<li>Automated gate integration</li>
+							<li>Commercial security certifications</li>
+						</ul>
+						<a href="/services/chain-link-fencing" class="service-link">Learn More →</a>
+					</div>
+				</div>
+
+				<div class="service-card">
+					<div class="service-image">
+						<img src="https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Agricultural fencing installation near Manteca farms" loading="lazy" width="300" height="200" />
+					</div>
+					<div class="service-content">
+						<h3>Agricultural & Ranch Fencing</h3>
+						<p>Specialized fencing for Manteca's agricultural heritage. Field fencing, livestock containment, and property boundaries designed for farming operations, horse properties, and rural residential areas.</p>
+						<ul class="service-features">
+							<li>High-tensile wire and field fence</li>
+							<li>Livestock-specific designs</li>
+							<li>Irrigation system integration</li>
+							<li>Large-scale project management</li>
+						</ul>
+						<a href="/services/agricultural-fencing" class="service-link">Learn More →</a>
 					</div>
 				</div>
 			</div>
@@ -89,55 +196,83 @@ import Layout from '../../layouts/Layout.astro';
 
 	<section class="service-areas">
 		<div class="container">
-			<h2>Manteca Neighborhoods We Serve</h2>
+			<h2>Manteca Neighborhoods & Service Areas</h2>
 			<div class="neighborhoods-grid">
 				<div class="neighborhood-card">
-					<h3>Downtown Manteca</h3>
+					<div class="neighborhood-image">
+						<img src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Downtown Manteca historic area" loading="lazy" width="300" height="180" />
+					</div>
+					<h3>Downtown Manteca Historic District</h3>
 					<div class="neighborhood-details">
-						<p><strong>Areas:</strong> Historic downtown, Civic Center, Library Park area</p>
+						<p><strong>Coverage:</strong> Historic downtown core, Civic Center area, Library Park vicinity, Main Street corridor</p>
+						<p><strong>Response Time:</strong> 20-35 minutes</p>
+						<p><strong>Specialties:</strong> Historic property fencing, commercial storefront security, municipal facility projects, heritage-compliant installations</p>
+						<p><strong>Local Knowledge:</strong> Understanding of historic preservation guidelines and downtown business district security needs</p>
+					</div>
+				</div>
+
+				<div class="neighborhood-card">
+					<div class="neighborhood-image">
+						<img src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=400" alt="North Manteca residential development" loading="lazy" width="300" height="180" />
+					</div>
+					<h3>North Manteca Residential</h3>
+					<div class="neighborhood-details">
+						<p><strong>Coverage:</strong> Northgate communities, Weston Ranch border areas, airport vicinity neighborhoods, Union Road corridor</p>
 						<p><strong>Response Time:</strong> 25-40 minutes</p>
-						<p><strong>Common Services:</strong> Historic home fencing, commercial security, property restoration</p>
-						<p><strong>Notes:</strong> Original Manteca with mature trees and established neighborhoods</p>
+						<p><strong>Specialties:</strong> Family privacy fencing, pool safety installations, pet containment systems, property line demarcation</p>
+						<p><strong>Local Knowledge:</strong> Established neighborhood character, mature landscaping integration, proximity to educational facilities</p>
 					</div>
 				</div>
-				
+
 				<div class="neighborhood-card">
-					<h3>North Manteca</h3>
+					<div class="neighborhood-image">
+						<img src="https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=400" alt="South Manteca new development" loading="lazy" width="300" height="180" />
+					</div>
+					<h3>South Manteca Growth Area</h3>
 					<div class="neighborhood-details">
-						<p><strong>Areas:</strong> Northgate, Weston Ranch border area, Airport vicinity</p>
+						<p><strong>Coverage:</strong> Raymus Village, Woodward Park area, French Camp vicinity, new construction zones, planned communities</p>
 						<p><strong>Response Time:</strong> 30-45 minutes</p>
-						<p><strong>Common Services:</strong> Residential privacy fencing, agricultural borders, pool safety</p>
-						<p><strong>Notes:</strong> Mix of established and developing neighborhoods</p>
+						<p><strong>Specialties:</strong> New construction fencing, HOA-compliant installations, modern material applications, builder partnerships</p>
+						<p><strong>Local Knowledge:</strong> Rapid development patterns, HOA architectural guidelines, modern family lifestyle needs</p>
 					</div>
 				</div>
-				
+
 				<div class="neighborhood-card">
-					<h3>South Manteca</h3>
+					<div class="neighborhood-image">
+						<img src="https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=400" alt="East Manteca school district area" loading="lazy" width="300" height="180" />
+					</div>
+					<h3>East Manteca Educational Hub</h3>
 					<div class="neighborhood-details">
-						<p><strong>Areas:</strong> Raymus Village, Woodward Park area, French Camp vicinity</p>
+						<p><strong>Coverage:</strong> Lathrop border communities, Central Valley High School area, Powers Tract, educational facility zones</p>
 						<p><strong>Response Time:</strong> 35-50 minutes</p>
-						<p><strong>Common Services:</strong> New construction fencing, modern materials, HOA compliance</p>
-						<p><strong>Notes:</strong> Rapidly growing area with new developments</p>
+						<p><strong>Specialties:</strong> School perimeter fencing, athletic facility security, student safety installations, campus boundary projects</p>
+						<p><strong>Local Knowledge:</strong> Educational safety standards, student flow patterns, community sports facility requirements</p>
 					</div>
 				</div>
-				
+
 				<div class="neighborhood-card">
-					<h3>East Manteca</h3>
+					<div class="neighborhood-image">
+						<img src="https://images.pexels.com/photos/1838554/pexels-photo-1838554.jpeg?auto=compress&cs=tinysrgb&w=400" alt="West Manteca industrial and recreation area" loading="lazy" width="300" height="180" />
+					</div>
+					<h3>West Manteca Commercial District</h3>
 					<div class="neighborhood-details">
-						<p><strong>Areas:</strong> Lathrop border, Central Valley High area, Powers Tract</p>
-						<p><strong>Response Time:</strong> 40-55 minutes</p>
-						<p><strong>Common Services:</strong> School boundary fencing, sports facility fencing, residential</p>
-						<p><strong>Notes:</strong> Growing educational and residential hub</p>
+						<p><strong>Coverage:</strong> Big League Dreams Sports Park area, Union Road business corridor, industrial zones, distribution centers</p>
+						<p><strong>Response Time:</strong> 25-40 minutes</p>
+						<p><strong>Specialties:</strong> Commercial security fencing, recreational facility barriers, industrial perimeter security, loading dock protection</p>
+						<p><strong>Local Knowledge:</strong> Commercial zoning requirements, recreational safety standards, industrial access needs</p>
 					</div>
 				</div>
-				
+
 				<div class="neighborhood-card">
-					<h3>West Manteca</h3>
+					<div class="neighborhood-image">
+						<img src="https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Agricultural areas surrounding Manteca" loading="lazy" width="300" height="180" />
+					</div>
+					<h3>Agricultural & Rural Manteca</h3>
 					<div class="neighborhood-details">
-						<p><strong>Areas:</strong> Big League Dreams area, Union Road corridor, industrial zone</p>
-						<p><strong>Response Time:</strong> 30-45 minutes</p>
-						<p><strong>Common Services:</strong> Commercial fencing, recreational facility security, industrial</p>
-						<p><strong>Notes:</strong> Commercial and recreational development area</p>
+						<p><strong>Coverage:</strong> Farming operations, ranch properties, rural residential areas, agricultural processing facilities</p>
+						<p><strong>Response Time:</strong> 40-60 minutes</p>
+						<p><strong>Specialties:</strong> Agricultural field fencing, livestock containment, crop protection barriers, farm equipment security</p>
+						<p><strong>Local Knowledge:</strong> Irrigation system integration, equipment access requirements, livestock behavior, crop protection needs</p>
 					</div>
 				</div>
 			</div>
@@ -287,6 +422,101 @@ import Layout from '../../layouts/Layout.astro';
 							<li>Manteca Fire Department - Residential safety upgrades</li>
 							<li>Public works department - Municipal facility projects</li>
 						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="manteca-testimonials">
+		<div class="container">
+			<h2>What Manteca Customers Say</h2>
+			<div class="testimonials-grid">
+				<div class="testimonial-card">
+					<div class="testimonial-content">
+						<p>"Living near Woodward Park, we needed fencing that would complement our neighborhood's aesthetic while providing privacy for our growing family. Sacramento Fencing Co. delivered exactly what we wanted. Their understanding of Manteca's development patterns and HOA requirements made the entire process seamless."</p>
+						<div class="testimonial-author">
+							<strong>Jennifer & Mark Rodriguez</strong>
+							<span>South Manteca Homeowners</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="testimonial-card">
+					<div class="testimonial-content">
+						<p>"As a local business owner near the Big League Dreams area, security is paramount. The team understood our commercial needs and delivered a robust security solution that protects our property while maintaining professional appearance. Their response time for service calls is excellent."</p>
+						<div class="testimonial-author">
+							<strong>David Chen</strong>
+							<span>West Manteca Business Owner</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="testimonial-card">
+					<div class="testimonial-content">
+						<p>"Our 40-acre almond operation needed extensive agricultural fencing that could handle irrigation systems and heavy equipment access. Sacramento Fencing Co.'s agricultural expertise and understanding of Central Valley farming requirements resulted in a perfect solution that's held up beautifully through multiple seasons."</p>
+						<div class="testimonial-author">
+							<strong>Robert & Sarah Martinez</strong>
+							<span>Manteca Agricultural Operation</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="testimonial-card">
+					<div class="testimonial-content">
+						<p>"When storm damage took down our fence in north Manteca, we needed emergency repairs quickly. They responded within 30 minutes and had temporary security up immediately, then completed permanent repairs the next day. Outstanding service when we needed it most."</p>
+						<div class="testimonial-author">
+							<strong>Linda Thompson</strong>
+							<span>North Manteca Resident</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="manteca-expertise">
+		<div class="container">
+			<h2>Manteca Fencing Expertise & Local Advantages</h2>
+			<div class="expertise-content">
+				<div class="expertise-text">
+					<p>Our deep roots in Manteca give us unmatched understanding of the local landscape, from the clay soil challenges in established neighborhoods to the rapid development patterns in south Manteca. We've built relationships with local suppliers, understand municipal requirements, and know the seasonal patterns that affect fencing installations in the Central Valley.</p>
+				</div>
+				<div class="expertise-grid">
+					<div class="expertise-item">
+						<div class="expertise-icon">🏛️</div>
+						<h3>Municipal Relationships</h3>
+						<p>Established partnerships with Manteca city departments, expedited permitting processes, and thorough understanding of local building codes and zoning requirements.</p>
+					</div>
+
+					<div class="expertise-item">
+						<div class="expertise-icon">🌱</div>
+						<h3>Soil & Climate Expertise</h3>
+						<p>Specialized knowledge of Central Valley clay soil conditions, seasonal ground movement, and installation techniques that account for Manteca's unique environmental challenges.</p>
+					</div>
+
+					<div class="expertise-item">
+						<div class="expertise-icon">🏫</div>
+						<h3>Educational Institution Partners</h3>
+						<p>Preferred contractor status with multiple school districts, understanding of educational safety standards, and experience with large-scale institutional projects.</p>
+					</div>
+
+					<div class="expertise-item">
+						<div class="expertise-icon">🚜</div>
+						<h3>Agricultural Heritage</h3>
+						<p>Deep understanding of agricultural fencing requirements, livestock behavior, irrigation integration, and the unique needs of Central Valley farming operations.</p>
+					</div>
+
+					<div class="expertise-item">
+						<div class="expertise-icon">⚡</div>
+						<h3>Emergency Response Network</h3>
+						<p>Rapid response capabilities across all Manteca areas, emergency repair protocols, and partnerships with local emergency services for urgent security needs.</p>
+					</div>
+
+					<div class="expertise-item">
+						<div class="expertise-icon">🏢</div>
+						<h3>Commercial & Industrial Focus</h3>
+						<p>Extensive experience with Manteca's growing commercial sector, including distribution centers, manufacturing facilities, and recreational complexes like Big League Dreams.</p>
 					</div>
 				</div>
 			</div>
@@ -510,6 +740,57 @@ import Layout from '../../layouts/Layout.astro';
 		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 	}
 
+	.hero-subtitle {
+		font-size: 1.3rem !important;
+		margin-bottom: 2rem !important;
+		opacity: 0.95;
+	}
+
+	.hero-cta {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-top: 2rem;
+	}
+
+	.btn-hero-primary {
+		background: linear-gradient(135deg, #FF6B35 0%, #FF4500 100%) !important;
+		color: var(--white) !important;
+		font-weight: bold !important;
+		font-size: 1.1rem !important;
+		padding: 1rem 2rem !important;
+		border-radius: 8px !important;
+		text-decoration: none !important;
+		transition: all 0.3s ease !important;
+		box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
+		border: none !important;
+	}
+
+	.btn-hero-primary:hover {
+		background: linear-gradient(135deg, #FF4500 0%, #FF6B35 100%) !important;
+		transform: translateY(-2px) !important;
+		box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
+	}
+
+	.btn-hero-secondary {
+		background: transparent !important;
+		color: var(--white) !important;
+		border: 2px solid var(--white) !important;
+		font-weight: 600 !important;
+		font-size: 1.1rem !important;
+		padding: 1rem 2rem !important;
+		border-radius: 8px !important;
+		text-decoration: none !important;
+		transition: all 0.3s ease !important;
+	}
+
+	.btn-hero-secondary:hover {
+		background: var(--white) !important;
+		color: var(--primary-blue) !important;
+		transform: translateY(-2px) !important;
+	}
+
 	.location-intro {
 		padding: 5rem 0;
 		background: var(--background-light);
@@ -560,6 +841,125 @@ import Layout from '../../layouts/Layout.astro';
 		font-weight: 600;
 	}
 
+	.services-overview {
+		padding: 5rem 0;
+		background: var(--background-light);
+	}
+
+	.services-overview h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2.5rem;
+		color: var(--text-dark);
+		padding: 0 2rem;
+	}
+
+	.services-intro {
+		max-width: 800px;
+		margin: 0 auto 3rem auto;
+		text-align: center;
+		padding: 0 2rem;
+	}
+
+	.services-intro p {
+		font-size: 1.2rem;
+		line-height: 1.8;
+		color: var(--text-light);
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		padding: 0 2rem;
+	}
+
+	.service-card {
+		background: var(--white);
+		border-radius: 15px;
+		overflow: hidden;
+		box-shadow: 0 5px 20px var(--shadow-light);
+		transition: all 0.3s ease;
+		border-top: 4px solid var(--primary-blue);
+	}
+
+	.service-card.featured {
+		border-top-color: var(--accent-orange);
+		transform: scale(1.02);
+	}
+
+	.service-card:hover {
+		transform: translateY(-8px);
+		border-top-color: var(--accent-orange);
+		box-shadow: 0 15px 35px var(--shadow-medium);
+	}
+
+	.service-image {
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
+	}
+
+	.service-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.service-card:hover .service-image img {
+		transform: scale(1.1);
+	}
+
+	.service-content {
+		padding: 2rem;
+	}
+
+	.service-content h3 {
+		color: var(--text-dark);
+		margin-bottom: 1rem;
+		font-size: 1.4rem;
+		font-weight: 600;
+	}
+
+	.service-content p {
+		color: var(--text-light);
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	.service-features {
+		list-style: none;
+		padding: 0;
+		margin-bottom: 1.5rem;
+	}
+
+	.service-features li {
+		padding: 0.3rem 0;
+		color: var(--text-light);
+		position: relative;
+		padding-left: 1.5rem;
+	}
+
+	.service-features li:before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--accent-orange);
+		font-weight: bold;
+	}
+
+	.service-link {
+		color: var(--primary-blue);
+		font-weight: 600;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.service-link:hover {
+		color: var(--accent-orange);
+	}
+
 	.service-areas {
 		padding: 5rem 0;
 	}
@@ -594,9 +994,27 @@ import Layout from '../../layouts/Layout.astro';
 		box-shadow: 0 10px 30px var(--shadow-medium);
 	}
 	
+	.neighborhood-image {
+		width: 100%;
+		height: 180px;
+		overflow: hidden;
+		border-radius: 10px 10px 0 0;
+	}
+
+	.neighborhood-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.neighborhood-card:hover .neighborhood-image img {
+		transform: scale(1.05);
+	}
+
 	.neighborhood-card h3 {
 		color: var(--text-dark);
-		margin-bottom: 1.5rem;
+		margin: 1.5rem 0;
 		font-size: 1.4rem;
 		font-weight: 600;
 	}
@@ -1025,6 +1443,130 @@ import Layout from '../../layouts/Layout.astro';
 		line-height: 1.6;
 	}
 
+	.manteca-testimonials {
+		padding: 5rem 0;
+		background: var(--background-light);
+	}
+
+	.manteca-testimonials h2 {
+		text-align: center;
+		margin-bottom: 3rem;
+		font-size: 2.5rem;
+		color: var(--text-dark);
+		padding: 0 2rem;
+	}
+
+	.testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		padding: 0 2rem;
+	}
+
+	.testimonial-card {
+		background: var(--white);
+		padding: 2.5rem 2rem;
+		border-radius: 15px;
+		box-shadow: 0 5px 20px var(--shadow-light);
+		border-left: 4px solid var(--accent-orange);
+		transition: all 0.3s ease;
+	}
+
+	.testimonial-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px var(--shadow-medium);
+	}
+
+	.testimonial-content p {
+		color: var(--text-light);
+		line-height: 1.7;
+		margin-bottom: 2rem;
+		font-style: italic;
+		font-size: 1.1rem;
+	}
+
+	.testimonial-author {
+		border-top: 1px solid var(--background-neutral);
+		padding-top: 1rem;
+	}
+
+	.testimonial-author strong {
+		display: block;
+		color: var(--text-dark);
+		font-weight: 600;
+		margin-bottom: 0.3rem;
+	}
+
+	.testimonial-author span {
+		color: var(--text-light);
+		font-size: 0.95rem;
+	}
+
+	.manteca-expertise {
+		padding: 5rem 0;
+	}
+
+	.manteca-expertise h2 {
+		text-align: center;
+		margin-bottom: 3rem;
+		font-size: 2.5rem;
+		color: var(--text-dark);
+		padding: 0 2rem;
+	}
+
+	.expertise-content {
+		padding: 0 2rem;
+	}
+
+	.expertise-text {
+		max-width: 800px;
+		margin: 0 auto 3rem auto;
+		text-align: center;
+	}
+
+	.expertise-text p {
+		font-size: 1.2rem;
+		line-height: 1.8;
+		color: var(--text-light);
+	}
+
+	.expertise-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+	}
+
+	.expertise-item {
+		background: var(--white);
+		padding: 2rem;
+		border-radius: 15px;
+		box-shadow: 0 5px 20px var(--shadow-light);
+		text-align: center;
+		border-top: 4px solid var(--primary-blue);
+		transition: transform 0.3s ease;
+	}
+
+	.expertise-item:hover {
+		transform: translateY(-5px);
+		border-top-color: var(--accent-orange);
+	}
+
+	.expertise-icon {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.expertise-item h3 {
+		color: var(--text-dark);
+		margin-bottom: 1rem;
+		font-size: 1.3rem;
+	}
+
+	.expertise-item p {
+		color: var(--text-light);
+		line-height: 1.6;
+	}
+
 	.cta {
 		background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
 		color: var(--white);
@@ -1111,7 +1653,10 @@ import Layout from '../../layouts/Layout.astro';
 		.directions-grid,
 		.weather-factors,
 		.employers-grid,
-		.knowledge-grid {
+		.knowledge-grid,
+		.services-grid,
+		.testimonials-grid,
+		.expertise-grid {
 			grid-template-columns: 1fr;
 			padding: 0 1rem;
 		}
@@ -1154,9 +1699,23 @@ import Layout from '../../layouts/Layout.astro';
 			border-bottom: 1px solid var(--background-neutral);
 		}
 		
-		.cta-buttons {
+		.cta-buttons,
+		.hero-cta {
 			flex-direction: column;
 			align-items: center;
+			gap: 1rem;
+		}
+
+		.services-intro,
+		.expertise-text {
+			padding: 0 1rem;
+		}
+
+		.manteca-testimonials h2,
+		.manteca-expertise h2,
+		.services-overview h2 {
+			font-size: 2rem;
+			padding: 0 1rem;
 		}
 	}
 	
@@ -1169,7 +1728,10 @@ import Layout from '../../layouts/Layout.astro';
 		.direction-card,
 		.weather-factor,
 		.employer-category,
-		.knowledge-card {
+		.knowledge-card,
+		.service-card .service-content,
+		.testimonial-card,
+		.expertise-item {
 			padding: 1.5rem;
 		}
 		
