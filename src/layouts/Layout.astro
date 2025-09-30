@@ -1521,6 +1521,22 @@ const finalCanonicalUrl = getCanonicalUrl();
 							// Open this dropdown
 							dropdown.classList.add('open');
 							console.log('Added open class to dropdown');
+
+							// Debug what's inside the dropdown
+							var menu = dropdown.querySelector('.nav-dropdown-menu');
+							console.log('Dropdown menu element:', menu);
+
+							if (menu) {
+								console.log('Menu HTML:', menu.innerHTML);
+								console.log('Menu children:', menu.children.length);
+
+								var items = menu.querySelectorAll('li');
+								console.log('Menu items found:', items.length);
+
+								for (var k = 0; k < items.length; k++) {
+									console.log('Item', k, ':', items[k].innerHTML);
+								}
+							}
 						}
 					});
 				}
