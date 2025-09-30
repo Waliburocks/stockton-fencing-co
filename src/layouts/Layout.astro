@@ -1487,132 +1487,31 @@ const finalCanonicalUrl = getCanonicalUrl();
 		</footer>
 		
 		<script>
-			// Test if JavaScript is working
-			console.log('JavaScript loaded successfully');
+			console.log('JS Test 1');
 
-			// Mobile menu toggle functionality
 			document.addEventListener('DOMContentLoaded', function() {
-				console.log('DOMContentLoaded fired');
-				const mobileToggle = document.querySelector('.mobile-menu-toggle');
-				const navLinks = document.querySelector('.nav-links');
-				const mobileCloseBtn = document.querySelector('.mobile-close-btn');
-				const submenuBackBtns = document.querySelectorAll('.submenu-back');
-				const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+				console.log('JS Test 2 - DOM Ready');
 
-				function closeMenu() {
-					navLinks.classList.remove('active');
-					// Close all dropdowns when closing main menu
-					const dropdowns = document.querySelectorAll('.nav-dropdown');
-					dropdowns.forEach(dropdown => {
-						dropdown.classList.remove('active');
-						dropdown.classList.remove('open');
-					});
-					document.body.style.overflow = '';
-				}
+				// Simple dropdown functionality
+				var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+				console.log('Found dropdowns:', dropdowns.length);
 
-				function openMenu() {
-					navLinks.classList.add('active');
-					document.body.style.overflow = 'hidden';
-				}
-
-				function closeAllDropdowns() {
-					const dropdowns = document.querySelectorAll('.nav-dropdown');
-					dropdowns.forEach(dropdown => {
-						dropdown.classList.remove('open');
-						dropdown.classList.remove('active');
-					});
-				}
-
-				// Simple approach: Add click listeners directly to dropdown toggles
-				const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
-				console.log('Found dropdown toggles:', dropdownToggles.length);
-
-				dropdownToggles.forEach(function(toggle, index) {
-					console.log('Adding listener to toggle', index, toggle);
-					toggle.addEventListener('click', function(e) {
-						console.log('CLICK EVENT FIRED on toggle', index);
+				for (var i = 0; i < dropdowns.length; i++) {
+					dropdowns[i].addEventListener('click', function(e) {
+						console.log('Dropdown clicked!');
 						e.preventDefault();
-						e.stopPropagation();
 
-						const dropdown = this.closest('.nav-dropdown');
-						console.log('Found dropdown parent:', dropdown);
-						if (!dropdown) return;
-
-						const isCurrentlyOpen = dropdown.classList.contains('open') || dropdown.classList.contains('active');
-						console.log('Currently open:', isCurrentlyOpen);
-						console.log('Window width:', window.innerWidth);
-
-						// Close all dropdowns first
-						closeAllDropdowns();
-
-						// If this dropdown wasn't open, open it
-						if (!isCurrentlyOpen) {
-							if (window.innerWidth <= 768) {
-								dropdown.classList.add('active');
-								console.log('Added ACTIVE class (mobile)');
-							} else {
-								dropdown.classList.add('open');
-								console.log('Added OPEN class (desktop)');
-								console.log('Dropdown classes after adding open:', dropdown.className);
+						var dropdown = this.closest('.nav-dropdown');
+						if (dropdown) {
+							// Close all dropdowns
+							var allDropdowns = document.querySelectorAll('.nav-dropdown');
+							for (var j = 0; j < allDropdowns.length; j++) {
+								allDropdowns[j].classList.remove('open');
 							}
-						}
-					});
-				});
 
-				// Close dropdowns when clicking outside
-				document.addEventListener('click', function(e) {
-					if (!e.target.closest('.nav-dropdown')) {
-						closeAllDropdowns();
-					}
-
-					// Close mobile menu when clicking outside nav
-					if (!e.target.closest('nav') && navLinks && navLinks.classList.contains('active')) {
-						closeMenu();
-					}
-				});
-
-				// Handle keyboard navigation
-				document.addEventListener('keydown', function(e) {
-					if (e.key === 'Escape') {
-						if (navLinks.classList.contains('active')) {
-							closeMenu();
-						} else {
-							closeAllDropdowns();
-						}
-					}
-				});
-
-				// Always set up the mobile functionality
-				if (mobileToggle && navLinks) {
-					// Toggle menu on hamburger click
-					mobileToggle.addEventListener('click', function() {
-						if (navLinks.classList.contains('active')) {
-							closeMenu();
-						} else {
-							openMenu();
-						}
-					});
-
-					// Close menu on close button click
-					if (mobileCloseBtn) {
-						mobileCloseBtn.addEventListener('click', closeMenu);
-					}
-
-					// Handle submenu back buttons
-					submenuBackBtns.forEach(function(backBtn) {
-						backBtn.addEventListener('click', function() {
-							const dropdown = backBtn.closest('.nav-dropdown');
-							if (dropdown) {
-								dropdown.classList.remove('active');
-							}
-						});
-					});
-
-					// Handle mobile link clicks
-					navLinks.addEventListener('click', function(e) {
-						// Close menu when a regular link is clicked (not dropdown toggle)
-						if (e.target.tagName === 'A' && !e.target.classList.contains('nav-dropdown-toggle')) {
-							closeMenu();
+							// Open this dropdown
+							dropdown.classList.add('open');
+							console.log('Added open class to dropdown');
 						}
 					});
 				}
