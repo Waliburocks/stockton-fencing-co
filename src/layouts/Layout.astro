@@ -1067,6 +1067,8 @@ const finalCanonicalUrl = getCanonicalUrl();
 				transform: translateY(0) !important;
 				pointer-events: auto !important;
 				border: 2px solid red !important; /* Temporary visual test */
+				background: yellow !important; /* Make it very visible */
+				min-height: 200px !important; /* Force some height */
 			}
 
 			/* Visual indicator when dropdown is open */
@@ -1088,14 +1090,21 @@ const finalCanonicalUrl = getCanonicalUrl();
 			}
 			
 			.nav-dropdown-menu a {
-				display: block;
+				display: block !important;
 				padding: 0.7rem 1.2rem;
-				color: var(--text-dark);
+				color: var(--text-dark) !important;
 				text-decoration: none;
 				font-weight: 500;
 				border-radius: 0;
 				background: transparent;
 				transition: all 0.3s ease;
+			}
+
+			/* Force show dropdown menu items when open */
+			.nav-dropdown.open .nav-dropdown-menu li {
+				display: block !important;
+				background: lightblue !important; /* Temporary - make items visible */
+				margin: 2px 0 !important;
 			}
 			
 			.nav-dropdown-menu a:hover {
