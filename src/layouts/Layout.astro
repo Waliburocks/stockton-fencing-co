@@ -1055,6 +1055,7 @@ const finalCanonicalUrl = getCanonicalUrl();
 			
 			/* Hide mobile elements on desktop */
 			@media (min-width: 769px) {
+				.mobile-only,
 				.submenu-back,
 				.submenu-title {
 					display: none !important;
@@ -1416,8 +1417,10 @@ const finalCanonicalUrl = getCanonicalUrl();
 					<li class="nav-dropdown">
 						<a href="/services" class="nav-dropdown-toggle">Services <span class="dropdown-arrow">▼</span></a>
 						<ul class="nav-dropdown-menu">
-							<button class="submenu-back" aria-label="Back to main menu">←</button>
-							<div class="submenu-title">Services</div>
+							<li class="mobile-only">
+								<button class="submenu-back" aria-label="Back to main menu">←</button>
+								<div class="submenu-title">Services</div>
+							</li>
 							<li><a href="/services">All Services</a></li>
 							<li><a href="/services/chain-link-fence">Chain Link Fence</a></li>
 							<li><a href="/services/wood-fence">Wood Fence</a></li>
@@ -1429,8 +1432,10 @@ const finalCanonicalUrl = getCanonicalUrl();
 					<li class="nav-dropdown">
 						<a href="/about" class="nav-dropdown-toggle">About <span class="dropdown-arrow">▼</span></a>
 						<ul class="nav-dropdown-menu">
-							<button class="submenu-back" aria-label="Back to main menu">←</button>
-							<div class="submenu-title">About</div>
+							<li class="mobile-only">
+								<button class="submenu-back" aria-label="Back to main menu">←</button>
+								<div class="submenu-title">About</div>
+							</li>
 							<li><a href="/about">Our Story</a></li>
 							<li><a href="/locations">Service Areas</a></li>
 							<li><a href="/blog">Tips & Blog</a></li>
