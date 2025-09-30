@@ -1048,9 +1048,10 @@ const finalCanonicalUrl = getCanonicalUrl();
 			.nav-dropdown:hover .nav-dropdown-menu,
 			.nav-dropdown:focus-within .nav-dropdown-menu,
 			.nav-dropdown.open .nav-dropdown-menu {
-				opacity: 1;
-				visibility: visible;
-				transform: translateY(0);
+				opacity: 1 !important;
+				visibility: visible !important;
+				transform: translateY(0) !important;
+				display: block !important;
 			}
 			
 			/* Hide mobile elements on desktop */
@@ -1498,20 +1499,24 @@ const finalCanonicalUrl = getCanonicalUrl();
 					});
 				}
 
-				// Handle desktop dropdown clicks
-				dropdownToggles.forEach(function(toggle) {
-					toggle.addEventListener('click', function(e) {
-						console.log('Dropdown clicked', e.target);
-						const dropdown = e.target.closest('.nav-dropdown');
+				// Handle dropdown clicks for both mobile and desktop
+				document.addEventListener('click', function(e) {
+					// Check if click is on a dropdown toggle
+					if (e.target.matches('.nav-dropdown-toggle') || e.target.closest('.nav-dropdown-toggle')) {
+						console.log('Dropdown toggle clicked');
+						e.preventDefault();
+
+						const toggle = e.target.matches('.nav-dropdown-toggle') ? e.target : e.target.closest('.nav-dropdown-toggle');
+						const dropdown = toggle.closest('.nav-dropdown');
+
 						if (!dropdown) {
-							console.log('No dropdown found');
+							console.log('No dropdown parent found');
 							return;
 						}
 
-						// On mobile, handle differently
+						// On mobile, use 'active' class
 						if (window.innerWidth <= 768) {
-							console.log('Mobile mode');
-							e.preventDefault();
+							console.log('Mobile: toggling active class');
 							// Close all other dropdowns first
 							const allDropdowns = document.querySelectorAll('.nav-dropdown');
 							allDropdowns.forEach(function(otherDropdown) {
@@ -1524,17 +1529,34 @@ const finalCanonicalUrl = getCanonicalUrl();
 							return;
 						}
 
-						// On desktop, toggle open state
-						console.log('Desktop mode - toggling open state');
-						e.preventDefault();
+						// On desktop, use 'open' class
+						console.log('Desktop: toggling open class');
 						const isOpen = dropdown.classList.contains('open');
 						console.log('Currently open:', isOpen);
+
+						// Close all dropdowns first
 						closeAllDropdowns();
+
+						// If it wasn't open, open it
 						if (!isOpen) {
 							dropdown.classList.add('open');
-							console.log('Added open class');
+							console.log('Added open class to dropdown');
 						}
-					});
+						return;
+					}
+
+					// Handle clicks outside dropdowns
+					if (window.innerWidth > 768) {
+						// Close dropdowns if clicking outside nav dropdown area
+						if (!e.target.closest('.nav-dropdown')) {
+							closeAllDropdowns();
+						}
+					}
+
+					// Close mobile menu when clicking outside nav
+					if (!e.target.closest('nav') && navLinks && navLinks.classList.contains('active')) {
+						closeMenu();
+					}
 				});
 
 				// Handle keyboard navigation
@@ -1581,20 +1603,7 @@ const finalCanonicalUrl = getCanonicalUrl();
 						}
 					});
 
-					// Close dropdowns when clicking outside on desktop
-					document.addEventListener('click', function(e) {
-						if (window.innerWidth > 768) {
-							// Close dropdowns if clicking outside nav
-							if (!e.target.closest('.nav-dropdown')) {
-								closeAllDropdowns();
-							}
-						}
-
-						// Close mobile menu when clicking outside
-						if (!e.target.closest('nav') && navLinks.classList.contains('active')) {
-							closeMenu();
-						}
-					});
+					// Note: Click handling is now done globally above
 				}
 			});
 		</script>
