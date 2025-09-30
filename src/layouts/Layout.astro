@@ -1491,6 +1491,7 @@ const finalCanonicalUrl = getCanonicalUrl();
 				}
 
 				function closeAllDropdowns() {
+					console.log('Closing all dropdowns');
 					const dropdowns = document.querySelectorAll('.nav-dropdown');
 					dropdowns.forEach(dropdown => {
 						dropdown.classList.remove('open');
@@ -1500,11 +1501,16 @@ const finalCanonicalUrl = getCanonicalUrl();
 				// Handle desktop dropdown clicks
 				dropdownToggles.forEach(function(toggle) {
 					toggle.addEventListener('click', function(e) {
+						console.log('Dropdown clicked', e.target);
 						const dropdown = e.target.closest('.nav-dropdown');
-						if (!dropdown) return;
+						if (!dropdown) {
+							console.log('No dropdown found');
+							return;
+						}
 
 						// On mobile, handle differently
 						if (window.innerWidth <= 768) {
+							console.log('Mobile mode');
 							e.preventDefault();
 							// Close all other dropdowns first
 							const allDropdowns = document.querySelectorAll('.nav-dropdown');
@@ -1519,11 +1525,14 @@ const finalCanonicalUrl = getCanonicalUrl();
 						}
 
 						// On desktop, toggle open state
+						console.log('Desktop mode - toggling open state');
 						e.preventDefault();
 						const isOpen = dropdown.classList.contains('open');
+						console.log('Currently open:', isOpen);
 						closeAllDropdowns();
 						if (!isOpen) {
 							dropdown.classList.add('open');
+							console.log('Added open class');
 						}
 					});
 				});
