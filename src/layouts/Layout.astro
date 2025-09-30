@@ -1521,15 +1521,22 @@ const finalCanonicalUrl = getCanonicalUrl();
 
 				// Simple approach: Add click listeners directly to dropdown toggles
 				const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
-				dropdownToggles.forEach(function(toggle) {
+				console.log('Found dropdown toggles:', dropdownToggles.length);
+
+				dropdownToggles.forEach(function(toggle, index) {
+					console.log('Adding listener to toggle', index, toggle);
 					toggle.addEventListener('click', function(e) {
+						console.log('CLICK EVENT FIRED on toggle', index);
 						e.preventDefault();
 						e.stopPropagation();
 
 						const dropdown = this.closest('.nav-dropdown');
+						console.log('Found dropdown parent:', dropdown);
 						if (!dropdown) return;
 
 						const isCurrentlyOpen = dropdown.classList.contains('open') || dropdown.classList.contains('active');
+						console.log('Currently open:', isCurrentlyOpen);
+						console.log('Window width:', window.innerWidth);
 
 						// Close all dropdowns first
 						closeAllDropdowns();
@@ -1538,8 +1545,11 @@ const finalCanonicalUrl = getCanonicalUrl();
 						if (!isCurrentlyOpen) {
 							if (window.innerWidth <= 768) {
 								dropdown.classList.add('active');
+								console.log('Added ACTIVE class (mobile)');
 							} else {
 								dropdown.classList.add('open');
+								console.log('Added OPEN class (desktop)');
+								console.log('Dropdown classes after adding open:', dropdown.className);
 							}
 						}
 					});
