@@ -6,7 +6,10 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git log:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(for file in src/pages/locations/{ripon,escalon,lathrop,french-camp,mountain-house,discovery-bay,brentwood,byron}.astro)",
+      "Bash(do sed -i 's/padding: 5rem 0;/padding: 5rem 2rem;/g' \"$file\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []
