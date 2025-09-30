@@ -1010,6 +1010,13 @@ const finalCanonicalUrl = getCanonicalUrl();
 				font-weight: 500;
 				padding: 0.5rem 1rem;
 				border-radius: 4px;
+				position: relative;
+				z-index: 10;
+			}
+
+			/* Make the entire dropdown area clickable */
+			.nav-dropdown {
+				position: relative;
 			}
 			
 			.nav-dropdown-toggle:hover {
@@ -1045,13 +1052,26 @@ const finalCanonicalUrl = getCanonicalUrl();
 				list-style: none;
 			}
 
+			/* Show dropdown on hover, focus, or when open class is applied */
 			.nav-dropdown:hover .nav-dropdown-menu,
-			.nav-dropdown:focus-within .nav-dropdown-menu,
+			.nav-dropdown:focus-within .nav-dropdown-menu {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+
+			/* Force show dropdown when open class is applied */
 			.nav-dropdown.open .nav-dropdown-menu {
 				opacity: 1 !important;
 				visibility: visible !important;
 				transform: translateY(0) !important;
-				display: block !important;
+				pointer-events: auto !important;
+				border: 2px solid red !important; /* Temporary visual test */
+			}
+
+			/* Visual indicator when dropdown is open */
+			.nav-dropdown.open .nav-dropdown-toggle {
+				background: rgba(255, 255, 255, 0.2) !important;
 			}
 			
 			/* Hide mobile elements on desktop */
@@ -1492,65 +1512,43 @@ const finalCanonicalUrl = getCanonicalUrl();
 				}
 
 				function closeAllDropdowns() {
-					console.log('Closing all dropdowns');
 					const dropdowns = document.querySelectorAll('.nav-dropdown');
 					dropdowns.forEach(dropdown => {
 						dropdown.classList.remove('open');
+						dropdown.classList.remove('active');
 					});
 				}
 
-				// Handle dropdown clicks for both mobile and desktop
-				document.addEventListener('click', function(e) {
-					// Check if click is on a dropdown toggle
-					if (e.target.matches('.nav-dropdown-toggle') || e.target.closest('.nav-dropdown-toggle')) {
-						console.log('Dropdown toggle clicked');
+				// Simple approach: Add click listeners directly to dropdown toggles
+				const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+				dropdownToggles.forEach(function(toggle) {
+					toggle.addEventListener('click', function(e) {
 						e.preventDefault();
+						e.stopPropagation();
 
-						const toggle = e.target.matches('.nav-dropdown-toggle') ? e.target : e.target.closest('.nav-dropdown-toggle');
-						const dropdown = toggle.closest('.nav-dropdown');
+						const dropdown = this.closest('.nav-dropdown');
+						if (!dropdown) return;
 
-						if (!dropdown) {
-							console.log('No dropdown parent found');
-							return;
-						}
-
-						// On mobile, use 'active' class
-						if (window.innerWidth <= 768) {
-							console.log('Mobile: toggling active class');
-							// Close all other dropdowns first
-							const allDropdowns = document.querySelectorAll('.nav-dropdown');
-							allDropdowns.forEach(function(otherDropdown) {
-								if (otherDropdown !== dropdown) {
-									otherDropdown.classList.remove('active');
-								}
-							});
-							// Toggle the clicked dropdown
-							dropdown.classList.toggle('active');
-							return;
-						}
-
-						// On desktop, use 'open' class
-						console.log('Desktop: toggling open class');
-						const isOpen = dropdown.classList.contains('open');
-						console.log('Currently open:', isOpen);
+						const isCurrentlyOpen = dropdown.classList.contains('open') || dropdown.classList.contains('active');
 
 						// Close all dropdowns first
 						closeAllDropdowns();
 
-						// If it wasn't open, open it
-						if (!isOpen) {
-							dropdown.classList.add('open');
-							console.log('Added open class to dropdown');
+						// If this dropdown wasn't open, open it
+						if (!isCurrentlyOpen) {
+							if (window.innerWidth <= 768) {
+								dropdown.classList.add('active');
+							} else {
+								dropdown.classList.add('open');
+							}
 						}
-						return;
-					}
+					});
+				});
 
-					// Handle clicks outside dropdowns
-					if (window.innerWidth > 768) {
-						// Close dropdowns if clicking outside nav dropdown area
-						if (!e.target.closest('.nav-dropdown')) {
-							closeAllDropdowns();
-						}
+				// Close dropdowns when clicking outside
+				document.addEventListener('click', function(e) {
+					if (!e.target.closest('.nav-dropdown')) {
+						closeAllDropdowns();
 					}
 
 					// Close mobile menu when clicking outside nav
@@ -1602,8 +1600,6 @@ const finalCanonicalUrl = getCanonicalUrl();
 							closeMenu();
 						}
 					});
-
-					// Note: Click handling is now done globally above
 				}
 			});
 		</script>
