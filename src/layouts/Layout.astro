@@ -1066,9 +1066,6 @@ const finalCanonicalUrl = getCanonicalUrl();
 				visibility: visible !important;
 				transform: translateY(0) !important;
 				pointer-events: auto !important;
-				border: 2px solid red !important; /* Temporary visual test */
-				background: yellow !important; /* Make it very visible */
-				min-height: 200px !important; /* Force some height */
 			}
 
 			/* Visual indicator when dropdown is open */
@@ -1100,11 +1097,9 @@ const finalCanonicalUrl = getCanonicalUrl();
 				transition: all 0.3s ease;
 			}
 
-			/* Force show dropdown menu items when open */
+			/* Ensure dropdown menu items are visible when open */
 			.nav-dropdown.open .nav-dropdown-menu li {
 				display: block !important;
-				background: lightblue !important; /* Temporary - make items visible */
-				margin: 2px 0 !important;
 			}
 			
 			.nav-dropdown-menu a:hover {
@@ -1496,50 +1491,51 @@ const finalCanonicalUrl = getCanonicalUrl();
 		</footer>
 		
 		<script>
-			console.log('JS Test 1');
-
+			// Dropdown navigation functionality
 			document.addEventListener('DOMContentLoaded', function() {
-				console.log('JS Test 2 - DOM Ready');
-
-				// Simple dropdown functionality
 				var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
-				console.log('Found dropdowns:', dropdowns.length);
 
 				for (var i = 0; i < dropdowns.length; i++) {
 					dropdowns[i].addEventListener('click', function(e) {
-						console.log('Dropdown clicked!');
 						e.preventDefault();
 
 						var dropdown = this.closest('.nav-dropdown');
 						if (dropdown) {
-							// Close all dropdowns
+							var isCurrentlyOpen = dropdown.classList.contains('open');
+
+							// Close all dropdowns first
 							var allDropdowns = document.querySelectorAll('.nav-dropdown');
 							for (var j = 0; j < allDropdowns.length; j++) {
 								allDropdowns[j].classList.remove('open');
 							}
 
-							// Open this dropdown
-							dropdown.classList.add('open');
-							console.log('Added open class to dropdown');
-
-							// Debug what's inside the dropdown
-							var menu = dropdown.querySelector('.nav-dropdown-menu');
-							console.log('Dropdown menu element:', menu);
-
-							if (menu) {
-								console.log('Menu HTML:', menu.innerHTML);
-								console.log('Menu children:', menu.children.length);
-
-								var items = menu.querySelectorAll('li');
-								console.log('Menu items found:', items.length);
-
-								for (var k = 0; k < items.length; k++) {
-									console.log('Item', k, ':', items[k].innerHTML);
-								}
+							// If this dropdown wasn't open, open it
+							if (!isCurrentlyOpen) {
+								dropdown.classList.add('open');
 							}
 						}
 					});
 				}
+
+				// Close dropdowns when clicking outside
+				document.addEventListener('click', function(e) {
+					if (!e.target.closest('.nav-dropdown')) {
+						var allDropdowns = document.querySelectorAll('.nav-dropdown');
+						for (var i = 0; i < allDropdowns.length; i++) {
+							allDropdowns[i].classList.remove('open');
+						}
+					}
+				});
+
+				// Close dropdowns on escape key
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Escape') {
+						var allDropdowns = document.querySelectorAll('.nav-dropdown');
+						for (var i = 0; i < allDropdowns.length; i++) {
+							allDropdowns[i].classList.remove('open');
+						}
+					}
+				});
 			});
 		</script>
 	</body>
