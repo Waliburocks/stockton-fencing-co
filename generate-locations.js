@@ -265,7 +265,7 @@ import Layout from '../../layouts/Layout.astro';
 				</div>
 
 				<div class="service-item">
-					<img src="/images/vinyl-fence.webp" alt="Vinyl fence installation in ${loc.name} CA" loading="lazy" width="300" height="200" />
+					<img src="/images/vinyl-fence-photo.webp" alt="Vinyl fence installation in ${loc.name} CA" loading="lazy" width="300" height="200" />
 					<h3>Vinyl Fence Installation</h3>
 					<p>Maintenance-free vinyl fencing that withstands Central Valley weather. Available in multiple colors and styles with lifetime warranties.</p>
 					<div class="service-features">
@@ -277,7 +277,7 @@ import Layout from '../../layouts/Layout.astro';
 				</div>
 
 				<div class="service-item">
-					<img src="/images/chain-link-fence.webp" alt="Chain link fence installation in ${loc.name} CA" loading="lazy" width="300" height="200" />
+					<img src="/images/chain-link-fence-photo.webp" alt="Chain link fence installation in ${loc.name} CA" loading="lazy" width="300" height="200" />
 					<h3>Chain Link Fencing</h3>
 					<p>Affordable and durable chain link fencing for residential and commercial properties in ${loc.name}. Galvanized and vinyl-coated options available.</p>
 					<div class="service-features">
@@ -289,7 +289,7 @@ import Layout from '../../layouts/Layout.astro';
 				</div>
 
 				<div class="service-item">
-					<img src="/images/iron-fence.webp" alt="Iron fence installation in ${loc.name} CA" loading="lazy" width="300" height="200" />
+					<img src="/images/iron-fence-photo.webp" alt="Iron fence installation in ${loc.name} CA" loading="lazy" width="300" height="200" />
 					<h3>Iron & Aluminum Fencing</h3>
 					<p>Elegant ornamental iron and aluminum fencing that combines security with sophisticated aesthetics. Perfect for ${loc.name}'s upscale properties.</p>
 					<div class="service-features">
