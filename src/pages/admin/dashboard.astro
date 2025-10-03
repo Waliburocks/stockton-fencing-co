@@ -433,30 +433,109 @@ import Layout from '../../layouts/Layout.astro';
 		// Search and filter
 		document.getElementById('keywordSearch')?.addEventListener('input', (e) => {
 			const search = e.target.value.toLowerCase();
-			const filtered = sampleRankings.filter(r => r.keyword.toLowerCase().includes(search));
+			const dataSource = window.gscData || sampleRankings;
+			const filtered = dataSource.filter(r => r.keyword.toLowerCase().includes(search));
 			populateRankings(filtered);
 		});
 
 		document.getElementById('locationFilter')?.addEventListener('change', (e) => {
 			const location = e.target.value;
-			const filtered = location === 'all' ? sampleRankings : sampleRankings.filter(r => r.location.toLowerCase() === location);
+			const dataSource = window.gscData || sampleRankings;
+			const filtered = location === 'all' ? dataSource : dataSource.filter(r => r.location && r.location.toLowerCase() === location);
 			populateRankings(filtered);
 		});
 
-		// Refresh data
-		document.getElementById('refreshData')?.addEventListener('click', () => {
-			alert('Data would be refreshed from connected analytics sources');
-		});
+		// Fetch real GSC data
+		async function fetchGSCData(days = 30) {
+			try {
+				const endDate = new Date().toISOString().split('T')[0];
+				const startDate = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+				const response = await fetch(`/api/gsc?startDate=${startDate}&endDate=${endDate}&dimension=query`);
+				const data = await response.json();
+
+				if (data.success) {
+					// Update metrics with real data
+					document.getElementById('avgPosition').textContent = data.metrics.avgPosition;
+					document.getElementById('organicTraffic').textContent = data.metrics.totalClicks.toLocaleString();
+
+					// Update rankings table with real keywords
+					const tbody = document.getElementById('rankingsBody');
+					tbody.innerHTML = data.keywords.slice(0, 50).map(row => {
+						const posNum = parseFloat(row.position);
+						const posClass = posNum <= 3 ? 'top' : posNum <= 10 ? 'good' : 'fair';
+
+						return `
+							<tr>
+								<td class="keyword-cell">${row.keyword}</td>
+								<td>Multiple</td>
+								<td class="position-badge position-${posClass}">#${row.position}</td>
+								<td class="change-cell neutral">−</td>
+								<td>${row.clicks}</td>
+								<td><div class="difficulty-bar" style="width: 50%">--</div></td>
+								<td><span class="trend-stable">➡️</span></td>
+							</tr>
+						`;
+					}).join('');
+
+					// Store data for filtering
+					window.gscData = data.keywords;
+				} else {
+					console.error('GSC API Error:', data);
+					showSetupInstructions(data);
+				}
+			} catch (error) {
+				console.error('Failed to fetch GSC data:', error);
+				// Fall back to sample data
+				updateMetrics();
+				populateRankings();
+			}
+		}
+
+		// Show setup instructions if API not configured
+		function showSetupInstructions(data) {
+			const tbody = document.getElementById('rankingsBody');
+			tbody.innerHTML = `
+				<tr>
+					<td colspan="7" class="loading">
+						<div style="text-align: left; padding: 1rem;">
+							<h3 style="color: #ef4444; margin-bottom: 1rem;">⚠️ Google Search Console Not Connected</h3>
+							<p style="margin-bottom: 1rem;">${data.error || 'API not configured'}</p>
+							<div style="background: #f3f4f6; padding: 1rem; border-radius: 5px; font-family: monospace; font-size: 0.9rem;">
+								<strong>Setup Instructions:</strong><br><br>
+								${data.setup ? Object.entries(data.setup).map(([key, value]) => `${key}: ${value}`).join('<br>') : 'Check .env configuration'}
+							</div>
+							<p style="margin-top: 1rem;"><em>Displaying sample data for demonstration...</em></p>
+						</div>
+					</td>
+				</tr>
+			`;
+
+			// Show sample data after instructions
+			setTimeout(() => {
+				updateMetrics();
+				populateRankings();
+			}, 3000);
+		}
 
 		// Initialize on load
 		document.addEventListener('DOMContentLoaded', () => {
-			updateMetrics();
-			populateRankings();
+			// Try to fetch real GSC data first
+			fetchGSCData(30);
+
+			// Initialize other sections with sample/placeholder data
 			populateLocations();
 			updateLeadSources();
 			updateCompetitors();
 			createTrafficChart();
 			createLeadsChart();
+		});
+
+		// Update refresh button to fetch new data
+		document.getElementById('refreshData')?.addEventListener('click', async () => {
+			const dateRange = document.getElementById('dateRange').value;
+			document.getElementById('rankingsBody').innerHTML = '<tr><td colspan="7" class="loading">Refreshing data...</td></tr>';
+			await fetchGSCData(parseInt(dateRange));
 		});
 	</script>
 
