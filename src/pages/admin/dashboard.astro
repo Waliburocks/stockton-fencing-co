@@ -227,24 +227,68 @@ import Layout from '../../layouts/Layout.astro';
 
 			<!-- Integration Setup -->
 			<div class="section-card integration-setup">
-				<h2>⚙️ Analytics Integration Setup</h2>
+				<h2>⚙️ Google Search Console Integration</h2>
 				<div class="integration-info">
-					<p>To see live data, connect your analytics tools:</p>
-					<div class="integration-steps">
-						<div class="step">
-							<h4>1. Google Analytics 4</h4>
-							<input type="text" id="gaPropertyId" placeholder="G-XXXXXXXXXX">
-							<button class="btn-connect" onclick="connectGA()">Connect GA4</button>
+					<p>The dashboard is already configured to fetch live data from Google Search Console. Follow these steps to activate:</p>
+
+					<div class="setup-steps">
+						<div class="step-item">
+							<div class="step-number">1</div>
+							<div class="step-content">
+								<h4>Create Google Cloud Project</h4>
+								<p>Go to <a href="https://console.cloud.google.com" target="_blank">Google Cloud Console</a> and create a new project</p>
+							</div>
 						</div>
-						<div class="step">
-							<h4>2. Google Search Console</h4>
-							<button class="btn-connect" onclick="connectGSC()">Authenticate GSC</button>
+
+						<div class="step-item">
+							<div class="step-number">2</div>
+							<div class="step-content">
+								<h4>Enable Search Console API</h4>
+								<p>In your Google Cloud project, enable the "Google Search Console API" from the API Library</p>
+							</div>
 						</div>
-						<div class="step">
-							<h4>3. Call Tracking</h4>
-							<input type="text" id="callTrackingKey" placeholder="API Key">
-							<button class="btn-connect" onclick="connectCallTracking()">Connect</button>
+
+						<div class="step-item">
+							<div class="step-number">3</div>
+							<div class="step-content">
+								<h4>Create Service Account</h4>
+								<p>Create a Service Account and download the JSON key file</p>
+							</div>
 						</div>
+
+						<div class="step-item">
+							<div class="step-number">4</div>
+							<div class="step-content">
+								<h4>Add to Google Search Console</h4>
+								<p>In <a href="https://search.google.com/search-console" target="_blank">Google Search Console</a>, add the service account email (from JSON) as a user with "Full" permissions</p>
+							</div>
+						</div>
+
+						<div class="step-item">
+							<div class="step-number">5</div>
+							<div class="step-content">
+								<h4>Configure Environment Variables</h4>
+								<p>Add these to your <code>.env</code> file:</p>
+								<div class="code-block">
+									<pre>GOOGLE_SERVICE_ACCOUNT_JSON='&#123;"type":"service_account",...&#125;'
+GSC_SITE_URL='sc-domain:fencestockton.com'</pre>
+								</div>
+							</div>
+						</div>
+
+						<div class="step-item">
+							<div class="step-number">6</div>
+							<div class="step-content">
+								<h4>Rebuild and Deploy</h4>
+								<p>Run <code>npm run build</code> and deploy your site. The dashboard will automatically fetch real data!</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="status-indicator">
+						<p id="connectionStatus">
+							<strong>Current Status:</strong> <span id="statusText">Checking connection...</span>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -407,26 +451,21 @@ import Layout from '../../layouts/Layout.astro';
 			});
 		}
 
-		// Integration functions
-		function connectGA() {
-			const propertyId = document.getElementById('gaPropertyId').value;
-			if (propertyId) {
-				alert('GA4 connection would be established with: ' + propertyId + '\n\nThis requires backend API integration.');
-			} else {
-				alert('Please enter your GA4 Property ID (G-XXXXXXXXXX)');
-			}
-		}
+		// Check API connection status
+		async function checkConnectionStatus() {
+			try {
+				const response = await fetch('/api/gsc?startDate=2025-01-01&endDate=2025-01-02');
+				const data = await response.json();
+				const statusEl = document.getElementById('statusText');
 
-		function connectGSC() {
-			alert('Google Search Console authentication would open OAuth flow.\n\nThis requires backend API integration.');
-		}
-
-		function connectCallTracking() {
-			const apiKey = document.getElementById('callTrackingKey').value;
-			if (apiKey) {
-				alert('Call tracking would be connected with API key.\n\nThis requires backend API integration.');
-			} else {
-				alert('Please enter your call tracking API key');
+				if (data.success) {
+					statusEl.innerHTML = '<span style="color: #10b981;">✓ Connected - Displaying live data</span>';
+				} else {
+					statusEl.innerHTML = '<span style="color: #f59e0b;">⚠ Not Connected - Complete setup steps above</span>';
+				}
+			} catch (error) {
+				const statusEl = document.getElementById('statusText');
+				statusEl.innerHTML = '<span style="color: #ef4444;">✗ API Error - Check configuration</span>';
 			}
 		}
 
@@ -522,6 +561,9 @@ import Layout from '../../layouts/Layout.astro';
 		document.addEventListener('DOMContentLoaded', () => {
 			// Try to fetch real GSC data first
 			fetchGSCData(30);
+
+			// Check connection status
+			checkConnectionStatus();
 
 			// Initialize other sections with sample/placeholder data
 			populateLocations();
@@ -861,56 +903,97 @@ import Layout from '../../layouts/Layout.astro';
 		color: white;
 	}
 
-	.integration-info p {
-		margin-bottom: 1.5rem;
-		opacity: 0.9;
+	.integration-info > p {
+		margin-bottom: 2rem;
+		opacity: 0.95;
+		font-size: 1.1rem;
 	}
 
-	.integration-steps {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	.integration-info a {
+		color: white;
+		text-decoration: underline;
+		font-weight: 600;
+	}
+
+	.integration-info a:hover {
+		color: var(--accent-orange);
+	}
+
+	.setup-steps {
+		display: flex;
+		flex-direction: column;
 		gap: 1.5rem;
+		margin-bottom: 2rem;
 	}
 
-	.step {
+	.step-item {
+		display: flex;
+		gap: 1.5rem;
+		align-items: flex-start;
 		background: rgba(255,255,255,0.1);
 		padding: 1.5rem;
 		border-radius: 10px;
+		border-left: 4px solid var(--accent-orange);
 	}
 
-	.step h4 {
-		margin-bottom: 1rem;
-	}
-
-	.step input {
-		width: 100%;
-		padding: 0.5rem;
-		margin-bottom: 1rem;
-		border: 1px solid rgba(255,255,255,0.3);
-		border-radius: 5px;
-		background: rgba(255,255,255,0.1);
-		color: white;
-	}
-
-	.step input::placeholder {
-		color: rgba(255,255,255,0.6);
-	}
-
-	.btn-connect {
-		width: 100%;
-		padding: 0.75rem;
+	.step-number {
 		background: white;
 		color: var(--primary-blue);
-		border: none;
-		border-radius: 5px;
-		font-weight: 600;
-		cursor: pointer;
-		transition: all 0.3s;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		font-size: 1.2rem;
+		flex-shrink: 0;
 	}
 
-	.btn-connect:hover {
-		background: var(--accent-orange);
-		color: white;
+	.step-content h4 {
+		margin: 0 0 0.5rem 0;
+		font-size: 1.1rem;
+	}
+
+	.step-content p {
+		margin: 0;
+		opacity: 0.9;
+		line-height: 1.6;
+	}
+
+	.step-content code {
+		background: rgba(0,0,0,0.3);
+		padding: 0.2rem 0.5rem;
+		border-radius: 3px;
+		font-family: monospace;
+	}
+
+	.code-block {
+		background: rgba(0,0,0,0.3);
+		padding: 1rem;
+		border-radius: 5px;
+		margin-top: 0.5rem;
+	}
+
+	.code-block pre {
+		margin: 0;
+		font-family: monospace;
+		font-size: 0.9rem;
+		line-height: 1.5;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+
+	.status-indicator {
+		background: rgba(255,255,255,0.15);
+		padding: 1rem 1.5rem;
+		border-radius: 10px;
+		text-align: center;
+		font-size: 1.1rem;
+	}
+
+	.status-indicator p {
+		margin: 0;
 	}
 
 	.loading {
