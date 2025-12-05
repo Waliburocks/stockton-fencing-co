@@ -1,5 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// Get all blog posts using Vite's glob import
+const blogModules = import.meta.glob('./blog/*.astro', { eager: true });
+const allPosts = Object.values(blogModules);
+
+// Filter posts based on scheduledDate
+const today = new Date();
+today.setHours(0, 0, 0, 0); // Normalize to midnight for accurate date comparison
+
+const visiblePosts = allPosts.filter((post) => {
+	const scheduledDate = post.frontmatter?.scheduledDate;
+
+	// If no scheduledDate is set, the post is always visible
+	if (!scheduledDate) return true;
+
+	// Parse the scheduled date and compare with today
+	const scheduled = new Date(scheduledDate);
+	scheduled.setHours(0, 0, 0, 0);
+
+	return scheduled <= today;
+}).map((post) => ({
+	url: post.url,
+	title: post.frontmatter?.heroTitle || post.frontmatter?.title || 'Untitled',
+	description: post.frontmatter?.description || '',
+	image: post.frontmatter?.heroImage || '/images/blog/default.jpg',
+	imageAlt: post.frontmatter?.heroImageAlt || post.frontmatter?.title || 'Blog post image',
+	publishDate: post.frontmatter?.publishDate || '',
+	category: post.frontmatter?.category || 'General',
+	readingTime: post.frontmatter?.readingTime || '5 min read',
+	datePublished: post.frontmatter?.schemaData?.datePublished || post.frontmatter?.publishDate || ''
+})).sort((a, b) => {
+	// Sort by date published (newest first)
+	return new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime();
+});
 ---
 
 <Layout 
@@ -141,146 +175,27 @@ import Layout from '../layouts/Layout.astro';
 		<div class="container">
 			<h2>Latest Posts</h2>
 			<div class="posts-grid">
-				<a href="/blog/emergency-fence-service" class="blog-post-link">
-					<article class="blog-post">
-						<div class="post-image">
-							<img src="/images/blog/emergency-fence-service.jpg" alt="Emergency fence repair service" loading="lazy" />
-						</div>
-						<div class="post-content">
-							<div class="post-meta">
-								<span class="post-date">September 15, 2024</span>
-								<span class="post-category">Emergency</span>
+				{visiblePosts.map((post) => (
+					<a href={post.url} class="blog-post-link">
+						<article class="blog-post">
+							<div class="post-image">
+								<img src={post.image} alt={post.imageAlt} loading="lazy" />
 							</div>
-							<h3>Emergency Fence Service: What You Need to Know</h3>
-							<p>Learn when to call for emergency fence repairs, what to expect from emergency services, and how to handle fence emergencies safely in Stockton.</p>
-							<div class="post-footer">
-								<span class="read-more">Read More →</span>
-								<span class="reading-time">9 min read</span>
+							<div class="post-content">
+								<div class="post-meta">
+									<span class="post-date">{post.publishDate}</span>
+									<span class="post-category">{post.category}</span>
+								</div>
+								<h3>{post.title}</h3>
+								<p>{post.description}</p>
+								<div class="post-footer">
+									<span class="read-more">Read More →</span>
+									<span class="reading-time">{post.readingTime}</span>
+								</div>
 							</div>
-						</div>
-					</article>
-				</a>
-
-				<a href="/blog/fall-fence-preparation" class="blog-post-link">
-					<article class="blog-post">
-						<div class="post-image">
-							<img src="/images/blog/fall-fence-maintenance.jpg" alt="Fall fence maintenance preparation" loading="lazy" />
-						</div>
-						<div class="post-content">
-							<div class="post-meta">
-								<span class="post-date">September 15, 2024</span>
-								<span class="post-category">Maintenance</span>
-							</div>
-							<h3>Fall Fence Preparation Guide</h3>
-							<p>Essential fall maintenance guide for Stockton homeowners. Learn to prepare your fence for winter weather and extend its lifespan.</p>
-							<div class="post-footer">
-								<span class="read-more">Read More →</span>
-								<span class="reading-time">9 min read</span>
-							</div>
-						</div>
-					</article>
-				</a>
-
-				<a href="/blog/fence-costs-stockton" class="blog-post-link">
-					<article class="blog-post">
-						<div class="post-image">
-							<img src="/images/blog/fence-cost-calculator.jpg" alt="Fence cost planning and budgeting" loading="lazy" />
-						</div>
-						<div class="post-content">
-							<div class="post-meta">
-								<span class="post-date">September 15, 2024</span>
-								<span class="post-category">Pricing</span>
-							</div>
-							<h3>How Much Do Fences Cost in Stockton?</h3>
-							<p>Complete 2024 fence cost guide for Stockton. Compare materials, understand labor costs, and discover ways to save money on your project.</p>
-							<div class="post-footer">
-								<span class="read-more">Read More →</span>
-								<span class="reading-time">10 min read</span>
-							</div>
-						</div>
-					</article>
-				</a>
-
-				<a href="/blog/what-to-do-leaning-fence" class="blog-post-link">
-					<article class="blog-post">
-						<div class="post-image">
-							<img src="/images/blog/leaning-fence-repair.jpg" alt="Leaning fence repair and stabilization" loading="lazy" />
-						</div>
-						<div class="post-content">
-							<div class="post-meta">
-								<span class="post-date">September 15, 2024</span>
-								<span class="post-category">Repair</span>
-							</div>
-							<h3>What to Do When Your Fence is Leaning</h3>
-							<p>Complete repair guide for fixing leaning fences in Stockton. Learn to diagnose causes, stabilize tilted posts, and implement permanent solutions.</p>
-							<div class="post-footer">
-								<span class="read-more">Read More →</span>
-								<span class="reading-time">8 min read</span>
-							</div>
-						</div>
-					</article>
-				</a>
-
-				<a href="/blog/what-to-do-damaged-fence" class="blog-post-link">
-					<article class="blog-post">
-						<div class="post-image">
-							<img src="/images/blog/damaged-fence-repair.jpg" alt="Damaged fence emergency repair" loading="lazy" />
-						</div>
-						<div class="post-content">
-							<div class="post-meta">
-								<span class="post-date">September 15, 2024</span>
-								<span class="post-category">Emergency</span>
-							</div>
-							<h3>What to Do When Your Fence is Damaged</h3>
-							<p>Emergency guide for handling fence damage from storms, accidents, or wear. Expert advice on repairs, insurance claims, and professional help.</p>
-							<div class="post-footer">
-								<span class="read-more">Read More →</span>
-								<span class="reading-time">8 min read</span>
-							</div>
-						</div>
-					</article>
-				</a>
-
-				<a href="/blog/complete-guide-fences-stockton" class="blog-post-link">
-					<article class="blog-post">
-						<div class="post-image">
-							<img src="/images/blog/fence-installation.jpg" alt="Complete fence installation guide" loading="lazy" />
-						</div>
-						<div class="post-content">
-							<div class="post-meta">
-								<span class="post-date">September 15, 2024</span>
-								<span class="post-category">Guide</span>
-							</div>
-							<h3>Complete Guide to Fences in Stockton</h3>
-							<p>Everything you need to know about fencing in Stockton. Compare materials, understand costs, learn about permits, and find the perfect fence.</p>
-							<div class="post-footer">
-								<span class="read-more">Read More →</span>
-								<span class="reading-time">12 min read</span>
-							</div>
-						</div>
-					</article>
-				</a>
-
-				<a href="/blog/fence-repair-signs" class="blog-post-link">
-					<article class="blog-post">
-						<div class="post-image">
-							<img src="/images/wood-fence-photo.webp" alt="Damaged fence requiring repair" loading="lazy" />
-						</div>
-						<div class="post-content">
-							<div class="post-meta">
-								<span class="post-date">September 1, 2024</span>
-								<span class="post-category">Maintenance</span>
-							</div>
-							<h3>5 Signs Your Fence Needs Immediate Repair</h3>
-							<p>Don't wait until it's too late! Learn to identify the warning signs that indicate your fence needs professional attention before minor issues become major expenses.</p>
-							<div class="post-footer">
-								<span class="read-more">Read More →</span>
-								<span class="reading-time">5 min read</span>
-							</div>
-						</div>
-					</article>
-				</a>
-
+						</article>
+					</a>
+				))}
 			</div>
 		</div>
 	</section>

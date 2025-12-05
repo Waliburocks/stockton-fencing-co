@@ -10,25 +10,27 @@ export interface Props {
 	heroTitle: string;
 	heroSubtitle: string;
 	publishDate: string;
+	scheduledDate?: string; // Optional: ISO date string (YYYY-MM-DD) - post will only be visible after this date
 	category: string;
 	readingTime: string;
 	breadcrumbTitle: string;
 	schemaData?: any;
 }
 
-const { 
-	title, 
-	description, 
-	canonicalUrl, 
-	heroImage, 
-	heroImageAlt, 
-	heroTitle, 
-	heroSubtitle, 
-	publishDate, 
-	category, 
-	readingTime, 
+const {
+	title,
+	description,
+	canonicalUrl,
+	heroImage,
+	heroImageAlt,
+	heroTitle,
+	heroSubtitle,
+	publishDate,
+	scheduledDate,
+	category,
+	readingTime,
 	breadcrumbTitle,
-	schemaData 
+	schemaData
 } = Astro.props;
 ---
 
