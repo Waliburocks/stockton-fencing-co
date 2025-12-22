@@ -1,9 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Get all blog posts using Vite's glob import
-const blogModules = import.meta.glob('./blog/*.astro', { eager: true });
-const allPosts = Object.values(blogModules);
+// Get all blog posts using Astro.glob
+const allPosts = await Astro.glob('./blog/*.astro');
 
 // Filter posts based on scheduledDate
 const today = new Date();
