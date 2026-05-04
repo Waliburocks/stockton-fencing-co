@@ -802,55 +802,8 @@ const finalCanonicalUrl = getCanonicalUrl();
 		}
 		</script>
 
-		<!-- AltText AI Script - Load only after significant user interaction or long delay -->
-		<script>
-		  // Defer AltText AI to very late in the page lifecycle
-		  function loadAltTextAI() {
-		    if (document.getElementById('alttextai-ujs') || window.altTextAILoaded) return;
-		    window.altTextAILoaded = true;
-
-		    // Create script after ensuring page is fully loaded
-		    var script = document.createElement('script');
-		    script.type = 'module';
-		    script.id = 'alttextai-ujs';
-		    script.src = 'https://ujs.alttext.ai/alttextai-ujs.js?site-key=c95c60cfd5def341';
-		    script.async = true;
-		    document.head.appendChild(script);
-		  }
-
-		  // Only load after page is completely finished and user has interacted
-		  var loadConditions = {
-		    pageLoaded: false,
-		    userInteracted: false,
-		    timerExpired: false
-		  };
-
-		  function checkLoadConditions() {
-		    if ((loadConditions.pageLoaded && loadConditions.userInteracted) || loadConditions.timerExpired) {
-		      loadAltTextAI();
-		    }
-		  }
-
-		  // Wait for page to be completely loaded
-		  window.addEventListener('load', function() {
-		    loadConditions.pageLoaded = true;
-		    checkLoadConditions();
-		  });
-
-		  // Wait for meaningful user interaction (not just scroll)
-		  ['mousedown', 'touchstart', 'keydown', 'click'].forEach(function(event) {
-		    document.addEventListener(event, function() {
-		      loadConditions.userInteracted = true;
-		      checkLoadConditions();
-		    }, { once: true, passive: true });
-		  });
-
-		  // Fallback: load after 10 seconds regardless
-		  setTimeout(function() {
-		    loadConditions.timerExpired = true;
-		    checkLoadConditions();
-		  }, 10000);
-		</script>
+		<!-- AltText AI Script -->
+		<script type="module" defer id="alttextai-ujs" src="https://ujs.alttext.ai/alttextai-ujs.js?site-key=c95c60cfd5def341"></script>
 
 		<style>
 			:root {
