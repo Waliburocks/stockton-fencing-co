@@ -10,7 +10,8 @@
       "Bash(for file in src/pages/locations/{ripon,escalon,lathrop,french-camp,mountain-house,discovery-bay,brentwood,byron}.astro)",
       "Bash(do sed -i 's/padding: 5rem 0;/padding: 5rem 2rem;/g' \"$file\")",
       "Bash(done)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(dir /b \"C:\\\\Users\\\\Ben\\\\sacramento-fencing-co\\\\src\\\\pages\\\\blog\\\\*.astro\")"
     ],
     "deny": [],
     "ask": []
