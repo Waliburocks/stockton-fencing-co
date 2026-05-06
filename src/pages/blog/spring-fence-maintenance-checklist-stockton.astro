@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Spring Fence Maintenance Checklist for Stockton: Prepare Your Fence for Summer",
-	description: "Complete spring fence maintenance guide for Stockton homeowners. Inspection tips, cleaning methods, staining schedules, and repairs to complete before summer heat arrives.",
-	publishDate: "2026-08-12",
-	category: "Maintenance"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Spring Fence Maintenance Checklist for Stockton: Prepare Your Fence for Summer",
+	description: "Complete spring fence maintenance guide for Stockton homeowners. Inspection tips, cleaning methods, staining schedules, and repairs to complete before summer heat arrives.",
+	heroTitle: "Spring Fence Maintenance Checklist",
+	heroImage: "/images/blog/fall-fence-maintenance.jpg",
+	heroImageAlt: "Homeowner performing spring maintenance on wood fence",
+	publishDate: "August 12, 2026",
+	scheduledDate: "2026-08-12",
+	category: "Maintenance",
+	readingTime: "11 min read"
+};
 ---
 
 <BlogLayout
 	title="Spring Fence Maintenance Checklist for Stockton: Prepare Your Fence for Summer"
 	description="Complete spring fence maintenance guide for Stockton homeowners. Inspection tips, cleaning methods, staining schedules, and repairs to complete before summer heat arrives."
 	canonicalUrl="/blog/spring-fence-maintenance-checklist-stockton"
-	heroImage="/images/blog/spring-fence-maintenance.jpg"
+	heroImage="/images/blog/fall-fence-maintenance.jpg"
 	heroImageAlt="Homeowner performing spring maintenance on wood fence"
 	heroTitle="Spring Fence Maintenance Checklist"
 	heroSubtitle="Get your fence ready for Stockton's hot summer season"

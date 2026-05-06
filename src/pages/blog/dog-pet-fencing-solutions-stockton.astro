@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Dog & Pet Fencing Solutions in Stockton: Complete Guide to Keeping Pets Safe",
-	description: "Best pet-friendly fence options for Stockton homes. Learn about dog-proof fencing heights, materials, dig prevention, and escape-proof designs for your furry family members.",
-	publishDate: "2026-05-13",
-	category: "Pet Fencing"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Dog & Pet Fencing Solutions in Stockton: Complete Guide to Keeping Pets Safe",
+	description: "Best pet-friendly fence options for Stockton homes. Learn about dog-proof fencing heights, materials, dig prevention, and escape-proof designs for your furry family members.",
+	heroTitle: "Dog & Pet Fencing Solutions in Stockton",
+	heroImage: "/images/blog/fence-installation.jpg",
+	heroImageAlt: "Happy dog safely contained by quality fence in Stockton backyard",
+	publishDate: "May 13, 2026",
+	scheduledDate: "2026-05-13",
+	category: "Pet Fencing",
+	readingTime: "13 min read"
+};
 ---
 
 <BlogLayout
 	title="Dog & Pet Fencing Solutions in Stockton: Complete Guide to Keeping Pets Safe"
 	description="Best pet-friendly fence options for Stockton homes. Learn about dog-proof fencing heights, materials, dig prevention, and escape-proof designs for your furry family members."
 	canonicalUrl="/blog/dog-pet-fencing-solutions-stockton"
-	heroImage="/images/blog/pet-dog-fencing.jpg"
+	heroImage="/images/blog/fence-installation.jpg"
 	heroImageAlt="Happy dog safely contained by quality fence in Stockton backyard"
 	heroTitle="Dog & Pet Fencing Solutions in Stockton"
 	heroSubtitle="Keep your furry family members safe with the right fence design"

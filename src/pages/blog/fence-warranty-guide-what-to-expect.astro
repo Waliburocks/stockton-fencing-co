@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Fence Warranty Guide: What to Expect from Materials & Installation Warranties",
-	description: "Complete guide to fence warranties in Stockton. Understand material warranties, labor warranties, what's covered, exclusions, and how to protect your investment.",
-	publishDate: "2026-05-27",
-	category: "Buyer's Guide"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Fence Warranty Guide: What to Expect from Materials & Installation Warranties",
+	description: "Complete guide to fence warranties in Stockton. Understand material warranties, labor warranties, what's covered, exclusions, and how to protect your investment.",
+	heroTitle: "Fence Warranty Guide",
+	heroImage: "/images/blog/fence-installation.jpg",
+	heroImageAlt: "Quality fence installation with warranty documentation",
+	publishDate: "May 27, 2026",
+	scheduledDate: "2026-05-27",
+	category: "Buyer's Guide",
+	readingTime: "12 min read"
+};
 ---
 
 <BlogLayout
 	title="Fence Warranty Guide: What to Expect from Materials & Installation Warranties"
 	description="Complete guide to fence warranties in Stockton. Understand material warranties, labor warranties, what's covered, exclusions, and how to protect your investment."
 	canonicalUrl="/blog/fence-warranty-guide-what-to-expect"
-	heroImage="/images/blog/fence-warranty-guide.jpg"
+	heroImage="/images/blog/fence-installation.jpg"
 	heroImageAlt="Quality fence installation with warranty documentation"
 	heroTitle="Fence Warranty Guide"
 	heroSubtitle="Understanding what's covered and how to protect your investment"

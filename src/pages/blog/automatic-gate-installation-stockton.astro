@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Automatic Gate Installation in Stockton: Complete Guide to Motorized Gate Systems",
-	description: "Everything you need to know about automatic gate installation in Stockton. Compare swing vs sliding gates, operators, access controls, costs, and maintenance requirements.",
-	publishDate: "2026-06-10",
-	category: "Gates & Access"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Automatic Gate Installation in Stockton: Complete Guide to Motorized Gate Systems",
+	description: "Everything you need to know about automatic gate installation in Stockton. Compare swing vs sliding gates, operators, access controls, costs, and maintenance requirements.",
+	heroTitle: "Automatic Gate Installation in Stockton",
+	heroImage: "/images/blog/fence-installation.jpg",
+	heroImageAlt: "Modern automatic driveway gate with keypad entry system",
+	publishDate: "June 10, 2026",
+	scheduledDate: "2026-06-10",
+	category: "Gates & Access",
+	readingTime: "13 min read"
+};
 ---
 
 <BlogLayout
 	title="Automatic Gate Installation in Stockton: Complete Guide to Motorized Gate Systems"
 	description="Everything you need to know about automatic gate installation in Stockton. Compare swing vs sliding gates, operators, access controls, costs, and maintenance requirements."
 	canonicalUrl="/blog/automatic-gate-installation-stockton"
-	heroImage="/images/blog/automatic-gate-installation.jpg"
+	heroImage="/images/blog/fence-installation.jpg"
 	heroImageAlt="Modern automatic driveway gate with keypad entry system"
 	heroTitle="Automatic Gate Installation in Stockton"
 	heroSubtitle="Enhance security and convenience with motorized gate systems"

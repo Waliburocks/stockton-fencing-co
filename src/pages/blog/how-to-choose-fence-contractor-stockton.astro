@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "How to Choose the Best Fence Contractor in Stockton: Complete Hiring Guide",
-	description: "Expert tips for hiring a fence contractor in Stockton, CA. Learn what questions to ask, red flags to avoid, licensing requirements, and how to get the best value for your fencing project.",
-	publishDate: "2026-05-06",
-	category: "Hiring Guide"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "How to Choose the Best Fence Contractor in Stockton: Complete Hiring Guide",
+	description: "Expert tips for hiring a fence contractor in Stockton, CA. Learn what questions to ask, red flags to avoid, licensing requirements, and how to get the best value for your fencing project.",
+	heroTitle: "How to Choose the Best Fence Contractor in Stockton",
+	heroImage: "/images/blog/fence-installation.jpg",
+	heroImageAlt: "Professional fence contractor discussing project plans with Stockton homeowner",
+	publishDate: "May 6, 2026",
+	scheduledDate: "2026-05-06",
+	category: "Hiring Guide",
+	readingTime: "14 min read"
+};
 ---
 
 <BlogLayout
 	title="How to Choose the Best Fence Contractor in Stockton: Complete Hiring Guide"
 	description="Expert tips for hiring a fence contractor in Stockton, CA. Learn what questions to ask, red flags to avoid, licensing requirements, and how to get the best value for your fencing project."
 	canonicalUrl="/blog/how-to-choose-fence-contractor-stockton"
-	heroImage="/images/blog/fence-contractor-hiring.jpg"
+	heroImage="/images/blog/fence-installation.jpg"
 	heroImageAlt="Professional fence contractor discussing project plans with Stockton homeowner"
 	heroTitle="How to Choose the Best Fence Contractor in Stockton"
 	heroSubtitle="Your complete guide to hiring a reliable, licensed fence installation company"

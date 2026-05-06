@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Noise Reduction Fencing for Stockton: Sound Barrier Solutions for Quieter Yards",
-	description: "Reduce noise pollution with sound-blocking fences in Stockton. Compare materials, heights, and techniques for effective noise reduction from traffic and neighbors.",
-	publishDate: "2026-07-29",
-	category: "Specialty Fencing"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Noise Reduction Fencing for Stockton: Sound Barrier Solutions for Quieter Yards",
+	description: "Reduce noise pollution with sound-blocking fences in Stockton. Compare materials, heights, and techniques for effective noise reduction from traffic and neighbors.",
+	heroTitle: "Noise Reduction Fencing for Stockton",
+	heroImage: "/images/blog/fence-installation.jpg",
+	heroImageAlt: "Solid noise-reducing fence blocking traffic sounds",
+	publishDate: "July 29, 2026",
+	scheduledDate: "2026-07-29",
+	category: "Specialty Fencing",
+	readingTime: "11 min read"
+};
 ---
 
 <BlogLayout
 	title="Noise Reduction Fencing for Stockton: Sound Barrier Solutions for Quieter Yards"
 	description="Reduce noise pollution with sound-blocking fences in Stockton. Compare materials, heights, and techniques for effective noise reduction from traffic and neighbors."
 	canonicalUrl="/blog/noise-reduction-fencing-stockton"
-	heroImage="/images/blog/noise-reduction-fence.jpg"
+	heroImage="/images/blog/fence-installation.jpg"
 	heroImageAlt="Solid noise-reducing fence blocking traffic sounds"
 	heroTitle="Noise Reduction Fencing for Stockton"
 	heroSubtitle="Create a quieter outdoor space with sound barrier solutions"

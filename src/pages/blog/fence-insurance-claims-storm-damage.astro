@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Fence Insurance Claims: How to File for Storm and Damage Coverage in Stockton",
-	description: "Guide to filing fence insurance claims in Stockton. Learn what's covered, documentation requirements, the claims process, and how to maximize your settlement.",
-	publishDate: "2026-07-22",
-	category: "Insurance"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Fence Insurance Claims: How to File for Storm and Damage Coverage in Stockton",
+	description: "Guide to filing fence insurance claims in Stockton. Learn what's covered, documentation requirements, the claims process, and how to maximize your settlement.",
+	heroTitle: "Fence Insurance Claims Guide",
+	heroImage: "/images/blog/damaged-fence-repair.jpg",
+	heroImageAlt: "Storm-damaged fence requiring insurance claim",
+	publishDate: "July 22, 2026",
+	scheduledDate: "2026-07-22",
+	category: "Insurance",
+	readingTime: "11 min read"
+};
 ---
 
 <BlogLayout
 	title="Fence Insurance Claims: How to File for Storm and Damage Coverage in Stockton"
 	description="Guide to filing fence insurance claims in Stockton. Learn what's covered, documentation requirements, the claims process, and how to maximize your settlement."
 	canonicalUrl="/blog/fence-insurance-claims-storm-damage"
-	heroImage="/images/blog/fence-insurance-claim.jpg"
+	heroImage="/images/blog/damaged-fence-repair.jpg"
 	heroImageAlt="Storm-damaged fence requiring insurance claim"
 	heroTitle="Fence Insurance Claims Guide"
 	heroSubtitle="How to file and maximize your fence damage insurance claim"

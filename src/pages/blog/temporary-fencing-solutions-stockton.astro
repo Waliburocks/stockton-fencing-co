@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Temporary Fencing Solutions in Stockton: Rentals, Events & Construction Options",
-	description: "Guide to temporary fencing in Stockton for construction sites, events, pool safety, and property protection. Compare options, rental costs, and installation requirements.",
-	publishDate: "2026-08-05",
-	category: "Temporary Fencing"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Temporary Fencing Solutions in Stockton: Rentals, Events & Construction Options",
+	description: "Guide to temporary fencing in Stockton for construction sites, events, pool safety, and property protection. Compare options, rental costs, and installation requirements.",
+	heroTitle: "Temporary Fencing Solutions in Stockton",
+	heroImage: "/images/blog/fence-installation.jpg",
+	heroImageAlt: "Temporary chain link fence panels at construction site",
+	publishDate: "August 5, 2026",
+	scheduledDate: "2026-08-05",
+	category: "Temporary Fencing",
+	readingTime: "10 min read"
+};
 ---
 
 <BlogLayout
 	title="Temporary Fencing Solutions in Stockton: Rentals, Events & Construction Options"
 	description="Guide to temporary fencing in Stockton for construction sites, events, pool safety, and property protection. Compare options, rental costs, and installation requirements."
 	canonicalUrl="/blog/temporary-fencing-solutions-stockton"
-	heroImage="/images/blog/temporary-fencing.jpg"
+	heroImage="/images/blog/fence-installation.jpg"
 	heroImageAlt="Temporary chain link fence panels at construction site"
 	heroTitle="Temporary Fencing Solutions in Stockton"
 	heroSubtitle="Flexible, short-term fencing for construction, events, and property needs"

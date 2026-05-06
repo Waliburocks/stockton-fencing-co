@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Shadow Box Fence vs Solid Privacy Fence: Which is Right for Your Stockton Home?",
-	description: "Compare shadow box and solid privacy fences for Stockton properties. Learn about airflow, aesthetics, cost differences, wind resistance, and which style suits your needs.",
-	publishDate: "2026-06-03",
-	category: "Fence Styles"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Shadow Box Fence vs Solid Privacy Fence: Which is Right for Your Stockton Home?",
+	description: "Compare shadow box and solid privacy fences for Stockton properties. Learn about airflow, aesthetics, cost differences, wind resistance, and which style suits your needs.",
+	heroTitle: "Shadow Box vs Solid Privacy Fence",
+	heroImage: "/images/blog/fence-installation.jpg",
+	heroImageAlt: "Side-by-side comparison of shadow box and solid privacy fence styles",
+	publishDate: "June 3, 2026",
+	scheduledDate: "2026-06-03",
+	category: "Fence Styles",
+	readingTime: "12 min read"
+};
 ---
 
 <BlogLayout
 	title="Shadow Box Fence vs Solid Privacy Fence: Which is Right for Your Stockton Home?"
 	description="Compare shadow box and solid privacy fences for Stockton properties. Learn about airflow, aesthetics, cost differences, wind resistance, and which style suits your needs."
 	canonicalUrl="/blog/shadow-box-vs-privacy-fence-comparison"
-	heroImage="/images/blog/shadow-box-privacy-fence.jpg"
+	heroImage="/images/blog/fence-installation.jpg"
 	heroImageAlt="Side-by-side comparison of shadow box and solid privacy fence styles"
 	heroTitle="Shadow Box vs Solid Privacy Fence"
 	heroSubtitle="Choosing the right fence style for your Stockton property"

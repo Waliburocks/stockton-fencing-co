@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Slope & Hill Fence Installation Guide: Solutions for Uneven Terrain in Stockton",
-	description: "How to install fences on slopes and hills in Stockton. Learn about stepping, racking, and custom solutions for challenging terrain with proper drainage and stability.",
-	publishDate: "2026-07-08",
-	category: "Installation Guide"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Slope & Hill Fence Installation Guide: Solutions for Uneven Terrain in Stockton",
+	description: "How to install fences on slopes and hills in Stockton. Learn about stepping, racking, and custom solutions for challenging terrain with proper drainage and stability.",
+	heroTitle: "Slope & Hill Fence Installation",
+	heroImage: "/images/blog/fence-installation.jpg",
+	heroImageAlt: "Professional fence installation on sloped terrain",
+	publishDate: "July 8, 2026",
+	scheduledDate: "2026-07-08",
+	category: "Installation Guide",
+	readingTime: "11 min read"
+};
 ---
 
 <BlogLayout
 	title="Slope & Hill Fence Installation Guide: Solutions for Uneven Terrain in Stockton"
 	description="How to install fences on slopes and hills in Stockton. Learn about stepping, racking, and custom solutions for challenging terrain with proper drainage and stability."
 	canonicalUrl="/blog/slope-hill-fence-installation-guide"
-	heroImage="/images/blog/slope-fence-installation.jpg"
+	heroImage="/images/blog/fence-installation.jpg"
 	heroImageAlt="Professional fence installation on sloped terrain"
 	heroTitle="Slope & Hill Fence Installation"
 	heroSubtitle="Solutions for challenging terrain in Stockton properties"

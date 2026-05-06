@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "How Long Does Fence Installation Take? Timeline Guide for Stockton Projects",
-	description: "Understand fence installation timelines for Stockton properties. Learn what affects project duration, from permits to weather, and how to plan for your new fence.",
-	publishDate: "2026-06-24",
-	category: "Planning Guide"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "How Long Does Fence Installation Take? Timeline Guide for Stockton Projects",
+	description: "Understand fence installation timelines for Stockton properties. Learn what affects project duration, from permits to weather, and how to plan for your new fence.",
+	heroTitle: "How Long Does Fence Installation Take?",
+	heroImage: "/images/blog/fence-installation.jpg",
+	heroImageAlt: "Professional fence installation crew working on residential fence",
+	publishDate: "June 24, 2026",
+	scheduledDate: "2026-06-24",
+	category: "Planning Guide",
+	readingTime: "11 min read"
+};
 ---
 
 <BlogLayout
 	title="How Long Does Fence Installation Take? Timeline Guide for Stockton Projects"
 	description="Understand fence installation timelines for Stockton properties. Learn what affects project duration, from permits to weather, and how to plan for your new fence."
 	canonicalUrl="/blog/how-long-fence-installation-takes"
-	heroImage="/images/blog/fence-installation-timeline.jpg"
+	heroImage="/images/blog/fence-installation.jpg"
 	heroImageAlt="Professional fence installation crew working on residential fence"
 	heroTitle="How Long Does Fence Installation Take?"
 	heroSubtitle="Plan your fencing project with realistic timeline expectations"

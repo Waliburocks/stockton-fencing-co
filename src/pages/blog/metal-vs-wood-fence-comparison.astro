@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Metal vs Wood Fence: Complete Comparison Guide for Stockton Homeowners",
-	description: "Compare metal and wood fences for your Stockton home. Detailed analysis of cost, durability, maintenance, aesthetics, and performance in Central Valley climate.",
-	publishDate: "2026-07-15",
-	category: "Fence Comparison"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Metal vs Wood Fence: Complete Comparison Guide for Stockton Homeowners",
+	description: "Compare metal and wood fences for your Stockton home. Detailed analysis of cost, durability, maintenance, aesthetics, and performance in Central Valley climate.",
+	heroTitle: "Metal vs Wood Fence Comparison",
+	heroImage: "/images/blog/fence-installation.jpg",
+	heroImageAlt: "Side-by-side comparison of metal and wood fencing options",
+	publishDate: "July 15, 2026",
+	scheduledDate: "2026-07-15",
+	category: "Fence Comparison",
+	readingTime: "12 min read"
+};
 ---
 
 <BlogLayout
 	title="Metal vs Wood Fence: Complete Comparison Guide for Stockton Homeowners"
 	description="Compare metal and wood fences for your Stockton home. Detailed analysis of cost, durability, maintenance, aesthetics, and performance in Central Valley climate."
 	canonicalUrl="/blog/metal-vs-wood-fence-comparison"
-	heroImage="/images/blog/metal-vs-wood-fence.jpg"
+	heroImage="/images/blog/fence-installation.jpg"
 	heroImageAlt="Side-by-side comparison of metal and wood fencing options"
 	heroTitle="Metal vs Wood Fence Comparison"
 	heroSubtitle="Find the right fence material for your Stockton property"

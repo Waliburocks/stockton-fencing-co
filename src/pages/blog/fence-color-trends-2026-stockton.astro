@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Fence Color Trends 2026: Popular Stain, Paint & Material Colors for Stockton Homes",
-	description: "Discover the hottest fence color trends for 2026 in Stockton. From modern grays to natural wood tones, learn which colors boost curb appeal and complement your home.",
-	publishDate: "2026-06-17",
-	category: "Design Trends"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Fence Color Trends 2026: Popular Stain, Paint & Material Colors for Stockton Homes",
+	description: "Discover the hottest fence color trends for 2026 in Stockton. From modern grays to natural wood tones, learn which colors boost curb appeal and complement your home.",
+	heroTitle: "Fence Color Trends 2026",
+	heroImage: "/images/blog/fence-installation.jpg",
+	heroImageAlt: "Beautiful stained wood fence showcasing modern color trends",
+	publishDate: "June 17, 2026",
+	scheduledDate: "2026-06-17",
+	category: "Design Trends",
+	readingTime: "11 min read"
+};
 ---
 
 <BlogLayout
 	title="Fence Color Trends 2026: Popular Stain, Paint & Material Colors for Stockton Homes"
 	description="Discover the hottest fence color trends for 2026 in Stockton. From modern grays to natural wood tones, learn which colors boost curb appeal and complement your home."
 	canonicalUrl="/blog/fence-color-trends-2026-stockton"
-	heroImage="/images/blog/fence-color-trends.jpg"
+	heroImage="/images/blog/fence-installation.jpg"
 	heroImageAlt="Beautiful stained wood fence showcasing modern color trends"
 	heroTitle="Fence Color Trends 2026"
 	heroSubtitle="The most popular fence colors for Stockton homes this year"

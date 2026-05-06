@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Good Neighbor Fence Laws in California: Rights, Responsibilities & Stockton Guidelines",
-	description: "Understand California's Good Neighbor Fence Act and Stockton fence laws. Learn about shared costs, property lines, fence etiquette, and resolving neighbor disputes legally.",
-	publishDate: "2026-05-20",
-	category: "Legal & Regulations"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Good Neighbor Fence Laws in California: Rights, Responsibilities & Stockton Guidelines",
+	description: "Understand California's Good Neighbor Fence Act and Stockton fence laws. Learn about shared costs, property lines, fence etiquette, and resolving neighbor disputes legally.",
+	heroTitle: "Good Neighbor Fence Laws in California",
+	heroImage: "/images/blog/fence-installation.jpg",
+	heroImageAlt: "Two neighbors discussing fence plans over shared property line",
+	publishDate: "May 20, 2026",
+	scheduledDate: "2026-05-20",
+	category: "Legal & Regulations",
+	readingTime: "14 min read"
+};
 ---
 
 <BlogLayout
 	title="Good Neighbor Fence Laws in California: Rights, Responsibilities & Stockton Guidelines"
 	description="Understand California's Good Neighbor Fence Act and Stockton fence laws. Learn about shared costs, property lines, fence etiquette, and resolving neighbor disputes legally."
 	canonicalUrl="/blog/good-neighbor-fence-laws-california"
-	heroImage="/images/blog/neighbor-fence-laws.jpg"
+	heroImage="/images/blog/fence-installation.jpg"
 	heroImageAlt="Two neighbors discussing fence plans over shared property line"
 	heroTitle="Good Neighbor Fence Laws in California"
 	heroSubtitle="Understanding your rights and responsibilities for shared boundary fences"

@@ -1,13 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-export const frontmatter = {
-	title: "Fence Financing Options in Stockton: How to Pay for Your New Fence",
-	description: "Explore fence financing options available to Stockton homeowners. Compare contractor financing, personal loans, credit cards, and HELOC options for your fencing project.",
-	publishDate: "2026-07-01",
-	category: "Financing"
-};
-
 const schemaData = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -61,13 +54,25 @@ const schemaData = {
 		]
 	}
 };
+
+export const frontmatter = {
+	title: "Fence Financing Options in Stockton: How to Pay for Your New Fence",
+	description: "Explore fence financing options available to Stockton homeowners. Compare contractor financing, personal loans, credit cards, and HELOC options for your fencing project.",
+	heroTitle: "Fence Financing Options in Stockton",
+	heroImage: "/images/blog/fence-cost-calculator.jpg",
+	heroImageAlt: "Homeowner reviewing financing options for new fence installation",
+	publishDate: "July 1, 2026",
+	scheduledDate: "2026-07-01",
+	category: "Financing",
+	readingTime: "11 min read"
+};
 ---
 
 <BlogLayout
 	title="Fence Financing Options in Stockton: How to Pay for Your New Fence"
 	description="Explore fence financing options available to Stockton homeowners. Compare contractor financing, personal loans, credit cards, and HELOC options for your fencing project."
 	canonicalUrl="/blog/fence-financing-options-stockton"
-	heroImage="/images/blog/fence-financing.jpg"
+	heroImage="/images/blog/fence-cost-calculator.jpg"
 	heroImageAlt="Homeowner reviewing financing options for new fence installation"
 	heroTitle="Fence Financing Options in Stockton"
 	heroSubtitle="Flexible payment solutions for your fencing investment"
